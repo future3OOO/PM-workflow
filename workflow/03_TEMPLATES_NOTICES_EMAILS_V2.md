@@ -1,7 +1,7 @@
 # TEMPLATE PACK — Notices, Emails, and Website Copy (Version 2)
 
-**Version:** V2 (Full)  
-**Last updated:** 2026-02-24
+**Version:** V2.1 (Updated from video walkthrough)  
+**Last updated:** 2026-03-07
 
 ---
 
@@ -113,12 +113,12 @@ Regards,
 
 ---
 
-## 7) Maintenance — owner approval request
+## 7) Maintenance — owner approval request (email)
 **Subject:** Approval required — maintenance at [Property Address]
 
 Hi [Landlord Name],
 
-We’ve received a maintenance request for **[issue]**.
+We've received a maintenance request for **[issue]**.
 
 - **Recommendation:** [Proceed / Quote first]  
 - **Reason:** [short risk/impact]  
@@ -132,7 +132,44 @@ Thanks,
 
 ---
 
-## 8) Maintenance — contractor work order
+## 7b) Maintenance — owner approval request (Tapi — inspection follow-up)
+**Used in:** Tapi → Ask owner for approval → Add personal message
+
+> Hi [Owner first name],
+>
+> These items were noted during the routine inspection at [address]. Are you happy for me to arrange a contractor to attend to them?
+>
+> Kind regards,
+> [PM / VA name]
+
+**When to use:** After a routine inspection, for each maintenance item synced to Tapi where the owner has not already responded via the inspection report email.
+
+**When NOT to use:** If the owner has already replied to the inspection report email approving the work — go directly to sending a work order instead.
+
+---
+
+## 7c) Maintenance — work order message to contractor (Tapi)
+**Used in:** Tapi → Send work order → Add personal message to supplier
+
+> Please [describe the work], e.g.:
+> - "Please replace 1x oyster light in the living room"
+> - "Please service the shower mixer and check under the laundry floor for a leak"
+> - "Please attend to the heat pump — not heating"
+
+**Keep it brief.** The contractor can click through to see full job details, photos, and property info in Tapi.
+
+---
+
+## 7d) Maintenance — work order message to tenant (Tapi)
+**Used in:** Tapi → Send work order → Add personal message to tenants
+
+> Hi [Tenant name], a contractor will be in contact with you to [brief description of work].
+
+**Why this matters:** The tenant only sees the job title in their email notification from Tapi (e.g., "Lounge room light flickering") — they don't see the full description. Add a message to provide context about what will happen.
+
+---
+
+## 8) Maintenance — contractor work order (email — manual)
 **Subject:** Work order — [Property Address] — [Issue]
 
 Hi [Contractor Name],

@@ -1,0 +1,143 @@
+# Transcript — Video 1
+# Source: video1_audio.wav
+
+[00:01 - 00:08] I'm just going to show you something here from inspection, express and tarpey or tapy.
+[00:09 - 00:13] This will actually be one of the first tasks.
+[00:13 - 00:15] I'll probably get you to start on this one next week.
+[00:16 - 00:23] But yes, so once you've got login credentials for inspection manager, I have to see if I
+[00:23 - 00:25] will create a new account or you'll just use my account.
+[00:25 - 00:34] But essentially when you log into inspection manager, I think you get defaults to the inspection page.
+[00:34 - 00:38] So you can see all the inspections that I've done this week.
+[00:39 - 00:43] You can see what's coming up for next week.
+[00:44 - 00:52] But essentially what you'll be doing is like every day you would jump into here and see,
+[00:52 - 00:57] you see what inspections I have done on any given day.
+[00:59 - 01:05] And then you want to look to see and make sure that everything has been finalised through here.
+[01:05 - 01:12] If an inspection hasn't been finalised, then you let me know and remind me about that one.
+[01:13 - 01:18] Generally I try to finalise an inspection while I'm there.
+[01:18 - 01:24] But sometimes you don't have time to go through and write all the comments and stuff like that.
+[01:25 - 01:29] So it might be the next day or the day after, just depending on what's going on.
+[01:29 - 01:32] So that's something you want to monitor here.
+[01:32 - 01:36] If something through here isn't finalised, then you want to let me know.
+[01:36 - 01:38] Maybe keep a record of.
+[01:39 - 01:45] And you'll see here one here, it says in progress, this was actually just a test property that I was
+[01:45 - 01:52] doing a run on because I actually broke my 360 camera that I use during the week.
+[01:53 - 01:57] You'll see this is like the 360 kind of walk through here.
+[01:57 - 01:59] That's sort of what that looks like.
+[02:00 - 02:03] But I only do this for sort of in-going reports.
+[02:03 - 02:08] Be I broke the lens on my camera and then had to do this retro fit repair,
+[02:09 - 02:13] which is quite difficult and involved cutting out a lens.
+[02:14 - 02:18] But you can see here there's a bit of distortion from my new lens because it's not seated correctly.
+[02:19 - 02:21] But anyway, so back to here.
+[02:22 - 02:29] What we want to do is you look at anything that's been finalised and you want to click into a
+[02:29 - 02:32] report. So you want to view each of these PDFs.
+[02:33 - 02:39] And then you will scroll down in the report here and you'll see maintenance items.
+[02:40 - 02:45] So these are all the maintenance items that I've lodged during the inspection.
+[02:45 - 02:50] And what happens with these maintenance items is that they get sent through directly into
+[02:50 - 02:55] Tappy. So then you'll see here, so we're at the Chum Street.
+[02:55 - 02:58] So you can see sort of three of them here that were submitted.
+[03:00 - 03:03] We'll create it today. I think I finalised this today.
+[03:03 - 03:05] It looks like they've been sent in here today.
+[03:05 - 03:10] So you want to come through and have a look at each of these.
+[03:11 - 03:15] And ideally, you'll start down here.
+[03:16 - 03:24] Here you'll see I've noticed some cracking to some floor tiles and which there's a bit of
+[03:24 - 03:29] floor movement which I think there could be sort of an underfloor leak going on here.
+[03:31 - 03:36] So it's a leak issue. So it's like a plumbers job. I think I've mentioned here.
+[03:36 - 03:41] You know, this should be investigated. But yeah, so basically that would be like a plumbers job.
+[03:41 - 03:46] So you need to kind of work out what that would be.
+[03:46 - 03:50] Like if you've got something, I could have probably been more clear here.
+[03:52 - 03:56] But yeah, so essentially there's some cracking here.
+[03:56 - 03:58] Like it could just be floor movement from settlement.
+[03:59 - 04:06] But yet because it's in this laundry area like this and also did notice it's quite sort of soft
+[04:06 - 04:11] in here, then it's likely, more likely that there could be some slow leak going on under the floor.
+[04:12 - 04:19] And then you'll also see here I've noted a drip leak from a shower mixer.
+[04:19 - 04:23] And then I've said shower mixer is not mine a drip leak needs a plummet of service.
+[04:23 - 04:28] You're happy for me to get this service and for plummet to check out under floor at the same time.
+[04:28 - 04:31] So I have kind of linked them together in that regard.
+[04:33 - 04:37] But yeah, I guess in future I will make it more clear in the description if you're reviewing this
+[04:37 - 04:42] like at least initially like what should be done and what contractor that would go to.
+[04:43 - 04:47] But yeah, why I wanted to sort of bring this one up is that yeah, there's two kind of separate
+[04:47 - 04:50] jobs here and they're both plumbing jobs.
+[04:53 - 05:01] So yeah, what we would do here is we want to link both of these jobs together since they're going
+[05:01 - 05:10] to go to the same contractor at the same time. So to do that, we select more options and then we go
+[05:10 - 05:16] merge job. And then it's going to come up with some other jobs here. I think there's another
+[05:16 - 05:22] heat pump service I'd said here from from last inspection that the landlord hasn't responded to.
+[05:23 - 05:29] But yeah, so then we find that other job which is the the tile cracking job we select okay.
+[05:30 - 05:39] And then we will just click on edit description. So then it brings out both of them here.
+[05:40 - 05:46] Needs a plummet to check. So sometimes you might have to sort of adjust some of these
+[05:46 - 05:52] descriptions here because I might have like asked to what in this example here you're happy for me
+[05:52 - 05:58] to get the service and for plummet to check. That's like sort of a message I've sent to to the
+[05:58 - 06:06] landlord. But yeah, what we're doing now is really getting this or getting these these jobs set
+[06:06 - 06:12] up as work orders so they can be sent to a plumbing company. So we don't really need to have this
+[06:12 - 06:18] part here and asking if we're happy to get to get it service. The plummet doesn't need to see
+[06:18 - 06:24] that information. The reason I'm asking that is because yeah, this you can come back over here.
+[06:24 - 06:30] You'll see in the maintenance items like this is what I've sent to the landlord and in the email,
+[06:30 - 06:35] the landlord gets sent. I have to show you the template for that. I'd ask them to sort of review
+[06:35 - 06:43] any maintenance items and sort of get back to me in regards to if they're happy for me to arrange a
+[06:43 - 06:48] contractor. So that's why I've sort of asked the question here. But yeah, if you see questions like
+[06:48 - 06:54] this that look like a question to the landlord then yeah, when we are sort of merging jobs or
+[06:54 - 06:58] before we're going to send them to a contractor, we want to sort of you know, tidy them up a little
+[06:58 - 07:06] bit so we don't need that part. This part here, 10 and put it out, this is not new, has been here
+[07:06 - 07:16] since I took over to 2020. Yeah, we can, again, that's a message to the landlord but yeah,
+[07:16 - 07:21] when we can sort of add that in, I guess it's still some context for the plumber. So what we do now
+[07:21 - 07:28] is we will merge these two jobs together and then it hasn't sort of refreshed it on the
+[07:28 - 07:36] initial load page which really probably should have if it was using better UI practices. But so
+[07:36 - 07:44] what we have to do then is just go back to it and it should be, let's just refresh it again.
+[07:45 - 07:52] Should be one of these ones now. Yeah, sorry, this one here now I believe we click back into it.
+[07:54 - 08:01] Yeah, so now you can see both of these jobs are in here. You know what, I should have also done
+[08:01 - 08:10] before is actually edit the title when we merge them. So I'll probably just do that now but
+[08:10 - 08:14] yeah, that's how you edit job. You can always go back in once you've done this and then read any
+[08:14 - 08:27] details you need. So drip leak from shower mixer plus potential leak under laundry floor.
+[08:28 - 08:38] So I've just kind of you summed up the job titles here, update job. But yeah, we'll try make,
+[08:38 - 08:43] you make the sort of everything a bit more accurate in this maintenance items. When I do the
+[08:43 - 08:48] inspection, so it's easier for you to kind of work anything out but you can always just ask me.
+[08:49 - 08:55] But yeah, basically also like the key thing for you in doing this is that you know, I want you to
+[08:55 - 09:02] then for all of these, all of these maintenance items that I've listed in like any, any, any report.
+[09:04 - 09:11] Yeah, I want you to be going through each one. This one's not loading. But you're going through
+[09:11 - 09:18] each one. Is this one going to load? I don't know. Oh, here we go. So you're going through each one
+[09:18 - 09:28] and and asking for approval for the landlord. You ideally, we want to do this. You want to do this
+[09:28 - 09:33] like each morning or even be monitoring during the day and saying if there's any finalized inspections
+[09:33 - 09:39] because ideally, this should be done after each inspection is finalized. So it's done at like the
+[09:39 - 09:46] same time because what happens is a lot of landlords just don't bother replying to like maintenance
+[09:46 - 09:53] items and a lot of the times it's also like more suggestions as well, not necessarily urgent maintenance.
+[09:53 - 10:00] So yeah, that's why we want to actually ask them for approval inside of TAPI because then they
+[10:00 - 10:08] get sent an additional reminder and yeah, makes them just more likely to respond. So yeah, you want
+[10:08 - 10:15] looking through all of these each day, seeing what's been finalized, seeing the maintenance items,
+[10:16 - 10:25] and then you're asking the owner for approval. But also, yeah, sometimes you might have to
+[10:25 - 10:30] yeah, sort of merge orders together like this one, not usually you won't have to do this,
+[10:30 - 10:35] but I've just used this one as an example because it's something that happens from time to time.
+[10:35 - 10:42] So then we would go into here ask for approval and then you can just say, um,
+[10:43 - 11:00] you're happy for me to arrange a plumber to say this, show a mezza and check under laundry for light.
+[11:07 - 11:12] So yeah, and then we're just going to send to owner. I probably will create some more structured
+[11:12 - 11:18] template for this message. You often might say kind regards, McKenzie or something as well,
+[11:18 - 11:25] but you sort of know this owner here quite well, so often a bit more casual. But yeah,
+[11:25 - 11:31] we'd sort of probably come up with a more structured message here that says something along the lines
+[11:31 - 11:39] of high wherever the landlord is, Brett. These items were noted during your routine inspection. Are you
+[11:39 - 11:49] happy for me to arrange a contractor to attend to them? Kind regards, um, Diane or whatever. But yeah,
+[11:49 - 11:54] we'll come up with some kind of template for this, but the main thing here, I'm just showing you
+[11:54 - 12:01] how the sort of workflow would work and then we're going to send to owner. And then the owner
+[12:01 - 12:08] gets sent an email that basically, um, where, yeah, I will have to show an example of what that looks
+[12:08 - 12:13] like just so you can see, but then it's sort of an email from Tappy saying that a maintenance
+[12:13 - 12:19] request has been sent. Please click this button here to approve it. So that way they can easily
+[12:19 - 12:24] just click into a button and actually open up this, this whole work order. So they've got all the
+[12:24 - 12:29] information and then they can click another button to approve and they can also message from inside
+[12:29 - 12:34] of here as well. Often they don't still don't actually click the button to approve, but they will
+[12:34 - 12:41] often respond in here too. So you that something you want to be monitoring each day to see if there's any
+[12:43 - 12:49] responses. And what you can also do inside of here is you can send like direct follow-ups,
+[12:49 - 12:54] so that would be a direct follow-up. It would send there. So you might want to be, um, you know,
+[12:54 - 13:00] checking this and if an owner hasn't replied in a few days, you might want to send a follow-up
+[13:00 - 13:07] message in here as well. But yeah, this is sort of the general just of the workflow. So,
+[13:07 - 13:14] yeah, I want basically one every maintenance item that was listed during an inspection to be sent
+[13:14 - 13:22] for to the owner for approval. Yeah, probably is also the other sort of caveat to this is that,
+[13:25 - 13:36] for example, where are we? This is another landlord. Thanks, bro. He's here's another landlord
+[13:36 - 13:43] that I know as well. Yes, a lot of landlords I do have your quite good relationships with.
+[13:46 - 13:52] Um, where are we? Um, just trying to bring up his one. Yeah, so that's his property is 46
+[13:52 - 14:01] quins. So this landlord here is very responsive. Um, so, so there'd be no need to then like request,
+[14:01 - 14:05] or so there'd be no need to ask for approval here because he's pretty much responded,
+[14:06 - 14:12] on that same day or straight away. But yeah, if you are like doing these immediately, then a landlord
+[14:12 - 14:17] never would have responded straight away. But, you know, just depending on your, the time you're
+[14:17 - 14:22] working, it might, you know, it might, it might not be till the next day that you get to doing any of this.
+[14:23 - 14:30] So what you would want to do is also check my, my inbox to see if there has already been a response
+[14:30 - 14:36] from a landlord before you went in and asked for approval. Um, but that's only going to be, yeah,
+[14:36 - 14:41] like if you are sort of, you know, asking for approval like the next day or something like that,
+[14:41 - 14:47] but you're always good to check, check my emails, which I will give you access to soon. Um,
+[14:48 - 14:53] so you can see if any response has been, um, has been sent by the landlord before sending that.
