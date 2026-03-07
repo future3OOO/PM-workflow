@@ -1,8 +1,8 @@
 # Property Management Workflow Documentation
 
 **Owner:** Property Partner (Strathmore Property Limited)  
-**Version:** V2 (Full)  
-**Last Updated:** 2026-02-24  
+**Version:** V2.1 (Updated from video walkthrough analysis)  
+**Last Updated:** 2026-03-07  
 **Audience:** Property Manager, Property Management Assistant / VA, Operations Support
 
 ---
@@ -68,8 +68,8 @@ All documentation files live inside the [`workflow/`](workflow/) folder.
 | [`01_PLAYBOOK_TENANCY_SETUP_TPS_TO_PROPERTYTREE_V2.md`](workflow/01_PLAYBOOK_TENANCY_SETUP_TPS_TO_PROPERTYTREE_V2.md) | Tenancy creation from signed agreement through to Property Tree record |
 | [`01_PLAYBOOK_COMPLIANCE_HEALTHY_HOMES_V2.md`](workflow/01_PLAYBOOK_COMPLIANCE_HEALTHY_HOMES_V2.md) | Healthy Homes compliance (evidence gathering, TPS fields, remediation, tracking) |
 | [`01_PLAYBOOK_TENANT_ONBOARDING_V2.md`](workflow/01_PLAYBOOK_TENANT_ONBOARDING_V2.md) | Tenant welcome pack, ingoing inspection, first-week check |
-| [`01_PLAYBOOK_INSPECTIONS_PROPERTYTREE_TO_INSPECTIONEXPRESS_V2.md`](workflow/01_PLAYBOOK_INSPECTIONS_PROPERTYTREE_TO_INSPECTIONEXPRESS_V2.md) | Inspection lifecycle (scheduling, confirmations, reporting, maintenance capture) |
-| [`01_PLAYBOOK_MAINTENANCE_TAPI_TARPY_V2.md`](workflow/01_PLAYBOOK_MAINTENANCE_TAPI_TARPY_V2.md) | Maintenance lifecycle (intake, triage, approvals, work orders, invoices, close-out) |
+| [`01_PLAYBOOK_INSPECTIONS_PROPERTYTREE_TO_INSPECTIONEXPRESS_V2.md`](workflow/01_PLAYBOOK_INSPECTIONS_PROPERTYTREE_TO_INSPECTIONEXPRESS_V2.md) | Inspection lifecycle (scheduling, confirmations, reporting, maintenance capture, VA daily Tapi follow-up) |
+| [`01_PLAYBOOK_MAINTENANCE_TAPI_TARPY_V2.md`](workflow/01_PLAYBOOK_MAINTENANCE_TAPI_TARPY_V2.md) | Maintenance lifecycle (intake, triage, approvals, job merging, work orders, invoices, close-out) |
 | [`01_PLAYBOOK_RENEWALS_RENT_REVIEWS_VALUA_TPS_V2.md`](workflow/01_PLAYBOOK_RENEWALS_RENT_REVIEWS_VALUA_TPS_V2.md) | Renewals and rent reviews (Valua evidence, owner consultation, TPS execution) |
 | [`01_PLAYBOOK_END_OF_TENANCY_BREAK_LEASE_V2.md`](workflow/01_PLAYBOOK_END_OF_TENANCY_BREAK_LEASE_V2.md) | End of tenancy and fixed-term lease breaks |
 | [`01_PLAYBOOK_NOTICES_AND_COMMS_V2.md`](workflow/01_PLAYBOOK_NOTICES_AND_COMMS_V2.md) | Notices, escalation ladder, and communications rules |
@@ -89,9 +89,9 @@ All documentation files live inside the [`workflow/`](workflow/) folder.
 | [`02_SOP_TPS_AGREEMENT_GENERATION_SIGNING_RENEWALS_V2.md`](workflow/02_SOP_TPS_AGREEMENT_GENERATION_SIGNING_RENEWALS_V2.md) | Agreement generation, signing, and renewals in TPS |
 | [`02_SOP_TENANCY_SERVICES_BOND_LODGEMENT_VIA_TPS_V2.md`](workflow/02_SOP_TENANCY_SERVICES_BOND_LODGEMENT_VIA_TPS_V2.md) | Bond lodgement workflow via TPS |
 | [`02_SOP_COMPLIANCE_HEALTHY_HOMES_EVIDENCE_V2.md`](workflow/02_SOP_COMPLIANCE_HEALTHY_HOMES_EVIDENCE_V2.md) | Healthy Homes evidence gathering and TPS compliance fields |
-| [`02_SOP_TAPI_INTAKE_TRIAGE_APPROVALS_WORKORDERS_V2.md`](workflow/02_SOP_TAPI_INTAKE_TRIAGE_APPROVALS_WORKORDERS_V2.md) | Tapi: intake, triage, owner approvals, work orders |
+| [`02_SOP_TAPI_INTAKE_TRIAGE_APPROVALS_WORKORDERS_V2.md`](workflow/02_SOP_TAPI_INTAKE_TRIAGE_APPROVALS_WORKORDERS_V2.md) | Tapi: intake, triage, job merging, owner approvals, follow-up protocol, work orders |
 | [`02_SOP_TAPI_INVOICES_OWNER_TENANT_DIY_SYNC_TO_PROPERTYTREE_V2.md`](workflow/02_SOP_TAPI_INVOICES_OWNER_TENANT_DIY_SYNC_TO_PROPERTYTREE_V2.md) | Tapi: invoice matching, coding, and sync to Property Tree |
-| [`02_SOP_INSPECTION_EXPRESS_REPORT_PUBLISH_ACTIONS_TO_TAPI_V2.md`](workflow/02_SOP_INSPECTION_EXPRESS_REPORT_PUBLISH_ACTIONS_TO_TAPI_V2.md) | Inspection Express: report publishing and maintenance sync to Tapi |
+| [`02_SOP_INSPECTION_EXPRESS_REPORT_PUBLISH_ACTIONS_TO_TAPI_V2.md`](workflow/02_SOP_INSPECTION_EXPRESS_REPORT_PUBLISH_ACTIONS_TO_TAPI_V2.md) | Inspection Express: daily monitoring, report review, Tapi sync verification, approval workflow, work orders |
 | [`02_SOP_VALUA_RENT_RESEARCH_V2.md`](workflow/02_SOP_VALUA_RENT_RESEARCH_V2.md) | Valua: rent research and recommendation preparation |
 | [`02_SOP_EMAIL_MANAGEMENT_SHARED_INBOX_V2.md`](workflow/02_SOP_EMAIL_MANAGEMENT_SHARED_INBOX_V2.md) | Shared inbox email management and labelling |
 
@@ -99,14 +99,14 @@ All documentation files live inside the [`workflow/`](workflow/) folder.
 
 | File | Description |
 |---|---|
-| [`03_TEMPLATES_NOTICES_EMAILS_V2.md`](workflow/03_TEMPLATES_NOTICES_EMAILS_V2.md) | All email templates, formal notices, and website copy (including lease break guide) |
-| [`03_TEMPLATES_CHECKLISTS_V2.md`](workflow/03_TEMPLATES_CHECKLISTS_V2.md) | Execution checklists for onboarding, leasing, tenancy setup, inspections, maintenance, renewals, and end of tenancy |
+| [`03_TEMPLATES_NOTICES_EMAILS_V2.md`](workflow/03_TEMPLATES_NOTICES_EMAILS_V2.md) | All email templates, Tapi message templates, formal notices, and website copy (including lease break guide) |
+| [`03_TEMPLATES_CHECKLISTS_V2.md`](workflow/03_TEMPLATES_CHECKLISTS_V2.md) | Execution checklists for onboarding, leasing, tenancy setup, inspections (incl. post-inspection Tapi follow-up), maintenance, renewals, and end of tenancy |
 
 ### Quality Assurance (04_)
 
 | File | Description |
 |---|---|
-| [`04_QA_DAILY_TRIAGE_CHECKLIST_V2.md`](workflow/04_QA_DAILY_TRIAGE_CHECKLIST_V2.md) | Daily triage checklist (maintenance, leasing, inspections, inbox) |
+| [`04_QA_DAILY_TRIAGE_CHECKLIST_V2.md`](workflow/04_QA_DAILY_TRIAGE_CHECKLIST_V2.md) | Daily triage checklist (maintenance, inspection follow-up in Tapi, leasing, inspections, inbox) |
 | [`04_QA_WEEKLY_OPERATIONS_CHECKLIST_V2.md`](workflow/04_QA_WEEKLY_OPERATIONS_CHECKLIST_V2.md) | Weekly operations review checklist |
 | [`04_QA_MONTHLY_COMPLIANCE_AUDIT_V2.md`](workflow/04_QA_MONTHLY_COMPLIANCE_AUDIT_V2.md) | Monthly compliance and records audit (sample 10 properties) |
 
@@ -115,6 +115,14 @@ All documentation files live inside the [`workflow/`](workflow/) folder.
 | File | Description |
 |---|---|
 | [`99_SOURCES_NOTE_V2.md`](workflow/99_SOURCES_NOTE_V2.md) | External sources and regulatory references (Tenancy Services, vendor integrations) |
+
+### Video Analysis
+
+| File | Description |
+|---|---|
+| [`_video_analysis/VIDEO_ANALYSIS_REPORT.md`](_video_analysis/VIDEO_ANALYSIS_REPORT.md) | Gap analysis report from Tapi inspection follow-up training videos (15 gaps identified, 7 automation opportunities) |
+| [`_video_analysis/video1_transcript.txt`](_video_analysis/video1_transcript.txt) | Timestamped transcript — Video 1: Tapi inspection follow-up approval workflow (14:55) |
+| [`_video_analysis/video2_transcript.txt`](_video_analysis/video2_transcript.txt) | Timestamped transcript — Video 2: Tapi inspection follow-up approval example (6:21) |
 
 ---
 
