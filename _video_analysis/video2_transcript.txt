@@ -1,0 +1,75 @@
+# Transcript — Video 2
+# Source: video2_audio.wav
+
+[00:00 - 00:09] So I've just got a good example here of an inspection report that from yesterday that was
+[00:09 - 00:15] just sent out to an owner this morning and the owner here has actually replied straight
+[00:15 - 00:15] away.
+[00:16 - 00:21] So this is David and Jeff, they are brothers, they are, they are both very responsive, good
+[00:21 - 00:23] on the email coms.
+[00:24 - 00:30] So you can actually see here an example of a report that gets, well, a sort of the email
+[00:30 - 00:33] message that gets sent to the owner when a report is sent out.
+[00:36 - 00:46] And you can see here that I've listed maintenance item which we will see over somewhere.
+[00:48 - 00:49] Where are we?
+[00:49 - 00:52] Yeah, here we go.
+[00:54 - 01:00] So here lounge light flickering would need replacing.
+[01:00 - 01:05] So this is the, the open order and tarpies.
+[01:05 - 01:07] So the owner has replied sort of straight away.
+[01:07 - 01:10] So in this case, we wouldn't need to ask for approval.
+[01:11 - 01:17] What the upset is like, thanks to in the measure up, it's okay to fix the LED you mentioned.
+[01:23 - 01:28] Yeah, there's also an issue here with the glass, but we won't deal with that in this, in
+[01:28 - 01:29] this request.
+[01:29 - 01:33] But as you can see, we need to get this light replaced.
+[01:34 - 01:41] So this is where you do need a little bit of understanding, I guess, about electrical,
+[01:41 - 01:44] but yeah, usually I've just sort of listed it here.
+[01:44 - 01:45] I've said it needs replacing.
+[01:46 - 01:52] You're like a light like this, you might think that it can be repaired, but I already know
+[01:52 - 01:56] that the repair, trying to repair this would just be your waste of time and probably cost
+[01:57 - 02:03] more than actually just replacing it because you have these lights and not that expensive,
+[02:03 - 02:08] the actual labour charge for the electrician just to go there like the minimum labour charge
+[02:08 - 02:10] is the biggest component.
+[02:10 - 02:16] So that's why we wouldn't bother just trying to repair something like this when it's not
+[02:16 - 02:19] going to be much cheaper than a replacement, even if it can be repaired.
+[02:20 - 02:24] But in this case, you just sort of follow the description here.
+[02:24 - 02:28] In this case, we probably don't need to make many adjustments to it either.
+[02:28 - 02:32] So like that sort of ridden like it could be cent straight to a contractor.
+[02:33 - 02:37] So in this case, here we're going to search for a contractor.
+[02:37 - 02:48] So in terms of contractors, I will just make a wee contractor key or protocol so you have
+[02:48 - 02:53] an idea of what work orders should be sent to what contractors.
+[02:53 - 02:57] So there is sort of multiple electricians I use and plumbers I use.
+[02:58 - 03:02] But for this one, I'm going to send it to Carl.
+[03:02 - 03:08] So I've been using him quite a lot recently because he is quite well priced.
+[03:09 - 03:13] So often that's a big consideration is the price component.
+[03:14 - 03:19] So he is well priced and he actually also does handyman work as well as electrical work,
+[03:19 - 03:22] which is handy and not that common.
+[03:22 - 03:27] So most electricians are just doing electrical whereas this guy is a licensed electrician
+[03:27 - 03:28] plus he is a handyman.
+[03:28 - 03:30] So he does all sorts of things.
+[03:31 - 03:34] So in this case, here we have a look through here.
+[03:36 - 03:40] We're by we can send a when we send this work order, we can send a message to supplier,
+[03:40 - 03:43] we can send a message to owner, send a message to the tenant.
+[03:45 - 03:59] In this case, we'll just say to him, please replace the sort of oyster light and the loading
+[03:59 - 04:07] room or please replace one times oyster light in the living room.
+[04:08 - 04:12] So he'll just get a wee note here when he gets sent that to his email but then he can
+[04:12 - 04:15] also click in and see the full work order details.
+[04:16 - 04:21] And then there's a couple of boxes here so we don't need the compliance information.
+[04:21 - 04:27] I believe I covered this in an earlier video and you always essentially want to require
+[04:28 - 04:32] for the contractor to contact the tenants in a range of time.
+[04:32 - 04:37] In most cases, you are not going to really message anything or add a message to the owner here
+[04:37 - 04:42] because we've just been in correspondence with them but they will get sent a copy of this
+[04:42 - 04:44] so they're not gone to the contractor.
+[04:44 - 04:49] And then sometimes we do want to send a message to the tenant so again we'll probably come up with
+[04:49 - 04:53] like a template or some sort of structure to these messages.
+[04:55 - 05:02] So in this case, here are guys named John, Hyde John, a contractor will be in contact with
+[05:04 - 05:12] you to replace the oyster light in the lounge.
+[05:13 - 05:19] So just so John has an idea because what happens is the tenant gets sent like an email notification
+[05:19 - 05:28] that a contractor will be in touch with them in regards to a lounge room overall light flickering.
+[05:28 - 05:31] So they only get sort of the title of it.
+[05:31 - 05:37] They don't actually see the other details in here so you sometimes you might want to actually
+[05:37 - 05:43] include some more specific details about what's going on because often the title might only have
+[05:43 - 05:49] one part of it or not have all the details so sometimes it's helpful to add it.
+[05:49 - 05:51] A message to the tenant as well.
+[05:52 - 05:54] Yeah, there's no hazards here.
+[05:55 - 06:00] So yeah, we'll just send this one straight through, send work order.
+[06:04 - 06:12] Now that's been through and in that we'll move into scheduling jobs and now you can see he's been
+[06:13 - 06:16] sent that through there and he's, it says, it says,
+[06:16 - 06:19] Row and Addagon schedule that job with the tenant.

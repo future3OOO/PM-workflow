@@ -1,7 +1,7 @@
 # CHECKLIST PACK — Execution Checklists (Version 2)
 
-**Version:** V2 (Full)  
-**Last updated:** 2026-02-24
+**Version:** V2.1 (Updated from video walkthrough)  
+**Last updated:** 2026-03-07
 
 ---
 
@@ -45,25 +45,60 @@
 ---
 
 ## 4) Routine inspections (quarterly)
+
+### 4a) Pre-inspection and scheduling
 - [ ] Inspection scheduled in Property Tree and sync confirmed to Inspection Express
 - [ ] Email sent ~10 days out
 - [ ] SMS sent ~9 days out asking for confirmation
 - [ ] Tenant confirmed in writing
 - [ ] Property Tree updated to Confirmed
 - [ ] 24-hour reminder sent
+
+### 4b) Inspection execution and reporting
 - [ ] Inspection completed and report published
 - [ ] Report sent to landlord and tenant
-- [ ] Maintenance items created and synced to Tapi (if needed)
+
+### 4c) Post-inspection Tapi follow-up (VA/PM Assistant daily task)
+- [ ] Inspection Express checked for newly finalised inspections
+- [ ] PDF report reviewed for maintenance items
+- [ ] Each maintenance item confirmed present in Tapi (synced correctly)
+- [ ] Job descriptions cleaned up (landlord-directed language removed)
+- [ ] Related jobs merged where applicable (same property + same trade)
+- [ ] PM's email inbox checked for existing owner responses to inspection report
+- [ ] Owner approval requested in Tapi for items without prior response
+- [ ] Work order sent directly for items already approved by owner
+- [ ] Tapi "Awaiting approval" jobs followed up after 3 business days
 - [ ] Follow-ups tracked to completion
 
 ---
 
 ## 5) Maintenance (Tapi-first)
-- [ ] Request received in Tapi and tenant acknowledged
+
+### 5a) Intake
+- [ ] Request received in Tapi (tenant-submitted OR synced from inspection)
+- [ ] For tenant requests: tenant acknowledged and update time set
+- [ ] For inspection items: cross-referenced against inspection PDF to confirm all items synced
+
+### 5b) Triage and preparation
 - [ ] Urgency assessed (urgent vs routine)
-- [ ] Owner approval captured for routine work
+- [ ] Related jobs merged if applicable (same property + same trade)
+- [ ] Job description reviewed and cleaned up for contractor clarity
+
+### 5c) Approval
+- [ ] PM's email checked for existing owner response before requesting Tapi approval
+- [ ] Owner approval captured for routine work (via Tapi or email)
 - [ ] Quote-first used where needed (> $500 or uncertain)
+- [ ] Approval followed up after 3 business days if no response
+
+### 5d) Contractor engagement
 - [ ] Work order/quote request issued with scope/access/WO#
+- [ ] Contractor selected based on trade and preference (Contractor Key)
+- [ ] Message to supplier includes clear instruction
+- [ ] Copy sent to owner (default)
+- [ ] Copy sent to tenant with context message
+- [ ] "Require contractor to contact tenants" ticked for access
+
+### 5e) Completion and close-out
 - [ ] Job tracked and updates sent to tenant/owner
 - [ ] Invoice matched and approved; coded correctly (owner/tenant/DIY)
 - [ ] Invoice synced to Property Tree for payment run
