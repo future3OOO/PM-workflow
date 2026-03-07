@@ -1,0 +1,78 @@
+# PLAYBOOK — Leasing (Trade Me → TPS BookMe → TPS Apps/Checks → TPS Agreement) (Version 2)
+
+**Version:** V2 (Full)  
+**Last updated:** 2026-02-24
+
+---
+
+## Goal
+Lease a property quickly and safely using Trade Me marketing and TPS end‑to‑end leasing workflow, with a clear audit trail.
+
+## Trigger
+Vacancy or upcoming vacancy with owner approval to market.
+
+## Outputs (definition of done)
+- Trade Me listing live; enquiries route into TPS BookMe
+- Viewings scheduled and run (tenant-in-place handled properly)
+- Applications processed; checks run on preferred applicant(s); decision recorded
+- Tenant approved in TPS; agreement generated and signed in TPS
+- Handover to tenancy setup playbook
+
+---
+
+## Stage 1 — Pre-list readiness
+- Confirm availability date
+- Confirm access plan (vacant vs tenant-in-place)
+- Confirm photos, chattels list, and “must know” property notes
+- Confirm rent guidance:
+  - use Valua if rent is uncertain or owner requests evidence
+
+---
+
+## Stage 2 — Publish listing on Trade Me
+- Create/publish listing in Trade Me (your standard marketing approach)
+- Capture Trade Me listing number (required for enquiry routing into TPS)
+
+---
+
+## Stage 3 — Connect Trade Me to TPS BookMe (enquiry routing)
+- Enter the Trade Me listing number into TPS property “Trade Me ID” field
+- Confirm enquiries are flowing into TPS BookMe dashboard
+
+SOP: **02_SOP_TPS_PROPERTY_SETUP_TRADEME_ID_BOOKME_V2.md**
+
+---
+
+## Stage 4 — Viewings in BookMe
+- Create 2–4 viewings per week initially (adjust to demand)
+- Add attendee instructions (meeting point, time window expectations)
+- Tenant-in-place:
+  - coordinate politely and aim for a time window
+  - keep changes minimal and record confirmations in writing
+
+SOP: **02_SOP_TPS_VIEWINGS_BOOKME_V2.md**
+
+---
+
+## Stage 5 — Applications and checks (TPS)
+- Applicants apply via TPS tenant portal (often prompted after viewings)
+- Triage for completeness and shortlist preferred applicant(s)
+- Run background/credit checks only on preferred applicant(s) per your privacy rule
+- Provide owner recommendation; capture decision in writing
+
+SOP: **02_SOP_TPS_APPLICATION_PROCESSING_CHECKS_APPROVAL_V2.md**
+
+---
+
+## Stage 6 — Approve and generate agreement
+- Approve application in TPS (tenant receives acceptance notification)
+- Generate tenancy agreement in TPS using stored landlord/property/compliance data
+- Send for digital signing; export final signed PDF
+
+SOP: **02_SOP_TPS_AGREEMENT_GENERATION_SIGNING_RENEWALS_V2.md**
+
+---
+
+## Stage 7 — Handover to Tenancy Setup
+Start:
+- **01_PLAYBOOK_TENANCY_SETUP_TPS_TO_PROPERTYTREE_V2.md**
