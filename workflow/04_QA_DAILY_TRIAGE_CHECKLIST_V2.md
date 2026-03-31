@@ -1,7 +1,7 @@
 # QA — Daily Triage Checklist (Version 2)
 
-**Version:** V2.1 (Updated from video walkthrough)  
-**Last updated:** 2026-03-07
+**Version:** V2.2 (Updated from video walkthrough)  
+**Last updated:** 2026-03-31
 
 ---
 
@@ -35,3 +35,18 @@
 - [ ] Clear URGENT then ACTION labels
 - [ ] Chase WAITING items
 - [ ] File key decisions to Property Tree
+
+## 6) Tapi Maintenance Dashboard — Daily Check
+
+| # | Check | Detail |
+|---|-------|--------|
+| 1 | Open Tapi Jobs dashboard | Review status pipeline counts: Open jobs, Awaiting quotes, Awaiting approval, Scheduling, Awaiting invoice |
+| 2 | Check new Concierge requests | Look for email notifications with Concierge/Maintenance labels. Accept in Tapi, clean up, triage |
+| 3 | Review "Open jobs" bucket | Any new jobs needing triage? Leave notes for PM if unsure about action |
+| 4 | Review "Awaiting approval" bucket | Any approvals >3 business days old? Send follow-up via Tapi thread |
+| 5 | Review "Scheduling job" bucket | Any contractors not responded >2 days? Send follow-up |
+| 6 | Review "Awaiting invoice" bucket | Any completed jobs with no invoice >2 weeks? Follow up contractor |
+| 7 | Check Tapi Inbox | Review messages from owners, tenants, contractors in Tapi messaging |
+| 8 | Check PM email for owner responses | Any owners replied to inspection reports or approval requests via email? Process accordingly |
+| 9 | Check Invoice Dashboard | Any new invoices arrived? Process matched/unmatched invoices |
+| 10 | Cross-reference Inspection Express | Any finalised inspections today? Verify maintenance items synced to Tapi |
