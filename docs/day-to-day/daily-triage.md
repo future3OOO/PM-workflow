@@ -39,6 +39,7 @@ See: [Leasing Lifecycle](../leasing/leasing-lifecycle.md)
 See: [Property Tree Scheduling](../inspections/pt-scheduling.md)
 - [ ] Upcoming inspections: **Communications Log** checked (automated ~10-day / ~9-day messages from Property Tree)
 - [ ] Unconfirmed inspections chased (**Confirmed** required for day-before auto email and for attendance — no confirmation = no attendance)
+- [ ] Newly auto-created first routine inspections checked to ensure the date did not land on a weekend
 
 ## 5) Inbox hygiene (VA)
 

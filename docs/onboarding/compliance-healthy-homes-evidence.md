@@ -1,7 +1,7 @@
 # Healthy Homes Evidence (TPS)
 
-**Version:** V2.3  
-**Last updated:** 2026-03-31
+**Version:** V2.4  
+**Last updated:** 2026-04-01
 
 ---
 
@@ -14,6 +14,15 @@ Healthy Homes (and related compliance evidence) is stored correctly in Property 
 3) Enter/update TPS compliance section fields using evidence
 4) If gaps exist, create remediation tasks in Tapi with owner approval plan
 5) After remediation, file completion evidence in Property Tree and update TPS fields
+
+## Smoke alarms / renewal-time verification
+
+When a renewal is being prepared in TPS, also verify the smoke alarm section:
+
+1) Check the latest service or test date from **SETS** (`sets.co.nz`) if the property is under a smoke alarm testing service
+2) If there is no SETS-managed service, use the last verified routine inspection date where appropriate
+3) Update the TPS smoke alarm fields so the renewal agreement reflects the latest known test/service information
+4) If TPS shows a non-compliant item but evidence suggests the work was completed, confirm via Property Tree invoices or Tapi before changing the field
 
 ## Quality checks
 

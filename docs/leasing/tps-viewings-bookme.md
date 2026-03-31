@@ -43,6 +43,9 @@ Navigate to **Book a viewing → Create Viewing** in the TPS sidebar.
 | **MAX NUMBER OF PEOPLE** | Default 50 | Lower if tenant or owner requests limited access |
 | **Special Instructions** | Free text | Use for access instructions, parking restrictions, hard-to-find properties |
 
+!!! warning "Calendar connection matters"
+    TPS shows a warning under **VIEWING AGENT** if that agent does not have a calendar connected. If the selected viewing agent has no linked calendar, the calendar event is not sent.
+
 ### Current tenant notification
 
 Toggle **AUTO UPDATE CURRENT TENANT → YES** to auto-populate the existing tenant's contact details. Select **EMAIL** as the notification type. The tenant receives a "Viewing Created" email with the date, time, and a note that the PM will arrive 10–15 minutes early.
@@ -88,21 +91,32 @@ BookMe sends automated SMS messages to all booked viewers:
 
 From the **Viewings** page, click the **Send Message** action on a completed viewing.
 
-1. Select the **Send Tenant Application Url - Email** template
-2. Use the filter buttons to select recipients: **Select All Attended** or **Select All Suitable**
-3. Click **SEND**
+1. Select **EMAIL** as the message type
+2. Select the **Send Tenant Application Url - Email** template
+3. Use the filter buttons to select recipients: **Select All Attended** or **Select All Suitable**
+4. Review the auto-populated subject and message
+5. Click **SEND**
+
+Available viewer filters in the dialog:
+
+- **Select All**
+- **Select All Suitable**
+- **Select All Not Suitable**
+- **Select All Attended**
+- **Select All Not Attended**
 
 The PM typically does this from his phone at the viewing itself.
 
 ---
 
-## Daily Enquiry Monitoring
+## Daily Enquiry Monitoring & Replies
 
 Check the **Book a viewing → Enquiries** page daily.
 
 - Most enquiries are generic, but some tenants include specific questions about the property
 - If a specific question requires an answer, either reply in TPS or forward to email
 - Replies in TPS are sent to the reply address — currently routes to `hello@propertypartner.co.nz`
+- The reply dialog supports **SMS / EMAIL**, template selection, subject editing, and a message editor with merge tags
 
 !!! tip "Email is preferred for responses"
     The TPS reply interface is functional but limited. For detailed responses, use email directly. All enquiry replies route through the hello@propertypartner address.
@@ -124,6 +138,17 @@ Each viewing row shows confirmation status badges: **NOT CONFIRMED**, **VT CONFI
 
 ---
 
+## Property Overview & Reporting
+
+BookMe also includes two reporting screens that are useful for portfolio-level visibility:
+
+- **Property Overview** — shows each property's upcoming viewings and enquiry counts, with address search and agent filters
+- **Owner's Report** — property-level reporting view; access depends on the account being used
+
+These are reference/reporting pages rather than the main daily operating screens.
+
+---
+
 ## BookMe Settings Reference
 
 Key settings configured in **Book a viewing → Settings**:
@@ -136,6 +161,7 @@ Key settings configured in **Book a viewing → Settings**:
     | Send Reminder SMS (Agents) | OFF | — |
     | Get Email Notification for New Bookings | ON | — |
     | Get Email Notification for New Enquiries | ON | — |
+    | CC Viewing Agent for Current Tenant Notifications | ON | Viewing agent receives a copy of occupant notices |
     | Auto Cancel Viewing (no bookings) | OFF | — |
     | Enable Tenant Feedback | OFF | — |
     | Update Enquiry Prompt | ON | 14 days |
@@ -155,7 +181,7 @@ BookMe includes 24+ email templates for the full viewing lifecycle. Key template
 - **Send Tenant Application Url** — application link sent after viewing
 - **Forwarded enquiry auto response** — auto-response when viewings are available or not
 
-Templates use merge tags like `{first_name}`, `{property_address}`, `{book_date}`, `{book_time}`, `{agent_full_name}`, `{application_url}`, and `{special_instructions}`. Edit templates in **Settings → SELECT TEMPLATE TO EDIT**.
+Templates use merge tags like `{first_name}`, `{property_address}`, `{book_date}`, `{book_time}`, `{agent_full_name}`, `{viewing_agent_full_name}`, `{viewing_agent_email}`, `{viewing_agent_cell_phone}`, `{application_url}`, and `{special_instructions}`. Edit templates in **Settings → SELECT TEMPLATE TO EDIT**.
 
 ---
 

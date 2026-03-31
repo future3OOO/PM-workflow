@@ -48,6 +48,7 @@
 
 ### 4a) Pre-inspection and scheduling
 - [ ] Inspection scheduled in Property Tree (date/time window set; **Proposed** until tenant confirms)
+- [ ] First routine inspection checked if auto-created by Property Tree — move off weekends if needed
 - [ ] Property Tree **automatic** ~10-day email and ~9-day SMS verified in **Communications Log** (not manual PM sends)
 - [ ] Tenant confirmed in writing
 - [ ] Property Tree updated to **Confirmed** (required for automatic day-before email, Inspection Express sync, and attendance)

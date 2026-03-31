@@ -55,6 +55,9 @@ Before starting the renewal wizard:
 - **Current Tenancy Start Date** and **End Date**: verify these match Property Tree
 - **Next Rent Payment Date**: get this from Property Tree → Lease & Rent → **Effective Paid To** date, then add one day. This date must not be before the rent-in-advance expiry.
 
+!!! warning "Do not trust the current tenancy end date blindly"
+    TPS sometimes shows the wrong current tenancy end date when you open a renewal. Always cross-check the current tenancy end date against Property Tree before using it to set the renewal start date.
+
 **Renewal Details:**
 
 - **Renewal Start Date**: the day after the current tenancy end date

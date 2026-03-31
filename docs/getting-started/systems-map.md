@@ -1,7 +1,7 @@
 # Systems Overview
 
-**Version:** V2.3  
-**Last updated:** 2026-03-31
+**Version:** V2.4  
+**Last updated:** 2026-04-01
 
 ---
 
@@ -101,6 +101,7 @@ See workflow: [Renewals & Rent Reviews](../renewals-exits/renewals-rent-reviews.
 
 - Exceptions, escalations, and anything not captured cleanly in TPS/Tapi/Property Tree
 - Written confirmations where needed
+- Shortwave may be used as the email client for drafting and thread handling, but critical decisions still get filed to Property Tree
 
 See: [Email Management](../day-to-day/email-management.md)
 
