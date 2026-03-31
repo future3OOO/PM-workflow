@@ -124,7 +124,7 @@ Add a varying term noting the rent increase:
 
 **Attach the rent increase notice:**
 
-1. Click **"Add a property specific attachment"**
+1. Click **"Add a property-specific attachment"**
 2. Browse for the saved rent increase notice PDF
 3. Select which tenants can view it
 4. Set the category to **"Payments"** (most applicable option)

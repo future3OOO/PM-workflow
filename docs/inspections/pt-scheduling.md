@@ -1,6 +1,6 @@
 # Scheduling & Confirmation (Property Tree)
 
-**Version:** V2.5  
+**Version:** V2.4  
 **Last updated:** 2026-04-01
 
 ---

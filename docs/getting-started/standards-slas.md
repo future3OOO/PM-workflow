@@ -1,6 +1,6 @@
 # Standards & SLAs
 
-**Version:** V2.5  
+**Version:** V2.4  
 **Last updated:** 2026-04-01
 
 ---
@@ -142,7 +142,7 @@ File evidence (photos/report) into Property Tree.
 
 ## Damage liability framework
 
-When damage is found at an inspection, determining who pays for repairs depends on whether the damage is **accidental** (tenant liability) or **careless** (landlord liability).
+When damage is found at an inspection, determining who pays for repairs depends on whether the damage is **careless** (tenant liability) or **accidental / not careless** (landlord liability).
 
 ### The anticipation test
 
@@ -150,8 +150,8 @@ The key distinction is **foreseeability during normal use**:
 
 | Classification | Test | Who pays |
 |---|---|---|
-| **Accidental damage** | The damage could reasonably be anticipated during normal use of the property | **Tenant** pays |
-| **Careless damage** | The damage could **not** reasonably be anticipated — it resulted from a foreseeable risk the tenant should have avoided | **Landlord** pays |
+| **Careless damage** | The damage resulted from a foreseeable risk the tenant should have avoided during normal use | **Tenant** pays |
+| **Accidental / not careless damage** | The damage could not reasonably have been anticipated from the activity being performed | **Landlord** pays |
 
 !!! tip "Grey area resolution"
     Many situations are genuinely ambiguous. When liability is unclear:
@@ -165,8 +165,8 @@ The key distinction is **foreseeability during normal use**:
 ??? info "Example: stone hitting a window during lawn mowing (expand)"
     A tenant reported that a stone flicked up and hit a window while mowing the lawn. This is a grey area because:
     
-    - **Argument for tenant liability (accidental)**: mowing near gravel or stones creates a foreseeable risk of projectile damage
-    - **Argument for landlord liability (careless)**: no stones were present near the grass areas (only in the driveway), the tenant had mowed the lawns for 4–5 years without incident, and mowing is a normal expected activity
+    - **Argument for tenant liability (careless)**: mowing near gravel or stones creates a foreseeable risk of projectile damage
+    - **Argument for landlord liability (accidental / not careless)**: no stones were present near the grass areas (only in the driveway), the tenant had mowed the lawns for 4–5 years without incident, and mowing is a normal expected activity
     
     In this case, the owner agreed to cover the cost (it fell below their insurance excess), but the PM noted that many owners would push back. The key factors were: no stone hazard near the lawn, long history of safe mowing, and the tenant's financial constraints.
 

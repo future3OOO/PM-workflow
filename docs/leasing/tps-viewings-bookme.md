@@ -14,17 +14,17 @@ Part of: [Leasing Lifecycle](leasing-lifecycle.md) → Stage 4
 
 ## Trade Me → TPS Integration
 
-Before BookMe can receive inquiries, the Trade Me listing must be linked to TPS.
+Before BookMe can receive enquiries, the Trade Me listing must be linked to TPS.
 
 1. List the property on Trade Me with photos, details, and rent
 2. Scroll to the bottom of the Trade Me listing and copy the **Listing ID**
 3. In TPS, navigate to **Properties → [property] → Property Details**
 4. Paste the Listing ID into the **TRADEME ID** field and save
 
-This creates a webhook-like connection — all Trade Me email inquiries are automatically forwarded into TPS Enquiries, and the system sends an automated response to the tenant with a "Make a Booking" link.
+This creates a webhook-like connection — all Trade Me email enquiries are automatically forwarded into TPS Enquiries, and the system sends an automated response to the tenant with a "Make a Booking" link.
 
 !!! warning "Known Trade Me throttling"
-    Duplicate inquiries from the same Trade Me account within a short timeframe may not be forwarded to TPS. This appears to be a Trade Me platform limitation.
+    Duplicate enquiries from the same Trade Me account within a short timeframe may not be forwarded to TPS. This appears to be a Trade Me platform limitation.
 
 ---
 
@@ -54,7 +54,7 @@ Toggle **AUTO UPDATE CURRENT TENANT → YES** to auto-populate the existing tena
 
 ## Tenant Booking Experience
 
-When a tenant inquires via Trade Me and viewings are scheduled:
+When a tenant enquires via Trade Me and viewings are scheduled:
 
 1. Tenant receives an automated email: "Great news, viewing times are available!" with a **Make a Booking** button
 2. The booking page at `bookme.tenant.co.nz` shows available time slots and a form: name, email, mobile, number of people attending, comments/questions
@@ -96,16 +96,16 @@ The PM typically does this from his phone at the viewing itself.
 
 ---
 
-## Daily Inquiry Monitoring
+## Daily Enquiry Monitoring
 
 Check the **Book a viewing → Enquiries** page daily.
 
-- Most inquiries are generic, but some tenants include specific questions about the property
+- Most enquiries are generic, but some tenants include specific questions about the property
 - If a specific question requires an answer, either reply in TPS or forward to email
 - Replies in TPS are sent to the reply address — currently routes to `hello@propertypartner.co.nz`
 
 !!! tip "Email is preferred for responses"
-    The TPS reply interface is functional but limited. For detailed responses, use email directly. All inquiry replies route through the hello@propertypartner address.
+    The TPS reply interface is functional but limited. For detailed responses, use email directly. All enquiry replies route through the hello@propertypartner address.
 
 ---
 
@@ -118,7 +118,7 @@ The **Viewings** page shows key statistics across the portfolio:
 | Today / Tomorrow / This Week | Upcoming viewing counts |
 | Cancellations | Viewing cancellations |
 | Past Viewings | Historical count |
-| Unread Enquiries | Inquiries requiring attention |
+| Unread Enquiries | Enquiries requiring attention |
 
 Each viewing row shows confirmation status badges: **NOT CONFIRMED**, **VT CONFIRMED** (viewer confirmed), or **S/R CONFIRMED** (sent/received confirmed), along with booking and attendee counts.
 
@@ -139,7 +139,7 @@ Key settings configured in **Book a viewing → Settings**:
     | Auto Cancel Viewing (no bookings) | OFF | — |
     | Enable Tenant Feedback | OFF | — |
     | Update Enquiry Prompt | ON | 14 days |
-    | **Tenant Portal Contact Details** | **Viewing agent** | Planned change to **Office details** so the VA manages inquiries via hello@propertypartner.co.nz |
+    | **Tenant Portal Contact Details** | **Viewing agent** | Planned change to **Office details** so the VA manages enquiries via hello@propertypartner.co.nz |
     | Remove Viewing | ON | 60 minutes before (stops new bookings) |
     | Max Number of People | 50 | Default; lower per property as needed |
 

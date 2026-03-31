@@ -1,8 +1,8 @@
 # Property Management Workflow Documentation
 
 **Owner:** Property Partner (Strathmore Property Limited)
-**Version:** V2.3
-**Last Updated:** 2026-03-31
+**Version:** V2.4
+**Last Updated:** 2026-04-01
 **Audience:** Property Manager, Property Management Assistant / VA, Operations Support
 
 ---
@@ -65,9 +65,11 @@ See `docs/day-to-day/contributing.md` for the full authoring guide.
 
 | File | Purpose |
 |---|---|
-| [`RUNBOOK.md`](_video_analysis/RUNBOOK.md) | 9-step process for integrating new training videos into the documentation |
+| [`RUNBOOK.md`](_video_analysis/RUNBOOK.md) | Transcript + frame-based process for integrating new training videos into the documentation |
 | [`transcribe.py`](_video_analysis/transcribe.py) | Single-video CLI transcription helper |
 | [`transcribe_all_videos.py`](_video_analysis/transcribe_all_videos.py) | Batch audio extraction and transcription pipeline |
+| [`transcribe_batch2.py`](_video_analysis/transcribe_batch2.py) | Batch audio extraction and transcription for the 2026-04-01 video batch |
+| [`extract_frames.py`](_video_analysis/extract_frames.py) | Extract key frames from training videos for visual analysis |
 
 ---
 
@@ -97,3 +99,4 @@ When a process changes, update in this order:
 | V2.1 | 2026-03-07 | Integrated 2 Tapi inspection follow-up training videos |
 | V2.2 | 2026-03-31 | Integrated 12 Tapi training videos. Added RUNBOOK and transcription tooling. Fixed Tarpy naming. Added invoice forwarding SOP and Property Tree rent holdback documentation |
 | V2.3 | 2026-03-31 | MkDocs Material portal. Migrated from `workflow/` to `docs/` with system-based navigation. Reformatted all pages with admonitions, contextual navigation, and clean titles |
+| V2.4 | 2026-04-01 | Integrated 10 new training videos. Added batch-2 transcription and frame extraction scripts. Expanded BookMe, TPS renewal, inspection scheduling, rent increase, Healthy Homes, and damage liability guidance |
