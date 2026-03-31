@@ -1,8 +1,8 @@
 # Property Management Workflow Documentation
 
 **Owner:** Property Partner (Strathmore Property Limited)  
-**Version:** V2.1 (Updated from video walkthrough analysis)  
-**Last Updated:** 2026-03-07  
+**Version:** V2.2 (Updated from 12 video walkthroughs)  
+**Last Updated:** 2026-03-31  
 **Audience:** Property Manager, Property Management Assistant / VA, Operations Support
 
 ---
@@ -22,7 +22,7 @@ This is the complete operational documentation library for Property Partner's en
 | **Property Tree** | System of record -- property/owner/tenant master data, tenancy dates, rent ledger, inspection scheduling, document repository, trust accounting |
 | **TPS / Tenancy.co.nz** | Leasing -- BookMe viewings, applications, checks, agreement generation, renewals, compliance fields, bond workflow |
 | **Trade Me for Rent** | Marketing channel -- listing publication, enquiry routing into TPS via listing ID |
-| **Tapi (Tarpy)** | Maintenance CRM -- request intake, triage, approvals, work orders, contractor comms, invoices, sync to Property Tree |
+| **Tapi** | Maintenance CRM -- request intake, triage, approvals, work orders, contractor comms, invoices, sync to Property Tree |
 | **Inspection Express** | Inspection execution -- receives schedule from Property Tree, report publishing, maintenance item capture syncing to Tapi |
 | **Valua** | Rent evidence -- comparable market analysis and recommended rent range for rent reviews |
 
@@ -69,7 +69,7 @@ All documentation files live inside the [`workflow/`](workflow/) folder.
 | [`01_PLAYBOOK_COMPLIANCE_HEALTHY_HOMES_V2.md`](workflow/01_PLAYBOOK_COMPLIANCE_HEALTHY_HOMES_V2.md) | Healthy Homes compliance (evidence gathering, TPS fields, remediation, tracking) |
 | [`01_PLAYBOOK_TENANT_ONBOARDING_V2.md`](workflow/01_PLAYBOOK_TENANT_ONBOARDING_V2.md) | Tenant welcome pack, ingoing inspection, first-week check |
 | [`01_PLAYBOOK_INSPECTIONS_PROPERTYTREE_TO_INSPECTIONEXPRESS_V2.md`](workflow/01_PLAYBOOK_INSPECTIONS_PROPERTYTREE_TO_INSPECTIONEXPRESS_V2.md) | Inspection lifecycle (scheduling, confirmations, reporting, maintenance capture, VA daily Tapi follow-up) |
-| [`01_PLAYBOOK_MAINTENANCE_TAPI_TARPY_V2.md`](workflow/01_PLAYBOOK_MAINTENANCE_TAPI_TARPY_V2.md) | Maintenance lifecycle (intake, triage, approvals, job merging, work orders, invoices, close-out) |
+| [`01_PLAYBOOK_MAINTENANCE_TAPI_V2.md`](workflow/01_PLAYBOOK_MAINTENANCE_TAPI_V2.md) | Maintenance lifecycle (intake, triage, approvals, work orders, invoices, close-out) |
 | [`01_PLAYBOOK_RENEWALS_RENT_REVIEWS_VALUA_TPS_V2.md`](workflow/01_PLAYBOOK_RENEWALS_RENT_REVIEWS_VALUA_TPS_V2.md) | Renewals and rent reviews (Valua evidence, owner consultation, TPS execution) |
 | [`01_PLAYBOOK_END_OF_TENANCY_BREAK_LEASE_V2.md`](workflow/01_PLAYBOOK_END_OF_TENANCY_BREAK_LEASE_V2.md) | End of tenancy and fixed-term lease breaks |
 | [`01_PLAYBOOK_NOTICES_AND_COMMS_V2.md`](workflow/01_PLAYBOOK_NOTICES_AND_COMMS_V2.md) | Notices, escalation ladder, and communications rules |
@@ -116,13 +116,13 @@ All documentation files live inside the [`workflow/`](workflow/) folder.
 |---|---|
 | [`99_SOURCES_NOTE_V2.md`](workflow/99_SOURCES_NOTE_V2.md) | External sources and regulatory references (Tenancy Services, vendor integrations) |
 
-### Video Analysis
+### Video Analysis Tooling
 
 | File | Description |
 |---|---|
-| [`_video_analysis/VIDEO_ANALYSIS_REPORT.md`](_video_analysis/VIDEO_ANALYSIS_REPORT.md) | Gap analysis report from Tapi inspection follow-up training videos (15 gaps identified, 7 automation opportunities) |
-| [`_video_analysis/video1_transcript.txt`](_video_analysis/video1_transcript.txt) | Timestamped transcript — Video 1: Tapi inspection follow-up approval workflow (14:55) |
-| [`_video_analysis/video2_transcript.txt`](_video_analysis/video2_transcript.txt) | Timestamped transcript — Video 2: Tapi inspection follow-up approval example (6:21) |
+| [`_video_analysis/RUNBOOK.md`](_video_analysis/RUNBOOK.md) | Step-by-step process for integrating new training videos into the workflow documentation |
+| [`_video_analysis/transcribe.py`](_video_analysis/transcribe.py) | Whisper transcription helper for individual videos |
+| [`_video_analysis/transcribe_all_videos.py`](_video_analysis/transcribe_all_videos.py) | Batch audio extraction and transcription pipeline for all videos |
 
 ---
 

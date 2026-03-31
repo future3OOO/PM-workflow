@@ -1,49 +1,81 @@
-"""Transcribe both video audio files using OpenAI Whisper with timestamps."""
+"""Transcribe a single video file using OpenAI Whisper.
+
+Usage:
+    py -3 _video_analysis/transcribe.py <video_id> <path_to_video>
+
+Example:
+    py -3 _video_analysis/transcribe.py video15 "videos/New Training Video.mp4"
+
+Output is written to _video_analysis/videos/{video_id}_transcript.{json,txt}
+Audio is extracted to _video_analysis/videos/{video_id}_audio.wav
+"""
 import whisper
 import json
 import os
+import subprocess
+import sys
+import time
 
-AUDIO_DIR = os.path.dirname(os.path.abspath(__file__))
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+OUTPUT_DIR = os.path.join(SCRIPT_DIR, "videos")
+FFMPEG = os.environ.get("FFMPEG_PATH", "ffmpeg")
 
-# Use the 'base' model — good balance of speed and accuracy
-print("Loading Whisper model (base)...")
-model = whisper.load_model("base")
 
-for idx, filename in enumerate(["video1_audio.wav", "video2_audio.wav"], start=1):
-    path = os.path.join(AUDIO_DIR, filename)
-    print(f"\n{'='*60}")
-    print(f"Transcribing Video {idx}: {filename}")
-    print(f"{'='*60}")
-    
-    result = model.transcribe(
-        path,
-        language="en",
-        verbose=False,
-        word_timestamps=True
-    )
-    
-    # Save full JSON result
-    json_path = os.path.join(AUDIO_DIR, f"video{idx}_transcript.json")
+def transcribe_video(vid_id: str, src_path: str) -> None:
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+    wav_path = os.path.join(OUTPUT_DIR, f"{vid_id}_audio.wav")
+    json_path = os.path.join(OUTPUT_DIR, f"{vid_id}_transcript.json")
+    txt_path = os.path.join(OUTPUT_DIR, f"{vid_id}_transcript.txt")
+
+    if not os.path.exists(src_path):
+        print(f"[ERROR] Video file not found: {src_path}")
+        sys.exit(1)
+
+    if os.path.exists(txt_path):
+        print(f"[SKIP] {vid_id} — transcript already exists at {txt_path}")
+        print("       Delete it to force re-processing.")
+        return
+
+    if not os.path.exists(wav_path):
+        print(f"Extracting audio from {src_path}...")
+        t0 = time.time()
+        cmd = [FFMPEG, "-y", "-i", src_path, "-vn", "-acodec", "pcm_s16le",
+               "-ar", "16000", "-ac", "1", wav_path]
+        result = subprocess.run(cmd, capture_output=True, text=True)
+        if result.returncode != 0:
+            print(f"[ERROR] ffmpeg failed: {result.stderr[:500]}")
+            sys.exit(1)
+        print(f"Audio extracted in {time.time() - t0:.1f}s")
+
+    print("Loading Whisper model (base)...")
+    model = whisper.load_model("base")
+
+    print("Transcribing...")
+    t0 = time.time()
+    transcript = model.transcribe(wav_path, language="en", verbose=False, word_timestamps=True)
+    print(f"Transcription done in {time.time() - t0:.1f}s")
+
     with open(json_path, "w", encoding="utf-8") as f:
-        json.dump(result, f, indent=2, ensure_ascii=False)
-    print(f"  JSON saved: {json_path}")
-    
-    # Save readable text with timestamps
-    txt_path = os.path.join(AUDIO_DIR, f"video{idx}_transcript.txt")
-    with open(txt_path, "w", encoding="utf-8") as f:
-        f.write(f"# Transcript — Video {idx}\n")
-        f.write(f"# Source: {filename}\n\n")
-        for seg in result["segments"]:
-            start_m = int(seg["start"] // 60)
-            start_s = int(seg["start"] % 60)
-            end_m = int(seg["end"] // 60)
-            end_s = int(seg["end"] % 60)
-            timestamp = f"[{start_m:02d}:{start_s:02d} - {end_m:02d}:{end_s:02d}]"
-            f.write(f"{timestamp} {seg['text'].strip()}\n")
-    print(f"  TXT saved: {txt_path}")
-    
-    # Print full text summary
-    print(f"\n  Full text ({len(result['text'])} chars):")
-    print(f"  {result['text'][:500]}...")
+        json.dump(transcript, f, indent=2, ensure_ascii=False)
 
-print("\n\nDone! Both transcripts saved.")
+    with open(txt_path, "w", encoding="utf-8") as f:
+        f.write(f"# Transcript — {vid_id}\n")
+        f.write(f"# Source: {os.path.basename(src_path)}\n\n")
+        for seg in transcript["segments"]:
+            start_m, start_s = int(seg["start"] // 60), int(seg["start"] % 60)
+            end_m, end_s = int(seg["end"] // 60), int(seg["end"] % 60)
+            f.write(f"[{start_m:02d}:{start_s:02d} - {end_m:02d}:{end_s:02d}] {seg['text'].strip()}\n")
+
+    seg_count = len(transcript["segments"])
+    char_count = len(transcript["text"])
+    print(f"Done — {seg_count} segments, {char_count} chars")
+    print(f"  JSON: {json_path}")
+    print(f"  TXT:  {txt_path}")
+
+
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print(__doc__)
+        sys.exit(1)
+    transcribe_video(sys.argv[1], sys.argv[2])

@@ -36,8 +36,8 @@ Inbox | New job | New Invoice | Jobs (main) | Invoices | Properties | Suppliers 
 ### Priority colour badges
 | Badge colour | Level | Target response |
 |---|---|---|
-| Red | Emergency | Within 24 hours |
-| Red | Urgent | Within 48 hours |
+| Red | Emergency | Within 24 hours — life/safety (flooding, gas leak, serious electrical) |
+| Red | Urgent | Act promptly — hot water outage, power outage, sewerage, significant leak |
 | Amber | Routine | Standard flow (90%+ of jobs) |
 | Grey/Blue | Planned | Scheduled for future |
 

@@ -6,9 +6,12 @@ import subprocess
 import sys
 import time
 
-VIDEO_DIR = r"C:\Users\Property Partner\Downloads\property_management_docs_v2\videos"
-OUTPUT_DIR = r"C:\Users\Property Partner\Downloads\property_management_docs_v2\_video_analysis\videos"
-FFMPEG = r"C:\ProgramData\chocolatey\bin\ffmpeg.exe"
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+REPO_ROOT = os.path.dirname(SCRIPT_DIR)
+
+VIDEO_DIR = os.path.join(REPO_ROOT, "videos")
+OUTPUT_DIR = os.path.join(SCRIPT_DIR, "videos")
+FFMPEG = os.environ.get("FFMPEG_PATH", "ffmpeg")
 
 VIDEOS = [
     ("video03", "3. Tapi overview and management 1.mkv"),
