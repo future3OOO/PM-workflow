@@ -20,31 +20,34 @@ theme:
     - navigation.top
     - navigation.tracking
     - navigation.path
+    - navigation.instant
+    - navigation.instant.progress
     - search.suggest
     - search.highlight
     - search.share
     - toc.follow
     - content.tooltips
+    - header.autohide
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: teal
-      accent: amber
+      primary: custom
+      accent: custom
       toggle:
-        icon: material/weather-night
+        icon: material/brightness-4
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: teal
-      accent: amber
+      primary: custom
+      accent: custom
       toggle:
-        icon: material/weather-sunny
+        icon: material/brightness-7
         name: Switch to light mode
   font:
-    text: Inter
-    code: JetBrains Mono
+    text: DM Sans
+    code: IBM Plex Mono
   icon:
-    logo: material/home-city
+    logo: material/home-city-outline
     repo: fontawesome/brands/github
 
 plugins:
