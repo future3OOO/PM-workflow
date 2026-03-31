@@ -1,149 +1,93 @@
 # Property Management Workflow Documentation
 
-**Owner:** Property Partner (Strathmore Property Limited)  
-**Version:** V2.2 (Integrated 12 Tapi training video walkthroughs)  
-**Last Updated:** 2026-03-31  
+**Owner:** Property Partner (Strathmore Property Limited)
+**Version:** V2.3
+**Last Updated:** 2026-03-31
 **Audience:** Property Manager, Property Management Assistant / VA, Operations Support
+
+---
+
+## Documentation Site
+
+This documentation is served as a searchable, navigable website via [MkDocs Material](https://squidfunk.github.io/mkdocs-material/).
+
+- **Auto-deploys** on every push to `main` via GitHub Actions
+- **Search:** Full-text search across all documents (Ctrl+K)
+- **Light/dark mode** toggle
+- **Edit workflow:** Edit any `.md` file in `docs/`, push to `main`, site updates in ~60 seconds
 
 ---
 
 ## What This Is
 
-This is the complete operational documentation library for Property Partner's end-to-end New Zealand residential property management workflow. It covers every stage of the property management lifecycle, from landlord onboarding through to end of tenancy, with detailed playbooks, step-by-step SOPs, copy-paste templates, and quality assurance checklists.
+The complete operational documentation library for NZ residential property management. Covers every stage of the property management lifecycle, organised by workflow area and the systems you use.
 
 **Golden rule:** if it isn't recorded in Property Tree (or linked into the property record), it didn't happen.
 
 ---
 
-## Systems Covered
+## Site Structure
 
-| System | Role |
-|---|---|
-| **Property Tree** | System of record — property/owner/tenant master data, tenancy dates, rent ledger, inspection scheduling, document repository, trust accounting, Monday payment run |
-| **TPS / Tenancy.co.nz** | Leasing — BookMe viewings, applications, checks, agreement generation, renewals, compliance fields, bond workflow |
-| **Trade Me for Rent** | Marketing channel — listing publication, enquiry routing into TPS via listing ID |
-| **Tapi** | Maintenance CRM — 4 intake sources (Concierge, Inspection Express, owner, phone/email), 7-stage status pipeline, triage, approvals, work orders, quote requests, DIY handoff, invoices (auto-match + manual match), sync to Property Tree |
-| **Inspection Express** | Inspection execution — receives schedule from Property Tree, report publishing, maintenance item capture syncing to Tapi |
-| **Valua** | Rent evidence — comparable market analysis and recommended rent range for rent reviews |
-| **Shortwave AI** | Email drafting — used by PM for composing professional owner/tenant communications |
-
----
-
-## Document Structure
-
-### How to Read This Library
-
-- **Playbooks (01_)** — Lifecycle processes: what happens and when. Start here to understand a workflow end to end.
-- **SOPs (02_)** — Step-by-step system instructions: how to do it, click by click, in each platform.
-- **Templates (03_)** — Copy/paste email templates, Tapi message templates, formal notices, and execution checklists.
-- **QA (04_)** — Daily, weekly, and monthly quality control checklists to make sure nothing falls through.
-
-All documentation files live inside the [`workflow/`](workflow/) folder.
-
-### Start Here
-
-| Document | Purpose |
-|---|---|
-| [`00.1_MASTER_INDEX_WORKFLOW_V2.md`](workflow/00.1_MASTER_INDEX_WORKFLOW_V2.md) | Full index of every document with "most used" quick-start routes |
-| [`00.2_SYSTEMS_MAP_DATA_FLOW_V2.md`](workflow/00.2_SYSTEMS_MAP_DATA_FLOW_V2.md) | Source of truth rules per system and end-to-end data flows |
-| [`00.3_STANDARDS_SLAS_APPROVALS_RECORDS_V2.md`](workflow/00.3_STANDARDS_SLAS_APPROVALS_RECORDS_V2.md) | SLAs, approval policies, comms rules, recordkeeping requirements |
+| Tab | What's in it | Primary systems |
+|---|---|---|
+| **Getting Started** | Systems overview, standards & SLAs | All systems |
+| **Onboarding** | Landlord & property setup, compliance | Property Tree, TPS |
+| **Leasing (TPS)** | Listing, viewings, applications, agreements, bonds, tenancy setup | TPS, Trade Me, Property Tree |
+| **Maintenance (Tapi)** | Lifecycle, intake & triage, invoice processing | Tapi, Property Tree |
+| **Inspections** | Scheduling, reports, actions | Property Tree, Inspection Express |
+| **Renewals & Exits** | Rent reviews, renewals, end of tenancy | Valua, TPS |
+| **Day-to-Day** | Email, notices, checklists, QA, templates | Shortwave AI, Property Tree |
 
 ---
 
-## Full File Index
+## Source Files (`docs/`)
 
-### Foundation (00.x)
+All documentation lives in the `docs/` directory, organised into subdirectories matching the site tabs:
 
-| File | Description |
+```text
+docs/
+├── index.md                     # Homepage
+├── getting-started/             # Systems overview, standards
+├── onboarding/                  # Landlord setup, PT, TPS, compliance
+├── leasing/                     # TPS lifecycle, viewings, apps, agreements
+├── maintenance/                 # Tapi lifecycle, intake, invoices
+├── inspections/                 # PT scheduling, Inspection Express
+├── renewals-exits/              # Rent reviews, Valua, end of tenancy
+├── day-to-day/                  # Email, notices, checklists, QA, templates
+└── stylesheets/                 # Custom CSS
+```
+
+See `docs/day-to-day/contributing.md` for the full authoring guide.
+
+---
+
+## Video Analysis Tooling (`_video_analysis/`)
+
+| File | Purpose |
 |---|---|
-| [`00.1_MASTER_INDEX_WORKFLOW_V2.md`](workflow/00.1_MASTER_INDEX_WORKFLOW_V2.md) | Master index and quick-start routes for all workflows |
-| [`00.2_SYSTEMS_MAP_DATA_FLOW_V2.md`](workflow/00.2_SYSTEMS_MAP_DATA_FLOW_V2.md) | Systems map with Tapi dashboard layout, invoice flow, Property Tree sync, and data flows between all systems |
-| [`00.3_STANDARDS_SLAS_APPROVALS_RECORDS_V2.md`](workflow/00.3_STANDARDS_SLAS_APPROVALS_RECORDS_V2.md) | SLAs, comms rules, triage decision framework, contractor standards, approval follow-up cadence, owner-declined procedures |
-
-### Playbooks (01_) — Lifecycle Processes
-
-| File | Description |
-|---|---|
-| [`01_PLAYBOOK_LANDLORD_PROPERTY_ONBOARDING_V2.md`](workflow/01_PLAYBOOK_LANDLORD_PROPERTY_ONBOARDING_V2.md) | New landlord and property onboarding (intake through go-live) |
-| [`01_PLAYBOOK_LEASING_TRADEME_TPS_BOOKME_V2.md`](workflow/01_PLAYBOOK_LEASING_TRADEME_TPS_BOOKME_V2.md) | End-to-end leasing (Trade Me listing through to approved application) |
-| [`01_PLAYBOOK_TENANCY_SETUP_TPS_TO_PROPERTYTREE_V2.md`](workflow/01_PLAYBOOK_TENANCY_SETUP_TPS_TO_PROPERTYTREE_V2.md) | Tenancy creation from signed agreement through to Property Tree record |
-| [`01_PLAYBOOK_COMPLIANCE_HEALTHY_HOMES_V2.md`](workflow/01_PLAYBOOK_COMPLIANCE_HEALTHY_HOMES_V2.md) | Healthy Homes compliance (evidence gathering, TPS fields, remediation, tracking) |
-| [`01_PLAYBOOK_TENANT_ONBOARDING_V2.md`](workflow/01_PLAYBOOK_TENANT_ONBOARDING_V2.md) | Tenant welcome pack, ingoing inspection, first-week check |
-| [`01_PLAYBOOK_INSPECTIONS_PROPERTYTREE_TO_INSPECTIONEXPRESS_V2.md`](workflow/01_PLAYBOOK_INSPECTIONS_PROPERTYTREE_TO_INSPECTIONEXPRESS_V2.md) | Inspection lifecycle (scheduling, confirmations, reporting, maintenance capture, VA daily Tapi follow-up) |
-| [`01_PLAYBOOK_MAINTENANCE_TAPI_V2.md`](workflow/01_PLAYBOOK_MAINTENANCE_TAPI_V2.md) | Maintenance lifecycle — 4 intake sources, dashboard operations, 7-stage pipeline, triage framework, 5 action buttons, call-contractor-first, quote requests, DIY, mid-job updates, invoice approval (4 auto effects), close-out |
-| [`01_PLAYBOOK_RENEWALS_RENT_REVIEWS_VALUA_TPS_V2.md`](workflow/01_PLAYBOOK_RENEWALS_RENT_REVIEWS_VALUA_TPS_V2.md) | Renewals and rent reviews (Valua evidence, owner consultation, TPS execution) |
-| [`01_PLAYBOOK_END_OF_TENANCY_BREAK_LEASE_V2.md`](workflow/01_PLAYBOOK_END_OF_TENANCY_BREAK_LEASE_V2.md) | End of tenancy and fixed-term lease breaks |
-| [`01_PLAYBOOK_NOTICES_AND_COMMS_V2.md`](workflow/01_PLAYBOOK_NOTICES_AND_COMMS_V2.md) | Notices, escalation ladder, and communications rules |
-| [`01_PLAYBOOK_EMAIL_AND_RECORDKEEPING_V2.md`](workflow/01_PLAYBOOK_EMAIL_AND_RECORDKEEPING_V2.md) | Email management, loop closure, and filing to Property Tree |
-
-### SOPs (02_) — Step-by-Step System Instructions
-
-| File | Description |
-|---|---|
-| [`02_SOP_PROPERTYTREE_CREATE_OWNER_PROPERTY_V2.md`](workflow/02_SOP_PROPERTYTREE_CREATE_OWNER_PROPERTY_V2.md) | Create owner and property records in Property Tree |
-| [`02_SOP_PROPERTYTREE_CREATE_TENANCY_DATES_V2.md`](workflow/02_SOP_PROPERTYTREE_CREATE_TENANCY_DATES_V2.md) | Create tenancy with correct dates and rent in Property Tree |
-| [`02_SOP_PROPERTYTREE_INSPECTION_SCHEDULING_CONFIRMATION_V2.md`](workflow/02_SOP_PROPERTYTREE_INSPECTION_SCHEDULING_CONFIRMATION_V2.md) | Schedule inspections and manage tenant confirmations in Property Tree |
-| [`02_SOP_PROPERTYTREE_FILING_AND_NAMING_V2.md`](workflow/02_SOP_PROPERTYTREE_FILING_AND_NAMING_V2.md) | Document filing and naming conventions in Property Tree |
-| [`02_SOP_TPS_PROPERTY_SETUP_TRADEME_ID_BOOKME_V2.md`](workflow/02_SOP_TPS_PROPERTY_SETUP_TRADEME_ID_BOOKME_V2.md) | TPS property setup with Trade Me listing ID and BookMe |
-| [`02_SOP_TPS_VIEWINGS_BOOKME_V2.md`](workflow/02_SOP_TPS_VIEWINGS_BOOKME_V2.md) | BookMe viewing management in TPS |
-| [`02_SOP_TPS_APPLICATION_PROCESSING_CHECKS_APPROVAL_V2.md`](workflow/02_SOP_TPS_APPLICATION_PROCESSING_CHECKS_APPROVAL_V2.md) | Application processing, checks, and approval in TPS |
-| [`02_SOP_TPS_AGREEMENT_GENERATION_SIGNING_RENEWALS_V2.md`](workflow/02_SOP_TPS_AGREEMENT_GENERATION_SIGNING_RENEWALS_V2.md) | Agreement generation, signing, and renewals in TPS |
-| [`02_SOP_TENANCY_SERVICES_BOND_LODGEMENT_VIA_TPS_V2.md`](workflow/02_SOP_TENANCY_SERVICES_BOND_LODGEMENT_VIA_TPS_V2.md) | Bond lodgement workflow via TPS |
-| [`02_SOP_COMPLIANCE_HEALTHY_HOMES_EVIDENCE_V2.md`](workflow/02_SOP_COMPLIANCE_HEALTHY_HOMES_EVIDENCE_V2.md) | Healthy Homes evidence gathering and TPS compliance fields |
-| [`02_SOP_TAPI_INTAKE_TRIAGE_APPROVALS_WORKORDERS_V2.md`](workflow/02_SOP_TAPI_INTAKE_TRIAGE_APPROVALS_WORKORDERS_V2.md) | Tapi: dashboard reference, 4 intake paths, priority badges, Concierge accept flow, triage framework, 5 action buttons, quote requests, DIY handoff, work order panel (compliance, hazards, notifications), approval 3-dot menu, mid-job updates, closure |
-| [`02_SOP_TAPI_INVOICES_OWNER_TENANT_DIY_SYNC_TO_PROPERTYTREE_V2.md`](workflow/02_SOP_TAPI_INVOICES_OWNER_TENANT_DIY_SYNC_TO_PROPERTYTREE_V2.md) | Tapi: invoice submission (direct upload, email, forwarding from wrong addresses with PDF requirement), auto-match vs 3-step manual match, charge-to coding, owner notifications, approve flow, Property Tree rent holdback mechanics with worked examples, Monday payment run |
-| [`02_SOP_INSPECTION_EXPRESS_REPORT_PUBLISH_ACTIONS_TO_TAPI_V2.md`](workflow/02_SOP_INSPECTION_EXPRESS_REPORT_PUBLISH_ACTIONS_TO_TAPI_V2.md) | Inspection Express: daily monitoring, report review, Tapi sync verification, approval workflow, work orders |
-| [`02_SOP_VALUA_RENT_RESEARCH_V2.md`](workflow/02_SOP_VALUA_RENT_RESEARCH_V2.md) | Valua: rent research and recommendation preparation |
-| [`02_SOP_EMAIL_MANAGEMENT_SHARED_INBOX_V2.md`](workflow/02_SOP_EMAIL_MANAGEMENT_SHARED_INBOX_V2.md) | Shared inbox email management and labelling |
-
-### Templates and Checklists (03_)
-
-| File | Description |
-|---|---|
-| [`03_TEMPLATES_NOTICES_EMAILS_V2.md`](workflow/03_TEMPLATES_NOTICES_EMAILS_V2.md) | All email templates (including 7 Tapi-specific: owner approval, call-contractor-first, quote request, DIY tenant notification, mid-job update, late invoice, safety/compliance), formal notices, and website copy |
-| [`03_TEMPLATES_CHECKLISTS_V2.md`](workflow/03_TEMPLATES_CHECKLISTS_V2.md) | Execution checklists for onboarding, leasing, tenancy setup, inspections (incl. post-inspection Tapi follow-up), maintenance, renewals, and end of tenancy |
-
-### Quality Assurance (04_)
-
-| File | Description |
-|---|---|
-| [`04_QA_DAILY_TRIAGE_CHECKLIST_V2.md`](workflow/04_QA_DAILY_TRIAGE_CHECKLIST_V2.md) | Daily triage: 12-item Tapi dashboard check (all 7 pipeline buckets), Concierge requests, invoice dashboard, Inspection Express cross-reference, PM email, inbox management |
-| [`04_QA_WEEKLY_OPERATIONS_CHECKLIST_V2.md`](workflow/04_QA_WEEKLY_OPERATIONS_CHECKLIST_V2.md) | Weekly operations review: unmatched invoices, Property Tree sync verification, stale open jobs, completed DIY jobs, unresponded inspection recommendations |
-| [`04_QA_MONTHLY_COMPLIANCE_AUDIT_V2.md`](workflow/04_QA_MONTHLY_COMPLIANCE_AUDIT_V2.md) | Monthly compliance and records audit (sample 10 properties) |
-
-### Reference
-
-| File | Description |
-|---|---|
-| [`99_SOURCES_NOTE_V2.md`](workflow/99_SOURCES_NOTE_V2.md) | External sources and regulatory references (Tenancy Services, vendor integrations) |
-
-### Video Analysis Tooling (`_video_analysis/`)
-
-| File | Description |
-|---|---|
-| [`RUNBOOK.md`](_video_analysis/RUNBOOK.md) | 9-step process for integrating new training videos into the workflow documentation (prerequisites, transcription, review, integration, verification, commit) |
-| [`transcribe.py`](_video_analysis/transcribe.py) | Single-video CLI transcription helper: `py -3 _video_analysis/transcribe.py <video_id> <path>` |
-| [`transcribe_all_videos.py`](_video_analysis/transcribe_all_videos.py) | Batch audio extraction (ffmpeg) and transcription (Whisper) pipeline for all registered videos |
+| [`RUNBOOK.md`](_video_analysis/RUNBOOK.md) | 9-step process for integrating new training videos into the documentation |
+| [`transcribe.py`](_video_analysis/transcribe.py) | Single-video CLI transcription helper |
+| [`transcribe_all_videos.py`](_video_analysis/transcribe_all_videos.py) | Batch audio extraction and transcription pipeline |
 
 ---
 
 ## Change Control
 
-When a process changes:
+When a process changes, update in this order:
 
-1. Update the **Playbook** first (the lifecycle process)
-2. Update the **SOP** second (the system steps)
-3. Update **Templates** third (the wording)
-4. Update **QA Checklists** if the change affects daily/weekly checks
-5. Update **Systems Map** and **Standards** if the change affects system behaviour or policies
-6. Update **Master Index** if filenames or high-level descriptions changed
-7. Log changes at the top of the document (version + last updated)
+1. Lifecycle page (main workflow guide)
+2. Step-by-step pages (system-specific instructions)
+3. Templates (email/notice wording)
+4. QA checklists (monitoring coverage)
+5. Systems overview and standards (if system capabilities or policies changed)
+6. `mkdocs.yml` nav (if new documents were added)
+7. Bump version and date on every file touched
 
 ### Naming conventions
 
 - The system is called **Tapi** (not Tarpy, Tappy, or any variant)
 - The invoice email is `propertypartner@tapi.co.nz`
-- File naming: `{NN}_{TYPE}_{TOPIC}_V2.md` (e.g., `02_SOP_TAPI_INTAKE_TRIAGE_APPROVALS_WORKORDERS_V2.md`)
+- File naming: kebab-case `.md` in the appropriate `docs/` subdirectory
 
 ### Version history
 
@@ -151,4 +95,5 @@ When a process changes:
 |---|---|---|
 | V2.0 | 2026-02-24 | Initial full documentation library (35 workflow files) |
 | V2.1 | 2026-03-07 | Integrated 2 Tapi inspection follow-up training videos |
-| V2.2 | 2026-03-31 | Integrated 12 Tapi training videos covering dashboard, triage, invoices, approvals, quotes, DIY, Concierge. Added video analysis RUNBOOK and transcription tooling. Fixed all Tarpy→Tapi naming. Added invoice forwarding SOP and Property Tree rent holdback documentation |
+| V2.2 | 2026-03-31 | Integrated 12 Tapi training videos. Added RUNBOOK and transcription tooling. Fixed Tarpy naming. Added invoice forwarding SOP and Property Tree rent holdback documentation |
+| V2.3 | 2026-03-31 | MkDocs Material portal. Migrated from `workflow/` to `docs/` with system-based navigation. Reformatted all pages with admonitions, contextual navigation, and clean titles |

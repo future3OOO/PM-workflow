@@ -16,29 +16,38 @@ The documentation is **not code** — it is structured Markdown covering playboo
 
 ```
 property_management_docs_v2/
-├── README.md                    # Project overview and full file index
+├── README.md                    # Project overview and live site link
 ├── CLAUDE.md                    # This file — agent instructions
-├── .gitignore                   # Excludes video/audio/frames/analysis drafts
-├── workflow/                    # All operational documentation (35 files)
-│   ├── 00.x_*                   # Foundation: index, systems map, standards
-│   ├── 01_PLAYBOOK_*            # Lifecycle processes (what + when)
-│   ├── 02_SOP_*                 # Click-by-click system instructions (how)
-│   ├── 03_TEMPLATES_*           # Copy-paste templates + checklists
-│   ├── 04_QA_*                  # Daily/weekly/monthly quality checks
-│   └── 99_SOURCES_NOTE_*        # External references
+├── mkdocs.yml                   # MkDocs Material config + nav tree
+├── requirements.txt             # Python deps (mkdocs-material)
+├── .gitignore                   # Excludes site/, video artefacts
+├── .github/workflows/docs.yml  # Auto-deploy to GitHub Pages on push to main
+├── docs/                        # All documentation (MkDocs source, 36 pages)
+│   ├── index.md                 # Homepage with workflow cards
+│   ├── stylesheets/extra.css    # Custom CSS
+│   ├── getting-started/         # Systems overview, standards & SLAs
+│   ├── onboarding/              # Landlord setup, PT, TPS, compliance (6 pages)
+│   ├── leasing/                 # TPS lifecycle, viewings, apps, agreements (8 pages)
+│   ├── maintenance/             # Tapi lifecycle, intake, invoices (3 pages)
+│   ├── inspections/             # PT scheduling, Inspection Express (3 pages)
+│   ├── renewals-exits/          # Rent reviews, Valua, end of tenancy (3 pages)
+│   └── day-to-day/              # Email, notices, checklists, QA, templates (10 pages)
 ├── _video_analysis/             # Video integration tooling
 │   ├── RUNBOOK.md               # 9-step video-to-workflow process
 │   ├── transcribe.py            # Single-video CLI transcription
 │   ├── transcribe_all_videos.py # Batch transcription pipeline
-│   └── artefacts/               # All generated outputs organised by date (gitignored)
-│       ├── 2026-03-07/          # Batch 1: reports + transcripts (video1–2)
-│       └── 2026-03-31/          # Batch 2: 12 Tapi training videos
-│           ├── *.md             # Analysis reports
-│           ├── transcripts/     # Whisper JSON + plaintext transcripts
-│           ├── audio/           # Extracted WAV files
-│           └── frames/          # Extracted video frame JPGs (per-video dirs)
-│   └── videos/                  # All source video files — originals + converted (gitignored)
+│   ├── artefacts/               # Generated outputs by date (gitignored)
+│   └── videos/                  # Source video files (gitignored)
 ```
+
+### Documentation Site
+
+Docs are served via MkDocs Material. The site auto-deploys on every push to `main` via GitHub Actions.
+
+- **File naming**: kebab-case `.md` in the appropriate `docs/` subdirectory
+- **Cross-links**: Relative Markdown links, e.g. `[Title](../maintenance/tapi-intake.md)`
+- **Nav**: Add new pages to `nav:` in `mkdocs.yml`
+- **Authoring guide**: `docs/day-to-day/contributing.md`
 
 ---
 
@@ -48,9 +57,9 @@ property_management_docs_v2/
 |---|---|---|
 | Maintenance CRM | **Tapi** | Tarpy, Tappy, Tarpie, TAPE |
 | Invoice email | `propertypartner@tapi.co.nz` | PropertyPartner@tarpy.co.nz, any @tarpy domain |
-| Playbook filename | `01_PLAYBOOK_MAINTENANCE_TAPI_V2.md` | anything with TARPY in the name |
+| Playbook filename | `maintenance-lifecycle.md` | anything with TARPY in the name |
 
-After any edit, run: `rg -i "tarpy\|tappy\|tarpie" workflow/` to verify zero misspellings.
+After any edit, run: `rg -i "tarpy\|tappy\|tarpie" docs/` to verify zero misspellings.
 
 ---
 
@@ -59,33 +68,33 @@ After any edit, run: `rg -i "tarpy\|tappy\|tarpie" workflow/` to verify zero mis
 Changes to one document usually require updates to others. This map shows the dependencies.
 
 ### Tier 1 — Changes here cascade everywhere
-- **`00.2_SYSTEMS_MAP_DATA_FLOW_V2.md`** — if a system's capabilities change, every doc that references that system needs checking
-- **`00.3_STANDARDS_SLAS_APPROVALS_RECORDS_V2.md`** — if policies/SLAs change, playbooks and SOPs must align
+- **`getting-started/systems-map.md`** — if a system's capabilities change, every doc that references that system needs checking
+- **`getting-started/standards-slas.md`** — if policies/SLAs change, all workflow docs must align
 
-### Tier 2 — Playbooks drive SOPs and templates
-- **Playbooks (01_)** define the lifecycle and decision logic
-- When a Playbook changes, check:
-  - The corresponding SOP(s) for click-level accuracy
-  - Templates for email wording alignment
-  - QA checklists for daily/weekly coverage
+### Tier 2 — Lifecycle pages drive step-level guides and templates
+- **Lifecycle pages** (e.g. `maintenance/maintenance-lifecycle.md`, `leasing/leasing-lifecycle.md`) define the end-to-end workflow and decision logic
+- When a lifecycle page changes, check:
+  - The corresponding step-level guides (e.g. `maintenance/tapi-intake.md`, `maintenance/tapi-invoices.md`) for click-level accuracy
+  - Templates (`day-to-day/notice-email-templates.md`) for email wording alignment
+  - Triage/operations checklists (`day-to-day/daily-triage.md`, `day-to-day/weekly-operations.md`) for daily/weekly coverage
 
-### Tier 3 — SOPs drive templates and checklists
-- When an SOP adds a new workflow step, check:
-  - Templates for any new comms needed
-  - QA checklists for monitoring coverage
+### Tier 3 — Step-level guides drive templates and checklists
+- When a step-level guide adds a new workflow step, check:
+  - Templates (`day-to-day/notice-email-templates.md`) for any new comms needed
+  - Triage/operations checklists (`day-to-day/daily-triage.md`, `day-to-day/weekly-operations.md`) for monitoring coverage
 
 ### Maintenance-specific dependency chain
 
 ```
-01_PLAYBOOK_MAINTENANCE_TAPI_V2.md (lifecycle)
-  ├── 02_SOP_TAPI_INTAKE_TRIAGE_APPROVALS_WORKORDERS_V2.md (intake → work order)
-  ├── 02_SOP_TAPI_INVOICES_OWNER_TENANT_DIY_SYNC_TO_PROPERTYTREE_V2.md (invoices → payment)
-  ├── 02_SOP_INSPECTION_EXPRESS_REPORT_PUBLISH_ACTIONS_TO_TAPI_V2.md (inspection source)
-  ├── 03_TEMPLATES_NOTICES_EMAILS_V2.md (templates 7a–7k)
-  ├── 04_QA_DAILY_TRIAGE_CHECKLIST_V2.md (section 6: Tapi dashboard)
-  ├── 04_QA_WEEKLY_OPERATIONS_CHECKLIST_V2.md (Tapi items)
-  ├── 00.2_SYSTEMS_MAP_DATA_FLOW_V2.md (Tapi + invoice sections)
-  └── 00.3_STANDARDS_SLAS_APPROVALS_RECORDS_V2.md (approval policy + contractor standards)
+maintenance/maintenance-lifecycle.md (lifecycle)
+  ├── maintenance/tapi-intake.md (intake → work orders)
+  ├── maintenance/tapi-invoices.md (invoices → payment)
+  ├── inspections/inspection-express.md (inspection source)
+  ├── day-to-day/notice-email-templates.md (templates 7a–7k)
+  ├── day-to-day/daily-triage.md (section 6: Tapi dashboard)
+  ├── day-to-day/weekly-operations.md (Tapi items)
+  ├── getting-started/systems-map.md (Tapi + invoice sections)
+  └── getting-started/standards-slas.md (approval policy + contractor standards)
 ```
 
 ### Cross-document consistency checks
@@ -94,12 +103,12 @@ After any update, verify these are aligned:
 
 | Check | Files involved |
 |---|---|
-| Priority levels (Emergency/Urgent/Routine/Planned) | Playbook, SOP Intake (badge table), Standards |
-| Tapi pipeline buckets (7 stages) | Playbook, SOP Intake, QA Daily Checklist |
-| Invoice Approve effects (4 auto-effects) | Playbook (Stage 6), SOP Invoices (Section 8) |
-| Triage cost thresholds | Playbook, SOP Intake, Standards |
-| Invoice email address | SOP Invoices, Templates, Systems Map, Playbook |
-| File references / filenames | Master Index, README.md, Healthy Homes Playbook (cross-ref) |
+| Priority levels (Emergency/Urgent/Routine/Planned) | `maintenance/maintenance-lifecycle.md`, `maintenance/tapi-intake.md` (badge table), `getting-started/standards-slas.md` |
+| Tapi pipeline buckets (7 stages) | `maintenance/maintenance-lifecycle.md`, `maintenance/tapi-intake.md`, `day-to-day/daily-triage.md` |
+| Invoice Approve effects (4 auto-effects) | `maintenance/maintenance-lifecycle.md` (Stage 6), `maintenance/tapi-invoices.md` (Section 8) |
+| Triage cost thresholds | `maintenance/maintenance-lifecycle.md`, `maintenance/tapi-intake.md`, `getting-started/standards-slas.md` |
+| Invoice email address | `maintenance/tapi-invoices.md`, `day-to-day/notice-email-templates.md`, `getting-started/systems-map.md`, `maintenance/maintenance-lifecycle.md` |
+| File references / filenames | README.md, `onboarding/compliance-healthy-homes.md` (cross-ref) |
 | Version + Last updated date | Every file that was changed |
 
 ---
@@ -115,7 +124,6 @@ After any update, verify these are aligned:
 5. **Write instructions, not narration.** Say "Click Approve to trigger auto-close" not "The PM then clicks Approve."
 6. **Bump version + date** on every file you change: `**Version:** V2.X` and `**Last updated:** YYYY-MM-DD`.
 7. **Update README.md** if any file description or filename changed.
-8. **Update Master Index** if the high-level summary for a workflow area changed.
 
 ### When integrating new training videos
 
@@ -128,11 +136,11 @@ Key points:
 
 ### When adding a new workflow document
 
-1. Follow the naming convention: `{NN}_{TYPE}_{TOPIC}_V2.md`
+1. Follow the naming convention: kebab-case `.md` in the correct `docs/` subdirectory
 2. Add it to the file index in `README.md`
-3. Add it to the Master Index (`00.1_MASTER_INDEX_WORKFLOW_V2.md`)
-4. Cross-reference it from related playbooks/SOPs
-5. Add monitoring items to the appropriate QA checklist if the new doc introduces daily/weekly checks
+3. Add a `nav:` entry in `mkdocs.yml`
+4. Cross-reference it from related lifecycle pages and step-level guides
+5. Add monitoring items to `day-to-day/daily-triage.md` or `day-to-day/weekly-operations.md` if the new doc introduces daily/weekly checks
 
 ---
 
@@ -142,20 +150,19 @@ Run these checks before every commit:
 
 ```powershell
 # 1. No Tapi misspellings
-rg -i "tarpy|tappy|tarpie" workflow/
+rg -i "tarpy|tappy|tarpie" docs/
 
 # 2. No old playbook filename references
-rg "TAPI_TARPY" workflow/ README.md
+rg "TAPI_TARPY" docs/ README.md
 
 # 3. No wrong email addresses
-rg "tarpy\.co\.nz" workflow/ README.md
+rg "tarpy\.co\.nz" docs/ README.md
 
 # 4. Version dates are consistent across changed files
-rg "Last updated" workflow/
+rg "Last updated" docs/
 
-# 5. Filenames in Master Index match actual files
-rg "\.md" workflow/00.1_MASTER_INDEX_WORKFLOW_V2.md
-Get-ChildItem workflow/*.md -Name
+# 5. Filenames in README match actual files
+Get-ChildItem docs/ -Recurse -Filter *.md -Name
 
 # 6. No generated artefacts staged
 git status
@@ -196,6 +203,6 @@ Tapi → approve → auto-close job + sync to Property Tree → rent holdback fr
 - Never commit video files, audio files, extracted frames, or transcript files
 - Never use "Tarpy", "Tappy", or "tarpy.co.nz" in any documentation
 - Never create parallel/duplicate sections when content already exists
-- Never change a Playbook without checking the dependent SOPs, Templates, and QA Checklists
-- Never add a new daily/weekly check to the QA checklists without ensuring the pipeline buckets match the Playbook
+- Never change a lifecycle page without checking the dependent step-level guides, templates, and triage/operations checklists
+- Never add a new daily/weekly check to `day-to-day/daily-triage.md` or `day-to-day/weekly-operations.md` without ensuring the pipeline buckets match the lifecycle page
 - Never hardcode absolute file paths in Python scripts (use relative paths from script location)
