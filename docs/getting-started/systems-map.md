@@ -1,0 +1,134 @@
+# Systems Overview
+
+*V2.2 — Updated 2026-03-31*
+
+---
+
+## 1) Source of truth (authoritative system by data type)
+
+### Property Tree (System of Record + Trust Accounting + Property File)
+Authoritative for:
+- Property, owner, tenant master records
+- Tenancy dates and rent (ledger truth)
+- Inspection schedule (sync source to Inspection Express)
+- Weekly disbursements and statements (Monday night run)
+- **Property documentation** (agreements, compliance evidence, insurance, inspection reports, notices, key correspondence)
+
+### TPS / Tenancy.co.nz (leasing + agreements + renewals + compliance + apps)
+Authoritative for:
+- BookMe viewings (bookings, confirmations, reminders)
+- Tenant applications and acceptance workflow
+- TPS checks (background/credit) workflow
+- Tenancy agreement generation + digital signing
+- Renewals/extensions workflow
+- Compliance management section for agreement readiness
+- Bond workflow initiation (you still collect funds into trust first)
+
+### Trade Me for Rent (marketing channel)
+Authoritative for:
+- Listing content and public marketing presence
+- Enquiry origin (routed into TPS via listing ID)
+
+### Tapi (maintenance CRM) 
+Authoritative for:
+- Maintenance request intake from four sources: Concierge (tenant website portal), Inspection Express sync, owner requests, and supplier-reported items
+- Triage: Emergency / Urgent / Routine / Planned priority levels; 24 trade categories
+- Five action options per job: Send work order, Request quotes, Ask owner for approval, Send to owner for DIY, Plan for later
+- Approvals workflow: owner receives email with Approve button + message thread; auto-updates or manual approval via three-dot menu
+- Work orders: multi-party notifications (supplier, owner, tenant); compliance document tracking; health & safety hazards; auto-reminders
+- Quote requests: separate flow for uncertain scope or >$500 jobs
+- DIY tracking: owner-managed repairs with tenant notification to all lease tenants
+- Invoice Dashboard: auto-match (via Tapi reference number) or manual 3-step match (contractor → property → job)
+- Invoice coding: Property (owner pays from rent, ~95%), Owner (direct forward, rare), Tenancy (tenant charge, requires evidence)
+- Approve → auto-closes linked job → syncs to Property Tree for Monday night payment run
+- Job lifecycle statuses: Open → Awaiting quotes → Awaiting approval → Scheduling → Awaiting repair → Awaiting invoice → Awaiting confirmation → Closed
+- Tapi left sidebar nav: Inbox, New job, New Invoice, Jobs, Invoices, Properties, Suppliers, Services, Owners, Compliance
+- Concierge: tenant-facing portal/chatbot where tenants submit maintenance requests with description, photos, and video
+
+### Inspection Express (inspections + reporting)
+Authoritative for:
+- Ingoing/routine/outgoing reports and photos
+- Inspection-captured maintenance items that sync into Tapi
+
+### Valua (rent evidence)
+Authoritative for:
+- Comparable set and rent recommendation rationale
+
+### Email (hello@ + owner mailbox)
+Authoritative for:
+- Exceptions, escalations, and anything not captured cleanly in TPS/Tapi/Property Tree
+- Written confirmations where needed
+
+---
+
+## 2) Data flow (end-to-end)
+
+### Leasing and tenancy creation
+1) Property and owner created in Property Tree; docs folders created.  
+2) Property created in TPS; compliance fields populated.  
+3) Trade Me listing published → listing ID entered into TPS → enquiries route into BookMe.  
+4) Viewings booked in BookMe; applicants apply via TPS portal; checks run; application approved.  
+5) Tenancy agreement generated and signed in TPS; export final PDF.  
+6) Bond workflow initiated via TPS → you collect bond into trust first → pay Tenancy Services using reference → file confirmation.  
+7) Tenancy created/updated in Property Tree with perfect dates and rent; store all documents in Property Tree.
+
+### Inspections
+1) Inspection scheduled in Property Tree → sync to Inspection Express.  
+2) Tenant confirmations managed; Property Tree status set to Confirmed (manual).  
+3) Inspection conducted and report published; send to tenant and landlord (email includes link + access code valid 30 days); file report to Property Tree.  
+4) Inspection maintenance items created by PM in Inspection Express → auto-sync to Tapi as individual jobs (tagged "Reported via inspection").  
+5) VA/PM Assistant reviews Tapi daily: cleans up descriptions, merges related jobs (same property + same trade), checks PM email for existing owner responses.  
+6) Owner approval requested in Tapi (unless already approved via inspection report email response) → owner receives email with approve button + message thread.  
+7) Once approved: work order sent to contractor via Tapi (copy to owner + tenant); job moves to Scheduling status.  
+
+### Maintenance (full Tapi lifecycle)
+1) Maintenance request arrives via one of four channels:
+   - **Concierge** (tenant portal): tenant submits via website chatbot → email notification to PM with labels (Concierge, Maintenance, property tag) → "View full request" button → opens in Tapi → VA clicks Accept, confirms property/tenancy match, cleans up chatbot noise
+   - **Inspection Express**: PM creates maintenance items during routine inspection → auto-syncs to Tapi as individual jobs tagged "Reported via inspection"
+   - **Owner request**: PM or VA creates job manually in Tapi (New job form with Source = Owner)
+   - **Phone/email**: PM logs request manually into Tapi
+2) VA triages: assess urgency (Emergency/Urgent/Routine/Planned), assign trade category, determine action path.
+3) Five action paths:
+   - **Send work order** — for simple/cheap/urgent jobs or after owner approval. Select supplier, set compliance, notify all parties.
+   - **Request quotes** — for uncertain scope or likely >$500. Include "quote" in message. Attach photos + satellite imagery.
+   - **Ask owner for approval** — default for routine items. Check PM email first (owner may have already responded to inspection report). Owner gets email with Approve button + message thread. Follow-up at Day 3, Day 7 escalate.
+   - **Send to owner for DIY** — owner handles it. Notify ALL tenants on lease. Must still action in Tapi to prevent backlog.
+   - **Plan for later** — non-urgent, deferred items.
+4) For urgent jobs requiring same-day attendance: phone contractor first ("call contractor first" rule), then send Tapi work order as formal record with "As discussed..." prefix.
+5) Multi-trade jobs (e.g., plumber installs, electrician wires): create separate Tapi job for each trade scope.
+6) Contractor engagement: work order sent → contractor accepts (1-2 days) → schedules with tenant → completes work → uploads invoice.
+7) Mid-job updates: if contractor calls back with expanded scope, update owner via email before large invoice arrives.
+
+### Invoices (Tapi → Property Tree sync)
+1) Contractor submits invoice via Tapi portal (direct upload) or email to propertypartner@tapi.co.nz.
+2) **Auto-match** (when contractor includes Tapi reference number) or **manual match** (3-step: contractor lookup → property selection → job selection → Attach).
+3) Code the invoice: Charge-to (Property = owner default ~95% / Owner = rare direct / Tenancy = uncommon, needs evidence), Work type dropdown (Plumbing most common, then General repairs, Electrical, Appliance servicing, Heat pump, Gardening).
+4) Notify owner (always tick; add personalised message; add date note for late invoices >2 weeks after work).
+5) Click Approve → four automatic effects: invoice approved, linked job auto-closes, owner notification sent, invoice syncs to Property Tree.
+6) Verify in Property Tree: Ownership → Financials → outstanding invoice line item → deducted from available balance in Monday night payment run.  
+
+---
+
+## 3) Recordkeeping rule (non‑negotiable)
+Everything that would matter in a dispute, audit, sale handover, or tribunal must be stored in **Property Tree docs** (or linked inside the property record):
+
+- Signed agreements + renewals/extensions/variations
+- Bond confirmation and bond refund outcomes
+- Healthy Homes evidence set and compliance statement data
+- Ingoing/routine/outgoing inspection reports
+- Major notices (rent increase, breach, termination, lease break)
+- Major maintenance approvals, quotes, invoices, completion evidence
+- Any critical email thread (saved as PDF)
+
+---
+
+## 4) Naming + filing (see SOP)
+See: [Property Tree Filing & Naming](../onboarding/pt-filing-naming.md)
+
+---
+
+!!! info "What's Next"
+
+    - [Standards & SLAs](standards-slas.md) — response times, approval rules, and recordkeeping requirements
+    - [Maintenance Lifecycle](../maintenance/maintenance-lifecycle.md) — end-to-end maintenance workflow
+    - [Leasing Lifecycle](../leasing/leasing-lifecycle.md) — end-to-end leasing workflow

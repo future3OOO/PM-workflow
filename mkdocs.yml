@@ -1,0 +1,142 @@
+site_name: Property Partner — Workflow Docs
+site_url: https://future3OOO.github.io/PM-workflow/
+site_description: >-
+  Internal workflow documentation for Property Partner — NZ residential
+  property management.
+
+repo_name: future3OOO/PM-workflow
+repo_url: https://github.com/future3OOO/PM-workflow
+
+copyright: "&copy; Property Partner (Strathmore Property Limited)"
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.footer
+    - navigation.top
+    - navigation.tracking
+    - navigation.path
+    - search.suggest
+    - search.highlight
+    - search.share
+    - toc.follow
+    - content.tooltips
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  icon:
+    logo: material/home-city
+    repo: fontawesome/brands/github
+
+plugins:
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - minify:
+      minify_html: true
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - tables
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/future3OOO/PM-workflow
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Systems Overview: getting-started/systems-map.md
+    - Standards & SLAs: getting-started/standards-slas.md
+  - Onboarding:
+    - Landlord & Property Setup: onboarding/landlord-property-onboarding.md
+    - Property Tree — Create Owner & Property: onboarding/pt-create-owner-property.md
+    - TPS — Property & Trade Me Setup: onboarding/tps-property-setup.md
+    - Compliance & Healthy Homes: onboarding/compliance-healthy-homes.md
+    - Healthy Homes Evidence (TPS): onboarding/compliance-healthy-homes-evidence.md
+    - Property Tree — Filing & Naming: onboarding/pt-filing-naming.md
+  - Leasing (TPS):
+    - Leasing Lifecycle: leasing/leasing-lifecycle.md
+    - Viewings & BookMe: leasing/tps-viewings-bookme.md
+    - Application Processing: leasing/tps-application-processing.md
+    - Agreements & Signing: leasing/tps-agreements-signing.md
+    - Bond Lodgement: leasing/bond-lodgement.md
+    - Tenancy Setup: leasing/tenancy-setup.md
+    - Tenant Onboarding: leasing/tenant-onboarding.md
+    - Property Tree — Create Tenancy: leasing/pt-create-tenancy.md
+  - Maintenance (Tapi):
+    - Maintenance Lifecycle: maintenance/maintenance-lifecycle.md
+    - Intake, Triage & Work Orders: maintenance/tapi-intake.md
+    - Invoice Processing & Property Tree Sync: maintenance/tapi-invoices.md
+  - Inspections:
+    - Inspection Lifecycle: inspections/inspection-lifecycle.md
+    - Scheduling & Confirmation (Property Tree): inspections/pt-scheduling.md
+    - Reports & Actions (Inspection Express): inspections/inspection-express.md
+  - Renewals & Exits:
+    - Renewals & Rent Reviews: renewals-exits/renewals-rent-reviews.md
+    - Valua — Rent Research: renewals-exits/valua-rent-research.md
+    - End of Tenancy & Lease Break: renewals-exits/end-of-tenancy.md
+  - Day-to-Day:
+    - Email Management: day-to-day/email-management.md
+    - Email & Recordkeeping Rules: day-to-day/email-recordkeeping.md
+    - Notices & Communications: day-to-day/notices-comms.md
+    - Notice & Email Templates: day-to-day/notice-email-templates.md
+    - Execution Checklists: day-to-day/execution-checklists.md
+    - Daily Triage: day-to-day/daily-triage.md
+    - Weekly Operations: day-to-day/weekly-operations.md
+    - Monthly Compliance Audit: day-to-day/monthly-compliance.md
+    - Sources & References: day-to-day/sources.md
+    - Contributing Guide: day-to-day/contributing.md
