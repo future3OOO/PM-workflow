@@ -56,7 +56,7 @@ See: [Tapi Intake & Triage SOP](../maintenance/tapi-intake.md) | [Tapi Invoices 
 |---|-------|--------|
 | 1 | Open Tapi Jobs dashboard | Review all 7 status pipeline buckets: Open jobs → Awaiting quotes → Awaiting approval → Scheduling job → Awaiting repair → Awaiting invoice → Awaiting confirmation |
 | 2 | Check new Concierge requests | Look for email notifications with Concierge/Maintenance labels. Accept in Tapi, clean up, triage |
-| 3 | Review "Open jobs" bucket | Any new jobs needing triage? Leave notes for PM if unsure about action |
+| 3 | Review "Open jobs" bucket | Sort/filter by **Created** to surface new **Choose action** jobs needing triage. Flag stale items that were never properly closed |
 | 4 | Review "Awaiting approval" bucket | Any approvals >3 business days old? Send follow-up via Tapi thread |
 | 5 | Review "Scheduling job" bucket | Any contractors not responded >2 days? Send follow-up |
 | 6 | Review "Awaiting repair" bucket | Any jobs where contractor confirmed but work not yet done? Check expected completion dates |
