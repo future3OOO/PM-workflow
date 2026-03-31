@@ -21,10 +21,12 @@ Vacancy or upcoming vacancy with owner approval to market.
 ---
 
 ## Stage 1 — Pre-list readiness
-- Confirm availability date
-- Confirm access plan (vacant vs tenant-in-place)
-- Confirm photos, chattels list, and "must know" property notes
-- Confirm rent guidance:
+
+??? info "Pre-list checklist (expand)"
+    - Confirm availability date
+    - Confirm access plan (vacant vs tenant-in-place)
+    - Confirm photos, chattels list, and "must know" property notes
+    - Confirm rent guidance:
 
 !!! tip "Rent evidence"
     Use Valua if rent is uncertain or the owner requests evidence.

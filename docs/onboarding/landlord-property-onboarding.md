@@ -27,13 +27,16 @@ Management authority signed OR takeover date confirmed.
 ---
 
 ## Stage 1 — Intake (collect and verify)
-Collect (and store in Property Tree docs "01 Management & Owner Docs"):
-- Management authority / agreement (incl. spend threshold if present)
-- Owner identity/contact details + bank account details
-- Preferred communication method and approval style
-- Insurance details (if supplied)
-- Property details: chattels list, utilities notes, parking/access constraints
-- Current tenancy status: vacant vs tenanted; key dates; rent; bond status
+
+??? info "Intake checklist (expand)"
+    Collect (and store in Property Tree docs "01 Management & Owner Docs"):
+
+    - Management authority / agreement (incl. spend threshold if present)
+    - Owner identity/contact details + bank account details
+    - Preferred communication method and approval style
+    - Insurance details (if supplied)
+    - Property details: chattels list, utilities notes, parking/access constraints
+    - Current tenancy status: vacant vs tenanted; key dates; rent; bond status
 
 !!! warning "Takeover from another agency"
     If taking over from another agency, add a takeover checklist:

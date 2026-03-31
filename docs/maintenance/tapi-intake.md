@@ -19,27 +19,28 @@ This SOP covers intake, triage, merging related jobs, obtaining owner approval, 
 
 ## Tapi Dashboard Reference
 
-### Left sidebar navigation
-Inbox | New job | New Invoice | Jobs (main) | Invoices | Properties | Suppliers | Services | Owners | Compliance
+??? info "Tapi dashboard reference (expand)"
+    ### Left sidebar navigation
+    Inbox | New job | New Invoice | Jobs (main) | Invoices | Properties | Suppliers | Services | Owners | Compliance
 
-### Jobs view — tabs and pipeline
-- **Tabs across top:** Open | Paused | Closed | All | Planned
-- **Status pipeline (column buckets):** Open jobs → Awaiting quotes → Awaiting approval → Scheduling job → Awaiting repair → Awaiting invoice → Awaiting confirmation
-- **Job list columns:** Job (title + status tag) | Last action | Priority (colour badges) | Supplier | Job agent | Property agent | Created
+    ### Jobs view — tabs and pipeline
+    - **Tabs across top:** Open | Paused | Closed | All | Planned
+    - **Status pipeline (column buckets):** Open jobs → Awaiting quotes → Awaiting approval → Scheduling job → Awaiting repair → Awaiting invoice → Awaiting confirmation
+    - **Job list columns:** Job (title + status tag) | Last action | Priority (colour badges) | Supplier | Job agent | Property agent | Created
 
-### Filtering and reporting
-- **Filter bar:** Job agent | Property agent | Priority | Source (Inspection / Tenant / Owner / Supplier / Compliance) | Created (date range)
-- **Save view** button — saves the current filter combination for reuse
-- **Export report** button — exports filtered job list
-- Footer shows "X of Y items" with pagination controls
+    ### Filtering and reporting
+    - **Filter bar:** Job agent | Property agent | Priority | Source (Inspection / Tenant / Owner / Supplier / Compliance) | Created (date range)
+    - **Save view** button — saves the current filter combination for reuse
+    - **Export report** button — exports filtered job list
+    - Footer shows "X of Y items" with pagination controls
 
-### Priority colour badges
-| Badge colour | Level | Target response |
-|---|---|---|
-| Red | Emergency | Within 24 hours — life/safety (flooding, gas leak, serious electrical) |
-| Red | Urgent | Act promptly — hot water outage, power outage, sewerage, significant leak |
-| Amber | Routine | Standard flow (90%+ of jobs) |
-| Grey/Blue | Planned | Scheduled for future |
+    ### Priority colour badges
+    | Badge colour | Level | Target response |
+    |---|---|---|
+    | Red | Emergency | Within 24 hours — life/safety (flooding, gas leak, serious electrical) |
+    | Red | Urgent | Act promptly — hot water outage, power outage, sewerage, significant leak |
+    | Amber | Routine | Standard flow (90%+ of jobs) |
+    | Grey/Blue | Planned | Scheduled for future |
 
 ---
 
@@ -292,14 +293,14 @@ When the owner declines a maintenance item (common for non-urgent inspection sug
 9. Click **More options** → **Close job**
 10. Verify the job has been removed from the open jobs list
 
-### "More options" dropdown menu (complete list)
-Add photos | Attach file | Search for jobs | Duplicate job | Merge job | Cancel job | Close job
+??? info "More options menu (complete list)"
+    Add photos | Attach file | Search for jobs | Duplicate job | Merge job | Cancel job | Close job
 
-### Add Note feature
-- Slide-out panel with: **Note** (free text area) and **Assign to** (dropdown: No agent assigned / McKenzie Lawrence / Property Partner)
-- Click **Save** to post
-- Notes appear in the Activity timeline on the job
-- Best practice: copy exact owner email content into notes for audit trail — never paraphrase owner instructions
+??? info "Add Note feature"
+    - Slide-out panel with: **Note** (free text area) and **Assign to** (dropdown: No agent assigned / McKenzie Lawrence / Property Partner)
+    - Click **Save** to post
+    - Notes appear in the Activity timeline on the job
+    - Best practice: copy exact owner email content into notes for audit trail — never paraphrase owner instructions
 
 ---
 

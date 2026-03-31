@@ -58,35 +58,36 @@ SOP: [Reports & Actions (Inspection Express)](inspection-express.md)
 
 This is a critical daily workflow for the VA/PM Assistant:
 
-### 4a) Daily review of Inspection Express
-- Log into Inspection Express each morning
-- Check "This Week" for any new finalised inspections
-- Flag any inspections still "In Progress" — remind PM to finalise
+??? info "Daily inspection review process (expand)"
+    ### 4a) Daily review of Inspection Express
+    - Log into Inspection Express each morning
+    - Check "This Week" for any new finalised inspections
+    - Flag any inspections still "In Progress" — remind PM to finalise
 
-### 4b) Cross-reference with Tapi
-- Open Tapi side-by-side
-- For each finalised inspection, confirm every maintenance item from the PDF report appears as a job in Tapi
-- Missing items = sync failure → notify PM
+    ### 4b) Cross-reference with Tapi
+    - Open Tapi side-by-side
+    - For each finalised inspection, confirm every maintenance item from the PDF report appears as a job in Tapi
+    - Missing items = sync failure → notify PM
 
-### 4c) Prepare each Tapi job
-- Review and clean up job descriptions (remove landlord-directed questions, ensure contractor-friendly language)
-- Merge related jobs if applicable (e.g., two plumbing issues at the same property → merge into one job)
-- Determine the correct action for each job (approval, work order, quote, plan for later)
+    ### 4c) Prepare each Tapi job
+    - Review and clean up job descriptions (remove landlord-directed questions, ensure contractor-friendly language)
+    - Merge related jobs if applicable (e.g., two plumbing issues at the same property → merge into one job)
+    - Determine the correct action for each job (approval, work order, quote, plan for later)
 
-### 4d) Check email before actioning
-- Before requesting owner approval in Tapi, check the PM's inbox
-- The inspection report email already lists maintenance items — responsive owners may have already replied
-- If owner has approved → skip approval, send work order directly
-- If no response → send approval request in Tapi
+    ### 4d) Check email before actioning
+    - Before requesting owner approval in Tapi, check the PM's inbox
+    - The inspection report email already lists maintenance items — responsive owners may have already replied
+    - If owner has approved → skip approval, send work order directly
+    - If no response → send approval request in Tapi
 
-### 4e) Request owner approval or send work order
-- For items needing approval: use "Ask owner for approval" in Tapi with a structured message
-- For items already approved: send work order directly, selecting the appropriate contractor
+    ### 4e) Request owner approval or send work order
+    - For items needing approval: use "Ask owner for approval" in Tapi with a structured message
+    - For items already approved: send work order directly, selecting the appropriate contractor
 
-### 4f) Monitor and follow up
-- Check Tapi's "Awaiting approval" bucket daily
-- If no owner response after 3 business days, send follow-up via Tapi message thread
-- Some owners respond via email rather than the Tapi approval button — check both
+    ### 4f) Monitor and follow up
+    - Check Tapi's "Awaiting approval" bucket daily
+    - If no owner response after 3 business days, send follow-up via Tapi message thread
+    - Some owners respond via email rather than the Tapi approval button — check both
 
 !!! tip "Key Principle"
     Every maintenance item listed in an inspection report must be sent to the owner for approval (or actioned directly if already approved). Do not let items sit in Tapi without action.

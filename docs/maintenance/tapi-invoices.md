@@ -96,13 +96,14 @@ Once the invoice is matched (auto or manual), complete the entry fields:
 | **Invoice amount** | Dollar value inc. GST | Pre-filled from the uploaded invoice |
 | **Matched job** | Linked Tapi job | Auto-populated or manually matched in previous step |
 
-### Charge-to Coding Rules
+??? info "Charge-to coding rules (expand)"
+    ### Charge-to Coding Rules
 
-| Code | When to use | Notes |
-|---|---|---|
-| **Property** | Default for virtually all invoices (~95%) | Cost deducted from the owner's rent account balance |
-| **Owner** | Rare | Invoice forwarded directly to the owner for their own payment |
-| **Tenancy** | Tenant is responsible | Uncommon — requires documented evidence and a written communication trail before coding |
+    | Code | When to use | Notes |
+    |---|---|---|
+    | **Property** | Default for virtually all invoices (~95%) | Cost deducted from the owner's rent account balance |
+    | **Owner** | Rare | Invoice forwarded directly to the owner for their own payment |
+    | **Tenancy** | Tenant is responsible | Uncommon — requires documented evidence and a written communication trail before coding |
 
 ---
 
@@ -189,44 +190,44 @@ Most tenants pay weekly, but some pay **fortnightly** or **monthly**. The holdba
 
 ---
 
-## Quick Reference — End-to-End Flow
+??? example "End-to-end invoice flow (expand)"
+    ## Quick Reference — End-to-End Flow
 
-```
-Invoice arrives (upload or email)
-        │
-        ├─ Auto-matched? ──YES──→ Review activity log → Invoice Entry
-        │
-        └─ Unmatched? ──────────→ Contractor lookup → Property select → Job select → Attach → Invoice Entry
-                                                                                                    │
-                                                                                    Set charge-to (Property/Owner/Tenancy)
-                                                                                    Set work type
-                                                                                    Verify amount
-                                                                                                    │
-                                                                                    Tick notify owner + add message
-                                                                                                    │
-                                                                                              Click Approve
-                                                                                                    │
-                                                                              ┌─────────────────────┼─────────────────────┐
-                                                                              │                     │                     │
-                                                                        Job auto-closes    Owner notified    Syncs to Property Tree
-                                                                                                                          │
-                                                                                                              Rent holdback (auto) — §10
-                                                                                                                          │
-                                                                                                              Monday payment run + statement
-```
+    ```
+    Invoice arrives (upload or email)
+            │
+            ├─ Auto-matched? ──YES──→ Review activity log → Invoice Entry
+            │
+            └─ Unmatched? ──────────→ Contractor lookup → Property select → Job select → Attach → Invoice Entry
+                                                                                                        │
+                                                                                        Set charge-to (Property/Owner/Tenancy)
+                                                                                        Set work type
+                                                                                        Verify amount
+                                                                                                        │
+                                                                                        Tick notify owner + add message
+                                                                                                        │
+                                                                                                  Click Approve
+                                                                                                        │
+                                                                                  ┌─────────────────────┼─────────────────────┐
+                                                                                  │                     │                     │
+                                                                            Job auto-closes    Owner notified    Syncs to Property Tree
+                                                                                                                              │
+                                                                                                                  Rent holdback (auto) — §10
+                                                                                                                              │
+                                                                                                                  Monday payment run + statement
+    ```
 
 ---
 
-## Checklist — Daily Invoice Processing
-
-- [ ] Check Tapi Invoice Dashboard for new invoices
-- [ ] Process auto-matched invoices (Path A)
-- [ ] Manually match any unmatched invoices (Path B)
-- [ ] Code each invoice (charge-to, work type, amount)
-- [ ] Add personalised owner notification message
-- [ ] Flag late invoices with completion date in notification
-- [ ] Click Approve
-- [ ] Verify sync in Property Tree (Ownership → Financials)
+!!! info "Daily Invoice Processing Checklist"
+    - [ ] Check Tapi Invoice Dashboard for new invoices
+    - [ ] Process auto-matched invoices (Path A)
+    - [ ] Manually match any unmatched invoices (Path B)
+    - [ ] Code each invoice (charge-to, work type, amount)
+    - [ ] Add personalised owner notification message
+    - [ ] Flag late invoices with completion date in notification
+    - [ ] Click Approve
+    - [ ] Verify sync in Property Tree (Ownership → Financials)
 
 !!! info "What's Next"
     - [Maintenance Lifecycle](maintenance-lifecycle.md) — full end-to-end maintenance process

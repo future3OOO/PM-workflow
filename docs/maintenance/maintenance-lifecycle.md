@@ -9,18 +9,18 @@
 Handle maintenance quickly and consistently with clean approvals, multi-party comms, correct invoicing, and full sync to Property Tree.
 
 ## Trigger
-1. **Tenant request via Concierge** — website chatbot portal; arrives as email notification labelled (Concierge, Maintenance, property tag) with a "View full request" button linking to Tapi
+1. **Tenant request via Concierge** — website chatbot portal; arrives as email notification with a "View full request" button linking to Tapi
 2. **Inspection-captured item** — synced from Inspection Express into Tapi, tagged "Reported via inspection"
-3. **Owner request** — PM or owner creates job manually in Tapi (New job form → Source dropdown: Inspection / Tenant / Owner / Supplier / Compliance)
+3. **Owner request** — PM or owner creates job manually in Tapi
 4. **Landlord email or phone call** — logged manually by PM/VA
 
 ## Outputs (definition of done)
-- Tenant acknowledged and update time set (for tenant-submitted requests)
-- Triage completed (urgent vs routine) with correct priority level assigned
+- Tenant acknowledged and update time set
+- Triage completed with correct priority level assigned
 - Owner approvals captured where required
 - Contractor engaged (work order, quote request, or DIY referral)
 - Invoice approved, coded, and synced to Property Tree
-- Owner/tenant notified appropriately; job closed and filed
+- Owner/tenant notified; job closed and filed
 
 ---
 
@@ -28,17 +28,23 @@ Handle maintenance quickly and consistently with clean approvals, multi-party co
 
 The Jobs dashboard is the VA's primary workspace. Tabs across the top: **Open | Paused | Closed | All | Planned**.
 
-### Status pipeline (left-to-right progression)
-Open jobs → Awaiting quotes → Awaiting approval → Scheduling job → Awaiting repair → Awaiting invoice → Awaiting confirmation
+??? info "Dashboard reference — pipeline, filters, search"
 
-### Filter bar
-Job agent · Property agent · Priority · Source · Created — use these to slice the queue by ownership or urgency.
+    **Status pipeline (left-to-right progression)**
 
-### Search
-Slide-out panel with free-text search and an "Include archived" checkbox for closed/historical jobs.
+    Open jobs → Awaiting quotes → Awaiting approval → Scheduling job → Awaiting repair → Awaiting invoice → Awaiting confirmation
 
-### Property detail page
-Accessed by clicking a property name. Tabs: **Jobs | Invoices | Assets | Services | People | Settings**.
+    **Filter bar**
+
+    Job agent · Property agent · Priority · Source · Created — slice the queue by ownership or urgency.
+
+    **Search**
+
+    Slide-out panel with free-text search and an "Include archived" checkbox for closed/historical jobs.
+
+    **Property detail page**
+
+    Click a property name → tabs: Jobs | Invoices | Assets | Services | People | Settings.
 
 ### Daily routine
 - Refresh the dashboard at the start of every shift
@@ -47,36 +53,31 @@ Accessed by clicking a property name. Tabs: **Jobs | Invoices | Assets | Service
 !!! info "Normal Volume"
     ~200 open jobs is normal — many are recommended (not required) inspection items that owners never respond to.
 
+Full pipeline reference: [Intake, Triage & Work Orders § Status Pipeline](tapi-intake.md#status-pipeline-what-each-stage-means)
+
 ---
 
 ## Stage 1 — Intake and Acknowledgement
 
-### 1a. Tenant request via Concierge
-- Email notification arrives → click "View full request" → opens Tapi
-- Click **Accept** in Tapi; confirm property/tenancy match in the modal
-- Clean up chatbot noise from the "Additional Info" field (Concierge often captures extraneous text)
-- Acknowledge the tenant and set a next-update time
+Jobs arrive from four sources. The VA's task is to accept, verify, and clean up each job before triaging.
 
-### 1b. Inspection-captured items
-- PM creates maintenance items in Inspection Express during the routine inspection
-- Items auto-sync into Tapi (tagged "Reported via inspection")
-- VA reviews daily in Tapi, cross-referencing against the published inspection report PDF
-- See [Inspection Express Reports](../inspections/inspection-express.md) for full daily review process
+| Source | Key action |
+|---|---|
+| Tenant concierge | Click **Accept** → confirm property match → clean up chatbot noise → acknowledge tenant |
+| Inspection items | Cross-reference Inspection Express report against Tapi daily; clean descriptions |
+| Owner request | Create job via **New job** → Source: Owner → add photos |
+| Supplier-reported | Create job → Source: Supplier → link to original job if relevant |
 
-### 1c. Owner request
-- PM or owner creates job directly in Tapi via the New Job form
-- Source dropdown set to **Owner**
-
-### 1d. Landlord email or phone call
-- VA creates job in Tapi manually, sets appropriate source
-
-> For click-by-click Tapi instructions, see [Intake, Triage & Work Orders](tapi-intake.md).
+!!! tip "Complete Instructions"
+    For the full click-by-click intake process for each source type:
+    [Intake, Triage & Work Orders § Intake](tapi-intake.md#intake)
 
 ---
 
 ## Stage 2 — Triage
 
-### Priority levels in Tapi
+Assess urgency and determine the action path.
+
 | Level | SLA | When to use |
 |---|---|---|
 | Emergency | 24 h | Life/safety — flooding, gas leak, serious electrical |
@@ -84,150 +85,110 @@ Accessed by clicking a property name. Tabs: **Jobs | Invoices | Assets | Service
 | Routine | Standard flow | 90%+ of all jobs |
 | Planned | Deferred | Scheduled future work |
 
-### Urgent items (act immediately — bypass owner pre-approval)
-- Water leaks / flooding risk
-- Hot water outage
-- Power outage
-- Sewerage
-- Serious electrical hazard
+??? info "Triage decision framework (expand)"
 
-### Priority chattels (handle quickly, still seek approval if time allows)
-- Oven / cooktop
-- Dishwasher
-- Rangehood
-- Heat pump
+    | Condition | Action |
+    |---|---|
+    | Active leak, flooding, no hot water, power out, sewerage, electrical hazard | Send work order immediately (bypass owner approval) |
+    | Oven, cooktop, dishwasher, rangehood, heat pump | Fast-track — send for approval immediately or work order if relationship allows |
+    | Simple/cheap fix (<$200–300, obvious scope) | Send work order directly — not worth approval overhead |
+    | Moderate routine ($300–500, clear scope) | Ask owner for approval, then work order |
+    | Expensive or uncertain scope (>$500 or diagnostic needed) | Request quotes first, then present to owner |
+    | Safety/compliance (fire doors, smoke alarms) | Inform owner + send work order — cannot wait |
+    | Owner will handle it | Send to owner for DIY |
+    | Non-urgent, recommended from inspection | Plan for later |
 
-### Routine
-Proceed to Stage 3 (approvals).
-
-> For the full triage decision framework, see [Intake, Triage & Work Orders](tapi-intake.md).
-
-### Trade categories in Tapi
-Building works · Carpentry · Cleaning · Drapery · Electrical · Exterior · Fencing · Fire protection · General · Grounds · HVAC · Insulation · Joinery · Locksmith · Painting · Pest control · Plumbing · Property management · Rangehood · Roofing · Security · Ventilation · Waterproofing
+Full decision framework with trade categories: [Intake, Triage & Work Orders § Triage](tapi-intake.md#triage)
 
 ---
 
-## Stage 3 — Decision: The Five Action Buttons
+## Stage 3 — The Five Action Buttons
 
 Every job in Tapi presents five action buttons. Selecting the right one is the core triage decision.
 
 | # | Button | When to use |
 |---|---|---|
-| 1 | **Send work order** | Straightforward job, known scope, owner approved (or simple/cheap enough to proceed) |
-| 2 | **Request quotes** | Cost likely >$500 or scope uncertain — apply the "knowable scope" test |
-| 3 | **Ask owner for approval** | Default for routine items; sends via Tapi with personalised message |
-| 4 | **Send to owner for DIY** | Owner arranges their own contractor/friend |
+| 1 | **Send work order** | Straightforward job, known scope, owner approved (or cheap enough to proceed) |
+| 2 | **Request quotes** | Cost likely >$500 or scope uncertain |
+| 3 | **Ask owner for approval** | Default for routine items |
+| 4 | **Send to owner for DIY** | Owner arranges their own contractor |
 | 5 | **Plan for later** | Non-urgent, deferred |
 
-> For detailed step-by-step for each action, see [Intake, Triage & Work Orders](tapi-intake.md).
+### Approval flow (summary)
 
-### 3a. Ask owner for approval (standard approval flow)
+1. **Check email first** — the inspection report may already have the owner's approval
+2. Send Tapi approval request with a structured message (issue, risk, recommendation, cost estimate)
+3. Owner responds via Approve button (auto-updates) or message thread (VA manually approves via ⋮ menu)
+4. Follow-up: Day 0 → Day 3 (business days) → Day 7 escalate to PM
 
-**Before requesting Tapi approval:** check the PM's email inbox first — the inspection report email already listed the items and the owner may have replied with approval. If already approved, skip straight to Stage 4.
+??? info "Approval message template"
 
-If no prior approval exists, send the Tapi approval request with: issue summary, risk, recommendation, cost estimate or quote-first note, and access plan.
+    > Hi [Owner first name],
+    >
+    > These items were noted during the routine inspection at [address]. Are you happy for me to arrange a contractor to attend to them?
+    >
+    > Kind regards,
+    > [PM / VA name]
 
-**Template (inspection items):**
+!!! tip "Complete Instructions"
+    Full approval flow, owner response paths, follow-up protocol, declined items closure:
+    [Intake, Triage & Work Orders § Approvals](tapi-intake.md#approvals)
 
-> Hi [Owner name],
->
-> These items were noted during the routine inspection at [address]. Are you happy for me to arrange a contractor to attend to them?
->
-> Kind regards,
-> [PM / VA name]
-
-**Owner response — two paths:**
-- **Path A:** Owner clicks the Approve button in the email → automatic approval in Tapi
-- **Path B:** Owner replies via the message thread → VA must manually approve via the three-dot menu (⋮) → Approve
-
-Three-dot menu options on an approval: **Approve | Decline | Resend email**.
-
-**Follow-up cadence:**
-- Day 0 — approval sent
-- Day 3 (business days) — follow-up via Tapi message thread
-- Day 7 — escalate to PM
-
-Monitor the **Awaiting approval** bucket daily.
-
-### 3b. Request quotes
-
-Apply the **"knowable scope" test**: can the contractor estimate without visiting the property? (Spouting clean = yes → send work order; plumbing leak behind a wall = no → request quote.)
-
-- PM may give a verbal price range first; the owner may still want a formal quote
-- Attach photos: inspection photos + satellite imagery from Property Guru / Google Maps where useful
-- Message to contractor must include the word **"quote"** or **"estimate"** — contractors may assume it's a work order otherwise
-- Tenant notification is optional for quotes (include if the contractor may need property access)
-
-### 3c. Send to owner for DIY
-
-- Owner has arranged their own person
-- Owner notification: optional (untick if you are already in email correspondence)
-- Tenant notification: important — goes to ALL tenants on the lease; include who / when / what / where
-- Must still action the job in Tapi to remove it from open jobs — failure to do so causes backlog
-
-### 3d. Owner-declined closure
-
-When an owner declines or ignores an item:
-1. Add a summary note (e.g. "Owner doesn't want to service at this time")
-2. Add a second note with the exact owner email text (audit trail)
-3. Assign notes to the appropriate agent
-4. Close via **More options → Close job**
-
-### 3e. Merging related jobs
-If multiple inspection items at the same property require the same trade:
-- Merge them in Tapi (More options → Merge job) before requesting approval or sending a work order
-- Update the merged job title to reflect the combined scope
-- Clean up the merged description — remove landlord-directed language, keep contractor-relevant detail
+    Quoting flow, DIY handoff, and merging related jobs:
+    [Intake, Triage & Work Orders § Work Order / Quote / DIY](tapi-intake.md#work-order-quote-request-diy-choosing-the-right-action)
 
 ---
 
 ## Stage 4 — Contractor Engagement
 
-### Work order details panel
-| Field | Guidance |
-|---|---|
-| Select supplier | Choose based on trade category and preferred contractor list |
-| Compliance documents | Require for electrical / plumbing / gas; skip for handyman |
-| Cost limit (inc. GST) | Set per owner approval or PM guidance |
-| Require contractor to contact tenants | Almost always **yes** |
-| Message to supplier | Brief, clear instruction of what is needed |
-| Send reminder after | Default 3 days |
-| Copy to owner | Default yes |
-| Message to owner | Brief context |
-| Copy to tenant | Tick |
-| Message to tenant | Important — the tenant only sees the job title, not the full description; add specifics here |
-| Health & safety hazards | Trip · Slip · Electrical · **Dogs (#1 hazard — can be set as property default)** · Steep access · Asbestos potential/confirmed · Working at height |
+??? info "Work order fields reference (expand)"
+
+    | Field | Guidance |
+    |---|---|
+    | Select supplier | Choose based on trade category and preferred contractor list |
+    | Compliance documents | Require for electrical / plumbing / gas; skip for handyman |
+    | Cost limit (inc. GST) | Set per owner approval or PM guidance |
+    | Require contractor to contact tenants | Almost always **yes** |
+    | Message to supplier | Brief, clear instruction of what is needed |
+    | Send reminder after | Default 3 days |
+    | Copy to owner | Default yes |
+    | Message to owner | Brief context |
+    | Copy to tenant | Tick |
+    | Message to tenant | Include specifics — tenants only see the job title, not the full description |
+    | Health & safety hazards | Trip · Slip · Electrical · **Dogs (#1 hazard)** · Steep access · Asbestos · Working at height |
 
 ### "Call contractor first" for urgent jobs
 
-!!! tip "Call First for Urgent Jobs"
-    When same-day attendance is needed:
+When same-day attendance is needed:
 
-    1. **Phone** the contractor first to confirm availability
-    2. Then send the Tapi work order as the formal record — supplier message starts with *"As discussed…"*
-    3. Include manual tenant contact details in the message if not updated in Tapi
+1. **Phone** the contractor first to confirm availability
+2. Then send the Tapi work order as the formal record — supplier message starts with *"As discussed…"*
+3. Include manual tenant contact details in the message if not updated in Tapi
 
 ### Multi-trade job coordination
-Some jobs need sequential trades (e.g. plumber installs water pump → electrician wires it; plumber replaces hot water cylinder → electrician connects):
-- Create a **separate Tapi job** for each trade's scope
-- Use "call contractor first" for the urgent second trade once the first completes
+Some jobs need sequential trades (e.g. plumber → electrician). Create a **separate Tapi job** for each trade's scope.
 
 ### Contractor acceptance
 - Usually within 1–2 days. If not, send a follow-up.
 - Work is typically completed within 2 weeks.
 
+Full work order panel reference: [Intake, Triage & Work Orders § Sending a Work Order](tapi-intake.md#sending-a-work-order-complete-panel-fields)
+
 ---
 
 ## Stage 5 — Mid-Job Updates
 
-### Contractor callback with expanded scope
-- Contractor may call back reporting a larger issue than originally scoped
-- Take notes during the call
-- Update the owner via email (can use Shortwave AI to draft a professional message)
-!!! warning "Scope Changes"
-    Keep owners informed when scope expands so they don't receive an unexpected large invoice.
+When a contractor calls back reporting a larger issue:
 
-### Communication channels
+1. Take notes during the call
+2. Update the owner via email (Shortwave AI can draft a professional message)
+3. **Keep owners informed before a large invoice arrives — no surprises**
+
+!!! warning "Scope Changes"
+    Never let an owner receive an invoice significantly larger than what was approved without prior communication.
+
+Two communication channels:
+
 - **Email reply** — quick but not tracked in Tapi
 - **Tapi "Send a message"** — tracked in the job timeline (preferred for audit trail)
 
@@ -235,39 +196,28 @@ Some jobs need sequential trades (e.g. plumber installs water pump → electrici
 
 ## Stage 6 — Invoices and Sync to Property Tree
 
-### Submission methods
-1. Contractor uploads via the Tapi portal
-2. Contractor emails to **propertypartner@tapi.co.nz**
+This is a critical stage with its own detailed SOP. The summary:
 
-### Matching
-- **Auto-match:** contractor included the Tapi reference number → invoice attaches automatically
-- **Manual match (3-step):** select contractor → select property → select job → Attach
+| Step | Action |
+|---|---|
+| Invoice arrives | Contractor uploads via Tapi portal or emails `propertypartner@tapi.co.nz` |
+| Matching | Auto-match (Tapi reference number) or manual 3-step match (contractor → property → job) |
+| Coding | Charge-to: Property (~95%) / Owner (rare) / Tenancy (uncommon). Set work type. |
+| Notification | Always tick owner notification; add personalised message |
+| Approve | Triggers: invoice approved → job auto-closes → owner notified → **syncs to Property Tree** |
+| Holdback | Invoice amount deducted from owner's rent account in the Monday payment run |
 
-### Charge-to coding
-| Code | When | Frequency |
-|---|---|---|
-| Property | Owner pays from rent account | ~95% of jobs |
-| Owner | Direct-forward to owner | Rare |
-| Tenancy | Charged to tenant | Uncommon; requires evidence |
+??? info "Forwarding invoices sent to the wrong address"
 
-### Work type dropdown
-Plumbing (most common) · General repairs · Electrical · Appliance servicing · Heat pump servicing · Gardening · others rarely used.
+    Some contractors send invoices to older addresses (`accounts@propertypartner.co.nz` etc.). When this happens:
 
-### Owner notification
-- Always tick owner notification
-- Add a personalised message, especially for owners who misinterpret the notification as a payment request
+    1. Forward the email to `propertypartner@tapi.co.nz`
+    2. Ensure a **PDF is attached** before forwarding (Tapi requires an actual PDF — links won't work)
+    3. If the email only has a link: click it, download the PDF, attach it to the forwarding email
 
-### Late invoices (>2 week gap)
-- Add a note about when the work was actually done for the owner's context
-
-### Approve
-Clicking **Approve** triggers four automatic effects:
-1. Invoice status changes to **Approved**
-2. The linked Tapi job **auto-closes**
-3. Owner notification email is **sent** (with the personalised message added above)
-4. Invoice **syncs to Property Tree** (Ownership → Financials)
-
-The invoice amount is deducted from the owner's available rent balance in the Monday payment run (see [Invoice Processing & Property Tree Sync](tapi-invoices.md) for holdback mechanics).
+!!! tip "Complete Instructions"
+    Full invoice matching, coding, approval, Property Tree sync, and rent holdback mechanics:
+    [Invoice Processing & Property Tree Sync](tapi-invoices.md)
 
 ---
 
@@ -282,15 +232,36 @@ The invoice amount is deducted from the owner's available rent balance in the Mo
 - File key artifacts to Property Tree
 - Notify owner of invoice plan (paid from next rent funds or held if insufficient balance)
 
+Declined item closure process: [Intake, Triage & Work Orders § Owner-Declined Maintenance](tapi-intake.md#owner-declined-maintenance-closure-flow)
+
 ---
 
 ## SOP References
 
-- [Inspection Express Reports](../inspections/inspection-express.md) — Inspection report publish, daily review, action sync
-- [Intake, Triage & Work Orders](tapi-intake.md) — Click-by-click for intake, triage, approvals, work orders, quotes, DIY
-- [Invoice Processing & Property Tree Sync](tapi-invoices.md) — Invoice matching, coding, approval, Property Tree sync
+<div class="grid cards" markdown>
 
-!!! info "What's Next"
-    - [Intake, Triage & Work Orders](tapi-intake.md) — click-by-click Tapi instructions
-    - [Invoice Processing & Property Tree Sync](tapi-invoices.md) — process and approve invoices
-    - [Daily Triage Checklist](../day-to-day/daily-triage.md) — check all pipeline buckets daily
+-   :material-clipboard-text:{ .lg .middle } **[Intake, Triage & Work Orders](tapi-intake.md)**
+
+    ---
+
+    Click-by-click for intake, triage, approvals, work orders, quotes, DIY, merging, follow-ups, and daily checklist.
+
+-   :material-receipt:{ .lg .middle } **[Invoice Processing & Property Tree Sync](tapi-invoices.md)**
+
+    ---
+
+    Invoice matching, coding, approval, Property Tree sync, rent holdback mechanics, and daily invoice checklist.
+
+-   :material-clipboard-check:{ .lg .middle } **[Inspection Express Reports](../inspections/inspection-express.md)**
+
+    ---
+
+    Inspection report publish, daily review, and action sync into Tapi.
+
+-   :material-calendar-check:{ .lg .middle } **[Daily Triage Checklist](../day-to-day/daily-triage.md)**
+
+    ---
+
+    Walk every Tapi pipeline bucket daily.
+
+</div>
