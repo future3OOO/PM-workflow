@@ -30,7 +30,7 @@ Run inspections consistently, with tenant confirmations, strong reporting, corre
 - Update to "Confirmed" in Property Tree (manual)
 - Send 24-hour reminder
 
-SOP: **02_SOP_PROPERTYTREE_INSPECTION_SCHEDULING_CONFIRMATION_V2.md**
+SOP: [PropertyTree Inspection Scheduling](../sops/propertytree-inspection-scheduling.md)
 
 ---
 
@@ -48,7 +48,7 @@ SOP: **02_SOP_PROPERTYTREE_INSPECTION_SCHEDULING_CONFIRMATION_V2.md**
 - Email includes: maintenance items noted (room, title, description, photos) and a request for the owner to respond regarding any maintenance
 - Tenant action list with deadlines where needed
 
-SOP: **02_SOP_INSPECTION_EXPRESS_REPORT_PUBLISH_ACTIONS_TO_TAPI_V2.md**
+SOP: [Inspection Express Report & Actions](../sops/inspection-express.md)
 
 ---
 
@@ -88,8 +88,8 @@ This is a critical daily workflow for the VA/PM Assistant:
 
 > **Key principle:** Every maintenance item listed in an inspection report must be sent to the owner for approval (or actioned directly if already approved). Do not let items sit in Tapi without action.
 
-SOP: **02_SOP_INSPECTION_EXPRESS_REPORT_PUBLISH_ACTIONS_TO_TAPI_V2.md**  
-SOP: **02_SOP_TAPI_INTAKE_TRIAGE_APPROVALS_WORKORDERS_V2.md**
+SOP: [Inspection Express Report & Actions](../sops/inspection-express.md)  
+SOP: [Tapi Intake, Triage, Approvals & Work Orders](../sops/tapi-intake.md)
 
 ---
 
@@ -98,4 +98,4 @@ SOP: **02_SOP_TAPI_INTAKE_TRIAGE_APPROVALS_WORKORDERS_V2.md**
 - Careless damage / multiple issues → follow-up inspection; consider formal escalation
 - Repeat issues → escalation ladder per Notices playbook
 
-Playbook: **01_PLAYBOOK_NOTICES_AND_COMMS_V2.md**
+Playbook: [Notices & Communications](notices-comms.md)

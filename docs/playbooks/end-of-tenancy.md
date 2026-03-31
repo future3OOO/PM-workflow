@@ -36,7 +36,7 @@ Send vacate pack with:
 - final inspection process
 - bond process outline
 
-Template: **03_TEMPLATES_NOTICES_EMAILS_V2.md**
+Template: [Notices & Emails Templates](../templates/notices-emails.md)
 
 ---
 

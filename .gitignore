@@ -11,5 +11,8 @@ _video_analysis/artefacts/
 # Video analysis working directory (converted MP4s, intermediate files)
 _video_analysis/videos/
 
+# MkDocs build output
+site/
+
 # Cursor IDE
 .cursor/
