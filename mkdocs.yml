@@ -6,6 +6,7 @@ site_description: >-
 
 repo_name: future3OOO/PM-workflow
 repo_url: https://github.com/future3OOO/PM-workflow
+edit_uri: edit/main/docs/
 
 copyright: "&copy; Property Partner (Strathmore Property Limited)"
 
@@ -15,6 +16,7 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
+    - navigation.expand
     - navigation.indexes
     - navigation.footer
     - navigation.top
@@ -27,7 +29,9 @@ theme:
     - search.share
     - toc.follow
     - content.tooltips
-    - header.autohide
+    - content.code.copy
+    - content.tabs.link
+    - content.action.edit
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default

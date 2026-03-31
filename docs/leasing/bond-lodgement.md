@@ -8,6 +8,8 @@
 ## Purpose / Outcome
 Bond is collected into trust first, then lodged with Tenancy Services via TPS workflow, with confirmation filed into Property Tree.
 
+Part of: [Leasing Lifecycle](leasing-lifecycle.md) → Stage 6 (bond)
+
 ## Steps
 1) Receive bond into trust account and record internally
 2) Initiate bond lodgement via TPS (Tenancy Services integration)

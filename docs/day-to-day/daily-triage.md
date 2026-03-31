@@ -16,7 +16,7 @@ See: [Tapi Intake & Triage SOP](../maintenance/tapi-intake.md) | [Maintenance Li
 
 ## 2) Inspection follow-up (Inspection Express → Tapi)
 
-See: [Inspection Lifecycle](../inspections/inspection-lifecycle.md) | [Inspection Express SOP](../inspections/inspection-express.md)
+See: [Inspection Lifecycle](../inspections/inspection-lifecycle.md) | [Inspection Express SOP](../inspections/inspection-express.md) | [Maintenance Lifecycle](../maintenance/maintenance-lifecycle.md) | [Tapi Intake SOP](../maintenance/tapi-intake.md)
 - [ ] Check Inspection Express for newly finalised inspections
 - [ ] Review each finalised report PDF for maintenance items
 - [ ] Confirm all maintenance items have synced into Tapi

@@ -51,6 +51,8 @@ After each routine inspection is completed, the PM finalises the report in Inspe
    - Description populated from the PM's notes
 4) If any maintenance item from the report is **missing** in Tapi, notify the PM — the sync may have failed or the item was not created during the inspection
 
+See also: [Maintenance Lifecycle](../maintenance/maintenance-lifecycle.md) for the full maintenance workflow after sync.
+
 ---
 
 ## Step 4 — Assess and prepare each Tapi job
@@ -73,7 +75,7 @@ For each inspection-created job in Tapi:
   7) Click **Merge** — the job will combine descriptions, photos, and context from both originals
   8) Refresh the page to see the merged job with updated Activity log
 
-!!! note
+!!! note "Merge Audit Trail"
     The merged job's Activity section will show "McKenzie Lawrence merged the following job: [Job Title]" for audit trail.
 
 ### 4c) Determine the correct Tapi action
@@ -135,7 +137,7 @@ When the owner has approved (either via Tapi approval button, Tapi message, or e
 1) Open the job in Tapi and click **Send work order**
 2) **Select contractor** — search by name or trade (see Contractor Key for preferred suppliers per trade)
 3) Fill in the **Send work order** panel:
-   - **Insurance / compliance**: Usually not required (untick unless specific trade requires it)
+   - **Insurance / compliance**: Required for electrical, plumbing, and gas work; untick for general handyman jobs
    - **Require contractor to contact tenants**: Tick this in most cases — contractor arranges access time
    - **Cost limit**: Set if applicable (inc. GST)
    - **Message to supplier**: Brief instruction, e.g., "Please replace 1x oyster light in the living room"

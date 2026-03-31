@@ -5,6 +5,8 @@
 
 ---
 
+Part of: [Leasing Lifecycle](leasing-lifecycle.md) → Stage 6
+
 ## New tenancy agreement
 
 1) Generate agreement in TPS (tenancy type, dates, rent, parties)

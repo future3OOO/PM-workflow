@@ -34,6 +34,8 @@ Fixed term end approaching or annual rent review cycle.
 - maintain a “next 120 days” list (VA/PM)
 - schedule outreach and follow-ups
 
+See: [Weekly Operations](../day-to-day/weekly-operations.md) for the weekly pipeline review process.
+
 ---
 
 ## Stage 2 — Rent evidence (Valua) when needed
@@ -49,6 +51,8 @@ SOP: [Valua — Rent Research](valua-rent-research.md)
 - capture decision in writing
 - if rent change: confirm timing and notice requirements before serving
 
+See: [Notices & Communications](../day-to-day/notices-comms.md) for notice requirements.
+
 ---
 
 ## Stage 4 — Tenant comms and execution
@@ -61,6 +65,8 @@ SOP: [Valua — Rent Research](valua-rent-research.md)
 - use TPS renewals/extensions tool where applicable
 - file signed docs to Property Tree
 - update Property Tree dates/rent to match
+
+SOP: [Agreements & Signing (TPS)](../leasing/tps-agreements-signing.md) — use the TPS renewals/extensions tool.
 
 ---
 

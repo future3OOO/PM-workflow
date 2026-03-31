@@ -8,6 +8,8 @@
 ## Purpose / Outcome
 Create a tenancy record in Property Tree that matches the signed TPS agreement exactly and stores key documents in the property file.
 
+Part of: [Leasing Lifecycle](leasing-lifecycle.md) → Stage 7
+
 ## Trigger
 TPS tenancy agreement signed; bond workflow initiated.
 

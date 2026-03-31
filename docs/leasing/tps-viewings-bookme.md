@@ -9,6 +9,8 @@
 Viewings are created, bookings managed, and tenant-in-place access is coordinated smoothly.
 
 ## Steps
+Part of: [Leasing Lifecycle](leasing-lifecycle.md) → Stage 4
+
 1) Create viewing sessions (2–4/week initially) and include attendee instructions
 2) Tenant-in-place: confirm access windows and record confirmation in writing
 3) Confirm automated confirmations/reminders are enabled

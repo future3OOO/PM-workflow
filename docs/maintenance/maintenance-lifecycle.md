@@ -26,7 +26,7 @@ Handle maintenance quickly and consistently with clean approvals, multi-party co
 
 ## The Tapi Dashboard — Daily Operating View
 
-The Jobs dashboard is the VA's primary workspace. Tabs across the top: **Open | Paused | Closed | All**.
+The Jobs dashboard is the VA's primary workspace. Tabs across the top: **Open | Paused | Closed | All | Planned**.
 
 ### Status pipeline (left-to-right progression)
 Open jobs → Awaiting quotes → Awaiting approval → Scheduling job → Awaiting repair → Awaiting invoice → Awaiting confirmation
@@ -44,7 +44,7 @@ Accessed by clicking a property name. Tabs: **Jobs | Invoices | Assets | Service
 - Refresh the dashboard at the start of every shift
 - Walk each status bucket: check for stuck jobs, overdue follow-ups, new intake
 
-!!! info
+!!! info "Normal Volume"
     ~200 open jobs is normal — many are recommended (not required) inspection items that owners never respond to.
 
 ---
@@ -69,6 +69,8 @@ Accessed by clicking a property name. Tabs: **Jobs | Invoices | Assets | Service
 
 ### 1d. Landlord email or phone call
 - VA creates job in Tapi manually, sets appropriate source
+
+> For click-by-click Tapi instructions, see [Intake, Triage & Work Orders](tapi-intake.md).
 
 ---
 
@@ -98,6 +100,8 @@ Accessed by clicking a property name. Tabs: **Jobs | Invoices | Assets | Service
 ### Routine
 Proceed to Stage 3 (approvals).
 
+> For the full triage decision framework, see [Intake, Triage & Work Orders](tapi-intake.md).
+
 ### Trade categories in Tapi
 Building works · Carpentry · Cleaning · Drapery · Electrical · Exterior · Fencing · Fire protection · General · Grounds · HVAC · Insulation · Joinery · Locksmith · Painting · Pest control · Plumbing · Property management · Rangehood · Roofing · Security · Ventilation · Waterproofing
 
@@ -114,6 +118,8 @@ Every job in Tapi presents five action buttons. Selecting the right one is the c
 | 3 | **Ask owner for approval** | Default for routine items; sends via Tapi with personalised message |
 | 4 | **Send to owner for DIY** | Owner arranges their own contractor/friend |
 | 5 | **Plan for later** | Non-urgent, deferred |
+
+> For detailed step-by-step for each action, see [Intake, Triage & Work Orders](tapi-intake.md).
 
 ### 3a. Ask owner for approval (standard approval flow)
 
@@ -138,7 +144,7 @@ Three-dot menu options on an approval: **Approve | Decline | Resend email**.
 
 **Follow-up cadence:**
 - Day 0 — approval sent
-- Day 3 — follow-up via Tapi message thread
+- Day 3 (business days) — follow-up via Tapi message thread
 - Day 7 — escalate to PM
 
 Monitor the **Awaiting approval** bucket daily.
@@ -167,7 +173,7 @@ When an owner declines or ignores an item:
 3. Assign notes to the appropriate agent
 4. Close via **More options → Close job**
 
-### Merging related jobs
+### 3e. Merging related jobs
 If multiple inspection items at the same property require the same trade:
 - Merge them in Tapi (More options → Merge job) before requesting approval or sending a work order
 - Update the merged job title to reflect the combined scope
@@ -218,7 +224,7 @@ Some jobs need sequential trades (e.g. plumber installs water pump → electrici
 - Contractor may call back reporting a larger issue than originally scoped
 - Take notes during the call
 - Update the owner via email (can use Shortwave AI to draft a professional message)
-!!! warning
+!!! warning "Scope Changes"
     Keep owners informed when scope expands so they don't receive an unexpected large invoice.
 
 ### Communication channels
@@ -261,7 +267,7 @@ Clicking **Approve** triggers four automatic effects:
 3. Owner notification email is **sent** (with the personalised message added above)
 4. Invoice **syncs to Property Tree** (Ownership → Financials)
 
-The invoice amount is deducted from the owner's available rent balance in the Monday payment run (see Invoice SOP § 10 for holdback mechanics).
+The invoice amount is deducted from the owner's available rent balance in the Monday payment run (see [Invoice Processing & Property Tree Sync](tapi-invoices.md) for holdback mechanics).
 
 ---
 

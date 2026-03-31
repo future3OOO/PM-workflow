@@ -81,5 +81,9 @@ SOP: [Agreements & Signing (TPS)](tps-agreements-signing.md)
 Start: [Tenancy Setup](tenancy-setup.md)
 
 !!! info "What's Next"
-    - [Viewings & BookMe (TPS)](tps-viewings-bookme.md) — create and manage viewing sessions
-    - [Application Processing (TPS)](tps-application-processing.md) — process applications and run checks
+    - [Viewings & BookMe](tps-viewings-bookme.md) — create and manage viewing sessions
+    - [Application Processing](tps-application-processing.md) — process applications and run checks
+    - [Agreements & Signing](tps-agreements-signing.md) — generate and sign the tenancy agreement
+    - [Bond Lodgement](bond-lodgement.md) — collect bond and lodge with Tenancy Services
+    - [Tenancy Setup](tenancy-setup.md) — complete the full tenancy setup
+    - [Tenant Onboarding](tenant-onboarding.md) — welcome pack and ingoing inspection

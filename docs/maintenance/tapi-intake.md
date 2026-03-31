@@ -179,7 +179,7 @@ Before sending an owner approval request in Tapi:
 | Day | Action |
 |---|---|
 | Day 0 | Approval request sent |
-| Day 3 | Send follow-up message via the Tapi job thread |
+| Day 3 (business days) | Send follow-up message via the Tapi job thread |
 | Day 7 | Escalate to PM for a phone call or direct email |
 | Daily | Monitor the **Awaiting approval** bucket in Tapi |
 
@@ -349,7 +349,7 @@ When a contractor calls back during a job reporting expanded scope or additional
 
 1. Check Gmail for overnight Tapi notifications (concierge requests, owner replies, contractor updates)
 2. Review the **Open jobs** bucket — triage and action new jobs
-3. Review **Awaiting approval** — send Day 3 / Day 7 follow-ups as needed
+3. Review **Awaiting approval** — send Day 3 (business days) / Day 7 follow-ups as needed
 4. Review **Scheduling job** — chase contractors who haven't accepted after 2 days
 5. Review **Awaiting repair** — check for overdue jobs
 6. Review **Awaiting invoice** — nudge contractors for outstanding invoices

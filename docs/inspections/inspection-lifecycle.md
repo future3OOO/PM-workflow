@@ -40,6 +40,8 @@ SOP: [Scheduling & Confirmation (Property Tree)](pt-scheduling.md)
 - PM creates maintenance items in Inspection Express during the inspection where relevant
 - PM should describe each item clearly: what the issue is, what trade is needed, and any urgency context
 
+SOP: [Reports & Actions (Inspection Express)](inspection-express.md)
+
 ---
 
 ## Stage 3 — Publish report and distribution

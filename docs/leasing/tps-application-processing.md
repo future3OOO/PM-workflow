@@ -8,6 +8,8 @@
 ## Purpose / Outcome
 Applications are processed consistently with a documented decision trail and appropriate use of checks.
 
+Part of: [Leasing Lifecycle](leasing-lifecycle.md) → Stage 5
+
 ## Rules
 
 !!! warning "Background checks — privacy rule"

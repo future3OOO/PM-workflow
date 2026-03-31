@@ -17,3 +17,9 @@ Vendor integrations:
   https://www.tapihq.com/en-nz/integrations
 
 Always verify the latest Tenancy Services guidance before issuing formal notices.
+
+---
+
+!!! info "What's Next"
+    - [Standards & SLAs](../getting-started/standards-slas.md) — response times and compliance rules
+    - [Contributing Guide](contributing.md) — how to update this documentation

@@ -46,11 +46,15 @@ Template: [Notice & Email Templates](../day-to-day/notice-email-templates.md)
 - document tenant damage vs fair wear/tear
 - publish and file report
 
+SOP: [Inspection Lifecycle](../inspections/inspection-lifecycle.md) · [Inspection Express](../inspections/inspection-express.md)
+
 ---
 
 ## Stage 4 — Bond processing
 - lodge bond refund/transfer form or Bond Hub process as used
 - file outcomes into Property Tree
+
+SOP: [Bond Lodgement](../leasing/bond-lodgement.md)
 
 ---
 
