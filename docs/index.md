@@ -109,4 +109,5 @@ Everything your team needs — organised by what you're doing and which system y
 
 </div>
 
-*V2.3 — Last updated 2026-03-31 — Property Partner (Strathmore Property Limited)*
+**Version:** V2.3  
+**Last updated:** 2026-03-31

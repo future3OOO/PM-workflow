@@ -1,6 +1,7 @@
 # Sources & References
 
-*V2 — Updated 2026-02-24*
+**Version:** V2.0  
+**Last updated:** 2026-02-24
 
 This workflow aligns key operational rules with Tenancy Services guidance and vendor integration statements:
 

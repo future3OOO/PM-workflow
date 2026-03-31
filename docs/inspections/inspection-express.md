@@ -1,6 +1,7 @@
 # Reports & Actions (Inspection Express)
 
-*V2.1 — Last updated 2026-03-31*
+**Version:** V2.1  
+**Last updated:** 2026-03-31
 
 ---
 
@@ -174,8 +175,8 @@ The Tapi Jobs page shows status buckets across the top:
 - **Awaiting approval** — sent to owner, waiting for response
 - **Scheduling job** — work order sent, contractor scheduling
 - **Awaiting repair** — contractor engaged, work in progress
-- **Awaiting confirmation** — work complete, awaiting verification
 - **Awaiting invoice** — job done, waiting for contractor invoice
+- **Awaiting confirmation** — work complete, awaiting verification
 
 ---
 

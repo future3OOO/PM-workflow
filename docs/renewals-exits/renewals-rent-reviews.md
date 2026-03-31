@@ -1,6 +1,7 @@
 # Renewals & Rent Reviews
 
-*V2.1 — Last updated 2026-03-31*
+**Version:** V2.1  
+**Last updated:** 2026-03-31
 
 ---
 

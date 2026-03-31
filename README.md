@@ -44,7 +44,7 @@ The complete operational documentation library for NZ residential property manag
 
 All documentation lives in the `docs/` directory, organised into subdirectories matching the site tabs:
 
-```
+```text
 docs/
 ├── index.md                     # Homepage
 ├── getting-started/             # Systems overview, standards

@@ -1,6 +1,7 @@
 # Invoice Processing & Property Tree Sync
 
-*V2.2 — Last updated 2026-03-31*
+**Version:** V2.2  
+**Last updated:** 2026-03-31
 
 ---
 

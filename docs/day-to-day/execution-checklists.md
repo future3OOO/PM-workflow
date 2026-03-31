@@ -1,6 +1,7 @@
 # Execution Checklists
 
-*V2.1 — Updated 2026-03-07*
+**Version:** V2.1  
+**Last updated:** 2026-03-07
 
 ---
 

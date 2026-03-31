@@ -1,6 +1,7 @@
 # Leasing Lifecycle
 
-*V2 — Last updated 2026-02-24*
+**Version:** V2.0  
+**Last updated:** 2026-02-24
 
 ---
 

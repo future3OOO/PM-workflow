@@ -46,7 +46,8 @@ Use **kebab-case** filenames (lowercase, hyphens, no spaces or underscores).
 ```markdown
 # Clear Descriptive Title
 
-*V2.x — Last updated YYYY-MM-DD*
+**Version:** V2.x  
+**Last updated:** YYYY-MM-DD
 ```
 
 No "PLAYBOOK --", "SOP --", or other prefixes. The navigation tells users where they are.

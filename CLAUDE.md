@@ -71,17 +71,17 @@ Changes to one document usually require updates to others. This map shows the de
 - **`getting-started/systems-map.md`** — if a system's capabilities change, every doc that references that system needs checking
 - **`getting-started/standards-slas.md`** — if policies/SLAs change, all workflow docs must align
 
-### Tier 2 — Playbooks drive SOPs and templates
-- **Playbooks (01_)** define the lifecycle and decision logic
-- When a Playbook changes, check:
-  - The corresponding SOP(s) for click-level accuracy
-  - Templates for email wording alignment
-  - QA checklists for daily/weekly coverage
+### Tier 2 — Lifecycle pages drive step-level guides and templates
+- **Lifecycle pages** (e.g. `maintenance/maintenance-lifecycle.md`, `leasing/leasing-lifecycle.md`) define the end-to-end workflow and decision logic
+- When a lifecycle page changes, check:
+  - The corresponding step-level guides (e.g. `maintenance/tapi-intake.md`, `maintenance/tapi-invoices.md`) for click-level accuracy
+  - Templates (`day-to-day/notice-email-templates.md`) for email wording alignment
+  - Triage/operations checklists (`day-to-day/daily-triage.md`, `day-to-day/weekly-operations.md`) for daily/weekly coverage
 
-### Tier 3 — SOPs drive templates and checklists
-- When an SOP adds a new workflow step, check:
-  - Templates for any new comms needed
-  - QA checklists for monitoring coverage
+### Tier 3 — Step-level guides drive templates and checklists
+- When a step-level guide adds a new workflow step, check:
+  - Templates (`day-to-day/notice-email-templates.md`) for any new comms needed
+  - Triage/operations checklists (`day-to-day/daily-triage.md`, `day-to-day/weekly-operations.md`) for monitoring coverage
 
 ### Maintenance-specific dependency chain
 
@@ -103,12 +103,12 @@ After any update, verify these are aligned:
 
 | Check | Files involved |
 |---|---|
-| Priority levels (Emergency/Urgent/Routine/Planned) | Playbook, SOP Intake (badge table), Standards |
-| Tapi pipeline buckets (7 stages) | Playbook, SOP Intake, QA Daily Checklist |
-| Invoice Approve effects (4 auto-effects) | Playbook (Stage 6), SOP Invoices (Section 8) |
-| Triage cost thresholds | Playbook, SOP Intake, Standards |
-| Invoice email address | SOP Invoices, Templates, Systems Map, Playbook |
-| File references / filenames | Master Index, README.md, Healthy Homes Playbook (cross-ref) |
+| Priority levels (Emergency/Urgent/Routine/Planned) | `maintenance/maintenance-lifecycle.md`, `maintenance/tapi-intake.md` (badge table), `getting-started/standards-slas.md` |
+| Tapi pipeline buckets (7 stages) | `maintenance/maintenance-lifecycle.md`, `maintenance/tapi-intake.md`, `day-to-day/daily-triage.md` |
+| Invoice Approve effects (4 auto-effects) | `maintenance/maintenance-lifecycle.md` (Stage 6), `maintenance/tapi-invoices.md` (Section 8) |
+| Triage cost thresholds | `maintenance/maintenance-lifecycle.md`, `maintenance/tapi-intake.md`, `getting-started/standards-slas.md` |
+| Invoice email address | `maintenance/tapi-invoices.md`, `day-to-day/notice-email-templates.md`, `getting-started/systems-map.md`, `maintenance/maintenance-lifecycle.md` |
+| File references / filenames | README.md, `onboarding/compliance-healthy-homes.md` (cross-ref) |
 | Version + Last updated date | Every file that was changed |
 
 ---
@@ -124,7 +124,6 @@ After any update, verify these are aligned:
 5. **Write instructions, not narration.** Say "Click Approve to trigger auto-close" not "The PM then clicks Approve."
 6. **Bump version + date** on every file you change: `**Version:** V2.X` and `**Last updated:** YYYY-MM-DD`.
 7. **Update README.md** if any file description or filename changed.
-8. **Update Master Index** if the high-level summary for a workflow area changed.
 
 ### When integrating new training videos
 
@@ -140,8 +139,8 @@ Key points:
 1. Follow the naming convention: kebab-case `.md` in the correct `docs/` subdirectory
 2. Add it to the file index in `README.md`
 3. Add a `nav:` entry in `mkdocs.yml`
-4. Cross-reference it from related playbooks/SOPs
-5. Add monitoring items to the appropriate QA checklist if the new doc introduces daily/weekly checks
+4. Cross-reference it from related lifecycle pages and step-level guides
+5. Add monitoring items to `day-to-day/daily-triage.md` or `day-to-day/weekly-operations.md` if the new doc introduces daily/weekly checks
 
 ---
 
@@ -162,7 +161,7 @@ rg "tarpy\.co\.nz" docs/ README.md
 # 4. Version dates are consistent across changed files
 rg "Last updated" docs/
 
-# 5. Filenames in Master Index match actual files
+# 5. Filenames in README match actual files
 Get-ChildItem docs/ -Recurse -Filter *.md -Name
 
 # 6. No generated artefacts staged
@@ -204,6 +203,6 @@ Tapi → approve → auto-close job + sync to Property Tree → rent holdback fr
 - Never commit video files, audio files, extracted frames, or transcript files
 - Never use "Tarpy", "Tappy", or "tarpy.co.nz" in any documentation
 - Never create parallel/duplicate sections when content already exists
-- Never change a Playbook without checking the dependent SOPs, Templates, and QA Checklists
-- Never add a new daily/weekly check to the QA checklists without ensuring the pipeline buckets match the Playbook
+- Never change a lifecycle page without checking the dependent step-level guides, templates, and triage/operations checklists
+- Never add a new daily/weekly check to `day-to-day/daily-triage.md` or `day-to-day/weekly-operations.md` without ensuring the pipeline buckets match the lifecycle page
 - Never hardcode absolute file paths in Python scripts (use relative paths from script location)
