@@ -59,7 +59,7 @@ Accessed by clicking a property name. Tabs: **Jobs | Invoices | Assets | Service
 - PM creates maintenance items in Inspection Express during the routine inspection
 - Items auto-sync into Tapi (tagged "Reported via inspection")
 - VA reviews daily in Tapi, cross-referencing against the published inspection report PDF
-- See **02_SOP_INSPECTION_EXPRESS_REPORT_PUBLISH_ACTIONS_TO_TAPI_V2.md** for full daily review process
+- See [Inspection Express Report & Actions](../sops/inspection-express.md) for full daily review process
 
 ### 1c. Owner request
 - PM or owner creates job directly in Tapi via the New Job form
@@ -274,6 +274,6 @@ The invoice amount is deducted from the owner's available rent balance in the Mo
 
 ## SOP References
 
-- **02_SOP_INSPECTION_EXPRESS_REPORT_PUBLISH_ACTIONS_TO_TAPI_V2.md** — Inspection report publish, daily review, action sync
-- **02_SOP_TAPI_INTAKE_TRIAGE_APPROVALS_WORKORDERS_V2.md** — Click-by-click for intake, triage, approvals, work orders, quotes, DIY
-- **02_SOP_TAPI_INVOICES_OWNER_TENANT_DIY_SYNC_TO_PROPERTYTREE_V2.md** — Invoice matching, coding, approval, Property Tree sync
+- [Inspection Express Report & Actions](../sops/inspection-express.md) — Inspection report publish, daily review, action sync
+- [Tapi Intake, Triage, Approvals & Work Orders](../sops/tapi-intake.md) — Click-by-click for intake, triage, approvals, work orders, quotes, DIY
+- [Tapi Invoices & Property Tree Sync](../sops/tapi-invoices.md) — Invoice matching, coding, approval, Property Tree sync

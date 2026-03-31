@@ -37,4 +37,4 @@ Use the correct notice and service method, preserve evidence, and keep communica
 
 ## Templates used
 All templates live in:
-- **03_TEMPLATES_NOTICES_EMAILS_V2.md**
+- [Notices & Emails Templates](../templates/notices-emails.md)

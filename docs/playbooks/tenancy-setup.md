@@ -31,7 +31,7 @@ Tenant approved in TPS and proceeds with tenancy setup.
 - Send for signing and track completion
 - Export signed agreement PDF
 
-SOP: **02_SOP_TPS_AGREEMENT_GENERATION_SIGNING_RENEWALS_V2.md**
+SOP: [TPS Agreements & Signing](../sops/tps-agreements-signing.md)
 
 ---
 
@@ -47,7 +47,7 @@ SOP: **02_SOP_TPS_AGREEMENT_GENERATION_SIGNING_RENEWALS_V2.md**
 - Track until confirmation received
 - File confirmation into Property Tree docs
 
-SOP: **02_SOP_TENANCY_SERVICES_BOND_LODGEMENT_VIA_TPS_V2.md**
+SOP: [Tenancy Services Bond Lodgement](../sops/tenancy-services-bond.md)
 
 ---
 
@@ -56,7 +56,7 @@ SOP: **02_SOP_TENANCY_SERVICES_BOND_LODGEMENT_VIA_TPS_V2.md**
 - Upload agreement and bond confirmation to Property Tree docs
 - Ensure landlord portal visibility is appropriate (docs are the owner-facing file)
 
-SOP: **02_SOP_PROPERTYTREE_CREATE_TENANCY_DATES_V2.md**
+SOP: [PropertyTree Create Tenancy & Dates](../sops/propertytree-create-tenancy-dates.md)
 
 ---
 
@@ -64,4 +64,4 @@ SOP: **02_SOP_PROPERTYTREE_CREATE_TENANCY_DATES_V2.md**
 - Send welcome pack
 - Schedule ingoing inspection in Property Tree (syncs to Inspection Express)
 
-Playbook: **01_PLAYBOOK_TENANT_ONBOARDING_V2.md**
+Playbook: [Tenant Onboarding](tenant-onboarding.md)
