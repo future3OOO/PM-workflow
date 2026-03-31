@@ -1,7 +1,7 @@
 # Compliance & Healthy Homes
 
-**Version:** V2.3  
-**Last updated:** 2026-03-31
+**Version:** V2.4  
+**Last updated:** 2026-04-01
 
 ---
 
@@ -23,16 +23,25 @@ Ensure the property is compliant *before tenancy start* (where required) and rem
 ---
 
 ## Stage 1 — Gather evidence and determine gaps
-Collect what exists:
-- Healthy Homes assessment/report (if any)
+
+### Assessment providers
+
+- **Healthy Homes assessment**: HomelyHomes (or similar contractor) conducts the on-site assessment and produces a detailed report covering heating, insulation, ventilation, moisture/drainage, and draught stopping
+- **Smoke alarm testing**: SETS (Smoke Alarm Testing Services) manages smoke alarm installation, testing, and certification. Check the SETS portal (`sets.co.nz`) under **My Properties** for service dates and expiry dates.
+
+!!! info "Compliance deadline"
+    All rental properties must be Healthy Homes compliant since **1 July 2025**. Any new tenancy or renewal requires a current compliance statement.
+
+### Collect what exists:
+- Healthy Homes assessment/report (from HomelyHomes or equivalent)
 - Insulation details and evidence
 - Heating specs and evidence
 - Ventilation/extractor evidence
 - Moisture ingress/drainage notes and remediation history
 - Draught stopping notes (where relevant)
-- Smoke alarm info (not a Healthy Homes standard but operationally tracked)
+- Smoke alarm info — check SETS portal for last service date and expiry dates (not technically a Healthy Homes standard but operationally tracked alongside it, required since 2016)
 
-Document gaps:
+### Document gaps:
 - "Missing evidence" vs "Non-compliant / needs work"
 
 Store in Property Tree: **03 Compliance**
@@ -62,6 +71,7 @@ Playbook: [Maintenance Lifecycle](../maintenance/maintenance-lifecycle.md)
 ## Stage 4 — Ongoing tracking
 - After each compliance job, file completion evidence (invoice + photos + certificate/report) in Property Tree.
 - Monthly/quarterly audit: sample properties to ensure compliance evidence exists and TPS compliance fields are accurate.
+- At each **renewal**: update the smoke alarm last-check date in TPS from the SETS website or the last routine inspection date. Verify smoke alarm expiry dates are still current.
 
 QA: [Monthly Compliance Audit](../day-to-day/monthly-compliance.md)
 

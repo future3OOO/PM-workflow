@@ -1,7 +1,7 @@
 # Standards & SLAs
 
-**Version:** V2.3  
-**Last updated:** 2026-03-31
+**Version:** V2.4  
+**Last updated:** 2026-04-01
 
 ---
 
@@ -137,6 +137,46 @@ See: [Inspection Lifecycle](../inspections/inspection-lifecycle.md) · [PT Sched
 - Repeat issues → escalate (written warning → formal notice where appropriate)
 
 File evidence (photos/report) into Property Tree.
+
+---
+
+## Damage liability framework
+
+When damage is found at an inspection, determining who pays for repairs depends on whether the damage is **accidental** (tenant liability) or **careless** (landlord liability).
+
+### The anticipation test
+
+The key distinction is **foreseeability during normal use**:
+
+| Classification | Test | Who pays |
+|---|---|---|
+| **Accidental damage** | The damage could reasonably be anticipated during normal use of the property | **Tenant** pays |
+| **Careless damage** | The damage could **not** reasonably be anticipated — it resulted from a foreseeable risk the tenant should have avoided | **Landlord** pays |
+
+!!! tip "Grey area resolution"
+    Many situations are genuinely ambiguous. When liability is unclear:
+    
+    1. Document the damage with photos and notes in the inspection report
+    2. Gather context: how did it happen, has this happened before, is the damage location/activity normal use?
+    3. Get a quote from the relevant trade before committing to a repair (the cost may influence the owner's decision)
+    4. Present the situation to the owner with the facts and your assessment
+    5. Document the owner's decision in Property Tree and Tapi
+
+??? info "Example: stone hitting a window during lawn mowing (expand)"
+    A tenant reported that a stone flicked up and hit a window while mowing the lawn. This is a grey area because:
+    
+    - **Argument for tenant liability (accidental)**: mowing near gravel or stones creates a foreseeable risk of projectile damage
+    - **Argument for landlord liability (careless)**: no stones were present near the grass areas (only in the driveway), the tenant had mowed the lawns for 4–5 years without incident, and mowing is a normal expected activity
+    
+    In this case, the owner agreed to cover the cost (it fell below their insurance excess), but the PM noted that many owners would push back. The key factors were: no stone hazard near the lawn, long history of safe mowing, and the tenant's financial constraints.
+
+### Factors to consider
+
+- **Location of hazard**: were the conditions that caused the damage present in the area of normal use?
+- **Tenant history**: how long has the tenant been there, any prior incidents?
+- **Reasonableness of activity**: was the tenant doing something expected (mowing, cleaning, cooking)?
+- **Insurance excess**: the owner's insurance excess may influence their willingness to cover costs
+- **Tenant financial hardship**: may affect negotiation approach but doesn't change legal liability
 
 ---
 
