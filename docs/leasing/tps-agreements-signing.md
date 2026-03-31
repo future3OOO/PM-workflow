@@ -7,14 +7,15 @@
 
 ## New tenancy agreement
 
-!!! warning "Compliance check"
-    Confirm the TPS compliance section is correct before generating the agreement — incorrect compliance fields produce incorrect tenancy agreements and compliance statements.
-
 1) Generate agreement in TPS (tenancy type, dates, rent, parties)
-2) Send for digital signing via tenant portal
-3) Export signed agreement PDF
-4) Upload to Property Tree docs (02 Tenancy Agreements)
-5) Store compliance evidence in Property Tree (03 Compliance)
+2) Confirm compliance section is correct (agreement readiness)
+3) Send for digital signing via tenant portal
+4) Export signed agreement PDF
+5) Upload to Property Tree docs (02 Tenancy Agreements)
+6) Store compliance evidence in Property Tree (03 Compliance)
+
+!!! warning "Compliance check"
+    Step 2 is critical — incorrect compliance fields produce incorrect tenancy agreements and compliance statements. Always verify before sending for signing.
 
 ## Renewals/extensions
 1) Confirm owner decision in writing

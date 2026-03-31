@@ -10,12 +10,13 @@ Viewings are created, bookings managed, and tenant-in-place access is coordinate
 
 ## Steps
 1) Create viewing sessions (2–4/week initially) and include attendee instructions
-2) Confirm automated confirmations/reminders are enabled
-3) After each viewing, ensure TPS application prompts are functioning; follow up if needed
-4) When viewings change, update BookMe and notify all affected parties
+2) Tenant-in-place: confirm access windows and record confirmation in writing
+3) Confirm automated confirmations/reminders are enabled
+4) After each viewing, ensure TPS application prompts are functioning; follow up if needed
+5) When viewings change, update BookMe and notify all affected parties
 
 !!! warning "Tenant-in-place access"
-    Confirm access windows with existing tenants and record confirmation in writing before scheduling viewings.
+    Step 2 is critical — never schedule viewings at an occupied property without written confirmation of access windows from the existing tenant.
 
 !!! tip "Demand-based scheduling"
     Start with 2–4 sessions per week and adjust frequency based on enquiry volume.
