@@ -15,6 +15,15 @@ The current analysis method has two mandatory evidence streams:
 
 Do **not** rely on transcript-only analysis when the video is demonstrating a software workflow. The transcript tells you what was said; the frames tell you what was actually on screen.
 
+There are also two mandatory synthesis outputs for every batch:
+
+1. **Per-video analysis reports**
+   - one analysis artefact per video, even if a later batch summary also exists
+   - preserves low-level details that are easy to lose in grouped write-ups
+2. **Doc coverage matrix**
+   - a batch-level table showing which docs were checked, what changed, what was intentionally left unchanged, and any residual gaps
+   - the batch is **not complete** until this matrix exists
+
 ---
 
 ## Repository Structure
@@ -85,16 +94,19 @@ py -3 -c "import whisper; print(whisper.__version__)"
  5. Draft analysis report per video
           │
           ▼
- 6. Read affected docs/ pages for baseline context
+ 6. Draft batch synthesis + doc coverage matrix
           │
           ▼
- 7. Integrate findings into the documentation
+ 7. Read affected docs/ pages for baseline context
           │
           ▼
- 8. Verify cross-document consistency
+ 8. Integrate findings into the documentation
           │
           ▼
- 9. Commit documentation/script changes only
+ 9. Verify cross-document consistency against the coverage matrix
+          │
+          ▼
+10. Commit documentation/script changes only
 ```
 
 ---
@@ -269,8 +281,10 @@ _video_analysis/artefacts/YYYY-MM-DD/analysis/
 Example:
 
 ```text
-_video_analysis/artefacts/2026-04-01/analysis/video15_16_bookme_analysis.md
+_video_analysis/artefacts/2026-04-01/analysis/video15_analysis.md
 ```
+
+If a grouped topic summary is useful, create it **in addition to** the per-video reports, not instead of them.
 
 ### Recommended report structure
 
@@ -304,6 +318,45 @@ The report should be specific enough that someone could update the docs **withou
 - frame evidence
 - workflow interpretation
 - documentation gaps
+
+### Per-video requirement
+
+Even when several videos cover the same topic, still produce a separate analysis report for each video ID first. Batch summaries are useful for synthesis, but the per-video report is the canonical evidence-preservation artefact.
+
+---
+
+## Step 6b — Create the Batch Coverage Matrix
+
+Before editing is considered complete, create a batch-level **doc coverage matrix** in the dated analysis folder.
+
+Recommended filename:
+
+```text
+_video_analysis/artefacts/YYYY-MM-DD/analysis/doc_coverage_matrix.md
+```
+
+### Required columns
+
+| Column | Purpose |
+|---|---|
+| **Video ID** | Which source video produced the finding |
+| **Finding / workflow** | The operational detail, UI fact, or rule identified |
+| **Evidence source** | Transcript, frames, or both |
+| **Target docs reviewed** | Which `docs/` pages were checked |
+| **Action taken** | Updated / already covered / intentionally not documented |
+| **Result** | File(s) changed or reason no change was needed |
+| **Residual risk / follow-up** | Anything still uncertain or deferred |
+
+### Closing rule
+
+Do **not** close a batch, commit the batch as complete, or state that integration is finished until:
+
+1. every video has a per-video analysis report
+2. the doc coverage matrix exists
+3. every material finding is mapped to:
+   - a doc update, or
+   - an explicit “already covered” judgment, or
+   - an explicit “not suitable for docs” judgment with reason
 
 ---
 
@@ -344,6 +397,7 @@ Update the relevant documentation pages using the analysis report as the synthes
 5. **Use transcript quotes sparingly** and only when the PM's wording adds important context.
 6. **Update all dependent docs** if a lifecycle, SOP, template, or checklist is affected.
 7. **Bump version and date** on every changed documentation file.
+8. **Update the coverage matrix** as you go so every material finding has a documented disposition.
 
 ### Typical dependency pattern
 
@@ -387,6 +441,15 @@ git status
 ```
 
 Only documentation pages and intentional script/instruction changes should be staged.
+
+### 5. Coverage matrix closure check
+
+Before considering the batch done, confirm:
+
+- every analysed video has a per-video report
+- the batch coverage matrix exists
+- each meaningful finding has a recorded disposition
+- no changed doc is missing from the matrix
 
 ---
 
@@ -437,6 +500,8 @@ git push -u origin HEAD
 ## Non-Negotiables
 
 - Use **both** transcripts and frames for workflow analysis
+- Produce a **per-video analysis report** for every video in the batch
+- Produce a **doc coverage matrix** before closing the batch
 - Update `docs/`, not any legacy `workflow/` paths
 - Treat the analysis report as a synthesis artefact, not as the final published documentation
 - Never commit generated video artefacts

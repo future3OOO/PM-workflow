@@ -67,6 +67,11 @@ Training videos are analysed using two evidence streams:
 
 The synthesis of those two inputs becomes the dated analysis report stored under `_video_analysis/artefacts/YYYY-MM-DD/analysis/`.
 
+Every batch also requires:
+
+- a **per-video analysis report** for each video ID
+- a **doc coverage matrix** that maps findings to reviewed docs and resulting actions
+
 ### Operating rule
 
 Do **not** update workflow documentation from transcript-only notes when the video demonstrates a UI workflow. Use:
@@ -74,6 +79,8 @@ Do **not** update workflow documentation from transcript-only notes when the vid
 - transcripts for rationale and spoken context
 - frames for exact interface facts
 - the analysis report as the working synthesis artefact
+
+Batch summaries are helpful, but they do **not** replace per-video analysis. The per-video report is the canonical evidence-preservation artefact.
 
 Primary process reference: [`_video_analysis/RUNBOOK.md`](_video_analysis/RUNBOOK.md)
 
@@ -161,9 +168,22 @@ Key points:
 
 - analyse software workflow videos using **both** transcript and extracted-frame evidence
 - store working outputs under `_video_analysis/artefacts/YYYY-MM-DD/`
+- create a **per-video analysis report** for each video before relying on any grouped summary
+- maintain a **doc coverage matrix** for the batch showing findings, target docs reviewed, actions taken, and residual gaps
 - update `docs/`, not any legacy `workflow/` paths
 - only commit documentation pages and intentional script/instruction changes
 - never commit source videos, audio, transcripts, frames, or analysis report drafts
+
+### Batch completion rule
+
+Do **not** mark a video batch complete until:
+
+1. every video has its own analysis report
+2. the coverage matrix exists for the batch
+3. each material finding is explicitly classified as:
+   - documented via an update
+   - already covered in the current docs
+   - intentionally excluded from docs with a reason
 
 ### When adding a new workflow document
 
@@ -195,6 +215,12 @@ Get-ChildItem docs/ -Recurse -Filter *.md -Name
 # 5. No generated artefacts staged
 git status
 ```
+
+For video-driven doc updates, also verify:
+
+- every video in the batch has a per-video analysis report
+- the doc coverage matrix exists and reflects the changed files
+- no material finding was left without a disposition
 
 ---
 
@@ -232,6 +258,8 @@ Tapi → approve → auto-close job + sync to Property Tree → rent holdback fr
 - Never use "Tarpy", "Tappy", or `tarpy.co.nz` in any documentation
 - Never create parallel or duplicate sections when content already exists
 - Never update software workflow docs from transcript-only notes when frame evidence is available
+- Never treat a grouped batch summary as a substitute for per-video analysis
+- Never close a batch without a doc coverage matrix
 - Never change a lifecycle page without checking the dependent step-level guides, templates, and triage/operations checklists
 - Never add a new daily/weekly check without ensuring the underlying lifecycle and SOP pages support it
 - Never hardcode absolute file paths in Python scripts when a repo-relative path will do
