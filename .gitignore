@@ -5,8 +5,11 @@
 *.mov
 *.wmv
 
-# Transcript JSON files (large, derived from audio extraction)
-_video_analysis/*.json
+# Video analysis artefacts (reports, transcripts, audio, frames — all date-based)
+_video_analysis/artefacts/
+
+# Video analysis working directory (converted MP4s, intermediate files)
+_video_analysis/videos/
 
 # Cursor IDE
 .cursor/

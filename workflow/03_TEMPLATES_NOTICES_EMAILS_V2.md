@@ -1,7 +1,7 @@
 # TEMPLATE PACK — Notices, Emails, and Website Copy (Version 2)
 
-**Version:** V2.1 (Updated from video walkthrough)  
-**Last updated:** 2026-03-07
+**Version:** V2.2 (Updated from video walkthrough)  
+**Last updated:** 2026-03-31
 
 ---
 
@@ -169,6 +169,102 @@ Thanks,
 
 ---
 
+## 7e) Maintenance — owner approval request for tenant-submitted request (Tapi)
+**Used in:** Tapi → Ask owner for approval → Add personal message (for NON-inspection items, i.e., tenant-reported)
+
+> Hi [Owner first name],
+>
+> The tenant at [address] has reported a maintenance issue: [brief description of issue].
+>
+> [If applicable: This appears to be a [trade] issue that would likely cost around $[range] to resolve.]
+>
+> Are you happy for me to arrange a contractor to attend to this?
+>
+> Kind regards,
+> [PM / VA name]
+
+**When to use:** For tenant-submitted maintenance requests where owner approval is needed before sending a work order.
+
+---
+
+## 7f) Maintenance — "call contractor first" supplier message (Tapi)
+**Used in:** Tapi → Send work order → Add personal message to supplier (when contractor was phoned first for urgent jobs)
+
+> As discussed, [brief instruction]. [Include tenant phone number if not updated in Tapi]. Please contact the tenant to arrange access.
+
+**When to use:** When you have already phoned the contractor to confirm same-day availability for an urgent job. The "As discussed" signals this is a follow-up to a phone conversation.
+
+---
+
+## 7g) Maintenance — quote request message to contractor (Tapi)
+**Used in:** Tapi → Request quotes → Add personal message to supplier
+
+> Please provide a quote to [describe the work], e.g.:
+> - "Please provide a quote to clean the spoutings at [address]"
+> - "Please provide a quote for fence repairs on the [side] boundary"
+>
+> IMPORTANT: Always include the word "quote" or "estimate" in your message — some contractors may assume it's a work order otherwise.
+
+**When to use:** When requesting a price estimate before committing to work. Typically for jobs >$500 or uncertain scope.
+
+---
+
+## 7h) Maintenance — DIY tenant notification (Tapi)
+**Used in:** Tapi → Send to owner for DIY → Add personal message to tenants
+
+> Hi all, the owner has arranged for [person/description] to come to the property on [day/date] to [brief description of work]. [If applicable: They should only need access to [specific area].]
+
+**When to use:** When the owner is handling maintenance themselves or via their own contractor. This notification goes to ALL tenants on the lease.
+
+---
+
+## 7i) Maintenance — mid-job owner update (scope expansion)
+**Used in:** Email to owner when contractor calls back with expanded scope or complex findings
+
+**Subject:** Update — maintenance at [address]
+
+> Hi [Owner first name],
+>
+> Just a quick update on the [issue] at [address].
+>
+> The [trade] has been out and found [brief description of findings]. [Explain what this means and what the recommended next step is, e.g., "The leak is actually coming from behind the shower mixer, not from under the laundry as initially suspected. He recommends replacing the mixer assembly."]
+>
+> [If applicable: This will likely cost more than the original estimate — approximately $[range].]
+>
+> I'll keep you posted on progress.
+>
+> Kind regards,
+> [PM / VA name]
+
+**When to use:** When a contractor's findings mid-job expand the scope or cost. Keep the owner informed BEFORE a large unexpected invoice arrives.
+
+---
+
+## 7j) Maintenance — owner invoice notification (late invoice variant)
+**Used in:** Tapi → Invoice entry → Message to owner (when invoice arrives significantly after work completion)
+
+> This is an invoice for the [work description] at [address]. The work was completed on [date of work]. Amount: $[amount]. This will be deducted from your rent account — no action required from you.
+
+**When to use:** When there is a significant gap (>2 weeks) between when work was completed and when the invoice arrives. Prevents owner confusion about unexpected charges.
+
+---
+
+## 7k) Maintenance — owner approval for safety/compliance issue (Tapi)
+**Used in:** Tapi → Ask owner for approval (for safety/compliance items that need to be done regardless)
+
+> Hi [Owner first name],
+>
+> The [item, e.g., fire door closer] at [address] is not functioning correctly. We recommend getting this fixed immediately due to safety and compliance requirements.
+>
+> Are you happy for me to arrange a contractor?
+>
+> Kind regards,
+> [PM / VA name]
+
+**When to use:** For safety/compliance items where the work needs to happen regardless, but you're informing the owner as a courtesy. Fire doors, smoke alarms, electrical hazards, etc.
+
+---
+
 ## 8) Maintenance — contractor work order (email — manual)
 **Subject:** Work order — [Property Address] — [Issue]
 
@@ -180,7 +276,7 @@ Please attend to: **[scope]**
 - **Priority:** [urgent/routine]  
 - **Work Order #:** [WO#]  
 - **Completion target:** [date]  
-- **Invoice:** email to PropertyPartner@tarpy.co.nz and include the Work Order #
+- **Invoice:** email to propertypartner@tapi.co.nz and include the Work Order #
 
 Thanks,  
 [Name]

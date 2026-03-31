@@ -53,7 +53,7 @@ If work is required:
 - apply quote-first guideline (> $500 / uncertain scope)
 - issue work orders and keep tenant/owner informed
 
-Playbook: **01_PLAYBOOK_MAINTENANCE_TAPI_TARPY_V2.md**
+Playbook: **01_PLAYBOOK_MAINTENANCE_TAPI_V2.md**
 
 ---
 
