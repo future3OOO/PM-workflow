@@ -71,6 +71,7 @@ Every batch also requires:
 
 - a **per-video analysis report** for each video ID
 - a **doc coverage matrix** that maps findings to reviewed docs and resulting actions
+- explicit **page / navigation mapping** for the screens involved in each analysed workflow
 
 ### Operating rule
 
@@ -170,6 +171,7 @@ Key points:
 - store working outputs under `_video_analysis/artefacts/YYYY-MM-DD/`
 - create a **per-video analysis report** for each video before relying on any grouped summary
 - maintain a **doc coverage matrix** for the batch showing findings, target docs reviewed, actions taken, and residual gaps
+- capture **where the action happens**: system, page/screen name, visible URL if any, and navigation path
 - update `docs/`, not any legacy `workflow/` paths
 - only commit documentation pages and intentional script/instruction changes
 - never commit source videos, audio, transcripts, frames, or analysis report drafts
@@ -184,6 +186,16 @@ Do **not** mark a video batch complete until:
    - documented via an update
    - already covered in the current docs
    - intentionally excluded from docs with a reason
+
+### Video-derived section marking rule
+
+When a documentation section is materially updated from proper video analysis, mark it with the verified label:
+
+```html
+<span class="pp-verified-label">Verified from video analysis</span>
+```
+
+Use this only for sections that were genuinely checked against transcript + frame evidence. Do not add it to sections that were only lightly edited or inherited from older written material.
 
 ### When adding a new workflow document
 
@@ -221,6 +233,8 @@ For video-driven doc updates, also verify:
 - every video in the batch has a per-video analysis report
 - the doc coverage matrix exists and reflects the changed files
 - no material finding was left without a disposition
+- page / navigation mapping is captured for the relevant workflows
+- any materially video-derived section that was updated is marked with the verified label
 
 ---
 
@@ -260,6 +274,8 @@ Tapi → approve → auto-close job + sync to Property Tree → rent holdback fr
 - Never update software workflow docs from transcript-only notes when frame evidence is available
 - Never treat a grouped batch summary as a substitute for per-video analysis
 - Never close a batch without a doc coverage matrix
+- Never omit page / navigation mapping when documenting a video-derived workflow
+- Never apply the verified label to sections that were not actually checked against proper video analysis
 - Never change a lifecycle page without checking the dependent step-level guides, templates, and triage/operations checklists
 - Never add a new daily/weekly check without ensuring the underlying lifecycle and SOP pages support it
 - Never hardcode absolute file paths in Python scripts when a repo-relative path will do

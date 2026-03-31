@@ -21,6 +21,12 @@ Edit .md file in docs/ → push to main → GitHub Actions builds → site updat
 3. Update the version and date line at the top of the page
 4. Push to `main` — the site rebuilds automatically
 
+If the section was materially updated from proper video analysis, add the verified label under the relevant heading:
+
+```html
+<span class="pp-verified-label">Verified from video analysis</span>
+```
+
 ---
 
 ## Adding a New Document
@@ -110,3 +116,38 @@ When a process changes, update documents in this order:
 5. Systems overview and standards (if system capabilities or policies changed)
 
 Bump the version and date on every file you touch.
+
+---
+
+## Video-Derived Section Conventions
+
+When documentation is updated from transcript + frame-based video analysis:
+
+### 1. Show users where the action happens
+
+Include concise location cues so users can find the correct screen quickly. Good patterns:
+
+- `Navigate to: Properties → [property] → Agreements`
+- `Location: Book a viewing → Enquiries`
+- `URL observed: tpportal.co.nz/clients/bookme/overview`
+
+Use exact menu, tab, and button wording taken from the analysed UI where possible.
+
+### 2. Mark materially verified sections
+
+Use this subtle label for sections that were materially updated from proper video analysis:
+
+```html
+<span class="pp-verified-label">Verified from video analysis</span>
+```
+
+Use it when:
+
+- the section was updated from transcript + frame evidence
+- the workflow or UI wording was checked against analysed video material
+
+Do not use it when:
+
+- the edit was only wording cleanup
+- the section was copied forward from older written docs without fresh evidence review
+- the source video evidence was incomplete or uncertain

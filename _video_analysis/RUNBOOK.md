@@ -295,6 +295,8 @@ If a grouped topic summary is useful, create it **in addition to** the per-video
 
 ## Video Details
 
+## System Location Mapping
+
 ## UI Walkthrough
 
 ## Workflow Logic
@@ -323,6 +325,21 @@ The report should be specific enough that someone could update the docs **withou
 
 Even when several videos cover the same topic, still produce a separate analysis report for each video ID first. Batch summaries are useful for synthesis, but the per-video report is the canonical evidence-preservation artefact.
 
+### Navigation and webpage mapping requirement
+
+Every per-video analysis report must explicitly capture **where** the workflow happens in the product:
+
+- **System name** (TPS, BookMe, Property Tree, Tapi, Inspection Express, etc.)
+- **Page / screen name**
+- **URL or page address** if visible
+- **Navigation path** used to reach it, e.g. `Properties → [property] → Agreements → Renewal`
+- **Key action points** in order, using the exact menu / button / tab labels shown on screen
+
+The goal is that a user can identify both:
+
+1. which webpage / screen the action belongs to
+2. how to navigate there from the product's normal starting point
+
 ---
 
 ## Step 6b — Create the Batch Coverage Matrix
@@ -342,6 +359,7 @@ _video_analysis/artefacts/YYYY-MM-DD/analysis/doc_coverage_matrix.md
 | **Video ID** | Which source video produced the finding |
 | **Finding / workflow** | The operational detail, UI fact, or rule identified |
 | **Evidence source** | Transcript, frames, or both |
+| **Page / navigation mapping** | System, page name, visible URL if any, and navigation path |
 | **Target docs reviewed** | Which `docs/` pages were checked |
 | **Action taken** | Updated / already covered / intentionally not documented |
 | **Result** | File(s) changed or reason no change was needed |
@@ -398,6 +416,37 @@ Update the relevant documentation pages using the analysis report as the synthes
 6. **Update all dependent docs** if a lifecycle, SOP, template, or checklist is affected.
 7. **Bump version and date** on every changed documentation file.
 8. **Update the coverage matrix** as you go so every material finding has a documented disposition.
+9. **Add navigation cues** so the user can find the screen, not just understand the rule.
+10. **Add a verified label** to sections materially updated from analysed video evidence.
+
+### Verified label convention
+
+When a section has been materially updated from proper video analysis, add this subtle label directly under the heading or opening line of the section:
+
+```html
+<span class="pp-verified-label">Verified from video analysis</span>
+```
+
+Use it when:
+
+- the section was materially updated from transcript + frame review
+- the workflow, UI wording, or decision logic was checked against analysed video evidence
+
+Do **not** use it when:
+
+- the section is only based on prior written docs
+- the section only received wording cleanup or formatting changes
+- the source evidence was incomplete or uncertain
+
+### Navigation cue convention
+
+For workflow sections derived from video analysis, include explicit location cues where helpful, for example:
+
+- `Navigate to: Properties → [property] → Agreements`
+- `Location: Book a viewing → Enquiries`
+- `URL observed: tpportal.co.nz/clients/bookme/overview`
+
+Prefer concise cues that help the user find the correct page quickly.
 
 ### Typical dependency pattern
 
