@@ -144,7 +144,7 @@ For each video, produce a structured analysis report. These are working document
 _video_analysis/artefacts/YYYY-MM-DD/
 ```
 
-For example, analysis reports from a session on 2026-04-15 would go in `_video_analysis/artefacts/2026-04-15/`. This folder is gitignored.
+For example, analysis reports from a session on 2026-03-31 would go in `_video_analysis/artefacts/2026-03-31/`. This folder is gitignored.
 
 ### Recommended report structure
 

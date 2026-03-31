@@ -11,6 +11,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 VIDEO_DIR = os.path.join(SCRIPT_DIR, "videos")
 OUTPUT_DIR = VIDEO_DIR
 FFMPEG = os.environ.get("FFMPEG_PATH", "ffmpeg")
+FFMPEG_TIMEOUT = 900  # 15 min safety bound per file
 
 VIDEOS = [
     ("video03", "3. Tapi overview and management 1.mkv"),
@@ -57,9 +58,20 @@ for vid_id, filename in VIDEOS:
         t0 = time.time()
         cmd = [FFMPEG, "-y", "-i", src, "-vn", "-acodec", "pcm_s16le",
                "-ar", "16000", "-ac", "1", wav_path]
-        result = subprocess.run(cmd, capture_output=True, text=True)
-        if result.returncode != 0:
-            print(f"  [ERROR] ffmpeg failed: {result.stderr[:500]}")
+        try:
+            subprocess.run(
+                cmd, capture_output=True, text=True,
+                check=True, timeout=FFMPEG_TIMEOUT,
+            )
+        except subprocess.TimeoutExpired:
+            print(f"  [ERROR] ffmpeg timed out after {FFMPEG_TIMEOUT}s")
+            if os.path.exists(wav_path):
+                os.remove(wav_path)
+            continue
+        except subprocess.CalledProcessError as e:
+            print(f"  [ERROR] ffmpeg failed: {e.stderr[:500] if e.stderr else 'no stderr'}")
+            if os.path.exists(wav_path):
+                os.remove(wav_path)
             continue
         elapsed = time.time() - t0
         print(f"  Audio extracted in {elapsed:.1f}s")

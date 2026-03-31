@@ -19,6 +19,7 @@ import time
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_DIR = os.path.join(SCRIPT_DIR, "videos")
 FFMPEG = os.environ.get("FFMPEG_PATH", "ffmpeg")
+FFMPEG_TIMEOUT = 900  # 15 min safety bound per file
 
 
 def transcribe_video(vid_id: str, src_path: str) -> None:
@@ -42,9 +43,20 @@ def transcribe_video(vid_id: str, src_path: str) -> None:
         t0 = time.time()
         cmd = [FFMPEG, "-y", "-i", src_path, "-vn", "-acodec", "pcm_s16le",
                "-ar", "16000", "-ac", "1", wav_path]
-        result = subprocess.run(cmd, capture_output=True, text=True)
-        if result.returncode != 0:
-            print(f"[ERROR] ffmpeg failed: {result.stderr[:500]}")
+        try:
+            subprocess.run(
+                cmd, capture_output=True, text=True,
+                check=True, timeout=FFMPEG_TIMEOUT,
+            )
+        except subprocess.TimeoutExpired:
+            print(f"[ERROR] ffmpeg timed out after {FFMPEG_TIMEOUT}s")
+            if os.path.exists(wav_path):
+                os.remove(wav_path)
+            sys.exit(1)
+        except subprocess.CalledProcessError as e:
+            print(f"[ERROR] ffmpeg failed: {e.stderr[:500] if e.stderr else 'no stderr'}")
+            if os.path.exists(wav_path):
+                os.remove(wav_path)
             sys.exit(1)
         print(f"Audio extracted in {time.time() - t0:.1f}s")
 
