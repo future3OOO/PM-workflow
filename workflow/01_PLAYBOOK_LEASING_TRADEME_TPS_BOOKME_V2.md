@@ -39,7 +39,7 @@ Vacancy or upcoming vacancy with owner approval to market.
 - Enter the Trade Me listing number into TPS property “Trade Me ID” field
 - Confirm enquiries are flowing into TPS BookMe dashboard
 
-SOP: [TPS Property Setup](../sops/tps-property-setup.md)
+SOP: **02_SOP_TPS_PROPERTY_SETUP_TRADEME_ID_BOOKME_V2.md**
 
 ---
 
@@ -50,7 +50,7 @@ SOP: [TPS Property Setup](../sops/tps-property-setup.md)
   - coordinate politely and aim for a time window
   - keep changes minimal and record confirmations in writing
 
-SOP: [TPS Viewings & BookMe](../sops/tps-viewings-bookme.md)
+SOP: **02_SOP_TPS_VIEWINGS_BOOKME_V2.md**
 
 ---
 
@@ -60,7 +60,7 @@ SOP: [TPS Viewings & BookMe](../sops/tps-viewings-bookme.md)
 - Run background/credit checks only on preferred applicant(s) per your privacy rule
 - Provide owner recommendation; capture decision in writing
 
-SOP: [TPS Application Processing](../sops/tps-application-processing.md)
+SOP: **02_SOP_TPS_APPLICATION_PROCESSING_CHECKS_APPROVAL_V2.md**
 
 ---
 
@@ -69,10 +69,10 @@ SOP: [TPS Application Processing](../sops/tps-application-processing.md)
 - Generate tenancy agreement in TPS using stored landlord/property/compliance data
 - Send for digital signing; export final signed PDF
 
-SOP: [TPS Agreements & Signing](../sops/tps-agreements-signing.md)
+SOP: **02_SOP_TPS_AGREEMENT_GENERATION_SIGNING_RENEWALS_V2.md**
 
 ---
 
 ## Stage 7 — Handover to Tenancy Setup
 Start:
-- [Tenancy Setup](tenancy-setup.md)
+- **01_PLAYBOOK_TENANCY_SETUP_TPS_TO_PROPERTYTREE_V2.md**

@@ -42,7 +42,7 @@ Store in Property Tree: **03 Compliance**
 ## Stage 2 — Update TPS compliance section
 Populate TPS compliance fields so tenancy agreements and compliance statements can be produced correctly (even if some work is pending, ensure it is recorded accurately).
 
-SOP: [Healthy Homes Evidence](../sops/compliance-healthy-homes-evidence.md)
+SOP: **02_SOP_COMPLIANCE_HEALTHY_HOMES_EVIDENCE_V2.md**
 
 ---
 
@@ -53,7 +53,7 @@ If work is required:
 - apply quote-first guideline (> $500 / uncertain scope)
 - issue work orders and keep tenant/owner informed
 
-Playbook: [Maintenance (Tapi)](maintenance-tapi.md)
+Playbook: **01_PLAYBOOK_MAINTENANCE_TAPI_V2.md**
 
 ---
 
@@ -61,4 +61,4 @@ Playbook: [Maintenance (Tapi)](maintenance-tapi.md)
 - After each compliance job, file completion evidence (invoice + photos + certificate/report) in Property Tree.
 - Monthly/quarterly audit: sample properties to ensure compliance evidence exists and TPS compliance fields are accurate.
 
-QA: [Monthly Compliance Audit](../qa/monthly-compliance.md)
+QA: **04_QA_MONTHLY_COMPLIANCE_AUDIT_V2.md**

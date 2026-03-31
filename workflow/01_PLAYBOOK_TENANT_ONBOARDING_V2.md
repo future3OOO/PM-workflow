@@ -27,7 +27,7 @@ Include:
 - inspection expectations (quarterly) and tenant responsibility basics
 - ingoing condition report timeline for tenant feedback
 
-Template: [Notices & Emails](../templates/notices-emails.md)
+Template: **03_TEMPLATES_NOTICES_EMAILS_V2.md**
 
 ---
 
@@ -36,7 +36,7 @@ Template: [Notices & Emails](../templates/notices-emails.md)
 - complete inspection thoroughly with photos
 - publish report; send to tenant and owner; store in Property Tree docs
 
-SOP: [Inspection Express — Report, Publish & Actions](../sops/inspection-express.md)
+SOP: **02_SOP_INSPECTION_EXPRESS_REPORT_PUBLISH_ACTIONS_TO_TAPI_V2.md**
 
 ---
 

@@ -57,7 +57,7 @@ Inbox | New job | New Invoice | Jobs (main) | Invoices | Properties | Suppliers 
 
 ### B. Inspection-captured items
 
-1. Review Inspection Express daily for finalised inspections (see [Inspection Express Reports & Actions](inspection-express.md))
+1. Review Inspection Express daily for finalised inspections (see **02_SOP_INSPECTION_EXPRESS_REPORT_PUBLISH_ACTIONS_TO_TAPI_V2.md**)
 2. Confirm each maintenance item from the inspection report has appeared in Tapi as an individual job
 3. Each job will show: property address, description from PM's inspection notes, photos, and "Reported via inspection" tag
 4. Review and clean up descriptions — remove any language directed at the landlord from the inspection report (e.g., "Are you happy for me to...") since this was part of the report narrative, not a work order instruction

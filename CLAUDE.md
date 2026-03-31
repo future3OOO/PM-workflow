@@ -18,38 +18,27 @@ The documentation is **not code** — it is structured Markdown covering playboo
 property_management_docs_v2/
 ├── README.md                    # Project overview and full file index
 ├── CLAUDE.md                    # This file — agent instructions
-├── mkdocs.yml                   # MkDocs Material site configuration + nav tree
-├── requirements.txt             # Python deps for docs build (mkdocs-material)
-├── .gitignore                   # Excludes video/audio/frames/analysis drafts + site/
-├── .github/workflows/docs.yml  # GitHub Actions — auto-deploy to GitHub Pages on push
-├── docs/                        # All documentation (MkDocs source)
-│   ├── index.md                 # Homepage with card grid and quick-start links
-│   ├── contributing.md          # Authoring guide for adding/updating docs
-│   ├── stylesheets/extra.css    # Custom CSS for tables, cards, print
-│   ├── foundation/              # Systems map, standards, master index
-│   ├── playbooks/               # Lifecycle playbooks (what + when)
-│   ├── sops/                    # Click-by-click SOPs (how), grouped by system
-│   ├── templates/               # Copy-paste templates + checklists
-│   ├── qa/                      # Daily/weekly/monthly quality checks
-│   └── reference/               # Sources and external references
+├── .gitignore                   # Excludes video/audio/frames/analysis drafts
+├── workflow/                    # All operational documentation (35 files)
+│   ├── 00.x_*                   # Foundation: index, systems map, standards
+│   ├── 01_PLAYBOOK_*            # Lifecycle processes (what + when)
+│   ├── 02_SOP_*                 # Click-by-click system instructions (how)
+│   ├── 03_TEMPLATES_*           # Copy-paste templates + checklists
+│   ├── 04_QA_*                  # Daily/weekly/monthly quality checks
+│   └── 99_SOURCES_NOTE_*        # External references
 ├── _video_analysis/             # Video integration tooling
 │   ├── RUNBOOK.md               # 9-step video-to-workflow process
 │   ├── transcribe.py            # Single-video CLI transcription
 │   ├── transcribe_all_videos.py # Batch transcription pipeline
-│   └── artefacts/               # Generated outputs organised by date (gitignored)
+│   └── artefacts/               # All generated outputs organised by date (gitignored)
 │       ├── 2026-03-07/          # Batch 1: reports + transcripts (video1–2)
 │       └── 2026-03-31/          # Batch 2: 12 Tapi training videos
-│   └── videos/                  # Source video files (gitignored)
+│           ├── *.md             # Analysis reports
+│           ├── transcripts/     # Whisper JSON + plaintext transcripts
+│           ├── audio/           # Extracted WAV files
+│           └── frames/          # Extracted video frame JPGs (per-video dirs)
+│   └── videos/                  # All source video files — originals + converted (gitignored)
 ```
-
-### Documentation Site
-
-The docs are served via MkDocs Material at **https://future3OOO.github.io/PM-workflow/**. The site auto-deploys on every push to `main` via GitHub Actions.
-
-**File naming**: kebab-case `.md` files in the appropriate `docs/` subdirectory.
-**Cross-links**: Use relative Markdown links, e.g. `[Title](../sops/filename.md)`.
-**Nav**: Add new pages to the `nav:` section in `mkdocs.yml`.
-**See**: `docs/contributing.md` for the full authoring guide.
 
 ---
 
@@ -59,9 +48,9 @@ The docs are served via MkDocs Material at **https://future3OOO.github.io/PM-wor
 |---|---|---|
 | Maintenance CRM | **Tapi** | Tarpy, Tappy, Tarpie, TAPE |
 | Invoice email | `propertypartner@tapi.co.nz` | PropertyPartner@tarpy.co.nz, any @tarpy domain |
-| Playbook filename | `docs/playbooks/maintenance-tapi.md` | anything with TARPY in the name |
+| Playbook filename | `01_PLAYBOOK_MAINTENANCE_TAPI_V2.md` | anything with TARPY in the name |
 
-After any edit, run: `rg -i "tarpy\|tappy\|tarpie" docs/` to verify zero misspellings.
+After any edit, run: `rg -i "tarpy\|tappy\|tarpie" workflow/` to verify zero misspellings.
 
 ---
 
@@ -70,8 +59,8 @@ After any edit, run: `rg -i "tarpy\|tappy\|tarpie" docs/` to verify zero misspel
 Changes to one document usually require updates to others. This map shows the dependencies.
 
 ### Tier 1 — Changes here cascade everywhere
-- **`docs/foundation/systems-map.md`** — if a system's capabilities change, every doc that references that system needs checking
-- **`docs/foundation/standards-slas.md`** — if policies/SLAs change, playbooks and SOPs must align
+- **`00.2_SYSTEMS_MAP_DATA_FLOW_V2.md`** — if a system's capabilities change, every doc that references that system needs checking
+- **`00.3_STANDARDS_SLAS_APPROVALS_RECORDS_V2.md`** — if policies/SLAs change, playbooks and SOPs must align
 
 ### Tier 2 — Playbooks drive SOPs and templates
 - **Playbooks (01_)** define the lifecycle and decision logic
@@ -88,15 +77,15 @@ Changes to one document usually require updates to others. This map shows the de
 ### Maintenance-specific dependency chain
 
 ```
-docs/playbooks/maintenance-tapi.md (lifecycle)
-  ├── docs/sops/tapi-intake.md (intake → work order)
-  ├── docs/sops/tapi-invoices.md (invoices → payment)
-  ├── docs/sops/inspection-express.md (inspection source)
-  ├── docs/templates/notices-emails.md (templates 7a–7k)
-  ├── docs/qa/daily-triage.md (section 6: Tapi dashboard)
-  ├── docs/qa/weekly-operations.md (Tapi items)
-  ├── docs/foundation/systems-map.md (Tapi + invoice sections)
-  └── docs/foundation/standards-slas.md (approval policy + contractor standards)
+01_PLAYBOOK_MAINTENANCE_TAPI_V2.md (lifecycle)
+  ├── 02_SOP_TAPI_INTAKE_TRIAGE_APPROVALS_WORKORDERS_V2.md (intake → work order)
+  ├── 02_SOP_TAPI_INVOICES_OWNER_TENANT_DIY_SYNC_TO_PROPERTYTREE_V2.md (invoices → payment)
+  ├── 02_SOP_INSPECTION_EXPRESS_REPORT_PUBLISH_ACTIONS_TO_TAPI_V2.md (inspection source)
+  ├── 03_TEMPLATES_NOTICES_EMAILS_V2.md (templates 7a–7k)
+  ├── 04_QA_DAILY_TRIAGE_CHECKLIST_V2.md (section 6: Tapi dashboard)
+  ├── 04_QA_WEEKLY_OPERATIONS_CHECKLIST_V2.md (Tapi items)
+  ├── 00.2_SYSTEMS_MAP_DATA_FLOW_V2.md (Tapi + invoice sections)
+  └── 00.3_STANDARDS_SLAS_APPROVALS_RECORDS_V2.md (approval policy + contractor standards)
 ```
 
 ### Cross-document consistency checks
@@ -139,9 +128,9 @@ Key points:
 
 ### When adding a new workflow document
 
-1. Follow the naming convention: kebab-case `.md` in the correct `docs/` subdirectory (e.g. `docs/playbooks/new-feature.md`)
-2. Add a `nav:` entry in `mkdocs.yml`
-3. Add it to the Master Index (`docs/foundation/master-index.md`)
+1. Follow the naming convention: `{NN}_{TYPE}_{TOPIC}_V2.md`
+2. Add it to the file index in `README.md`
+3. Add it to the Master Index (`00.1_MASTER_INDEX_WORKFLOW_V2.md`)
 4. Cross-reference it from related playbooks/SOPs
 5. Add monitoring items to the appropriate QA checklist if the new doc introduces daily/weekly checks
 
@@ -153,20 +142,20 @@ Run these checks before every commit:
 
 ```powershell
 # 1. No Tapi misspellings
-rg -i "tarpy|tappy|tarpie" docs/
+rg -i "tarpy|tappy|tarpie" workflow/
 
 # 2. No old playbook filename references
-rg "TAPI_TARPY" docs/ README.md
+rg "TAPI_TARPY" workflow/ README.md
 
 # 3. No wrong email addresses
-rg "tarpy\.co\.nz" docs/ README.md
+rg "tarpy\.co\.nz" workflow/ README.md
 
 # 4. Version dates are consistent across changed files
-rg "Last updated" docs/
+rg "Last updated" workflow/
 
 # 5. Filenames in Master Index match actual files
-rg "\.md" docs/foundation/master-index.md
-Get-ChildItem docs/ -Recurse -Filter *.md -Name
+rg "\.md" workflow/00.1_MASTER_INDEX_WORKFLOW_V2.md
+Get-ChildItem workflow/*.md -Name
 
 # 6. No generated artefacts staged
 git status

@@ -43,7 +43,7 @@ If yes, add a takeover checklist:
 ---
 
 ## Stage 2 — Create the Property Tree master record
-Follow SOP: [Create Owner & Property](../sops/propertytree-create-owner-property.md)  
+Follow SOP: **02_SOP_PROPERTYTREE_CREATE_OWNER_PROPERTY_V2.md**  
 Complete:
 - owner record
 - property record
@@ -53,7 +53,7 @@ Complete:
 ---
 
 ## Stage 3 — Create/verify TPS property setup
-Follow SOP: [TPS Property Setup](../sops/tps-property-setup.md)  
+Follow SOP: **02_SOP_TPS_PROPERTY_SETUP_TRADEME_ID_BOOKME_V2.md**  
 Populate:
 - property basics (so you can lease)
 - compliance fields (so you can generate agreements and statements)
@@ -72,14 +72,14 @@ Document in Property Tree property notes + “01 Management & Owner Docs”:
 
 ## Stage 5 — Compliance readiness (Healthy Homes and other)
 Run the compliance playbook if anything is missing:
-- [Compliance — Healthy Homes](compliance-healthy-homes.md)
+- **01_PLAYBOOK_COMPLIANCE_HEALTHY_HOMES_V2.md**
 Convert gaps into Tapi jobs (quote/work order) with owner approval plan.
 
 ---
 
 ## Stage 6 — Go-live QA
 Run onboarding checklist:
-- [Checklists](../templates/checklists.md)
+- **03_TEMPLATES_CHECKLISTS_V2.md**
 
 ---
 

@@ -41,7 +41,7 @@ No response after:
 - run Valua rent research and prepare a short recommendation
 - store evidence in Property Tree
 
-SOP: [Valua Rent Research](../sops/valua-rent-research.md)
+SOP: **02_SOP_VALUA_RENT_RESEARCH_V2.md**
 
 ---
 
