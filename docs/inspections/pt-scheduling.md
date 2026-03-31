@@ -1,6 +1,6 @@
 # Scheduling & Confirmation (Property Tree)
 
-**Version:** V2.4  
+**Version:** V2.5  
 **Last updated:** 2026-04-01
 
 ---
@@ -34,7 +34,7 @@ Property Tree uses a 5-stage status pipeline for inspections:
 |---|---|---|
 | **Tentative** | Sends a "proposing that date" email — can confuse tenants if the date is already agreed | No sync |
 | **Proposed** | Sends proposal notification | No sync |
-| **Confirmed** | Sends proper confirmation email **the day before** the inspection | Syncs to Inspection Express |
+| **Confirmed** | Sends proper confirmation email **the day before** the inspection (**only** when status is Confirmed) | Syncs to Inspection Express |
 | **Conducted** | — | — |
 | **Closed** | — | — |
 
@@ -50,13 +50,12 @@ Property Tree uses a 5-stage status pipeline for inspections:
 3. Set **Inspection Type**: Routine
 4. Set **Assign To**: McKenzie Lawrence
 5. Set the **Inspection Date** and **time window** (agreed with tenant via email/text)
-6. Set **Status**: leave as Proposed initially (triggers proposal notification to tenant)
+6. Set **Status**: leave as **Proposed** initially (triggers proposal notification to tenant)
 7. Click **Save**
-8. Send a ~10-day email with the proposed time window
-9. Send a ~9-day SMS requesting confirmation
-10. Follow up non-responders
-11. Once tenant confirms, update status to **Confirmed** (manual)
-12. Tenant receives automatic confirmation email the day before
+8. Property Tree **automatically** sends the **~10-day** scheduling email and **~9-day** SMS (Automated Communications) — **do not** treat these as manual PM sends; confirm they appear in the **Communications Log**
+9. Follow up **non-responders** manually if needed (email/SMS) until the tenant confirms
+10. Once the tenant confirms, update status to **Confirmed** (manual). **Until Confirmed:** the tenant **does not** receive the **automatic day-before confirmation email**, the inspection **does not** sync to Inspection Express, and **do not attend** the property for the inspection
+11. After **Confirmed**, the tenant receives the **automatic** day-before confirmation email
 
 ### Inspections Summary Page
 
@@ -129,9 +128,10 @@ Use this log to verify that the tenant has received the correct notifications.
 
 ## Quality Checks
 
-- Inspection appears in Inspection Express (requires Confirmed status + future time)
+- **Communications Log** shows Property Tree **automatic** ~10-day email and ~9-day SMS (not assumed manual sends)
+- Property Tree status **Confirmed** after tenant confirms (required for day-before auto email, IE sync, and attending)
+- Inspection appears in Inspection Express (requires **Confirmed** + future time)
 - Tenant confirmation recorded
-- Property Tree status set to **Confirmed**
 - Auto-scheduled routine inspections verified to fall on weekdays
 
 ---

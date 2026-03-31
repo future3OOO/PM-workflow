@@ -1,6 +1,6 @@
 # Inspection Lifecycle
 
-**Version:** V2.4  
+**Version:** V2.5  
 **Last updated:** 2026-04-01
 
 ---
@@ -27,11 +27,10 @@ Run inspections consistently, with tenant confirmations, strong reporting, corre
 
 ### Routine inspections
 - Property Tree auto-creates the first routine inspection **3 months from tenancy start date** — verify the date falls on a weekday
-- Schedule in Property Tree; inspection must reach **Confirmed** status with a **future date/time** to sync to Inspection Express
-- Send 10-day email and 9-day SMS to confirm
-- Do not attend unless tenant confirms
-- Update to "Confirmed" in Property Tree (manual)
-- Tenant receives automatic confirmation email the day before
+- Schedule in Property Tree with the agreed date/time window; use **Proposed** (or equivalent) until the tenant has confirmed
+- **~10-day email and ~9-day SMS** are sent **automatically by Property Tree** (Automated Communications) — **not** manual sends by the PM; check the inspection **Communications Log** to verify delivery
+- **Confirmation is mandatory:** update status to **Confirmed** in Property Tree **only after** the tenant confirms. Until **Confirmed**, the tenant **does not** get the **automatic day-before confirmation email**, the job **does not** sync to Inspection Express, and **do not conduct the inspection**
+- Follow up non-responders if the automated sequence does not produce a reply
 
 ### Ingoing inspections
 - Create via Tenancy Profile → Inspections → **(+)** button → set type to **Ingoing**

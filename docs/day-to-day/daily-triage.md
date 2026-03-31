@@ -1,7 +1,7 @@
 # Daily Triage Checklist
 
-**Version:** V2.3  
-**Last updated:** 2026-03-31
+**Version:** V2.4  
+**Last updated:** 2026-04-01
 
 ---
 
@@ -37,8 +37,8 @@ See: [Leasing Lifecycle](../leasing/leasing-lifecycle.md)
 ## 4) Inspections (upcoming)
 
 See: [Property Tree Scheduling](../inspections/pt-scheduling.md)
-- [ ] Inspections within 10 days have been communicated
-- [ ] Unconfirmed inspections chased (no confirmation = no attendance)
+- [ ] Upcoming inspections: **Communications Log** checked (automated ~10-day / ~9-day messages from Property Tree)
+- [ ] Unconfirmed inspections chased (**Confirmed** required for day-before auto email and for attendance — no confirmation = no attendance)
 
 ## 5) Inbox hygiene (VA)
 

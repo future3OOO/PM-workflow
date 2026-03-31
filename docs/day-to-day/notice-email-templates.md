@@ -1,7 +1,7 @@
 # Notice & Email Templates
 
-**Version:** V2.3  
-**Last updated:** 2026-03-31
+**Version:** V2.4  
+**Last updated:** 2026-04-01
 
 ---
 
@@ -280,6 +280,12 @@ Please attend to: **[scope]**
 
 Thanks,  
 [Name]
+
+---
+
+## 8a) Routine inspections — Property Tree automation (reference)
+
+For **routine** inspections, Property Tree **Automated Communications** sends the **~10-day email**, **~9-day SMS**, and (once status is **Confirmed**) the **day-before confirmation email**. The PM does **not** manually send those as the primary path — use the inspection **Communications Log** to verify delivery. Sections **9–11** below are **reference wording** only (e.g. manual follow-up to a non-responder, or explaining what tenants receive).
 
 ---
 
