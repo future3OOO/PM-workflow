@@ -1,12 +1,58 @@
----
-hide:
-  - toc
----
-
 # Property Partner Workflow Docs
 
 The complete operational knowledge base for NZ residential property management.
-Start with the [Systems Overview](getting-started/systems-map.md) or jump to a workflow below.
+
+---
+
+## Getting Started
+
+<div class="grid cards" markdown>
+
+-   :material-map:{ .lg .middle } **[Systems Overview](getting-started/systems-map.md)**
+
+    ---
+
+    Source of truth for every system, data flows, and recordkeeping rules. **Read this first.**
+
+-   :material-shield-check:{ .lg .middle } **[Standards & SLAs](getting-started/standards-slas.md)**
+
+    ---
+
+    Response times, approval thresholds, communication rules, and non-negotiable policies.
+
+</div>
+
+---
+
+## Daily Operations
+
+<div class="grid cards" markdown>
+
+-   :material-email-fast:{ .lg .middle } **[Daily Triage](day-to-day/daily-triage.md)**
+
+    ---
+
+    Walk every Tapi pipeline bucket, check inspections, clear inbox.
+
+-   :material-calendar-week:{ .lg .middle } **[Weekly Operations](day-to-day/weekly-operations.md)**
+
+    ---
+
+    Renewals pipeline, contractor follow-ups, compliance checks.
+
+-   :material-inbox:{ .lg .middle } **[Email Management](day-to-day/email-management.md)**
+
+    ---
+
+    Inbox triage, labelling, and filing to Property Tree.
+
+-   :material-file-document-edit:{ .lg .middle } **[Notices & Templates](day-to-day/notice-email-templates.md)**
+
+    ---
+
+    Standard notices, emails, and communications templates.
+
+</div>
 
 ---
 
@@ -78,16 +124,7 @@ Start with the [Systems Overview](getting-started/systems-map.md) or jump to a w
 | **Valua** | Rent evidence and market recommendations | [Renewals](renewals-exits/renewals-rent-reviews.md) |
 | **Shortwave AI** | AI email drafting for owner/tenant comms | [Day-to-Day](day-to-day/email-management.md) |
 
-For the full systems reference, see [Systems Overview](getting-started/systems-map.md).
-
----
-
-## Daily Operations
-
-- [Email Management](day-to-day/email-management.md) — inbox triage and filing
-- [Daily Triage Checklist](day-to-day/daily-triage.md) — walk every pipeline bucket
-- [Weekly Operations](day-to-day/weekly-operations.md) — renewals pipeline, contractor follow-ups
-- [Notices & Templates](day-to-day/notice-email-templates.md) — standard comms
+Full reference: [Systems Overview](getting-started/systems-map.md) · [Execution Checklists](day-to-day/execution-checklists.md) · [Monthly Compliance](day-to-day/monthly-compliance.md) · [Contributing Guide](day-to-day/contributing.md)
 
 ---
 
