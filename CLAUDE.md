@@ -37,7 +37,7 @@ property_management_docs_v2/
 │           ├── transcripts/     # Whisper JSON + plaintext transcripts
 │           ├── audio/           # Extracted WAV files
 │           └── frames/          # Extracted video frame JPGs (per-video dirs)
-└── videos/                      # Source video files (gitignored)
+│   └── videos/                  # All source video files — originals + converted (gitignored)
 ```
 
 ---

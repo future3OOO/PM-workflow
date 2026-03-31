@@ -27,7 +27,7 @@ py -3 -c "import whisper; print(whisper.__version__)"
 ## Process Overview
 
 ```
- Upload videos to videos/ folder
+ Upload videos to _video_analysis/videos/
           │
           ▼
  1. Register new videos in transcribe_all_videos.py
@@ -61,7 +61,7 @@ py -3 -c "import whisper; print(whisper.__version__)"
 
 ## Step 1 — Place Videos & Register Them
 
-1. Place all new video files (MP4 or MKV) into the `videos/` folder at the repo root.
+1. Place all new video files (MP4 or MKV) into `_video_analysis/videos/`.
 
 2. Open `_video_analysis/transcribe_all_videos.py` and add entries to the `VIDEOS` list. Each entry is a tuple of `(video_id, filename)`:
 

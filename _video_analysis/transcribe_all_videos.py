@@ -7,10 +7,9 @@ import sys
 import time
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-REPO_ROOT = os.path.dirname(SCRIPT_DIR)
 
-VIDEO_DIR = os.path.join(REPO_ROOT, "videos")
-OUTPUT_DIR = os.path.join(SCRIPT_DIR, "videos")
+VIDEO_DIR = os.path.join(SCRIPT_DIR, "videos")
+OUTPUT_DIR = VIDEO_DIR
 FFMPEG = os.environ.get("FFMPEG_PATH", "ffmpeg")
 
 VIDEOS = [
