@@ -13,8 +13,6 @@ copyright: "&copy; Property Partner (Strathmore Property Limited)"
 theme:
   name: material
   features:
-    - navigation.tabs
-    - navigation.tabs.sticky
     - navigation.sections
     - navigation.expand
     - navigation.indexes
