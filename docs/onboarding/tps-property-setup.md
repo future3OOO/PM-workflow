@@ -1,7 +1,7 @@
 # TPS — Property & Trade Me Setup
 
-**Version:** V2.0  
-**Last updated:** 2026-02-24
+**Version:** V2.3  
+**Last updated:** 2026-03-31
 
 ---
 

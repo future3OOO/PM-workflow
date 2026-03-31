@@ -1,6 +1,6 @@
 # Inspection Lifecycle
 
-**Version:** V2.1  
+**Version:** V2.3  
 **Last updated:** 2026-03-31
 
 ---

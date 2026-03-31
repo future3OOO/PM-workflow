@@ -1,6 +1,6 @@
 # Standards & SLAs
 
-**Version:** V2.2  
+**Version:** V2.3  
 **Last updated:** 2026-03-31
 
 ---
@@ -128,12 +128,13 @@ V2 escalation rule:
 !!! warning "Non-Negotiable"
 
     Every tenancy file in Property Tree must contain the items below. No exceptions.
-- signed agreement + any renewals/extensions
-- bond confirmation + any bond refund documents
-- Healthy Homes evidence set / statement info
-- inspection reports
-- major notices
-- major maintenance approvals + invoices + completion evidence
+
+    - signed agreement + any renewals/extensions
+    - bond confirmation + any bond refund documents
+    - Healthy Homes evidence set / statement info
+    - inspection reports
+    - major notices
+    - major maintenance approvals + invoices + completion evidence
 
 ---
 

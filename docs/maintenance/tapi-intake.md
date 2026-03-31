@@ -1,6 +1,6 @@
 # Intake, Triage & Work Orders
 
-**Version:** V2.2  
+**Version:** V2.3  
 **Last updated:** 2026-03-31
 
 ---
