@@ -249,8 +249,13 @@ Plumbing (most common) · General repairs · Electrical · Appliance servicing �
 - Add a note about when the work was actually done for the owner's context
 
 ### Approve
-- Click **Approve** → job auto-closes → invoice syncs to Property Tree (Ownership → Financials)
-- Deducted from available balance in the Monday night payment run
+Clicking **Approve** triggers four automatic effects:
+1. Invoice status changes to **Approved**
+2. The linked Tapi job **auto-closes**
+3. Owner notification email is **sent** (with the personalised message added above)
+4. Invoice **syncs to Property Tree** (Ownership → Financials)
+
+The invoice amount is deducted from the owner's available rent balance in the Monday payment run (see Invoice SOP § 10 for holdback mechanics).
 
 ---
 

@@ -98,13 +98,16 @@ for vid_id, filename in VIDEOS:
     print(f"  TXT saved: {txt_path}")
 
     # Print summary
-    char_count = len(transcript["text"])
     seg_count = len(transcript["segments"])
-    duration_s = transcript["segments"][-1]["end"] if transcript["segments"] else 0
-    duration_m = int(duration_s // 60)
-    duration_r = int(duration_s % 60)
-    print(f"  Duration: {duration_m}m{duration_r}s | Segments: {seg_count} | Chars: {char_count}")
-    print(f"  Preview: {transcript['text'][:300]}...")
+    if seg_count == 0:
+        print(f"  WARNING: No segments transcribed for {vid_id}")
+    else:
+        char_count = len(transcript["text"])
+        duration_s = transcript["segments"][-1]["end"]
+        duration_m = int(duration_s // 60)
+        duration_r = int(duration_s % 60)
+        print(f"  Duration: {duration_m}m{duration_r}s | Segments: {seg_count} | Chars: {char_count}")
+        print(f"  Preview: {transcript['text'][:300]}...")
 
     sys.stdout.flush()
 
