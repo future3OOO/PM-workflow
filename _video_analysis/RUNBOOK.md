@@ -138,7 +138,13 @@ In Cursor, use the Task tool with video review subagents to analyse MP4 files. P
 
 ## Step 5 — Draft Analysis Reports
 
-For each video, produce a structured analysis report. These are working documents used during integration — they don't need to be committed to the repo.
+For each video, produce a structured analysis report. These are working documents used during integration — they don't need to be committed to the repo. Store them in the `artefacts/` folder organised by date:
+
+```
+_video_analysis/artefacts/YYYY-MM-DD/
+```
+
+For example, analysis reports from a session on 2026-04-15 would go in `_video_analysis/artefacts/2026-04-15/`. This folder is gitignored.
 
 ### Recommended report structure
 

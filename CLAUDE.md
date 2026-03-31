@@ -29,7 +29,10 @@ property_management_docs_v2/
 ├── _video_analysis/             # Video integration tooling
 │   ├── RUNBOOK.md               # 9-step video-to-workflow process
 │   ├── transcribe.py            # Single-video CLI transcription
-│   └── transcribe_all_videos.py # Batch transcription pipeline
+│   ├── transcribe_all_videos.py # Batch transcription pipeline
+│   └── artefacts/               # Analysis reports organised by date (gitignored)
+│       ├── 2026-03-07/          # Batch 1: inspection follow-up videos
+│       └── 2026-03-31/          # Batch 2: 12 Tapi training videos
 └── videos/                      # Source video files (gitignored)
 ```
 

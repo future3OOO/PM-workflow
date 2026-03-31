@@ -10,8 +10,9 @@ _video_analysis/videos/
 _video_analysis/frames_*/
 _video_analysis/*.json
 
-# Video analysis reports (local working documents, not shipped)
+# Video analysis reports and artefacts (local working documents, not shipped)
 _video_analysis/VIDEO_*.md
+_video_analysis/artefacts/
 
 # Cursor IDE
 .cursor/
