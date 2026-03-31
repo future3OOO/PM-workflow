@@ -5,14 +5,11 @@
 *.mov
 *.wmv
 
-# Video analysis generated outputs (audio, transcripts, frames)
-_video_analysis/videos/
-_video_analysis/frames_*/
-_video_analysis/*.json
-
-# Video analysis reports and artefacts (local working documents, not shipped)
-_video_analysis/VIDEO_*.md
+# Video analysis artefacts (reports, transcripts, audio, frames — all date-based)
 _video_analysis/artefacts/
+
+# Video analysis working directory (converted MP4s, intermediate files)
+_video_analysis/videos/
 
 # Cursor IDE
 .cursor/
