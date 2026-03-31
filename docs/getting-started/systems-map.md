@@ -76,7 +76,7 @@ See workflow: [Leasing Lifecycle](../leasing/leasing-lifecycle.md)
 
     **Pipeline statuses**
 
-    Open → Awaiting quotes → Awaiting approval → Scheduling → Awaiting repair → Awaiting invoice → Awaiting confirmation → Closed
+    Open jobs → Awaiting quotes → Awaiting approval → Scheduling job → Awaiting repair → Awaiting invoice → Awaiting confirmation
 
     **Navigation**
 
