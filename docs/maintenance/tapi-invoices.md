@@ -1,6 +1,6 @@
 # Invoice Processing & Property Tree Sync
 
-**Version:** V2.6  
+**Version:** V2.7  
 **Last updated:** 2026-04-01
 
 ---
@@ -166,13 +166,14 @@ Once an approved invoice syncs from Tapi to Property Tree, the invoice amount is
 
 ### Owner payment rule
 
-The owner always pays the invoice.
+In the normal payment flow, the owner's funds pay the invoice first.
 
 - Standard case: code to **Property** and Property Tree pays it from the owner's rent account.
-- If the property is vacant or short of funds, the invoice stays against the owner account until enough rent is available.
-- If the landlord has agreed to pay directly, keep a clear email or phone-note record.
+- When the property is vacant or short of funds, the invoice stays against the owner account until enough rent is available.
+- When the landlord has agreed to pay directly, keep a clear email or phone-note record.
+- **Tenancy** is the exception: only code to **Tenancy** when tenant liability has been established with documented evidence and a written communication trail.
 
-If a landlord has multiple properties under the same ownership profile, those rent funds operate as one combined owner balance. If properties sit under separate ownership profiles, funds are not shared across them.
+Where a landlord has multiple properties under the same ownership profile, those rent funds operate as one combined owner balance. Properties under separate ownership profiles do not share funds.
 
 ### How the holdback works
 

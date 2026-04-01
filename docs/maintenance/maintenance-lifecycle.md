@@ -1,6 +1,6 @@
 # Maintenance Lifecycle
 
-**Version:** V2.6  
+**Version:** V2.7  
 **Last updated:** 2026-04-01
 
 ---
@@ -209,7 +209,7 @@ This is a critical stage with its own detailed SOP. The summary:
 | Coding | Charge-to: Property (~95%) / Owner (rare) / Tenancy (uncommon). Set work type. |
 | Notification | Always tick owner notification; add personalised message |
 | Approve | Triggers: invoice approved → job auto-closes → owner notified → **syncs to Property Tree** |
-| Holdback | Owner always pays. Invoice is deducted from the owner's rent account in the Monday payment run; if multiple properties share one ownership profile, available funds are pooled across that profile |
+| Holdback | Standard case: invoice is deducted from the owner's rent account in the Monday payment run. **Tenancy** remains an uncommon exception where tenant liability has been established. If multiple properties share one ownership profile, available funds are pooled across that profile |
 
 ??? info "Forwarding invoices sent to the wrong address"
 
