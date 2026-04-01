@@ -72,7 +72,7 @@ Populate:
 - landlord details required by TPS
 - later tenancy setup in Property Tree must still cross-check rent against TPS / the final agreement, because the management agreement can be stale
 
---- 
+---
 
 ## Stage 4 — Access plan and keys
 Document in Property Tree property notes + "01 Management & Owner Docs":
