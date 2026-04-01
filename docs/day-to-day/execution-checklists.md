@@ -1,6 +1,6 @@
 # Execution Checklists
 
-**Version:** V2.9  
+**Version:** V3.0  
 **Last updated:** 2026-04-01
 
 ---
@@ -10,12 +10,21 @@
 - [ ] Management authority saved to Property Tree docs (01 Management & Owner Docs)
 - [ ] Owner record created (bank details verified)
 - [ ] Property record created (address verified)
+- [ ] Owner statement preferences set correctly:
+  - delivery method = email
+  - statement type = basic statement
+  - contact type = Owner
+- [ ] If address lookup fails for a new build or unit, the address is corrected manually before saving
 - [ ] Fees/disbursement/statement settings applied
+- [ ] Authority Start Date matches the management agreement commencement date
+- [ ] Expenditure Limit matches the management agreement spend threshold
+- [ ] Management fee checked against the agreement and GST handled correctly
 - [ ] Property Tree docs folders created
 - [ ] Keys/access plan documented
 - [ ] TPS property setup completed (compliance fields entered)
 - [ ] Owner instructions recorded (approval style, quote-first, spend threshold)
 - [ ] Compliance evidence gathered OR gaps converted into Tapi action plan
+- [ ] Where later remediation evidence exists, Healthy Homes component dates are checked against the specific invoice / evidence source
 - [ ] Owner welcome email sent
 
 ---

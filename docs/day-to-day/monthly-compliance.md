@@ -1,7 +1,7 @@
 # Monthly Compliance Audit
 
-**Version:** V2.3  
-**Last updated:** 2026-03-31
+**Version:** V2.4  
+**Last updated:** 2026-04-01
 
 ---
 
@@ -12,6 +12,7 @@ See: [Compliance & Healthy Homes](../onboarding/compliance-healthy-homes.md)
 
 - [ ] Healthy Homes evidence set present (or action plan exists)
 - [ ] TPS compliance fields match evidence
+- [ ] Where later invoices or remediation evidence exist, each Healthy Homes component date matches its specific evidence source, or any discrepancy is noted and reconciled (record the component, source document, and reconciliation outcome)
 - [ ] Latest agreement present
 - [ ] Bond confirmation present
 

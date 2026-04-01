@@ -1,6 +1,6 @@
 # Reports & Actions (Inspection Express)
 
-**Version:** V2.5  
+**Version:** V2.6  
 **Last updated:** 2026-04-01
 
 ---
@@ -174,7 +174,7 @@ Use this flow for **ingoing** inspections rather than the routine-inspection own
 3) Advise the tenant they have **14 days** to review the report and submit any corrections or additions
 4) If amendments come back within the 14-day window, review and incorporate them according to the PM's decision
 5) If no amendments come back within 14 days, treat the ingoing report as finalised
-6) Once finalised, confirm the final copy is stored back into Property Tree and available to the landlord through the owner portal
+6) Once finalised, confirm the final copy has automatically synced back into Property Tree and is available to the landlord through the owner portal
 
 ---
 

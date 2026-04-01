@@ -1,6 +1,6 @@
 # Tenant Onboarding
 
-**Version:** V2.7  
+**Version:** V2.8  
 **Last updated:** 2026-04-01
 
 ---
@@ -45,7 +45,7 @@ Template: [Notice & Email Templates](../day-to-day/notice-email-templates.md)
 - on the morning of move-in, send the ingoing report or 360 report to the tenant together with the key sheet
 - tenant then has **14 days** to review the report and submit any amendments
 - if no amendments are received within that window, treat the report as finalised
-- once finalised, the final copy should be stored back into Property Tree automatically and should be available to the landlord through the portal
+- once finalised, confirm the final copy has automatically synced back into Property Tree and is available to the landlord through the portal
 
 SOP: [Inspection Express](../inspections/inspection-express.md)
 

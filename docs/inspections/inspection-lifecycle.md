@@ -1,6 +1,6 @@
 # Inspection Lifecycle
 
-**Version:** V2.5  
+**Version:** V2.6  
 **Last updated:** 2026-04-01
 
 ---
@@ -63,7 +63,7 @@ SOP: [Reports & Actions (Inspection Express)](inspection-express.md)
 - **Routine inspections:** tenant action list with deadlines where needed
 - **Ingoing inspections:** complete the report before move-in where possible, but send the ingoing report or 360 report to the tenant on the morning of move-in together with the key sheet
 - **Ingoing inspections:** the tenant has **14 days** to propose amendments; if no amendments are received, the report is treated as finalised
-- **Ingoing inspections:** finalised copies should flow back into Property Tree and be available to the landlord through the portal
+- **Ingoing inspections:** finalised copies should automatically sync back into Property Tree; confirm they are there and available to the landlord through the portal
 
 SOP: [Reports & Actions (Inspection Express)](inspection-express.md)
 

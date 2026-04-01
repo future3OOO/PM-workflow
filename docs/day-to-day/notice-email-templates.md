@@ -1,6 +1,6 @@
 # Notice & Email Templates
 
-**Version:** V2.5  
+**Version:** V2.6  
 **Last updated:** 2026-04-01
 
 ---
@@ -106,7 +106,7 @@ Welcome to your new home at **[Property Address]**. Here’s what you need befor
 - **Key handover:** [details]  
 - **Rent payments:** $[amount] per week, paid [frequency]. Payment details: [details].  
 - **Maintenance requests:** Please submit maintenance requests via our website form: [link]. For urgent issues (leaks/no hot water/power/sewerage/security risk), call [urgent number].  
-- **Ingoing condition report:** We’ll send the report after the ingoing inspection. Please review and reply with any notes within [X] days.
+- **Ingoing condition report:** We’ll send the ingoing report or 360 report on the morning of your move-in date together with the key sheet. Please review it and reply with any notes or corrections within **14 days**. After that window, we’ll treat the report as finalised and confirm the final copy is on file in Property Tree.
 
 Thanks,  
 [Name]
