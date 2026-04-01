@@ -59,9 +59,9 @@ SOP: [Agreements & Signing (TPS)](tps-agreements-signing.md)
 - In TPS, enter `Received General Bond` if needed and set `Received Status` to `Fully Paid`
 - Fix any missing bond-form details that stop the record reaching `Ready`
 - Lodge the bond in TPS using `Direct Credit`
-- Wait for the Tenancy Services email back with the payment reference and bank account details
+- Wait for the Tenancy Services payment-instruction email with the payment reference and bank account details
 - Pay Tenancy Services from trust using those emailed details
-- Track until confirmation received
+- Track until the later bond lodgement confirmation / receipt arrives
 - File confirmation into Property Tree docs
 
 SOP: [Bond Lodgement](bond-lodgement.md)

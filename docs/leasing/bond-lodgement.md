@@ -54,12 +54,12 @@ Navigate to: **TPS → Bonds → three-dot menu → Lodge bond**
 
 - Lodging in TPS sends the bond request to Tenancy Services
 - It does **not** itself move the trust money
-- Tenancy Services then emails back the bond confirmation with the payment reference and bank account details
-- Use that Tenancy Services email to make the actual payment from the trust account
+- Tenancy Services then emails back a payment-instruction email with the payment reference and bank account details
+- Use that payment-instruction email to make the actual payment from the trust account
 
 ### 7) File the confirmation
 
-- Track through to the Tenancy Services confirmation email
+- Track through to the later Tenancy Services bond lodgement confirmation / receipt email
 - Upload the confirmation into Property Tree docs
 - Update any internal bond status notes
 
