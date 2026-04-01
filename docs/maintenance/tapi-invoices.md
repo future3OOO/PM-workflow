@@ -1,6 +1,6 @@
 # Invoice Processing & Property Tree Sync
 
-**Version:** V2.9  
+**Version:** V2.10  
 **Last updated:** 2026-04-01
 
 ---
@@ -91,7 +91,7 @@ Once the invoice is matched (auto or manual), complete the entry fields:
 
 | Field | Description | Options / Notes |
 |---|---|---|
-| **Charge to** | Who bears the cost | **Property** (default ~95% — owner pays from rent account), **Owner** (rare — direct forward), **Tenancy** (system option used when charging the tenant; uncommon and evidence-based) |
+| **Charge to** | Who bears the cost | **Property** (default ~95% — owner pays from rent account), **Owner** (rare — direct forward), **Tenancy** (system option used when charging the tenant; uncommon except for excess water charges) |
 | **Work type** | Category of maintenance | Dropdown. Most common in order: Plumbing > General repairs/maintenance > Electrical > Appliance servicing > Heat pump servicing > Gardening. Others rarely used |
 | **Invoice amount** | Dollar value inc. GST | Pre-filled from the uploaded invoice |
 | **Matched job** | Linked Tapi job | Auto-populated or manually matched in previous step |
@@ -103,7 +103,7 @@ Once the invoice is matched (auto or manual), complete the entry fields:
     |---|---|---|
     | **Property** | Default for virtually all invoices (~95%) | Cost deducted from the owner's rent account balance |
     | **Owner** | Rare | Invoice forwarded directly to the owner for their own payment |
-    | **Tenancy** | Use this system option when charging the tenant | Uncommon — only use when tenant liability has been established, such as careless or intentional damage, and a written communication trail exists |
+    | **Tenancy** | Use this system option when charging the tenant | Most often used for excess water charges. Otherwise uncommon — only use when tenant liability has been established, such as careless or intentional damage, and a written communication trail exists |
 
 ---
 
@@ -176,7 +176,9 @@ In the normal payment flow, the owner's funds pay the invoice first.
 
 The system option may be labelled **Tenancy**, but the business meaning is that the **tenant** is being charged.
 
-- This is uncommon.
+- The more common tenant-charge case is an **excess water charge**.
+- In Christchurch, council charges for **excess water only**, not ordinary water use.
+- Outside excess water, charging the tenant is uncommon.
 - Only use it when tenant liability has been established, for example careless or intentional damage.
 - Do not use it without documented evidence and a written communication trail.
 
