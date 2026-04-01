@@ -1,7 +1,7 @@
 # Leasing Lifecycle
 
-**Version:** V2.3  
-**Last updated:** 2026-03-31
+**Version:** V2.5  
+**Last updated:** 2026-04-01
 
 ---
 
@@ -71,9 +71,16 @@ SOP: [Application Processing (TPS)](tps-application-processing.md)
 ---
 
 ## Stage 6 — Approve and generate agreement
-- Approve application in TPS (tenant receives acceptance notification)
+<span class="pp-verified-label">Verified from video analysis</span>
+
+- Mark the application successful in TPS
+- Create the draft tenancy agreement **before** sending the acceptance communication, so the payment reference exists
+- Confirm the move-in date with the tenant
 - Generate tenancy agreement in TPS using stored landlord/property/compliance data
 - Send for digital signing; export final signed PDF
+
+!!! warning "Do not withdraw the listing too early"
+    Keep the Trade Me listing live until the tenant has signed and the PM has countersigned the agreement. An accepted applicant can still fall through.
 
 SOP: [Agreements & Signing (TPS)](tps-agreements-signing.md)
 

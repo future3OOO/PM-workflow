@@ -19,6 +19,11 @@ VIDEOS = [
     ("video22", "TPS- Lease renewal and increase - 1.mp4"),
     ("video23", "TPS- Lease renewal and increase - 2.mp4"),
     ("video24", "TPS- Lease renewal and increase - 3.mp4"),
+    ("video25", "Property tree- entering an ingoing inspection v2.mp4"),
+    ("video26", "Property tree- entering new property, landlord and tenany.mkv"),
+    ("video27", "TPS- application approved (A).mp4"),
+    ("video28", "TPS- application approved- Create Tenancy agreement (B).mp4"),
+    ("video29", "TPS- Bond lodgement.mp4"),
 ]
 
 

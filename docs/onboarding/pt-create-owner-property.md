@@ -1,7 +1,7 @@
 # Property Tree — Create Owner & Property
 
-**Version:** V2.3  
-**Last updated:** 2026-03-31
+**Version:** V2.5  
+**Last updated:** 2026-04-01
 
 ---
 
@@ -20,22 +20,28 @@ New management authority signed OR new property onboard instruction.
 ---
 
 ## Steps (field checklist)
+<span class="pp-verified-label">Verified from video analysis</span>
 
 !!! info "Field names"
     Button names may vary; treat this as the required data list.
 
 ### 1) Create Owner
+Navigate to: **Property Tree → add owner / contact**
+
 - Create owner/client record
 - Enter and verify:
   - full legal names
   - email + phone
   - postal address
-  - bank account (double-check digits)
+  - bank account
+- Verify the bank account against the owner's bank statement before any payment is ever made to that owner
 - Notes:
   - approvals preference (approve/decline/quote first)
   - any spend threshold from management agreement
 
 ### 2) Create Property
+Navigate to: **Property Tree → add property**
+
 - Create property record
 - Enter and verify:
   - correct property address
@@ -43,10 +49,16 @@ New management authority signed OR new property onboard instruction.
   - access notes (keys/lockbox/tenant constraints)
   - compliance notes (what exists/what missing)
   - preferred contractors (if any)
+- Use the **management agreement commencement date** for **Authority Start Date**
+- Use the **management agreement** for the **Expenditure Limit**
+- Property type is usually `House` or `Townhouse`
 
 ### 3) Apply financial settings
 - management fee settings (per agreement)
 - disbursement rules and statement frequency
+- set owner statements to the normal operating preference
+- do not assume the default management fee is correct; override it if the agreement is different
+- account for GST in the effective percentage where needed
 
 ### 4) Create Property Tree "property file" docs folders
 Create:
@@ -69,9 +81,9 @@ Upload to 01 / 07 / 03 as appropriate:
 ## Quality checks
 
 !!! warning "Verify before closing"
-    - Bank details correct
+    - Bank details match the bank statement
     - Address correct
-    - Fees correct
+    - Fees correct for this management agreement
     - Docs folders exist
     - Any missing items captured as tasks
 

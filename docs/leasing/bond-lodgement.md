@@ -1,7 +1,7 @@
 # Bond Lodgement
 
-**Version:** V2.3  
-**Last updated:** 2026-03-31
+**Version:** V2.5  
+**Last updated:** 2026-04-01
 
 ---
 
@@ -11,11 +11,56 @@ Bond is collected into trust first, then lodged with Tenancy Services via TPS wo
 Part of: [Leasing Lifecycle](leasing-lifecycle.md) → Stage 6 (bond)
 
 ## Steps
-1) Receive bond into trust account and record internally
-2) Initiate bond lodgement via TPS (Tenancy Services integration)
-3) Pay Tenancy Services using the provided reference number (from trust funds)
-4) Track to confirmation (email/letter)
-5) Upload confirmation into Property Tree docs and update bond status
+<span class="pp-verified-label">Verified from video analysis</span>
+
+### 1) Confirm the bond has actually been received
+
+Navigate to:
+
+- **Property Tree → Accounting → Bond or Deposit Authority**, or
+- **Property Tree tenancy → Financials → Recent Transactions**
+
+Check that the bond funds have actually been received before touching the TPS lodgement action.
+
+### 2) Open the bond record in TPS
+
+Navigate to: **TPS → Bonds → open incomplete bond → Edit**
+
+- Review the bond lodgement details
+- If the tenant/property details are incomplete, fix them before lodging
+
+### 3) Mark the bond as fully received
+
+- Enter the **Received General Bond** amount manually if it has not auto-filled
+- Set **Received Status** to **Fully Paid**
+- Save
+
+!!! warning "Do not assume TPS has populated the received amount"
+    The video shows that TPS can hold the general bond amount but still require the `Received General Bond` field to be manually completed before the record becomes ready.
+
+### 4) Resolve any validation errors
+
+- If TPS still does not move the bond to `Ready`, check for missing form fields such as postcode or other required bond details
+
+### 5) Lodge the bond in TPS
+
+Navigate to: **TPS → Bonds → three-dot menu → Lodge bond**
+
+- Leave **Payment Method** as **Direct Credit**
+- Do not alter the generated references
+- Click **Lodge**
+
+### 6) Pay Tenancy Services from the trust account
+
+- Lodging in TPS sends the bond request to Tenancy Services
+- It does **not** itself move the trust money
+- Use the Tenancy Services confirmation / reference details to make the actual payment from trust
+
+### 7) File the confirmation
+
+- Track to confirmation from Tenancy Services
+- Upload the confirmation into Property Tree docs
+- Update any internal bond status notes
 
 ## Timeframe
 

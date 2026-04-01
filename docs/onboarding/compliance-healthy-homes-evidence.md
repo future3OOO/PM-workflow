@@ -1,6 +1,6 @@
 # Healthy Homes Evidence (TPS)
 
-**Version:** V2.4  
+**Version:** V2.5  
 **Last updated:** 2026-04-01
 
 ---
@@ -24,6 +24,18 @@ When a renewal is being prepared in TPS, also verify the smoke alarm section:
 2) If there is no SATS-managed service, use the last verified routine inspection date where appropriate
 3) Update the TPS smoke alarm fields so the renewal agreement reflects the latest known test/service information
 4) If TPS shows a non-compliant item but evidence suggests the work was completed, confirm via Property Tree invoices or Tapi before changing the field
+5) Where the TPS field asks who checked the alarms, `agent` may be the correct entry if the evidence came from the PM / inspection workflow rather than SATS
+
+## Property Tree evidence cross-check
+<span class="pp-verified-label">Verified from video analysis</span>
+
+Navigate to: **Property Tree → property / tenancy → Documents**
+
+Use Property Tree invoices and other stored evidence to support TPS compliance updates when the live TPS record is incomplete or stale. This is especially useful for:
+
+- extractor fan installation dates
+- draught stopping work
+- other Healthy Homes remediation items that were completed but not reflected in TPS yet
 
 ## Quality checks
 
