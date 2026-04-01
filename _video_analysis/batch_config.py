@@ -27,29 +27,6 @@ VIDEOS = [
     ("video30", "Inspection confirmations.mp4"),
 ]
 
-BATCH_VIDEO_IDS = {
-    "2026-04-01": [
-        "video15",
-        "video16",
-        "video17",
-        "video18",
-        "video19",
-        "video20",
-        "video21",
-        "video22",
-        "video23",
-        "video24",
-        "video25",
-        "video26",
-        "video27",
-        "video28",
-        "video29",
-    ],
-    "2026-04-02": [
-        "video30",
-    ],
-}
-
 
 def batch_date_aliases(batch_date: str) -> list[str]:
     """Return supported folder-name aliases for a batch date."""
@@ -94,13 +71,10 @@ def resolve_frames_dir(script_dir: Path, batch_date: str, override: str | None =
 
 
 def select_videos(
-    video_ids: Iterable[str] | None = None, batch_date: str | None = None
+    video_ids: Iterable[str] | None = None,
 ) -> list[tuple[str, str]]:
-    """Return the configured videos, optionally filtered by video_id or scoped to a batch."""
+    """Return configured videos, optionally filtered by explicit video_id."""
     if not video_ids:
-        if batch_date and batch_date in BATCH_VIDEO_IDS:
-            requested = BATCH_VIDEO_IDS[batch_date]
-            return [item for item in VIDEOS if item[0] in requested]
         return list(VIDEOS)
 
     requested = list(video_ids)
@@ -108,4 +82,31 @@ def select_videos(
     missing = [video_id for video_id in requested if video_id not in {item[0] for item in selected}]
     if missing:
         raise ValueError(f"Unknown video_id(s): {', '.join(missing)}")
+    return selected
+
+
+def discover_videos_in_dir(video_dir: Path) -> list[tuple[str, str]]:
+    """Return configured videos whose source files exist in the selected source folder."""
+    if not video_dir.exists():
+        return []
+    return [item for item in VIDEOS if (video_dir / item[1]).is_file()]
+
+
+def discover_videos_in_artefact_dir(artefact_dir: Path) -> list[tuple[str, str]]:
+    """Return configured videos that already have evidence in the selected artefact folder."""
+    if not artefact_dir.exists():
+        return []
+
+    selected: list[tuple[str, str]] = []
+    frames_root = artefact_dir / "frames"
+
+    for video_id, filename in VIDEOS:
+        has_transcript = (
+            (artefact_dir / f"{video_id}_transcript.json").is_file()
+            or (artefact_dir / f"{video_id}_transcript.txt").is_file()
+        )
+        has_frames = (frames_root / video_id).exists()
+        if has_transcript or has_frames:
+            selected.append((video_id, filename))
+
     return selected

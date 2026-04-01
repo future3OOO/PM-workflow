@@ -11,6 +11,7 @@ from pathlib import Path
 import whisper
 from batch_config import (
     DEFAULT_BATCH_DATE,
+    discover_videos_in_dir,
     resolve_artefact_dir,
     resolve_video_dir,
     select_videos,
@@ -79,10 +80,17 @@ def transcribe_batch() -> None:
     video_dir = resolve_video_dir(SCRIPT_DIR, args.batch_date, args.video_dir)
     artefact_dir = resolve_artefact_dir(SCRIPT_DIR, args.batch_date, args.artefact_dir)
     audio_dir = artefact_dir / "audio"
-    videos = select_videos(args.video_ids, args.batch_date)
+    videos = select_videos(args.video_ids) if args.video_ids else discover_videos_in_dir(video_dir)
 
     print(f"Source video directory: {video_dir}")
     print(f"Artefact output directory: {artefact_dir}")
+
+    if not videos:
+        print(
+            "No configured videos were found in the selected source folder. "
+            "Register the new video in batch_config.py or pass --video-id explicitly."
+        )
+        return
 
     audio_dir.mkdir(parents=True, exist_ok=True)
 
