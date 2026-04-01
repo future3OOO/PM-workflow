@@ -12,7 +12,7 @@ copyright: "&copy; Property Partner (Strathmore Property Limited)"
 
 theme:
   name: material
-  logo: assets/property-partner-logo.png
+  logo: assets/property-partner-mark.svg
   features:
     - navigation.sections
     - navigation.expand
