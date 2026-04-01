@@ -1,6 +1,6 @@
 # Execution Checklists
 
-**Version:** V3.0  
+**Version:** V3.1  
 **Last updated:** 2026-04-01
 
 ---
@@ -44,6 +44,7 @@
 ---
 
 ## 3) Tenancy setup — TPS → bond → Property Tree
+<span class="pp-verified-label">Verified from video analysis</span>
 - [ ] Agreement fully signed and exported
 - [ ] Bond + initial rent collected to trust
 - [ ] Bond lodged via TPS
@@ -58,7 +59,8 @@
 - [ ] Ingoing inspection completed as early as practical and well before move-in
 - [ ] Ingoing report / 360 report and key sheet sent to tenant on move-in morning
 - [ ] Tenant given 14 days to submit amendments
-- [ ] Finalised ingoing copy confirmed back in Property Tree
+- [ ] If amendments are received within 14 days, the ingoing report is updated and the finalised copy is confirmed back in Property Tree
+- [ ] If no amendments are received after 14 days, the ingoing report is treated as finalised and confirmed back in Property Tree
 - [ ] Finalised ingoing copy available to landlord through the portal
 
 ---

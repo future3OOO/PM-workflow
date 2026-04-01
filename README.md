@@ -1,7 +1,7 @@
 # Property Management Workflow Documentation
 
 **Owner:** Property Partner (Strathmore Property Limited)  
-**Version:** V2.5  
+**Version:** V2.6  
 **Last Updated:** 2026-04-01
 
 ---
@@ -68,7 +68,7 @@ Training videos are analysed with:
 
 Primary references:
 
-- [_video_analysis/RUNBOOK.md](_video_analysis/RUNBOOK.md)
+- [_video_analysis/RUNBOOK_PERFORMANCE.md](_video_analysis/RUNBOOK_PERFORMANCE.md)
 - [docs/day-to-day/contributing.md](docs/day-to-day/contributing.md)
 
 ---

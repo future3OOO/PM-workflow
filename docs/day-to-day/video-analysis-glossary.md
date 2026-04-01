@@ -1,6 +1,6 @@
 # Video Analysis Glossary
 
-**Version:** V2.9  
+**Version:** V3.0  
 **Last updated:** 2026-04-01
 
 ---
@@ -55,7 +55,7 @@ The underlying transcripts, frames, and analysis artefacts live under `_video_an
 | `video16` | `2. TPS Book me - correction.mp4` | [Viewings & BookMe](../leasing/tps-viewings-bookme.md), [Leasing Lifecycle](../leasing/leasing-lifecycle.md), [TPS — Property & Trade Me Setup](../onboarding/tps-property-setup.md) |
 | `video17` | `General example- liability nuance.mkv` | [Standards & SLAs](../getting-started/standards-slas.md), [Agreements & Signing](../leasing/tps-agreements-signing.md) |
 | `video18` | `Inspections- Changing an inspections time.mp4` | [Scheduling & Confirmation (Property Tree)](../inspections/pt-scheduling.md), [Inspection Lifecycle](../inspections/inspection-lifecycle.md) |
-| `video19` | `Inspections- Entering an ingoing.mp4` | [Scheduling & Confirmation (Property Tree)](../inspections/pt-scheduling.md), [Inspection Lifecycle](../inspections/inspection-lifecycle.md), [Tenant Onboarding](../leasing/tenant-onboarding.md) |
+| `video19` | `Inspections- Entering an ingoing.mp4` | [Scheduling & Confirmation (Property Tree)](../inspections/pt-scheduling.md), [Inspection Lifecycle](../inspections/inspection-lifecycle.md), [Reports & Actions (Inspection Express)](../inspections/inspection-express.md), [Tenant Onboarding](../leasing/tenant-onboarding.md) |
 | `video20` | `Property tree- entering a rent increase.mp4` | [Renewals & Rent Reviews](../renewals-exits/renewals-rent-reviews.md), [Notices & Communications](notices-comms.md), [Sources & References](sources.md) |
 | `video21` | `TPS Portal- entering a new property.mp4` | [TPS — Property & Trade Me Setup](../onboarding/tps-property-setup.md), [Landlord & Property Setup](../onboarding/landlord-property-onboarding.md), [Systems Overview](../getting-started/systems-map.md) |
 | `video22` | `TPS- Lease renewal and increase - 1.mp4` | [Renewals & Rent Reviews](../renewals-exits/renewals-rent-reviews.md), [Notices & Communications](notices-comms.md), [Notice & Email Templates](notice-email-templates.md) |
@@ -68,7 +68,7 @@ The underlying transcripts, frames, and analysis artefacts live under `_video_an
 
 | Video | Video label | Published workflow docs created from / materially updated from this video |
 |---|---|---|
-| `video25` | `Property tree- entering an ingoing inspection v2.mp4` | [Scheduling & Confirmation (Property Tree)](../inspections/pt-scheduling.md), [Tenant Onboarding](../leasing/tenant-onboarding.md), [Property Tree — Create Tenancy](../leasing/pt-create-tenancy.md), [Execution Checklists](execution-checklists.md) |
+| `video25` | `Property tree- entering an ingoing inspection v2.mp4` | [Scheduling & Confirmation (Property Tree)](../inspections/pt-scheduling.md), [Inspection Lifecycle](../inspections/inspection-lifecycle.md), [Reports & Actions (Inspection Express)](../inspections/inspection-express.md), [Tenant Onboarding](../leasing/tenant-onboarding.md), [Property Tree — Create Tenancy](../leasing/pt-create-tenancy.md), [Execution Checklists](execution-checklists.md) |
 | `video26` | `Property tree- entering new property, landlord and tenancy.mkv` | [Property Tree — Create Owner & Property](../onboarding/pt-create-owner-property.md), [Landlord & Property Setup](../onboarding/landlord-property-onboarding.md), [Property Tree — Create Tenancy](../leasing/pt-create-tenancy.md) |
 | `video27` | `TPS- application approved (A).mp4` | [Application Processing](../leasing/tps-application-processing.md), [Agreements & Signing](../leasing/tps-agreements-signing.md), [Notice & Email Templates](notice-email-templates.md) |
 | `video28` | `TPS- application approved- Create Tenancy agreement (B).mp4` | [Agreements & Signing](../leasing/tps-agreements-signing.md), [Tenancy Setup](../leasing/tenancy-setup.md), [Property Tree — Create Tenancy](../leasing/pt-create-tenancy.md) |

@@ -1,6 +1,6 @@
 # Inspection Lifecycle
 
-**Version:** V2.6  
+**Version:** V2.7  
 **Last updated:** 2026-04-01
 
 ---
@@ -58,6 +58,7 @@ SOP: [Reports & Actions (Inspection Express)](inspection-express.md)
 ---
 
 ## Stage 3 — Publish report and distribution
+<span class="pp-verified-label">Verified from video analysis</span>
 - **Routine inspections:** PM finalises and publishes report in Inspection Express, then the report is sent to tenant and owner via email (includes link + access code valid for 30 days)
 - **Routine inspections:** email includes maintenance items noted (room, title, description, photos) and a request for the owner to respond regarding any maintenance
 - **Routine inspections:** tenant action list with deadlines where needed
