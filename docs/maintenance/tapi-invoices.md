@@ -1,6 +1,6 @@
 # Invoice Processing & Property Tree Sync
 
-**Version:** V2.7  
+**Version:** V2.9  
 **Last updated:** 2026-04-01
 
 ---
@@ -91,7 +91,7 @@ Once the invoice is matched (auto or manual), complete the entry fields:
 
 | Field | Description | Options / Notes |
 |---|---|---|
-| **Charge to** | Who bears the cost | **Property** (default ~95% — owner pays from rent account), **Owner** (rare — direct forward), **Tenancy** (uncommon — requires evidence + comms trail) |
+| **Charge to** | Who bears the cost | **Property** (default ~95% — owner pays from rent account), **Owner** (rare — direct forward), **Tenancy** (system option used when charging the tenant; uncommon and evidence-based) |
 | **Work type** | Category of maintenance | Dropdown. Most common in order: Plumbing > General repairs/maintenance > Electrical > Appliance servicing > Heat pump servicing > Gardening. Others rarely used |
 | **Invoice amount** | Dollar value inc. GST | Pre-filled from the uploaded invoice |
 | **Matched job** | Linked Tapi job | Auto-populated or manually matched in previous step |
@@ -103,7 +103,7 @@ Once the invoice is matched (auto or manual), complete the entry fields:
     |---|---|---|
     | **Property** | Default for virtually all invoices (~95%) | Cost deducted from the owner's rent account balance |
     | **Owner** | Rare | Invoice forwarded directly to the owner for their own payment |
-    | **Tenancy** | Tenant is responsible | Uncommon — requires documented evidence and a written communication trail before coding |
+    | **Tenancy** | Use this system option when charging the tenant | Uncommon — only use when tenant liability has been established, such as careless or intentional damage, and a written communication trail exists |
 
 ---
 
@@ -171,9 +171,20 @@ In the normal payment flow, the owner's funds pay the invoice first.
 - Standard case: code to **Property** and Property Tree pays it from the owner's rent account.
 - When the property is vacant or short of funds, the invoice stays against the owner account until enough rent is available.
 - When the landlord has agreed to pay directly, keep a clear email or phone-note record.
-- **Tenancy** is the exception: only code to **Tenancy** when tenant liability has been established with documented evidence and a written communication trail.
 
-Where a landlord has multiple properties under the same ownership profile, those rent funds operate as one combined owner balance. Properties under separate ownership profiles do not share funds.
+### Charging the tenant
+
+The system option may be labelled **Tenancy**, but the business meaning is that the **tenant** is being charged.
+
+- This is uncommon.
+- Only use it when tenant liability has been established, for example careless or intentional damage.
+- Do not use it without documented evidence and a written communication trail.
+
+### Combined owner balances
+
+Where a landlord has multiple properties under the same ownership profile, those rent funds operate as one combined owner balance.
+
+If properties sit under separate ownership profiles, those funds do not pool across them.
 
 ### How the holdback works
 
@@ -211,7 +222,7 @@ Most tenants pay weekly, but some pay **fortnightly** or **monthly**. The holdba
             │
             └─ Unmatched? ──────────→ Contractor lookup → Property select → Job select → Attach → Invoice Entry
                                                                                                         │
-                                                                                        Set charge-to (Property/Owner/Tenancy)
+                                                                                        Set charge-to (Property/Owner/Tenancy system option for tenant charge)
                                                                                         Set work type
                                                                                         Verify amount
                                                                                                         │
