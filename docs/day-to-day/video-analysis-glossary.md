@@ -1,11 +1,13 @@
 # Video Analysis Glossary
 
-**Version:** V2.7  
+**Version:** V2.8  
 **Last updated:** 2026-04-01
 
 ---
 
 ## Purpose
+<span class="pp-verified-label">Verified from video analysis</span>
+
 Published index of every training video batch already processed into this documentation set.
 
 Use this page to answer:
