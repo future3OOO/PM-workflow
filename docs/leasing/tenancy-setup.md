@@ -1,7 +1,7 @@
 # Tenancy Setup
 
-**Version:** V2.3  
-**Last updated:** 2026-03-31
+**Version:** V2.5  
+**Last updated:** 2026-04-01
 
 ---
 
@@ -26,8 +26,18 @@ Tenant approved in TPS and proceeds with tenancy setup.
 ---
 
 ## Stage 1 — Agreement in TPS
-- Generate agreement with correct tenancy type and dates
-- Confirm compliance fields are completed (so agreement is correct)
+<span class="pp-verified-label">Verified from video analysis</span>
+
+- Mark the successful application in TPS
+- Create the **draft agreement before sending the acceptance letter** so the payment reference exists
+- Confirm the move-in date with the tenant
+- Review agreement fields carefully:
+  - dates
+  - next rent payment date
+  - liability
+  - compliance
+  - insurance excess
+  - clauses
 - Send for signing and track completion
 - Export signed agreement PDF
 
@@ -36,14 +46,20 @@ SOP: [Agreements & Signing (TPS)](tps-agreements-signing.md)
 ---
 
 ## Stage 2 — Collect move-in funds into trust
+- Use the TPS-generated payment reference in the tenant instructions
 - Collect bond and initial rent into your trust account (your standard)
 - Record receipt and allocate correctly for reporting
 
 ---
 
 ## Stage 3 — Lodge bond (TPS + Tenancy Services integration)
-- Initiate bond lodgement via TPS
-- Pay Tenancy Services using the reference provided (from trust funds)
+<span class="pp-verified-label">Verified from video analysis</span>
+
+- Verify the bond has actually been received in Property Tree before lodging
+- In TPS, enter `Received General Bond` if needed and set `Received Status` to `Fully Paid`
+- Fix any missing bond-form details that stop the record reaching `Ready`
+- Lodge the bond in TPS using `Direct Credit`
+- Pay Tenancy Services using the returned reference provided (from trust funds)
 - Track until confirmation received
 - File confirmation into Property Tree docs
 
@@ -52,7 +68,11 @@ SOP: [Bond Lodgement](bond-lodgement.md)
 ---
 
 ## Stage 4 — Create tenancy in Property Tree
+<span class="pp-verified-label">Verified from video analysis</span>
+
 - Create tenancy record and enter rent + dates exactly as per agreement
+- Add each tenant individually and copy names from TPS exactly
+- Set the rent review date roughly 2 to 3 months before fixed-term end
 - Upload agreement and bond confirmation to Property Tree docs
 - Ensure landlord portal visibility is appropriate (docs are the owner-facing file)
 
@@ -61,8 +81,10 @@ SOP: [Property Tree — Create Tenancy & Dates](pt-create-tenancy.md)
 ---
 
 ## Stage 5 — Trigger onboarding and inspections
+<span class="pp-verified-label">Verified from video analysis</span>
+
 - Send welcome pack
-- Schedule ingoing inspection in Property Tree (syncs to Inspection Express)
+- Add the ingoing inspection in Property Tree with a future time and `Confirmed` status so it syncs to Inspection Express
 
 Playbook: [Tenant Onboarding](tenant-onboarding.md)
 

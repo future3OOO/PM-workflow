@@ -1,7 +1,7 @@
 # Tenant Onboarding
 
-**Version:** V2.3  
-**Last updated:** 2026-03-31
+**Version:** V2.5  
+**Last updated:** 2026-04-01
 
 ---
 
@@ -36,7 +36,10 @@ Template: [Notice & Email Templates](../day-to-day/notice-email-templates.md)
 ---
 
 ## Stage 2 — Ingoing inspection (Property Tree → Inspection Express)
-- schedule ingoing inspection in Property Tree; confirm sync in Inspection Express
+<span class="pp-verified-label">Verified from video analysis</span>
+
+- schedule the ingoing inspection in Property Tree with a **future** time and **Confirmed** status
+- confirm sync in Inspection Express
 - complete inspection thoroughly with photos
 - publish report; send to tenant and owner; store in Property Tree docs
 

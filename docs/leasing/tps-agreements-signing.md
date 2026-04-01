@@ -1,6 +1,6 @@
 # Agreements & Signing (TPS)
 
-**Version:** V2.4  
+**Version:** V2.5  
 **Last updated:** 2026-04-01
 
 ---
@@ -8,16 +8,77 @@
 Part of: [Leasing Lifecycle](leasing-lifecycle.md) → Stage 6
 
 ## New tenancy agreement
+<span class="pp-verified-label">Verified from video analysis</span>
 
-1) Generate agreement in TPS (tenancy type, dates, rent, parties)
-2) Confirm compliance section is correct (agreement readiness)
-3) Send for digital signing via tenant portal
-4) Export signed agreement PDF
-5) Upload to Property Tree docs (02 Tenancy Agreements)
-6) Store compliance evidence in Property Tree (03 Compliance)
+Navigate to: **TPS → approved applicant / draft agreement → Edit**
+
+### Agreement review sequence
+
+1. Generate or reopen the draft agreement in TPS
+2. Review the agreement field by field before emailing it to the tenant
+3. Cross-check TPS data against Property Tree, compliance evidence, and owner emails where needed
+4. Email the agreement to the tenant for electronic signing
+5. Export the final signed PDF
+6. Upload the signed agreement to Property Tree docs
+7. Store supporting compliance evidence in Property Tree
+
+### Property costs and tenancy term
+
+- Check the tenancy type
+- Check the start date against the accepted move-in date
+- For a 12-month fixed term, the end date is the **day before the anniversary**
+- Check the first rent payment amount and bond totals carefully
+- If a pet is approved, make sure the pet bond is included where applicable
+
+### Next rent payment date
+<span class="pp-verified-label">Verified from video analysis</span>
+
+- Use the first unpaid date after the initial advance period
+- Do not set a next rent payment date that asks for rent inside a period the tenant has already paid for
+
+### Chattels
+
+- Tick the known chattels
+- Use the standard note that the full chattels list and key sheet will be provided with the ingoing condition report on move-in morning
+
+### Liability
+
+- Power: tenant liable
+- Gas consumption: tenant liable
+- Gas bottle rental: owner liable where relevant
+- Water: tenant liable for **excess charges only**
+- Gardens/lawns: usually tenant liable unless the property-specific arrangement is different
+
+### Tenant details and occupancy controls
+
+- Check tenant names, email, and phone
+- Leave emergency contact blank if it is intended for the tenant to complete
+- Check max residents and vehicle limits
+- Check pet approval status
+
+### Compliance and smoke alarms
 
 !!! warning "Compliance check"
-    Step 2 is critical — incorrect compliance fields produce incorrect tenancy agreements and compliance statements. Always verify before sending for signing.
+    Incorrect compliance fields produce incorrect tenancy agreements and compliance statements. Always verify before sending for signing.
+
+- Verify the smoke alarm section using SATS (`sats.co.nz`) or the last verified inspection date
+- `Checked by` may need to be `agent`
+- Leave the smoke alarm assessment date alone unless there is evidence it should change
+- All new tenancies must be compliant from tenancy start
+- If TPS shows a non-compliant Healthy Homes item but the work appears to have been completed, confirm against Property Tree invoices or other evidence before changing the field
+
+### Insurance and clauses
+
+- Verify the latest insurance details from the owner's policy or email
+- The key insurance field is the **excess amount**
+- Add pet clauses when a pet is approved
+- Add any property-specific parking, access, or shared-driveway clauses that apply
+- Do not attach the owner's insurance policy to the tenant agreement unless there is a specific reason to do so
+
+### Final send
+
+- Use **Email tenant**
+- Review the generated email before sending
 
 ---
 

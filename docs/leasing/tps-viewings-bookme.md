@@ -1,6 +1,6 @@
 # Viewings & BookMe (TPS)
 
-**Version:** V2.4  
+**Version:** V2.5  
 **Last updated:** 2026-04-01
 
 ---
@@ -111,6 +111,9 @@ Available viewer filters in the dialog:
 - **Select All Not Attended**
 
 The PM typically does this from his phone at the viewing itself.
+
+!!! tip "Keep the listing live during agreement stage"
+    Once a tenant is approved, do not pull the Trade Me listing down immediately. Leave it live until the tenancy agreement is signed by the tenant and countersigned by the PM in case the accepted applicant falls through.
 
 ---
 

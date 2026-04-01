@@ -1,7 +1,7 @@
 # Landlord & Property Setup
 
-**Version:** V2.3  
-**Last updated:** 2026-03-31
+**Version:** V2.5  
+**Last updated:** 2026-04-01
 
 ---
 
@@ -47,6 +47,8 @@ Management authority signed OR takeover date confirmed.
 ---
 
 ## Stage 2 — Create the Property Tree master record
+<span class="pp-verified-label">Verified from video analysis</span>
+
 Follow SOP: [Property Tree — Create Owner & Property](pt-create-owner-property.md)
 
 Complete:
@@ -54,6 +56,10 @@ Complete:
 - property record
 - fees and statement/disbursement settings
 - establish the Property Tree property file structure (docs folders)
+- verify owner bank details against the bank statement before any owner payment can be made
+- use the management agreement commencement date for `Authority Start Date`
+- use the management agreement spend threshold for `Expenditure Limit`
+- do not assume the default management fee is correct; check the agreement and include GST correctly in the effective rate
 
 ---
 
@@ -64,6 +70,7 @@ Populate:
 - property basics (so you can lease)
 - compliance fields (so you can generate agreements and statements)
 - landlord details required by TPS
+- later tenancy setup in Property Tree must still cross-check rent against TPS / the final agreement, because the management agreement can be stale
 
 ---
 

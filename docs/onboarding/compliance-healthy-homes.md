@@ -1,6 +1,6 @@
 # Compliance & Healthy Homes
 
-**Version:** V2.4  
+**Version:** V2.5  
 **Last updated:** 2026-04-01
 
 ---
@@ -52,6 +52,10 @@ Store in Property Tree: **03 Compliance**
 ## Stage 2 — Update TPS compliance section
 <span class="pp-verified-label">Verified from video analysis</span>
 Populate TPS compliance fields so tenancy agreements and compliance statements can be produced correctly (even if some work is pending, ensure it is recorded accurately).
+
+- Use SATS (`sats.co.nz`) or the last verified inspection date for smoke alarm last-check data
+- If TPS appears out of date, cross-check Property Tree invoices or other compliance evidence before changing the compliance answer
+- The evidence trail in Property Tree is the supporting proof for any compliance claim entered into TPS
 
 SOP: [Healthy Homes Evidence (TPS)](compliance-healthy-homes-evidence.md)
 
