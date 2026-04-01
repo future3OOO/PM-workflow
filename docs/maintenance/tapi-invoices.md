@@ -1,7 +1,7 @@
 # Invoice Processing & Property Tree Sync
 
-**Version:** V2.3  
-**Last updated:** 2026-03-31
+**Version:** V2.6  
+**Last updated:** 2026-04-01
 
 ---
 
@@ -163,6 +163,16 @@ After approving in Tapi, verify the sync in Property Tree:
 ## 10. Property Tree — Rent Holdback & Invoice Payment
 
 Once an approved invoice syncs from Tapi to Property Tree, the invoice amount is paid out of the **owner's rent account** (the accumulated rent funds held on behalf of the landlord). Property Tree handles this automatically — no manual intervention is required.
+
+### Owner payment rule
+
+The owner always pays the invoice.
+
+- Standard case: code to **Property** and Property Tree pays it from the owner's rent account.
+- If the property is vacant or short of funds, the invoice stays against the owner account until enough rent is available.
+- If the landlord has agreed to pay directly, keep a clear email or phone-note record.
+
+If a landlord has multiple properties under the same ownership profile, those rent funds operate as one combined owner balance. If properties sit under separate ownership profiles, funds are not shared across them.
 
 ### How the holdback works
 
