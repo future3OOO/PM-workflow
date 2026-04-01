@@ -1,7 +1,7 @@
 # Video Analysis Glossary
 
-**Version:** V3.0  
-**Last updated:** 2026-04-01
+**Version:** V3.1  
+**Last updated:** 2026-04-02
 
 ---
 
@@ -73,6 +73,14 @@ The underlying transcripts, frames, and analysis artefacts live under `_video_an
 | `video27` | `TPS- application approved (A).mp4` | [Application Processing](../leasing/tps-application-processing.md), [Agreements & Signing](../leasing/tps-agreements-signing.md), [Notice & Email Templates](notice-email-templates.md) |
 | `video28` | `TPS- application approved- Create Tenancy agreement (B).mp4` | [Agreements & Signing](../leasing/tps-agreements-signing.md), [Tenancy Setup](../leasing/tenancy-setup.md), [Property Tree — Create Tenancy](../leasing/pt-create-tenancy.md) |
 | `video29` | `TPS- Bond lodgement.mp4` | [Bond Lodgement](../leasing/bond-lodgement.md), [Tenancy Setup](../leasing/tenancy-setup.md), [Execution Checklists](execution-checklists.md) |
+
+---
+
+## Batch: 2026-04-02
+
+| Video | Video label | Published workflow docs created from / materially updated from this video |
+|---|---|---|
+| `video30` | `Inspection confirmations.mp4` | [Scheduling & Confirmation (Property Tree)](../inspections/pt-scheduling.md), [Inspection Lifecycle](../inspections/inspection-lifecycle.md), [Daily Triage](daily-triage.md), [Execution Checklists](execution-checklists.md), [Notice & Email Templates](notice-email-templates.md), [Standards & SLAs](../getting-started/standards-slas.md) |
 
 ---
 

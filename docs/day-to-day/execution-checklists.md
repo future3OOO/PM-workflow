@@ -1,7 +1,7 @@
 # Execution Checklists
 
-**Version:** V3.1  
-**Last updated:** 2026-04-01
+**Version:** V3.2  
+**Last updated:** 2026-04-02
 
 ---
 
@@ -71,9 +71,13 @@
 ### 4a) Pre-inspection and scheduling
 - [ ] Inspection scheduled in Property Tree (date/time window set; **Proposed** until tenant confirms)
 - [ ] First routine inspection checked if auto-created by Property Tree — move off weekends if needed
-- [ ] Property Tree **automatic** ~10-day email and ~9-day SMS verified in **Communications Log** (not manual PM sends)
+- [ ] Property Tree **automatic** 8-day email and 7-day SMS verified in **Communications Log** (not manual PM sends)
+- [ ] If still unconfirmed, the 3-day reminder email is visible in the communications sequence
 - [ ] Tenant confirmed in writing
+- [ ] Tenant reply found in the correct inspection inbox (use property-address search if needed)
+- [ ] Practical inspection time range set based on the day's run (prefer a range, not an exact time)
 - [ ] Property Tree updated to **Confirmed** (required for automatic day-before email, Inspection Express sync, and attendance)
+- [ ] Tenant sent the narrowed confirmed time range after status update
 - [ ] Day-before **automatic** reminder verified in Communications Log (only fires when **Confirmed**)
 
 ### 4b) Inspection execution and reporting

@@ -6,7 +6,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Iterable
 
-DEFAULT_BATCH_DATE = "2026-04-01"
+DEFAULT_BATCH_DATE = "2026-04-02"
 
 VIDEOS = [
     ("video15", "1. TPS Book me - creating viewings.mp4"),
@@ -24,6 +24,7 @@ VIDEOS = [
     ("video27", "TPS- application approved (A).mp4"),
     ("video28", "TPS- application approved- Create Tenancy agreement (B).mp4"),
     ("video29", "TPS- Bond lodgement.mp4"),
+    ("video30", "Inspection confirmations.mp4"),
 ]
 
 

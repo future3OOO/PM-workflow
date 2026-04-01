@@ -1,7 +1,7 @@
 # Inspection Lifecycle
 
-**Version:** V2.7  
-**Last updated:** 2026-04-01
+**Version:** V2.8  
+**Last updated:** 2026-04-02
 
 ---
 
@@ -29,9 +29,12 @@ Run inspections consistently, with tenant confirmations, strong reporting, corre
 ### Routine inspections
 - Property Tree auto-creates the first routine inspection **3 months from tenancy start date** — verify the date falls on a weekday
 - Schedule in Property Tree with the agreed date/time window; use **Proposed** (or equivalent) until the tenant has confirmed
-- **~10-day email and ~9-day SMS** are sent **automatically by Property Tree** (Automated Communications) — **not** manual sends by the PM; check the inspection **Communications Log** to verify delivery
+- Monitor both the **HelloIt Property Partner** inbox and the **McKenzie Property Partner** inbox for tenant replies; if a name search fails, search by the **property address**
+- **8-day email and 7-day SMS** are sent **automatically by Property Tree** (Automated Communications) — **not** manual sends by the PM; check the inspection **Communications Log** to verify delivery
+- If the inspection is still unconfirmed, Property Tree sends an extra **3-day reminder email**
+- Follow up non-responders about **3-4 days out**
 - **Confirmation is mandatory:** update status to **Confirmed** in Property Tree **only after** the tenant confirms. Until **Confirmed**, the tenant **does not** get the **automatic day-before confirmation email**, the job **does not** sync to Inspection Express, and **do not conduct the inspection**
-- Follow up non-responders if the automated sequence does not produce a reply
+- When a tenant replies, use the Property Tree edit flow to narrow the inspection to a practical **time range** based on the day's inspection run; then **save**, **Update to Confirmed**, and reply to the tenant with that confirmed range
 
 ### Ingoing inspections
 - Create via Tenancy Profile → Inspections → **(+)** button → set type to **Ingoing**
