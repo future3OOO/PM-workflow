@@ -1,6 +1,6 @@
 # Notice & Email Templates
 
-**Version:** V2.4  
+**Version:** V2.5  
 **Last updated:** 2026-04-01
 
 ---
@@ -63,6 +63,8 @@ Regards,
 ---
 
 ## 4) Leasing — approved next steps
+<span class="pp-verified-label">Verified from video analysis</span>
+
 **Subject:** Approved — next steps for [Property Address]
 
 Hi [Name],
@@ -72,9 +74,21 @@ Your application for **[Property Address]** has been approved.
 Next steps:
 1) Confirm start date: **[date]**
 2) We’ll send the tenancy agreement through Tenancy.co.nz for digital signing
-3) We’ll then confirm bond and payment instructions
+3) Please use the following payment reference when making your move-in payment: **[Payment Reference]**
+4) Move-in funds due:
+   - First week rent: **$[First Week Rent]**
+   - General bond: **$[General Bond]**
+   - Pet bond: **$[Pet Bond or N/A]**
+   - Total due: **$[Total Move-In Amount]**
+5) Payment instructions:
+   - Account name: **[Account Name]**
+   - Bank account: **[Bank Account]**
+   - Reference: **[Payment Reference]**
+6) Key collection / access: **[Key collection details or access code plan]**
 
-Please reply confirming the start date.
+Please reply confirming the start date and let us know if anything above needs clarification.
+
+CC: **[PM Email]**
 
 Thanks,  
 [Name]
