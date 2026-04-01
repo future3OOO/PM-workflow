@@ -76,6 +76,7 @@ Every batch also requires:
 - a **per-video analysis report** for each video ID
 - a **doc coverage matrix** that maps findings to reviewed docs and resulting actions
 - explicit **page / navigation mapping** for the screens involved in each analysed workflow
+- an explicit **dependency-cascade check** so templates, checklists, triage pages, and standards pages are not skipped when an SOP changes
 
 ### Operating rule
 
@@ -177,6 +178,9 @@ Key points:
 - run `_video_analysis/validate_batch.py` before doc integration to confirm transcript + frame evidence exists, then rerun it with `--require-coverage-matrix` before batch sign-off
 - create a **per-video analysis report** for each video before relying on any grouped summary
 - maintain a **doc coverage matrix** for the batch showing findings, target docs reviewed, actions taken, and residual gaps
+- use the coverage matrix to record both:
+  - **primary docs reviewed**: the main lifecycle / SOP targets
+  - **dependent docs checked**: templates, checklists, triage pages, standards pages, systems-map pages, or other downstream docs that may inherit the change
 - capture **where the action happens**: system, page/screen name, visible URL if any, and navigation path
 - update `docs/`, not any legacy `workflow/` paths
 - only commit documentation pages and intentional script/instruction changes
@@ -192,6 +196,26 @@ Do **not** mark a video batch complete until:
    - documented via an update
    - already covered in the current docs
    - intentionally excluded from docs with a reason
+4. each material finding has a recorded dependency-cascade result for:
+   - templates
+   - checklists / QA pages
+   - triage / operations pages
+   - standards / systems pages where relevant
+
+### Dependency-cascade rule
+
+When a video changes workflow understanding, the agent must not stop at the primary SOP page.
+
+For each material finding, explicitly check whether it also affects:
+
+- lifecycle pages
+- step-level SOPs
+- templates in `docs/day-to-day/notice-email-templates.md`
+- daily / weekly operations pages
+- execution / QA checklists
+- standards / systems-map pages
+
+The matrix must show that this pass happened even if the answer is **already aligned** or **not applicable**.
 
 ### Video-derived section marking rule
 
@@ -239,8 +263,10 @@ For video-driven doc updates, also verify:
 - every video in the batch has a per-video analysis report
 - the doc coverage matrix exists and reflects the changed files
 - no material finding was left without a disposition
+- no material finding was left without a dependency-cascade disposition
 - page / navigation mapping is captured for the relevant workflows
 - any materially video-derived section that was updated is marked with the verified label
+- templates, checklists, and triage pages were explicitly checked where the workflow changed
 
 ---
 
@@ -280,6 +306,7 @@ Tapi → approve → auto-close job + sync to Property Tree → rent holdback fr
 - Never update software workflow docs from transcript-only notes when frame evidence is available
 - Never treat a grouped batch summary as a substitute for per-video analysis
 - Never close a batch without a doc coverage matrix
+- Never use the coverage matrix as a primary-SOP-only checklist; it must cover downstream dependent docs too
 - Never omit page / navigation mapping when documenting a video-derived workflow
 - Never apply the verified label to sections that were not actually checked against proper video analysis
 - Never change a lifecycle page without checking the dependent step-level guides, templates, and triage/operations checklists

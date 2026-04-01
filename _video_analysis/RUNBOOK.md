@@ -24,6 +24,13 @@ There are also two mandatory synthesis outputs for every batch:
    - a batch-level table showing which docs were checked, what changed, what was intentionally left unchanged, and any residual gaps
    - the batch is **not complete** until this matrix exists
 
+The matrix must cover both:
+
+1. **primary integration targets**
+   - the lifecycle or SOP pages directly changed by the video finding
+2. **dependency-cascade targets**
+   - templates, checklists, triage pages, standards pages, and other downstream docs that may inherit the workflow change
+
 ---
 
 ## Repository Structure
@@ -412,7 +419,8 @@ _video_analysis/artefacts/YYYY-MM-DD/analysis/doc_coverage_matrix.md
 | **Finding / workflow** | The operational detail, UI fact, or rule identified |
 | **Evidence source** | Transcript, frames, or both |
 | **Page / navigation mapping** | System, page name, visible URL if any, and navigation path |
-| **Target docs reviewed** | Which `docs/` pages were checked |
+| **Primary docs reviewed** | Which main lifecycle / SOP pages were checked |
+| **Dependent docs checked** | Which templates, checklists, triage pages, standards pages, or related docs were checked because of the finding |
 | **Action taken** | Updated / already covered / intentionally not documented |
 | **Result** | File(s) changed or reason no change was needed |
 | **Residual risk / follow-up** | Anything still uncertain or deferred |
@@ -427,6 +435,11 @@ Do **not** close a batch, commit the batch as complete, or state that integratio
    - a doc update, or
    - an explicit “already covered” judgment, or
    - an explicit “not suitable for docs” judgment with reason
+4. every material finding has an explicit dependency-cascade check recorded for:
+   - templates
+   - checklists / QA
+   - triage / operations pages
+   - standards / systems-map pages where relevant
 
 ---
 
@@ -470,6 +483,20 @@ Update the relevant documentation pages using the analysis report as the synthes
 8. **Update the coverage matrix** as you go so every material finding has a documented disposition.
 9. **Add navigation cues** so the user can find the screen, not just understand the rule.
 10. **Add a verified label** to sections materially updated from analysed video evidence.
+
+### Dependency-cascade rule
+
+Do not treat the main SOP update as the end of the change.
+
+For each material video finding, explicitly check whether it also changes:
+
+- **templates** in `docs/day-to-day/notice-email-templates.md`
+- **daily / weekly operations pages** such as `daily-triage.md` and `weekly-operations.md`
+- **execution / QA checklists**
+- **lifecycle pages**
+- **systems / standards pages**
+
+The coverage matrix must record that dependency pass even when the result is **already aligned** or **not applicable**.
 
 ### Verified label convention
 
@@ -551,6 +578,8 @@ Before considering the batch done, confirm:
 - the batch coverage matrix exists
 - each meaningful finding has a recorded disposition
 - no changed doc is missing from the matrix
+- each meaningful finding has a recorded dependency-cascade disposition
+- templates, checklists, and triage pages have been explicitly marked as updated / already aligned / not applicable
 
 ---
 
@@ -603,6 +632,7 @@ git push -u origin HEAD
 - Use **both** transcripts and frames for workflow analysis
 - Produce a **per-video analysis report** for every video in the batch
 - Produce a **doc coverage matrix** before closing the batch
+- Use the matrix to track **dependent docs checked**, not just the primary SOP targets
 - Update `docs/`, not any legacy `workflow/` paths
 - Treat the analysis report as a synthesis artefact, not as the final published documentation
 - Never commit generated video artefacts
