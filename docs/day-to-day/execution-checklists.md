@@ -1,6 +1,6 @@
 # Execution Checklists
 
-**Version:** V2.6  
+**Version:** V2.7  
 **Last updated:** 2026-04-01
 
 ---
@@ -40,6 +40,7 @@
 - [ ] Bond lodged via TPS
 - [ ] Tenancy Services payment-instruction email received; bond paid from trust using emailed payment reference and bank account details
 - [ ] Bond lodgement confirmation / receipt saved to Property Tree
+- [ ] Bond receipt email stored in the relevant labelled email folder for that property
 - [ ] Tenancy created in Property Tree with perfect dates/rent
 - [ ] Agreement stored in Property Tree docs
 - [ ] Welcome pack sent

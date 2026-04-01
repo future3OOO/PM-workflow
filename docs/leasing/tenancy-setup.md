@@ -1,6 +1,6 @@
 # Tenancy Setup
 
-**Version:** V2.6  
+**Version:** V2.7  
 **Last updated:** 2026-04-01
 
 ---
@@ -63,6 +63,7 @@ SOP: [Agreements & Signing (TPS)](tps-agreements-signing.md)
 - Pay Tenancy Services from trust using those emailed details
 - Track until the later bond lodgement confirmation / receipt arrives
 - File confirmation into Property Tree docs
+- Store the receipt email in the relevant labelled email folder for that property
 
 SOP: [Bond Lodgement](bond-lodgement.md)
 

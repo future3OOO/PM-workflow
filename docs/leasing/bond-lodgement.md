@@ -1,6 +1,6 @@
 # Bond Lodgement
 
-**Version:** V2.6  
+**Version:** V2.7  
 **Last updated:** 2026-04-01
 
 ---
@@ -61,6 +61,7 @@ Navigate to: **TPS → Bonds → three-dot menu → Lodge bond**
 
 - Track through to the later Tenancy Services bond lodgement confirmation / receipt email
 - Upload the confirmation into Property Tree docs
+- Store the email in the relevant labelled email folder for that property
 - Update any internal bond status notes
 
 ## Timeframe
