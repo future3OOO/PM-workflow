@@ -1,7 +1,7 @@
 # Systems Overview
 
-**Version:** V2.3  
-**Last updated:** 2026-03-31
+**Version:** V2.4  
+**Last updated:** 2026-04-01
 
 ---
 
@@ -19,6 +19,7 @@
 See workflow: [Onboarding](../onboarding/landlord-property-onboarding.md) · [Leasing](../leasing/leasing-lifecycle.md) · [Inspections](../inspections/inspection-lifecycle.md)
 
 ### TPS / Tenancy.co.nz — Leasing Engine
+<span class="pp-verified-label">Verified from video analysis</span>
 
 | What | Detail |
 |---|---|
@@ -39,6 +40,7 @@ See workflow: [Leasing Lifecycle](../leasing/leasing-lifecycle.md) · [TPS Prope
 See workflow: [Leasing Lifecycle](../leasing/leasing-lifecycle.md)
 
 ### Tapi — Maintenance CRM
+<span class="pp-verified-label">Verified from video analysis</span>
 
 ??? info "Full Tapi reference (expand)"
 
@@ -85,6 +87,7 @@ See workflow: [Leasing Lifecycle](../leasing/leasing-lifecycle.md)
 See workflow: [Maintenance Lifecycle](../maintenance/maintenance-lifecycle.md) · [Tapi Intake SOP](../maintenance/tapi-intake.md) · [Tapi Invoices SOP](../maintenance/tapi-invoices.md)
 
 ### Inspection Express — Inspections & Reporting
+<span class="pp-verified-label">Verified from video analysis</span>
 
 - Ingoing / routine / outgoing reports and photos
 - Inspection-captured maintenance items sync into Tapi
@@ -101,6 +104,7 @@ See workflow: [Renewals & Rent Reviews](../renewals-exits/renewals-rent-reviews.
 
 - Exceptions, escalations, and anything not captured cleanly in TPS/Tapi/Property Tree
 - Written confirmations where needed
+- Shortwave may be used as the email client for drafting and thread handling, but critical decisions still get filed to Property Tree
 
 See: [Email Management](../day-to-day/email-management.md)
 

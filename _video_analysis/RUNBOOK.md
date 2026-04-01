@@ -1,6 +1,61 @@
-# Runbook — Video Analysis & Workflow Integration
+# Runbook — Video Analysis & Documentation Integration
 
-**Purpose:** Step-by-step process for taking new training videos, extracting their content, and integrating the learnings into the agentic workflow documentation.
+**Purpose:** Step-by-step process for turning new training videos into accurate workflow documentation updates using both speech transcription and frame-by-frame visual evidence.
+
+---
+
+## Core Method
+
+The current analysis method has two mandatory evidence streams:
+
+1. **Transcript evidence** from Whisper
+   - captures the PM's spoken explanation, rationale, exceptions, and workflow sequencing
+2. **Frame evidence** from ffmpeg screenshots
+   - captures exact UI labels, fields, button names, page layouts, status badges, and system behaviour visible on screen
+
+Do **not** rely on transcript-only analysis when the video is demonstrating a software workflow. The transcript tells you what was said; the frames tell you what was actually on screen.
+
+There are also two mandatory synthesis outputs for every batch:
+
+1. **Per-video analysis reports**
+   - one analysis artefact per video, even if a later batch summary also exists
+   - preserves low-level details that are easy to lose in grouped write-ups
+2. **Doc coverage matrix**
+   - a batch-level table showing which docs were checked, what changed, what was intentionally left unchanged, and any residual gaps
+   - the batch is **not complete** until this matrix exists
+
+---
+
+## Repository Structure
+
+```text
+_video_analysis/
+├── RUNBOOK.md
+├── batch_config.py
+├── requirements.txt
+├── transcribe.py
+├── transcribe_all_videos.py
+├── transcribe_batch2.py
+├── validate_batch.py
+├── extract_frames.py
+├── videos/                         # source videos + transcript outputs (gitignored)
+│   └── YYYY-MM-DD/                 # optional date-based source batch folders
+└── artefacts/                      # generated review outputs (gitignored)
+    └── YYYY-MM-DD/
+        ├── analysis/               # per-video analysis reports
+        └── frames/
+            └── videoXX/            # extracted JPG frames per video
+```
+
+### Important structure notes
+
+- The **documentation source** now lives in `docs/`, not the old `workflow/` folder.
+- Analysis outputs should be grouped by date under `_video_analysis/artefacts/YYYY-MM-DD/`.
+- The dated batch scripts now use `_video_analysis/batch_config.py` for the shared `VIDEOS` list and default batch date.
+- `transcribe_batch2.py` and `extract_frames.py` resolve either:
+  - `videos/YYYY-MM-DD/`
+  - or the legacy folder name `videos/D-M-YYYY/`
+- Use CLI overrides only when the source or output folder intentionally differs from the default dated batch path.
 
 ---
 
@@ -10,15 +65,15 @@
 
 | Tool | Purpose | Install |
 |---|---|---|
-| **Python 3.12+** | Runs transcription scripts | `winget install Python.Python.3.12` or [python.org](https://www.python.org/downloads/) |
-| **ffmpeg** | Extracts audio from video files | `choco install ffmpeg` or [ffmpeg.org](https://ffmpeg.org/download.html) |
-| **openai-whisper** | Speech-to-text transcription | `pip install openai-whisper` |
+| **Python 3.12+** | Runs transcription / extraction scripts | `winget install Python.Python.3.12` or [python.org](https://www.python.org/downloads/) |
+| **ffmpeg** | Audio extraction and frame capture | `choco install ffmpeg` or [ffmpeg.org](https://ffmpeg.org/download.html) |
+| **openai-whisper** | Speech-to-text transcription | `py -3 -m pip install -r _video_analysis/requirements.txt` |
 
 ### Verify installation
 
 ```powershell
-py -3 --version          # Python 3.12.x
-ffmpeg -version          # ffmpeg 6.x+
+py -3 --version
+ffmpeg -version
 py -3 -c "import whisper; print(whisper.__version__)"
 ```
 
@@ -26,246 +81,506 @@ py -3 -c "import whisper; print(whisper.__version__)"
 
 ## Process Overview
 
-```
- Upload videos to _video_analysis/videos/
+```text
+ Place new videos in the current batch folder
           │
           ▼
- 1. Register new videos in transcribe_all_videos.py
+ 1. Register video IDs and filenames in `batch_config.py`
           │
           ▼
- 2. Run transcription script (audio extraction + Whisper)
+ 2. Run transcription (audio extraction + Whisper)
           │
           ▼
- 3. Convert any MKV files to MP4 (for visual review)
+ 3. Run frame extraction (JPG screenshots every N seconds)
           │
           ▼
- 4. Review each video (visual UI walkthrough + transcript)
+ 4. Run local batch validation
           │
           ▼
- 5. Draft analysis report per video
+ 5. Review transcript + frames together
           │
           ▼
- 6. Read all current workflow docs to understand baseline
+ 6. Draft analysis report per video
           │
           ▼
- 7. Integrate findings into workflow documentation
+ 6b. Draft batch synthesis + doc coverage matrix
           │
           ▼
- 8. Verify consistency across all docs
+ 7. Read affected docs/ pages for baseline context
           │
           ▼
- 9. Commit workflow changes and open PR
+ 8. Integrate findings into the documentation
+          │
+          ▼
+ 9. Verify cross-document consistency against the coverage matrix
+          │
+          ▼
+10. Commit documentation/script changes only
 ```
 
 ---
 
-## Step 1 — Place Videos & Register Them
+## Step 1 — Stage the New Video Batch
 
-1. Place all new video files (MP4 or MKV) into `_video_analysis/videos/`.
+Place the raw video files in `_video_analysis/videos/`.
 
-2. Open `_video_analysis/transcribe_all_videos.py` and add entries to the `VIDEOS` list. Each entry is a tuple of `(video_id, filename)`:
+For larger review sessions, keep the source files in a date-based batch folder:
+
+```text
+_video_analysis/videos/2026-04-01/
+```
+
+Typical examples:
+
+- `_video_analysis/videos/2026-04-01/1. TPS Book me - creating viewings.mp4`
+- `_video_analysis/videos/2026-04-01/2. TPS Book me - correction.mp4`
+- `_video_analysis/videos/1-4-2026/1. TPS Book me - creating viewings.mp4` (legacy folder naming still supported)
+
+The analysis outputs for that batch should go under:
+
+```text
+_video_analysis/artefacts/2026-04-01/
+```
+
+---
+
+## Step 2 — Register Videos in the Batch Config
+
+Update `_video_analysis/batch_config.py`.
+
+Add each new video to the shared `VIDEOS` list:
 
 ```python
 VIDEOS = [
-    # Existing entries...
-    ("video15", "New Training Video Title.mp4"),
-    ("video16", "Another Training Video.mkv"),
+    ("video15", "1. TPS Book me - creating viewings.mp4"),
+    ("video16", "2. TPS Book me - correction.mp4"),
 ]
 ```
 
-Use sequential numbering from the last video ID. The `video_id` determines output filenames.
+Use sequential numbering from the latest existing video ID. The `video_id` determines the transcript and frame folder names.
+
+Set `DEFAULT_BATCH_DATE` to the current batch date when you prepare a new dated batch:
+
+```python
+DEFAULT_BATCH_DATE = "2026-04-01"
+```
+
+The dated batch scripts will then resolve:
+
+- source videos from `_video_analysis/videos/YYYY-MM-DD/` when present
+- the matching artefacts folder under `_video_analysis/artefacts/YYYY-MM-DD/`
+- a legacy source folder like `_video_analysis/videos/1-4-2026/` if that is what exists locally
 
 ---
 
-## Step 2 — Run Transcription
+## Step 3 — Run Transcription
 
-The script extracts audio via ffmpeg, then transcribes using Whisper (base model). It skips already-processed videos automatically.
+Transcription is the spoken-evidence layer. It captures:
+
+- exact PM explanations
+- approvals logic
+- exceptions and edge cases
+- timing corrections
+- terminology and internal shorthand
+
+### Single video
 
 ```powershell
-cd <repo-root>
-py -3 _video_analysis/transcribe_all_videos.py
+py -3 _video_analysis/transcribe.py video15 "_video_analysis/videos/2026-04-01/1. TPS Book me - creating viewings.mp4"
 ```
 
-**Output per video** (saved to `_video_analysis/videos/`):
-- `{video_id}_audio.wav` — extracted audio (16kHz mono)
-- `{video_id}_transcript.json` — full Whisper output with word-level timestamps
-- `{video_id}_transcript.txt` — human-readable timestamped transcript
-
-**Expect:** ~1-3 minutes per video depending on length and hardware. The script prints progress and a preview of each transcript.
-
----
-
-## Step 3 — Convert MKV to MP4 (If Needed)
-
-MKV files need conversion to MP4 for visual review in Cursor's video review tools. MP4 files can be skipped.
+### Batch
 
 ```powershell
-$ffmpeg = "C:\ProgramData\chocolatey\bin\ffmpeg.exe"
-$inputDir = "videos"
-$outputDir = "_video_analysis\videos"
+py -3 _video_analysis/transcribe_batch2.py
+```
 
-Get-ChildItem "$inputDir\*.mkv" | ForEach-Object {
-    $out = Join-Path $outputDir ($_.BaseName + ".mp4")
-    if (-not (Test-Path $out)) {
-        & $ffmpeg -i $_.FullName -c:v libx264 -c:a aac -movflags +faststart $out
-    }
-}
+Useful overrides:
+
+```powershell
+py -3 _video_analysis/transcribe_batch2.py --batch-date 2026-04-01
+py -3 _video_analysis/transcribe_batch2.py --video-id video15 --video-id video16
+py -3 _video_analysis/transcribe_batch2.py --video-dir "_video_analysis/videos/1-4-2026"
+```
+
+### Outputs
+
+Outputs are written into the dated artefacts folder:
+
+- `_video_analysis/artefacts/YYYY-MM-DD/audio/{video_id}_audio.wav`
+- `_video_analysis/artefacts/YYYY-MM-DD/{video_id}_transcript.json`
+- `_video_analysis/artefacts/YYYY-MM-DD/{video_id}_transcript.txt`
+
+The `.txt` transcript is the main review artefact for reading. The `.json` is useful when deeper timestamp inspection is needed.
+
+---
+
+## Step 4 — Run Frame Extraction
+
+Frame extraction is the visual-evidence layer. It captures what the transcript cannot be trusted to describe precisely:
+
+- page layouts
+- field names
+- button labels
+- status badges
+- dropdown options
+- template names
+- exact order of UI interactions
+
+Run:
+
+```powershell
+py -3 _video_analysis/extract_frames.py
+```
+
+Useful overrides:
+
+```powershell
+py -3 _video_analysis/extract_frames.py --batch-date 2026-04-01
+py -3 _video_analysis/extract_frames.py --video-id video15 --video-id video16
+py -3 _video_analysis/extract_frames.py --video-dir "_video_analysis/videos/1-4-2026"
+```
+
+### Output
+
+Frames are written to the dated artefacts folder:
+
+```text
+_video_analysis/artefacts/YYYY-MM-DD/frames/video15/video15_frame_0001.jpg
+_video_analysis/artefacts/YYYY-MM-DD/frames/video16/video16_frame_0001.jpg
+```
+
+### Default cadence
+
+The current script captures one frame every `INTERVAL` seconds. At present that value is:
+
+```python
+INTERVAL = 10
+```
+
+Lower the interval if the workflow is moving quickly and you need denser UI evidence.
+
+---
+
+## Step 5 — Run Local Batch Validation
+
+Before drafting analysis or updating docs, validate that the batch has the minimum required evidence:
+
+```powershell
+py -3 _video_analysis/validate_batch.py --batch-date 2026-04-01
+```
+
+Optional targeted validation:
+
+```powershell
+py -3 _video_analysis/validate_batch.py --video-id video15 --video-id video16
+```
+
+The validator checks for:
+
+- transcript `.json` and `.txt` outputs for each configured video
+- at least one extracted `.jpg` frame for each configured video
+
+Do **not** proceed to doc integration while this validation fails.
+
+Before closing the batch, rerun the validator with the coverage matrix requirement enabled:
+
+```powershell
+py -3 _video_analysis/validate_batch.py --batch-date 2026-04-01 --require-coverage-matrix
 ```
 
 ---
 
-## Step 4 — Review Each Video
+## Step 6 — Review Transcript and Frames Together
 
-Each video must be reviewed for **both** spoken content and visual UI context. Transcripts alone miss critical information like button locations, screen layouts, and workflow sequences visible on screen.
+This is the key analysis step.
 
-### What to capture per video
+### What the transcript is best for
 
-- **UI walkthrough:** Every screen, panel, button, dropdown, and field shown
-- **Workflow logic:** Decision points, branching paths, system behaviour
-- **PM quotes:** Direct quotes where the PM explains rationale or gives tips
-- **System features:** Tapi/Property Tree/Inspection Express functionality demonstrated
-- **Contractor/trade references:** Named contractors, trade categories, pricing
-- **Terminology:** System-specific terms, internal jargon, abbreviations
-- **Gaps:** Anything the video demonstrates that isn't in the current workflow docs
+- direct PM quotes
+- reasoning behind a decision
+- policy explanations
+- timing corrections
+- commentary about system quirks or bugs
 
-### Using Cursor's video review
+### What the frames are best for
 
-In Cursor, use the Task tool with video review subagents to analyse MP4 files. Provide the transcript alongside the video for combined context. Example prompt structure:
+- exact page names and URLs
+- field labels and option names
+- button text
+- visible warnings and notes
+- dashboard metrics
+- tenant-facing emails, portals, and forms
 
-> Analyse this Tapi training video. The transcript is provided below. Capture: (1) complete UI walkthrough with every screen/button/field, (2) workflow logic and decision points, (3) direct PM quotes, (4) system features demonstrated, (5) gap analysis against existing workflow docs.
+### Review rule
+
+When transcript and frame evidence appear to conflict:
+
+1. Use the **frame** for UI facts
+2. Use the **transcript** for intent, rationale, and commentary
+3. Note the discrepancy explicitly in the analysis report
 
 ---
 
-## Step 5 — Draft Analysis Reports
+## Step 7 — Draft the Analysis Report
 
-For each video, produce a structured analysis report. These are working documents used during integration — they don't need to be committed to the repo. Store them in the `artefacts/` folder organised by date:
+Create the report in the dated analysis folder:
 
+```text
+_video_analysis/artefacts/YYYY-MM-DD/analysis/
 ```
-_video_analysis/artefacts/YYYY-MM-DD/
+
+Example:
+
+```text
+_video_analysis/artefacts/2026-04-01/analysis/video15_analysis.md
 ```
 
-For example, analysis reports from a session on 2026-03-31 would go in `_video_analysis/artefacts/2026-03-31/`. This folder is gitignored.
+If a grouped topic summary is useful, create it **in addition to** the per-video reports, not instead of them.
 
 ### Recommended report structure
 
 ```markdown
-# Video Analysis — [Video Title]
+# Video Analysis Report: [Topic]
+
+## Executive Summary
 
 ## Video Details
-- **File:** filename.mp4
-- **Duration:** Xm Ys
-- **Topic:** Brief description
+
+## System Location Mapping
 
 ## UI Walkthrough
-Step-by-step of every screen shown...
 
 ## Workflow Logic
-Decision trees, branching paths...
 
 ## PM Quotes & Context
-Direct quotes with timestamps...
 
 ## System Features Demonstrated
-Buttons, fields, automations...
+
+## Complete Field & Label Reference
 
 ## Gap Analysis
-What's new vs. what's already documented...
 
 ## Integration Targets
-Which workflow docs need updating and what to add...
 ```
 
+### Analysis standard
+
+The report should be specific enough that someone could update the docs **without rewatching the video**, because the report already synthesises:
+
+- transcript evidence
+- frame evidence
+- workflow interpretation
+- documentation gaps
+
+### Per-video requirement
+
+Even when several videos cover the same topic, still produce a separate analysis report for each video ID first. Batch summaries are useful for synthesis, but the per-video report is the canonical evidence-preservation artefact.
+
+### Navigation and webpage mapping requirement
+
+Every per-video analysis report must explicitly capture **where** the workflow happens in the product:
+
+- **System name** (TPS, BookMe, Property Tree, Tapi, Inspection Express, etc.)
+- **Page / screen name**
+- **URL or page address** if visible
+- **Navigation path** used to reach it, e.g. `Properties → [property] → Agreements → Renewal`
+- **Key action points** in order, using the exact menu / button / tab labels shown on screen
+
+The goal is that a user can identify both:
+
+1. which webpage / screen the action belongs to
+2. how to navigate there from the product's normal starting point
+
 ---
 
-## Step 6 — Read Current Workflow Documentation
+## Step 7b — Create the Batch Coverage Matrix
 
-Before making any changes, read all the workflow docs that may be affected. The key files for maintenance/Tapi topics are:
+Before editing is considered complete, create a batch-level **doc coverage matrix** in the dated analysis folder.
 
-| File | Content |
+Recommended filename:
+
+```text
+_video_analysis/artefacts/YYYY-MM-DD/analysis/doc_coverage_matrix.md
+```
+
+### Required columns
+
+| Column | Purpose |
 |---|---|
-| `workflow/00.1_MASTER_INDEX_WORKFLOW_V2.md` | Top-level index with system summaries |
-| `workflow/00.2_SYSTEMS_MAP_DATA_FLOW_V2.md` | System descriptions and data flows |
-| `workflow/00.3_STANDARDS_SLAS_APPROVALS_RECORDS_V2.md` | Policies, SLAs, approval rules |
-| `workflow/01_PLAYBOOK_MAINTENANCE_TAPI_V2.md` | High-level maintenance lifecycle |
-| `workflow/02_SOP_TAPI_INTAKE_TRIAGE_APPROVALS_WORKORDERS_V2.md` | Detailed Tapi operations |
-| `workflow/02_SOP_TAPI_INVOICES_OWNER_TENANT_DIY_SYNC_TO_PROPERTYTREE_V2.md` | Invoice processing & Property Tree sync |
-| `workflow/02_SOP_INSPECTION_EXPRESS_REPORT_PUBLISH_ACTIONS_TO_TAPI_V2.md` | Inspection Express to Tapi flow |
-| `workflow/03_TEMPLATES_NOTICES_EMAILS_V2.md` | Email templates |
-| `workflow/04_QA_DAILY_TRIAGE_CHECKLIST_V2.md` | Daily checklist |
-| `workflow/04_QA_WEEKLY_OPERATIONS_CHECKLIST_V2.md` | Weekly checklist |
+| **Video ID** | Which source video produced the finding |
+| **Finding / workflow** | The operational detail, UI fact, or rule identified |
+| **Evidence source** | Transcript, frames, or both |
+| **Page / navigation mapping** | System, page name, visible URL if any, and navigation path |
+| **Target docs reviewed** | Which `docs/` pages were checked |
+| **Action taken** | Updated / already covered / intentionally not documented |
+| **Result** | File(s) changed or reason no change was needed |
+| **Residual risk / follow-up** | Anything still uncertain or deferred |
 
-For non-Tapi topics (leasing, onboarding, compliance, etc.), consult the corresponding playbooks and SOPs in `workflow/`.
+### Closing rule
+
+Do **not** close a batch, commit the batch as complete, or state that integration is finished until:
+
+1. every video has a per-video analysis report
+2. the doc coverage matrix exists
+3. every material finding is mapped to:
+   - a doc update, or
+   - an explicit “already covered” judgment, or
+   - an explicit “not suitable for docs” judgment with reason
 
 ---
 
-## Step 7 — Integrate Findings
+## Step 8 — Read the Current Documentation Baseline
 
-Update each affected workflow document with the new information. Follow these principles:
+Before editing anything, read the relevant pages in `docs/`.
+
+### Core baseline docs
+
+| File | Why it matters |
+|---|---|
+| `docs/getting-started/systems-map.md` | System roles, ownership, and data flows |
+| `docs/getting-started/standards-slas.md` | Policies, approval thresholds, and service rules |
+| `docs/day-to-day/contributing.md` | Authoring conventions and update order |
+
+### Topic-specific examples
+
+| Topic | Primary docs |
+|---|---|
+| Leasing / TPS / BookMe | `docs/leasing/leasing-lifecycle.md`, `docs/leasing/tps-viewings-bookme.md`, `docs/onboarding/tps-property-setup.md` |
+| Maintenance / Tapi | `docs/maintenance/maintenance-lifecycle.md`, `docs/maintenance/tapi-intake.md`, `docs/maintenance/tapi-invoices.md` |
+| Inspections | `docs/inspections/inspection-lifecycle.md`, `docs/inspections/pt-scheduling.md`, `docs/inspections/inspection-express.md` |
+| Renewals / Rent increases | `docs/renewals-exits/renewals-rent-reviews.md`, `docs/day-to-day/notices-comms.md`, `docs/day-to-day/sources.md` |
+| Templates / operational follow-up | `docs/day-to-day/notice-email-templates.md`, `docs/day-to-day/daily-triage.md`, `docs/day-to-day/weekly-operations.md` |
+
+---
+
+## Step 9 — Integrate Findings into `docs/`
+
+Update the relevant documentation pages using the analysis report as the synthesis source.
 
 ### Integration rules
 
-1. **Merge, don't duplicate.** If the video confirms something already documented, leave it. Only add what's new or corrects what's wrong.
-2. **Preserve structure.** Follow the existing section numbering, formatting, and heading conventions of each document.
-3. **Be specific.** Include exact field names, button labels, dropdown options, and system behaviour as shown in the video.
-4. **Add context, not narration.** Write operational instructions ("Click Approve to trigger auto-close and Property Tree sync"), not video summaries ("In the video, the PM clicks Approve").
-5. **Update version and date.** Bump the version number and set `Last updated` to today's date on every file you change.
-6. **Cross-reference.** If a new workflow spans multiple documents (e.g., invoice entry in the SOP and a template in Templates), update all of them and add section cross-references.
+1. **Merge, don't duplicate.**
+2. **Preserve structure.**
+3. **Write operational instructions, not video narration.**
+4. **Use exact UI wording** from the frames where possible.
+5. **Use transcript quotes sparingly** and only when the PM's wording adds important context.
+6. **Update all dependent docs** if a lifecycle, SOP, template, or checklist is affected.
+7. **Bump version and date** on every changed documentation file.
+8. **Update the coverage matrix** as you go so every material finding has a documented disposition.
+9. **Add navigation cues** so the user can find the screen, not just understand the rule.
+10. **Add a verified label** to sections materially updated from analysed video evidence.
 
-### Common integration targets by video topic
+### Verified label convention
 
-| Video topic | Primary doc | Also update |
-|---|---|---|
-| Dashboard / overview | Playbook, Systems Map | Master Index |
-| Triage / intake | Intake SOP | Standards (approval rules) |
-| Work orders / dispatch | Intake SOP | Templates (contractor emails) |
-| Invoices | Invoice SOP | QA Daily Checklist, Systems Map |
-| Approvals | Intake SOP, Standards | Templates (owner emails) |
-| Inspections | Inspection Express SOP | Playbook |
-| Tenant requests | Intake SOP | Templates (tenant comms) |
+When a section has been materially updated from proper video analysis, add this subtle label directly under the heading or opening line of the section:
 
----
-
-## Step 8 — Verify Consistency
-
-After all updates, run a consistency check:
-
-1. **Spelling:** Grep for common misspellings (the system is called **Tapi**, the email is `propertypartner@tapi.co.nz`)
-   ```powershell
-   rg -i "tarpy|tappy|tarpie" workflow/
-   ```
-
-2. **Cross-references:** Confirm all filenames referenced in the Master Index match actual files
-   ```powershell
-   rg "\.md" workflow/00.1_MASTER_INDEX_WORKFLOW_V2.md
-   Get-ChildItem workflow/*.md -Name
-   ```
-
-3. **Version dates:** All updated files should show the same `Last updated` date
-   ```powershell
-   rg "Last updated" workflow/
-   ```
-
-4. **Section numbering:** Skim each updated doc to confirm sections are sequential and no numbers were skipped or duplicated.
-
----
-
-## Step 9 — Commit & PR
-
-Only commit the **workflow documentation changes** and the **Python scripts**. Do not commit:
-- Video files (MP4, MKV, WAV)
-- Extracted frames
-- Video analysis report drafts
-- Transcript files (JSON, TXT)
-
-```powershell
-git checkout -b feature/tapi-workflow-vX.X-description
-git add workflow/ _video_analysis/*.py _video_analysis/RUNBOOK.md
-git commit -m "docs: integrate N new training videos into workflow VX.X"
-git push -u origin HEAD
-gh pr create --title "docs: ..." --body "..."
+```html
+<span class="pp-verified-label">Verified from video analysis</span>
 ```
 
-The PR description should list which videos were processed and which workflow docs were changed.
+Use it when:
+
+- the section was materially updated from transcript + frame review
+- the workflow, UI wording, or decision logic was checked against analysed video evidence
+
+Do **not** use it when:
+
+- the section is only based on prior written docs
+- the section only received wording cleanup or formatting changes
+- the source evidence was incomplete or uncertain
+
+### Navigation cue convention
+
+For workflow sections derived from video analysis, include explicit location cues where helpful, for example:
+
+- `Navigate to: Properties → [property] → Agreements`
+- `Location: Book a viewing → Enquiries`
+- `URL observed: tpportal.co.nz/clients/bookme/overview`
+
+Prefer concise cues that help the user find the correct page quickly.
+
+### Typical dependency pattern
+
+If a new video changes workflow understanding:
+
+1. lifecycle page
+2. step-level SOP
+3. templates
+4. checklist / QA pages
+5. systems map / standards if policy or system capability changed
+
+---
+
+## Step 10 — Verify Consistency
+
+After the docs are updated, run a consistency pass.
+
+### 1. Naming checks
+
+```powershell
+rg -i "tarpy|tappy|tarpie" docs/
+rg "tarpy\.co\.nz" docs/ README.md
+```
+
+### 2. Version dates
+
+```powershell
+rg "Last updated" docs/
+```
+
+### 3. Cross-reference sanity
+
+```powershell
+Get-ChildItem docs/ -Recurse -Filter *.md -Name
+```
+
+### 4. Staged files check
+
+```powershell
+git status
+```
+
+Only documentation pages and intentional script/instruction changes should be staged.
+
+### 5. Coverage matrix closure check
+
+Before considering the batch done, confirm:
+
+- every analysed video has a per-video report
+- the batch coverage matrix exists
+- each meaningful finding has a recorded disposition
+- no changed doc is missing from the matrix
+
+---
+
+## Step 11 — Commit the Right Files
+
+Commit:
+
+- `docs/` pages that were intentionally updated
+- `_video_analysis/*.py` if scripts changed
+- `_video_analysis/RUNBOOK.md`
+- `CLAUDE.md`
+- `AGENTS.md`
+
+Do **not** commit:
+
+- source video files
+- converted videos
+- audio files
+- transcripts
+- extracted frames
+- analysis report drafts
+
+Example:
+
+```powershell
+git checkout -b feature/video-workflow-update
+git add docs/ _video_analysis/*.py _video_analysis/RUNBOOK.md CLAUDE.md AGENTS.md
+git commit -m "docs: integrate training video findings and update agent guidance"
+git push -u origin HEAD
+```
 
 ---
 
@@ -273,9 +588,21 @@ The PR description should list which videos were processed and which workflow do
 
 | Problem | Fix |
 |---|---|
-| `ffmpeg` not found | Use full path: `C:\ProgramData\chocolatey\bin\ffmpeg.exe` or add to PATH |
-| `python` not found | Use `py -3` launcher, or full path: `C:\Users\Property Partner\AppData\Local\Programs\Python\Python312\python.exe` |
-| Whisper runs out of memory | Switch to `tiny` model in the script (`whisper.load_model("tiny")`) — less accurate but lower RAM |
-| MKV conversion fails | Check ffmpeg supports the codec: `ffmpeg -i input.mkv` to inspect streams |
-| Transcript has poor accuracy | NZ accents and property jargon may cause errors — cross-reference with the video visually |
-| Script skips a video | It skips if the transcript `.txt` already exists — delete it to force re-processing |
+| `ffmpeg` not found | Use `FFMPEG_PATH` env var or install ffmpeg into PATH |
+| `python` not found | Use `py -3` launcher |
+| Whisper memory pressure | Switch from `base` to `tiny` temporarily |
+| Transcript quality is weak | Re-check against the frames; NZ accents and product jargon often distort the transcript |
+| Frame coverage is too sparse | Lower `INTERVAL` in `extract_frames.py` and rerun the affected `--video-id` batch |
+| Script skips a video | Delete the prior output for that `video_id` or change the ID if the batch is intentionally new |
+| Analysis report is missing key UI detail | Go back to the extracted frames before changing the docs |
+
+---
+
+## Non-Negotiables
+
+- Use **both** transcripts and frames for workflow analysis
+- Produce a **per-video analysis report** for every video in the batch
+- Produce a **doc coverage matrix** before closing the batch
+- Update `docs/`, not any legacy `workflow/` paths
+- Treat the analysis report as a synthesis artefact, not as the final published documentation
+- Never commit generated video artefacts

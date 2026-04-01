@@ -1,7 +1,7 @@
 # Maintenance Lifecycle
 
-**Version:** V2.3  
-**Last updated:** 2026-03-31
+**Version:** V2.4  
+**Last updated:** 2026-04-01
 
 ---
 
@@ -25,6 +25,7 @@ Handle maintenance quickly and consistently with clean approvals, multi-party co
 ---
 
 ## The Tapi Dashboard — Daily Operating View
+<span class="pp-verified-label">Verified from video analysis</span>
 
 The Jobs dashboard is the VA's primary workspace. Tabs across the top: **Open | Paused | Closed | All | Planned**.
 
@@ -103,6 +104,7 @@ Full decision framework with trade categories: [Intake, Triage & Work Orders § 
 ---
 
 ## Stage 3 — The Five Action Buttons
+<span class="pp-verified-label">Verified from video analysis</span>
 
 Every job in Tapi presents five action buttons. Selecting the right one is the core triage decision.
 
@@ -117,9 +119,11 @@ Every job in Tapi presents five action buttons. Selecting the right one is the c
 ### Approval flow (summary)
 
 1. **Check email first** — the inspection report may already have the owner's approval
-2. Send Tapi approval request with a structured message (issue, risk, recommendation, cost estimate)
-3. Owner responds via Approve button (auto-updates) or message thread (VA manually approves via ⋮ menu)
-4. Follow-up: Day 0 → Day 3 (business days) → Day 7 escalate to PM
+2. In **Open jobs**, use the **Created** sort/filter to surface the newest **Choose action** jobs waiting for triage
+3. Send Tapi approval request with a structured message (issue, risk, recommendation, cost estimate)
+4. Dictation / voice-to-text is acceptable for speed, but clean any stray words before sending
+5. Owner responds via Approve button (auto-updates) or message thread (VA manually approves via ⋮ menu)
+6. Follow-up: Day 0 → Day 3 (business days) → Day 7 escalate to PM
 
 ??? info "Approval message template"
 

@@ -274,6 +274,33 @@
   font-size: 0.88rem;
 }
 
+/* ── Verified labels ── */
+.md-typeset .pp-verified-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+  margin: 0.1rem 0 0.85rem;
+  padding: 0.16rem 0.5rem;
+  border: 1px solid var(--pp-border);
+  border-radius: 999px;
+  background: var(--md-accent-fg-color--transparent);
+  color: var(--pp-text-muted);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  vertical-align: middle;
+}
+
+.md-typeset .pp-verified-label::before {
+  content: "";
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: var(--md-accent-fg-color);
+  flex: 0 0 auto;
+}
+
 /* ── Code ── */
 .md-typeset code {
   border-radius: 4px;

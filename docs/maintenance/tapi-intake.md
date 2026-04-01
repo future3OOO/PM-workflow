@@ -1,7 +1,7 @@
 # Intake, Triage & Work Orders
 
-**Version:** V2.3  
-**Last updated:** 2026-03-31
+**Version:** V2.4  
+**Last updated:** 2026-04-01
 
 ---
 
@@ -18,6 +18,7 @@ This SOP covers intake, triage, merging related jobs, obtaining owner approval, 
 ---
 
 ## Tapi Dashboard Reference
+<span class="pp-verified-label">Verified from video analysis</span>
 
 ??? info "Tapi dashboard reference (expand)"
     ### Left sidebar navigation
@@ -30,6 +31,7 @@ This SOP covers intake, triage, merging related jobs, obtaining owner approval, 
 
     ### Filtering and reporting
     - **Filter bar:** Job agent | Property agent | Priority | Source (Inspection / Tenant / Owner / Supplier / Compliance) | Created (date range)
+    - **Created filter / sort:** use this to surface the newest jobs first when reviewing fresh inspection-created items
     - **Save view** button — saves the current filter combination for reuse
     - **Export report** button — exports filtered job list
     - Footer shows "X of Y items" with pagination controls
@@ -130,6 +132,7 @@ When multiple jobs at the same property require the **same trade** (e.g., two pl
 ---
 
 ## Approvals
+<span class="pp-verified-label">Verified from video analysis</span>
 
 ### Step 1 — Check email first
 
@@ -138,6 +141,9 @@ Before sending an owner approval request in Tapi:
 2. The inspection report email includes all maintenance items — responsive owners may reply the same day approving work
 3. If the owner has already approved → skip to **Work order** section below
 4. If no response yet → proceed with the Tapi approval request
+
+!!! tip "How to find new inspection-created approval jobs"
+    In the **Open jobs** bucket, sort or filter by **Created** so the newest items rise to the top. Jobs that still show **Choose action** are usually the newly-created items waiting for VA triage after an inspection.
 
 ### Step 2 — Send approval request in Tapi
 
@@ -157,6 +163,9 @@ Before sending an owner approval request in Tapi:
 4. Click **Send to owner**
 5. Status changes to **Awaiting approval** (amber banner on the job)
 6. Activity log records: "requested approval for the job" with email sending confirmation (✓)
+
+!!! tip "Dictation is fine, but clean it before sending"
+    The PM uses a dictation / voice-to-text tool to compose approval messages quickly. If you use dictation, always review the text and remove artifacts or ambient speech that may have been captured accidentally before clicking **Send to owner**.
 
 ### What the owner experiences
 
@@ -347,15 +356,17 @@ When a contractor calls back during a job reporting expanded scope or additional
 ---
 
 ## Daily Workflow Checklist
+<span class="pp-verified-label">Verified from video analysis</span>
 
 1. Check Gmail for overnight Tapi notifications (concierge requests, owner replies, contractor updates)
-2. Review the **Open jobs** bucket — triage and action new jobs
+2. Review the **Open jobs** bucket — sort/filter by **Created** to surface recent **Choose action** jobs, then triage and action them
 3. Review **Awaiting approval** — send Day 3 (business days) / Day 7 follow-ups as needed
 4. Review **Scheduling job** — chase contractors who haven't accepted after 2 days
 5. Review **Awaiting repair** — check for overdue jobs
 6. Review **Awaiting invoice** — nudge contractors for outstanding invoices
-7. Process any owner decline emails — add notes and close jobs
-8. Log any mid-job updates or scope changes communicated during the day
+7. Flag stale open jobs that were never properly closed — either close them with notes or raise them to the PM
+8. Process any owner decline emails — add notes and close jobs
+9. Log any mid-job updates or scope changes communicated during the day
 
 !!! info "What's Next"
     - [Maintenance Lifecycle](maintenance-lifecycle.md) — full end-to-end maintenance process

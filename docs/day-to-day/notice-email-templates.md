@@ -1,7 +1,7 @@
 # Notice & Email Templates
 
-**Version:** V2.3  
-**Last updated:** 2026-03-31
+**Version:** V2.4  
+**Last updated:** 2026-04-01
 
 ---
 
@@ -133,6 +133,7 @@ Thanks,
 ---
 
 ## 7b) Maintenance — owner approval request (Tapi — inspection follow-up)
+<span class="pp-verified-label">Verified from video analysis</span>
 **Used in:** Tapi → Ask owner for approval → Add personal message
 
 > Hi [Owner first name],
@@ -283,6 +284,13 @@ Thanks,
 
 ---
 
+## 8a) Routine inspections — Property Tree automation (reference)
+<span class="pp-verified-label">Verified from video analysis</span>
+
+For **routine** inspections, Property Tree **Automated Communications** sends the **~10-day email**, **~9-day SMS**, and (once status is **Confirmed**) the **day-before confirmation email**. The PM does **not** manually send those as the primary path — use the inspection **Communications Log** to verify delivery. Sections **9–11** below are **reference wording** only (e.g. manual follow-up to a non-responder, or explaining what tenants receive).
+
+---
+
 ## 9) Inspections — 10-day scheduling email
 **Subject:** Routine inspection scheduling — [Property Address]
 
@@ -331,7 +339,30 @@ Thanks,
 
 ---
 
-## 13) Renewals — landlord email (~90 days)
+## 13) Owner email — grey-area damage / liability review
+<span class="pp-verified-label">Verified from video analysis</span>
+**Subject:** Inspection follow-up — damage review at [Property Address]
+
+Hi [Landlord Name],
+
+We noted damage at **[Property Address]** during / following the recent inspection.
+
+At this stage, liability is not completely clear. We are reviewing:
+- how the damage likely occurred
+- whether it appears accidental or careless
+- any supporting evidence from the tenant / inspection photos / contractor feedback
+
+Our next step is to obtain **[a glazier / contractor] quote** so we can confirm likely cost and recommend the best path forward.
+
+I’ll update you again once that quote and review are back.
+
+Kind regards,  
+[Name]
+
+---
+
+## 14) Renewals — landlord email (~90 days)
+<span class="pp-verified-label">Verified from video analysis</span>
 **Subject:** Renewal decision needed — [Property Address] — fixed term ending [End Date]
 
 Hi [Landlord Name],
@@ -350,7 +381,8 @@ Thanks,
 
 ---
 
-## 14) Renewals — tenant offer (once owner direction confirmed)
+## 15) Renewals — tenant offer (once owner direction confirmed)
+<span class="pp-verified-label">Verified from video analysis</span>
 **Subject:** Tenancy renewal — [Property Address]
 
 Hi [Tenant Name],
@@ -367,7 +399,7 @@ Thanks,
 
 ---
 
-## 15) End of tenancy — vacate pack email
+## 16) End of tenancy — vacate pack email
 **Subject:** Moving out — [Property Address] — next steps
 
 Hi [Tenant Name],
@@ -387,7 +419,7 @@ Regards,
 
 ---
 
-## 16) Lease break — acknowledgement (email)
+## 17) Lease break — acknowledgement (email)
 **Subject:** Lease break request — [Property Address]
 
 Hi [Tenant Name],

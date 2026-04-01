@@ -1,11 +1,12 @@
 # Reports & Actions (Inspection Express)
 
-**Version:** V2.3  
-**Last updated:** 2026-03-31
+**Version:** V2.4  
+**Last updated:** 2026-04-01
 
 ---
 
 ## Overview
+<span class="pp-verified-label">Verified from video analysis</span>
 
 After each routine inspection is completed, the PM finalises the report in Inspection Express. The VA/PM Assistant then reviews it, ensures maintenance items have synced into Tapi, and initiates the landlord approval workflow. This SOP covers the full post-inspection handoff from Inspection Express through to Tapi action.
 
@@ -50,6 +51,9 @@ After each routine inspection is completed, the PM finalises the report in Inspe
    - Photos from the inspection attached
    - Description populated from the PM's notes
 4) If any maintenance item from the report is **missing** in Tapi, notify the PM — the sync may have failed or the item was not created during the inspection
+
+!!! warning "If the inspection is missing from Inspection Express or Tapi"
+    First check the Property Tree inspection record. The inspection only syncs to Inspection Express when it is **Confirmed** and has a **future date/time**. If the date/time was edited, Property Tree may have pushed it back to **Tentative** and the sync will not occur until it is re-confirmed.
 
 See also: [Maintenance Lifecycle](../maintenance/maintenance-lifecycle.md) for the full maintenance workflow after sync.
 

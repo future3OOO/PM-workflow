@@ -1,6 +1,6 @@
-# CLAUDE.md — Project Intelligence for Property Management Workflow Docs
+# AGENTS.md — Project Intelligence for Property Management Workflow Docs
 
-This file provides context, rules, and dependency maps so any AI agent working on this repository produces correct, consistent, and complete documentation updates.
+This file mirrors `CLAUDE.md` for agent tooling that looks for an `AGENTS.md` file at the repository root.
 
 ---
 

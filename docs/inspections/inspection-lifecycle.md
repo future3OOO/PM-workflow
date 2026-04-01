@@ -1,7 +1,7 @@
 # Inspection Lifecycle
 
-**Version:** V2.3  
-**Last updated:** 2026-03-31
+**Version:** V2.4  
+**Last updated:** 2026-04-01
 
 ---
 
@@ -24,11 +24,23 @@ Run inspections consistently, with tenant confirmations, strong reporting, corre
 ---
 
 ## Stage 1 — Scheduling and confirmations (Property Tree)
-- Schedule in Property Tree; ensure it appears in Inspection Express
-- Send 10-day email and 9-day SMS to confirm
-- Do not attend unless tenant confirms
-- Update to "Confirmed" in Property Tree (manual)
-- Send 24-hour reminder
+<span class="pp-verified-label">Verified from video analysis</span>
+
+### Routine inspections
+- Property Tree auto-creates the first routine inspection **3 months from tenancy start date** — verify the date falls on a weekday
+- Schedule in Property Tree with the agreed date/time window; use **Proposed** (or equivalent) until the tenant has confirmed
+- **~10-day email and ~9-day SMS** are sent **automatically by Property Tree** (Automated Communications) — **not** manual sends by the PM; check the inspection **Communications Log** to verify delivery
+- **Confirmation is mandatory:** update status to **Confirmed** in Property Tree **only after** the tenant confirms. Until **Confirmed**, the tenant **does not** get the **automatic day-before confirmation email**, the job **does not** sync to Inspection Express, and **do not conduct the inspection**
+- Follow up non-responders if the automated sequence does not produce a reply
+
+### Ingoing inspections
+- Create via Tenancy Profile → Inspections → **(+)** button → set type to **Ingoing**
+- Assign to PM, set a near-future date/time, and set status to **Confirmed immediately**
+- No tenant correspondence needed — property is vacant pre-move-in
+- Once Confirmed at a future time, it syncs to Inspection Express
+
+!!! warning "Rescheduling resets status"
+    Editing an inspection date or time resets the status to **Tentative**. Always click **Update to Confirmed** immediately after saving a reschedule — otherwise the tenant receives a confusing "proposing" email instead of a proper confirmation.
 
 SOP: [Scheduling & Confirmation (Property Tree)](pt-scheduling.md)
 
@@ -55,6 +67,7 @@ SOP: [Reports & Actions (Inspection Express)](inspection-express.md)
 ---
 
 ## Stage 4 — Maintenance captured into Tapi (VA/PM Assistant daily task)
+<span class="pp-verified-label">Verified from video analysis</span>
 
 This is a critical daily workflow for the VA/PM Assistant:
 
@@ -98,6 +111,7 @@ SOP: [Intake, Triage & Work Orders (Tapi)](../maintenance/tapi-intake.md)
 ---
 
 ## Stage 5 — Follow-up decision rules (tenant issues)
+<span class="pp-verified-label">Verified from video analysis</span>
 - Minor / one-off → photos by deadline or remedy by next inspection
 - Careless damage / multiple issues → follow-up inspection; consider formal escalation
 - Repeat issues → escalation ladder per Notices playbook
