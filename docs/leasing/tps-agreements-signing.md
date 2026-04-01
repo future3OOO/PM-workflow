@@ -99,8 +99,8 @@ Before starting the renewal wizard:
 
 **Smoke Alarms:**
 
-- Update the **last check date** from the SETS smoke alarm testing website (`sets.co.nz`) or the last routine inspection date
-- Navigate to SETS → My Properties → select property → check service date and expiry dates
+- Update the **last check date** from the SATS smoke alarm testing website (`sats.co.nz`) or the last routine inspection date
+- Navigate to SATS → My Properties → select property → check service date and expiry dates
 - Verify expiry dates are correct in TPS
 - The **smoke alarm assessment date** is when smoke alarms were first assessed (usually during the healthy homes report) — leave unchanged unless updated
 

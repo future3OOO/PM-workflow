@@ -105,6 +105,7 @@ After entering the rent schedule, generate and send the formal **Rent Increase N
 ---
 
 ## Stage 6 — Execute in TPS and update Property Tree
+<span class="pp-verified-label">Verified from video analysis</span>
 
 ### Prerequisites
 Before creating a renewal in TPS, confirm you have:

@@ -15,6 +15,7 @@ See: [Tapi Intake & Triage SOP](../maintenance/tapi-intake.md) | [Maintenance Li
 - [ ] Contractor follow-ups for stalled urgent jobs
 
 ## 2) Inspection follow-up (Inspection Express → Tapi)
+<span class="pp-verified-label">Verified from video analysis</span>
 
 See: [Inspection Lifecycle](../inspections/inspection-lifecycle.md) | [Inspection Express SOP](../inspections/inspection-express.md) | [Maintenance Lifecycle](../maintenance/maintenance-lifecycle.md) | [Tapi Intake SOP](../maintenance/tapi-intake.md)
 - [ ] Check Inspection Express for newly finalised inspections
@@ -28,6 +29,7 @@ See: [Inspection Lifecycle](../inspections/inspection-lifecycle.md) | [Inspectio
 - [ ] Flag any inspections still "In Progress" — remind PM to finalise
 
 ## 3) Leasing (TPS/BookMe)
+<span class="pp-verified-label">Verified from video analysis</span>
 
 See: [Leasing Lifecycle](../leasing/leasing-lifecycle.md)
 - [ ] Viewings have availability
@@ -35,6 +37,7 @@ See: [Leasing Lifecycle](../leasing/leasing-lifecycle.md)
 - [ ] New applications triaged and next steps sent
 
 ## 4) Inspections (upcoming)
+<span class="pp-verified-label">Verified from video analysis</span>
 
 See: [Property Tree Scheduling](../inspections/pt-scheduling.md)
 - [ ] Upcoming inspections: **Communications Log** checked (automated ~10-day / ~9-day messages from Property Tree)
@@ -49,6 +52,7 @@ See: [Email Management](email-management.md)
 - [ ] File key decisions to Property Tree
 
 ## 6) Tapi Maintenance Dashboard — Daily Check
+<span class="pp-verified-label">Verified from video analysis</span>
 
 See: [Tapi Intake & Triage SOP](../maintenance/tapi-intake.md) | [Tapi Invoices SOP](../maintenance/tapi-invoices.md)
 

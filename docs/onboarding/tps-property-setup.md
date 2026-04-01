@@ -55,6 +55,7 @@ Navigate to **Properties → + New Property** and complete the setup fields.
 ---
 
 ## Step 2 — Property Configuration Tabs
+<span class="pp-verified-label">Verified from video analysis</span>
 
 ### Pets
 
@@ -81,6 +82,7 @@ Upload property images — source from the Trade Me listing or request from the 
 ---
 
 ## Step 3 — Chattels
+<span class="pp-verified-label">Verified from video analysis</span>
 
 The Chattels section contains a checklist of items present at the property (approximately 21 checkbox items). Tick what is known to be at the property.
 
@@ -89,6 +91,7 @@ All chattels data entered here flows directly onto the tenancy agreement. For a 
 ---
 
 ## Step 4 — Liability
+<span class="pp-verified-label">Verified from video analysis</span>
 
 The Liability section determines who pays for utilities and maintenance:
 
@@ -102,6 +105,7 @@ The Liability section determines who pays for utilities and maintenance:
 ---
 
 ## Step 5 — Compliance (Healthy Homes)
+<span class="pp-verified-label">Verified from video analysis</span>
 
 All properties must be **Healthy Homes compliant** (deadline: 1 July 2025). The compliance section covers:
 
@@ -119,6 +123,7 @@ See: [Compliance & Healthy Homes](compliance-healthy-homes.md)
 ---
 
 ## Step 6 — Insurance
+<span class="pp-verified-label">Verified from video analysis</span>
 
 Enter the landlord's insurance details from their policy documents:
 
@@ -132,6 +137,7 @@ The insurance information is included in the tenancy agreement and must be discl
 ---
 
 ## Step 7 — Clauses
+<span class="pp-verified-label">Verified from video analysis</span>
 
 TPS provides a clause management system with four sub-sections:
 
@@ -147,6 +153,7 @@ Toggle clauses on/off using the selection panel on the right. The PM will advise
 ---
 
 ## Step 8 — Attachments
+<span class="pp-verified-label">Verified from video analysis</span>
 
 Upload supporting documents that will be included with or available alongside the tenancy agreement:
 
@@ -157,6 +164,7 @@ Upload supporting documents that will be included with or available alongside th
 ---
 
 ## Step 9 — Trade Me Listing & BookMe Link
+<span class="pp-verified-label">Verified from video analysis</span>
 
 1. Publish the Trade Me listing with property photos, details, and rent
 2. Copy the **Listing ID** from the bottom of the Trade Me listing page
@@ -168,6 +176,7 @@ See: [Viewings & BookMe (TPS)](../leasing/tps-viewings-bookme.md)
 ---
 
 ## Property Status Flow
+<span class="pp-verified-label">Verified from video analysis</span>
 
 | Status | Trigger |
 |---|---|
@@ -178,6 +187,7 @@ See: [Viewings & BookMe (TPS)](../leasing/tps-viewings-bookme.md)
 ---
 
 ## Tenancy Agreement Generation
+<span class="pp-verified-label">Verified from video analysis</span>
 
 All data entered across the property tabs (details, chattels, liability, compliance, insurance, clauses) is used to generate the tenancy agreement. When you create or renew an agreement, TPS populates it from these fields.
 

@@ -26,6 +26,7 @@ To adjust: open the inspection → click the **pencil icon** → change the date
 ---
 
 ## Inspection Status Pipeline
+<span class="pp-verified-label">Verified from video analysis</span>
 
 Property Tree uses a 5-stage status pipeline for inspections:
 
@@ -45,6 +46,7 @@ Property Tree uses a 5-stage status pipeline for inspections:
 ---
 
 ## Scheduling a Routine Inspection
+<span class="pp-verified-label">Verified from video analysis</span>
 
 1. Navigate to **Inspections** tab on the Tenancy Profile (or use the Inspections Summary page)
 2. Check whether a **Routine** inspection already exists:
@@ -80,6 +82,7 @@ Additional tools: **Bulk Edit**, **Bulk Assign**, **Tags**, column customisation
 ---
 
 ## Rescheduling an Inspection
+<span class="pp-verified-label">Verified from video analysis</span>
 
 When a tenant or PM needs to change an inspection date:
 
@@ -99,6 +102,7 @@ The Edit Inspection dialog also shows an **"Inspections on [date]"** section lis
 ---
 
 ## Adding an Ingoing Inspection
+<span class="pp-verified-label">Verified from video analysis</span>
 
 Ingoing inspections are conducted before a new tenant moves in, while the property is vacant.
 
@@ -117,6 +121,7 @@ Ingoing inspections are conducted before a new tenant moves in, while the proper
 ---
 
 ## Communications Log
+<span class="pp-verified-label">Verified from video analysis</span>
 
 Each inspection in Property Tree maintains a full communications log showing:
 
@@ -131,6 +136,7 @@ Use this log to verify that the tenant has received the correct notifications.
 ---
 
 ## Quality Checks
+<span class="pp-verified-label">Verified from video analysis</span>
 
 - **Communications Log** shows Property Tree **automatic** ~10-day email and ~9-day SMS (not assumed manual sends)
 - Property Tree status **Confirmed** after tenant confirms (required for day-before auto email, IE sync, and attending)

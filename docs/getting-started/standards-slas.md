@@ -117,6 +117,7 @@ When an owner declines recommended maintenance:
 ---
 
 ## Routine inspection standards
+<span class="pp-verified-label">Verified from video analysis</span>
 
 - Routine inspections are **quarterly** (every 3 months)
 - Cadence (Property Tree **Automated Communications** — **not** manual PM sends):
@@ -141,6 +142,7 @@ File evidence (photos/report) into Property Tree.
 ---
 
 ## Damage liability framework
+<span class="pp-verified-label">Verified from video analysis</span>
 
 When damage is found at an inspection, determining who pays for repairs depends on whether the damage is **careless** (tenant liability) or **accidental / not careless** (landlord liability).
 

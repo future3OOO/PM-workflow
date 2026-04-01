@@ -30,6 +30,7 @@ This creates a webhook-like connection — all Trade Me email enquiries are auto
 ---
 
 ## Creating a Viewing
+<span class="pp-verified-label">Verified from video analysis</span>
 
 Navigate to **Book a viewing → Create Viewing** in the TPS sidebar.
 
@@ -57,6 +58,7 @@ Toggle **AUTO UPDATE CURRENT TENANT → YES** to auto-populate the existing tena
 ---
 
 ## Tenant Booking Experience
+<span class="pp-verified-label">Verified from video analysis</span>
 
 When a tenant enquires via Trade Me and viewings are scheduled:
 
@@ -71,6 +73,7 @@ When a tenant enquires via Trade Me and viewings are scheduled:
 ---
 
 ## Confirmation & Reminder SMS
+<span class="pp-verified-label">Verified from video analysis</span>
 
 BookMe sends automated SMS messages to all booked viewers:
 
@@ -89,6 +92,7 @@ BookMe sends automated SMS messages to all booked viewers:
 ---
 
 ## Post-Viewing: Sending Application Links
+<span class="pp-verified-label">Verified from video analysis</span>
 
 From the **Viewings** page, click the **Send Message** action on a completed viewing.
 
@@ -111,6 +115,7 @@ The PM typically does this from his phone at the viewing itself.
 ---
 
 ## Daily Enquiry Monitoring & Replies
+<span class="pp-verified-label">Verified from video analysis</span>
 
 Check the **Book a viewing → Enquiries** page daily.
 
@@ -125,6 +130,7 @@ Check the **Book a viewing → Enquiries** page daily.
 ---
 
 ## Viewings Dashboard
+<span class="pp-verified-label">Verified from video analysis</span>
 
 The **Viewings** page shows key statistics across the portfolio:
 
@@ -140,6 +146,7 @@ Each viewing row shows confirmation status badges: **NOT CONFIRMED**, **VT CONFI
 ---
 
 ## Property Overview & Reporting
+<span class="pp-verified-label">Verified from video analysis</span>
 
 BookMe also includes two reporting screens that are useful for portfolio-level visibility:
 
@@ -151,6 +158,7 @@ These are reference/reporting pages rather than the main daily operating screens
 ---
 
 ## BookMe Settings Reference
+<span class="pp-verified-label">Verified from video analysis</span>
 
 Key settings configured in **Book a viewing → Settings**:
 
@@ -173,6 +181,7 @@ Key settings configured in **Book a viewing → Settings**:
 ---
 
 ## Template Library
+<span class="pp-verified-label">Verified from video analysis</span>
 
 BookMe includes 24+ email templates for the full viewing lifecycle. Key templates:
 

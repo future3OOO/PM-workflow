@@ -6,6 +6,7 @@
 ---
 
 ## Overview
+<span class="pp-verified-label">Verified from video analysis</span>
 
 After each routine inspection is completed, the PM finalises the report in Inspection Express. The VA/PM Assistant then reviews it, ensures maintenance items have synced into Tapi, and initiates the landlord approval workflow. This SOP covers the full post-inspection handoff from Inspection Express through to Tapi action.
 

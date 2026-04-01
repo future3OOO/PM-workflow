@@ -133,6 +133,7 @@ Thanks,
 ---
 
 ## 7b) Maintenance — owner approval request (Tapi — inspection follow-up)
+<span class="pp-verified-label">Verified from video analysis</span>
 **Used in:** Tapi → Ask owner for approval → Add personal message
 
 > Hi [Owner first name],
@@ -284,6 +285,7 @@ Thanks,
 ---
 
 ## 8a) Routine inspections — Property Tree automation (reference)
+<span class="pp-verified-label">Verified from video analysis</span>
 
 For **routine** inspections, Property Tree **Automated Communications** sends the **~10-day email**, **~9-day SMS**, and (once status is **Confirmed**) the **day-before confirmation email**. The PM does **not** manually send those as the primary path — use the inspection **Communications Log** to verify delivery. Sections **9–11** below are **reference wording** only (e.g. manual follow-up to a non-responder, or explaining what tenants receive).
 
@@ -338,6 +340,7 @@ Thanks,
 ---
 
 ## 13) Owner email — grey-area damage / liability review
+<span class="pp-verified-label">Verified from video analysis</span>
 **Subject:** Inspection follow-up — damage review at [Property Address]
 
 Hi [Landlord Name],
@@ -359,6 +362,7 @@ Kind regards,
 ---
 
 ## 14) Renewals — landlord email (~90 days)
+<span class="pp-verified-label">Verified from video analysis</span>
 **Subject:** Renewal decision needed — [Property Address] — fixed term ending [End Date]
 
 Hi [Landlord Name],
@@ -378,6 +382,7 @@ Thanks,
 ---
 
 ## 15) Renewals — tenant offer (once owner direction confirmed)
+<span class="pp-verified-label">Verified from video analysis</span>
 **Subject:** Tenancy renewal — [Property Address]
 
 Hi [Tenant Name],

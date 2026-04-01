@@ -18,6 +18,7 @@ This SOP covers intake, triage, merging related jobs, obtaining owner approval, 
 ---
 
 ## Tapi Dashboard Reference
+<span class="pp-verified-label">Verified from video analysis</span>
 
 ??? info "Tapi dashboard reference (expand)"
     ### Left sidebar navigation
@@ -131,6 +132,7 @@ When multiple jobs at the same property require the **same trade** (e.g., two pl
 ---
 
 ## Approvals
+<span class="pp-verified-label">Verified from video analysis</span>
 
 ### Step 1 — Check email first
 
@@ -354,6 +356,7 @@ When a contractor calls back during a job reporting expanded scope or additional
 ---
 
 ## Daily Workflow Checklist
+<span class="pp-verified-label">Verified from video analysis</span>
 
 1. Check Gmail for overnight Tapi notifications (concierge requests, owner replies, contractor updates)
 2. Review the **Open jobs** bucket — sort/filter by **Created** to surface recent **Choose action** jobs, then triage and action them

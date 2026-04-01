@@ -24,6 +24,7 @@ Run inspections consistently, with tenant confirmations, strong reporting, corre
 ---
 
 ## Stage 1 — Scheduling and confirmations (Property Tree)
+<span class="pp-verified-label">Verified from video analysis</span>
 
 ### Routine inspections
 - Property Tree auto-creates the first routine inspection **3 months from tenancy start date** — verify the date falls on a weekday
@@ -66,6 +67,7 @@ SOP: [Reports & Actions (Inspection Express)](inspection-express.md)
 ---
 
 ## Stage 4 — Maintenance captured into Tapi (VA/PM Assistant daily task)
+<span class="pp-verified-label">Verified from video analysis</span>
 
 This is a critical daily workflow for the VA/PM Assistant:
 
@@ -109,6 +111,7 @@ SOP: [Intake, Triage & Work Orders (Tapi)](../maintenance/tapi-intake.md)
 ---
 
 ## Stage 5 — Follow-up decision rules (tenant issues)
+<span class="pp-verified-label">Verified from video analysis</span>
 - Minor / one-off → photos by deadline or remedy by next inspection
 - Careless damage / multiple issues → follow-up inspection; consider formal escalation
 - Repeat issues → escalation ladder per Notices playbook

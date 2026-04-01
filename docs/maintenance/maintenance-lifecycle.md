@@ -25,6 +25,7 @@ Handle maintenance quickly and consistently with clean approvals, multi-party co
 ---
 
 ## The Tapi Dashboard — Daily Operating View
+<span class="pp-verified-label">Verified from video analysis</span>
 
 The Jobs dashboard is the VA's primary workspace. Tabs across the top: **Open | Paused | Closed | All | Planned**.
 
@@ -103,6 +104,7 @@ Full decision framework with trade categories: [Intake, Triage & Work Orders § 
 ---
 
 ## Stage 3 — The Five Action Buttons
+<span class="pp-verified-label">Verified from video analysis</span>
 
 Every job in Tapi presents five action buttons. Selecting the right one is the core triage decision.
 

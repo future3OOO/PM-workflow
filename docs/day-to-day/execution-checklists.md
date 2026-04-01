@@ -6,6 +6,7 @@
 ---
 
 ## 1) Onboarding — new landlord + property
+<span class="pp-verified-label">Verified from video analysis</span>
 - [ ] Management authority saved to Property Tree docs (01 Management & Owner Docs)
 - [ ] Owner record created (bank details verified)
 - [ ] Property record created (address verified)
@@ -20,6 +21,7 @@
 ---
 
 ## 2) Leasing — Trade Me → TPS BookMe → TPS applications
+<span class="pp-verified-label">Verified from video analysis</span>
 - [ ] Trade Me listing published
 - [ ] Trade Me listing ID entered into TPS property
 - [ ] BookMe viewings created and visible
@@ -45,6 +47,7 @@
 ---
 
 ## 4) Routine inspections (quarterly)
+<span class="pp-verified-label">Verified from video analysis</span>
 
 ### 4a) Pre-inspection and scheduling
 - [ ] Inspection scheduled in Property Tree (date/time window set; **Proposed** until tenant confirms)
@@ -73,6 +76,7 @@
 ---
 
 ## 5) Maintenance (Tapi-first)
+<span class="pp-verified-label">Verified from video analysis</span>
 
 ### 5a) Intake
 - [ ] Request received in Tapi (tenant-submitted OR synced from inspection)
@@ -107,6 +111,7 @@
 ---
 
 ## 6) Renewals (fixed term)
+<span class="pp-verified-label">Verified from video analysis</span>
 - [ ] Landlord contacted at ~90 days
 - [ ] Rent evidence prepared (Valua) if required
 - [ ] Landlord decision captured in writing
