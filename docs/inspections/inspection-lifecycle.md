@@ -29,7 +29,7 @@ Run inspections consistently, with tenant confirmations, strong reporting, corre
 ### Routine inspections
 - Property Tree auto-creates the first routine inspection **3 months from tenancy start date** — verify the date falls on a weekday
 - Schedule in Property Tree with the agreed date/time window; use **Proposed** (or equivalent) until the tenant has confirmed
-- Monitor both the **HelloIt Property Partner** inbox and the **McKenzie Property Partner** inbox for tenant replies; if a name search fails, search by the **property address**
+- Monitor both **`hello@propertypartner.co.nz`** and **`mckenzie@propertypartner.co.nz`** for tenant replies; if a name search fails, search by the **property address**
 - **8-day email and 7-day SMS** are sent **automatically by Property Tree** (Automated Communications) — **not** manual sends by the PM; check the inspection **Communications Log** to verify delivery
 - If the inspection is still unconfirmed, Property Tree sends an extra **3-day reminder email**
 - Follow up non-responders about **3-4 days out**

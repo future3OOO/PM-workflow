@@ -69,7 +69,7 @@ Property Tree uses a 5-stage status pipeline for inspections:
 
 Use this flow once a tenant has replied to the routine-inspection notice.
 
-1. Monitor both the **HelloIt Property Partner** inbox and the **McKenzie Property Partner** inbox for tenant inspection replies
+1. Monitor both **`hello@propertypartner.co.nz`** and **`mckenzie@propertypartner.co.nz`** for tenant inspection replies
 2. If searching by tenant name does not find the thread, search by the **property address**
 3. Open **Property Tree → Inspections Summary**
 4. Find the correct routine inspection for that property/date

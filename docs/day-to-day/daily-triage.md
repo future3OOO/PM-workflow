@@ -40,7 +40,7 @@ See: [Leasing Lifecycle](../leasing/leasing-lifecycle.md)
 <span class="pp-verified-label">Verified from video analysis</span>
 
 See: [Property Tree Scheduling](../inspections/pt-scheduling.md)
-- [ ] Inspection reply inboxes monitored in both **HelloIt Property Partner** and **McKenzie Property Partner**
+- [ ] Inspection reply inboxes monitored in both **`hello@propertypartner.co.nz`** and **`mckenzie@propertypartner.co.nz`**
 - [ ] Property-address search used where tenant-name search does not find the thread
 - [ ] Upcoming inspections: **Communications Log** checked (automated **8-day email / 7-day SMS / 3-day reminder** from Property Tree)
 - [ ] Unconfirmed inspections chased **3-4 days out**
