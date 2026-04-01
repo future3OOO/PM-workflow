@@ -12,6 +12,7 @@ copyright: "&copy; Property Partner (Strathmore Property Limited)"
 
 theme:
   name: material
+  logo: assets/property-partner-logo.png
   features:
     - navigation.sections
     - navigation.expand
@@ -49,7 +50,6 @@ theme:
     text: DM Sans
     code: IBM Plex Mono
   icon:
-    logo: material/home-city-outline
     repo: fontawesome/brands/github
 
 plugins:
