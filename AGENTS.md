@@ -34,7 +34,8 @@ property_management_docs_v2/
 │   ├── renewals-exits/          # Rent reviews, Valua, end of tenancy
 │   └── day-to-day/              # Email, notices, checklists, QA, templates, glossary
 └── _video_analysis/             # Video integration tooling
-    ├── RUNBOOK.md               # Transcript + frame-based video-to-docs process
+    ├── RUNBOOK.md               # Superseded legacy runbook
+    ├── RUNBOOK_PERFORMANCE.md   # Default transcript + frame-based video-to-docs process
     ├── batch_config.py          # Shared dated-batch video list + path helpers
     ├── requirements.txt         # Video-analysis-only Python deps
     ├── transcribe.py            # Single-video CLI transcription
@@ -89,7 +90,9 @@ Do **not** update workflow documentation from transcript-only notes when the vid
 
 Batch summaries are helpful, but they do **not** replace per-video analysis. The per-video report is the canonical evidence-preservation artefact.
 
-Primary process reference: [`_video_analysis/RUNBOOK.md`](_video_analysis/RUNBOOK.md)
+Primary process reference: [`_video_analysis/RUNBOOK_PERFORMANCE.md`](_video_analysis/RUNBOOK_PERFORMANCE.md)
+
+`_video_analysis/RUNBOOK.md` is now legacy-only and should not be used as the starting point for new batches.
 
 ---
 
@@ -169,7 +172,7 @@ After any update, verify these are aligned:
 
 ### When integrating new training videos
 
-Follow the transcript + frame workflow in [`_video_analysis/RUNBOOK.md`](_video_analysis/RUNBOOK.md).
+Follow the transcript + frame workflow in [`_video_analysis/RUNBOOK_PERFORMANCE.md`](_video_analysis/RUNBOOK_PERFORMANCE.md).
 
 Key points:
 
@@ -180,6 +183,11 @@ Key points:
 - create a **per-video analysis report** for each video before relying on any grouped summary
 - maintain a **doc coverage matrix** for the batch showing findings, target docs reviewed, actions taken, and residual gaps
 - update the published **video analysis glossary** in `docs/day-to-day/video-analysis-glossary.md`
+- treat **complete first-pass UI mapping** as mandatory, not optional:
+  - page title / screen title
+  - entry path used in the video
+  - local tab / modal / row action
+  - visible URL if helpful
 - use the coverage matrix to record both:
   - **primary docs reviewed**: the main lifecycle / SOP targets
   - **dependent docs checked**: templates, checklists, triage pages, standards pages, systems-map pages, or other downstream docs that may inherit the change
@@ -204,6 +212,7 @@ Do **not** mark a video batch complete until:
    - checklists / QA pages
    - triage / operations pages
    - standards / systems pages where relevant
+6. each software-workflow video has complete first-pass UI mapping captured in the analysis artefact
 
 ### Dependency-cascade rule
 
@@ -270,6 +279,7 @@ For video-driven doc updates, also verify:
 - no material finding was left without a disposition
 - no material finding was left without a dependency-cascade disposition
 - page / navigation mapping is captured for the relevant workflows
+- page titles, entry paths, local tabs/modals, and key UI anchors are captured for the relevant workflows
 - any materially video-derived section that was updated is marked with the verified label
 - templates, checklists, and triage pages were explicitly checked where the workflow changed
 
@@ -314,6 +324,7 @@ Tapi → approve → auto-close job + sync to Property Tree → rent holdback fr
 - Never close a batch without updating the published video glossary
 - Never use the coverage matrix as a primary-SOP-only checklist; it must cover downstream dependent docs too
 - Never omit page / navigation mapping when documenting a video-derived workflow
+- Never treat UI mapping as complete if the page title, entry path, or local tab / modal is still ambiguous
 - Never apply the verified label to sections that were not actually checked against proper video analysis
 - Never change a lifecycle page without checking the dependent step-level guides, templates, and triage/operations checklists
 - Never add a new daily/weekly check without ensuring the underlying lifecycle and SOP pages support it

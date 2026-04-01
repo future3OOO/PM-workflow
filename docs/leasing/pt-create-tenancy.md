@@ -1,6 +1,6 @@
 # Property Tree — Create Tenancy & Dates
 
-**Version:** V2.5  
+**Version:** V2.8  
 **Last updated:** 2026-04-01
 
 ---
@@ -27,7 +27,9 @@ TPS tenancy agreement signed or ready to be mirrored in Property Tree; bond work
 
 ### 1) Open the property and create the tenancy
 
-Navigate to: **Property Tree → property → add tenancy**
+Navigate to: **Property Tree → property record → Add Tenancy**
+
+Page title shown in the UI: **Add Tenancy**
 
 - Create the tenancy under the correct property
 - Select the correct tenancy type
@@ -43,7 +45,7 @@ Navigate to: **Property Tree → property → add tenancy**
 
 ### 3) Add the tenants carefully
 
-Navigate to: **Property Tree tenancy record → tenants / occupants section**
+Navigate to: **Property Tree → Add Tenancy page → Contacts / tenant section**
 
 - Add each tenant individually
 - Copy the tenant names from TPS rather than retyping them from memory
@@ -57,6 +59,7 @@ Navigate to: **Property Tree tenancy record → tenants / occupants section**
 
 - Enter the next rent review date roughly **2 to 3 months before** the fixed-term end date
 - Check any internal tenancy notes or special terms that need to be visible to the PM
+- Confirm the tenancy is saved in the correct lease / finalised state before treating the Property Tree setup as complete
 
 ### 5) File the core documents
 
@@ -69,13 +72,14 @@ Upload documents into Property Tree docs:
 ### 6) Add the ingoing inspection immediately after save
 <span class="pp-verified-label">Verified from video analysis</span>
 
-Navigate to: **Property Tree tenancy record → Inspections → (+)**
+Navigate to: **Property Tree → Tenancy Profile → Inspections tab → (+)**
 
 - Add an **Ingoing** inspection after the tenancy is saved
 - Assign it to the PM
 - Use a **future** time, even if that is only a few hours later on the same day
 - Save it as **Confirmed**
 - This is required for the inspection to sync through to Inspection Express
+- Best practice is to complete the ingoing inspection as soon as possible and well before the new tenant moves in, rather than leaving it to the last minute
 
 ---
 
@@ -88,6 +92,7 @@ Navigate to: **Property Tree tenancy record → Inspections → (+)**
     - Agreement PDF must be stored in the property record
     - Bond status must be tracked until confirmed
     - Rent review date should be set in advance rather than left blank
+    - Lease / finalised status should be correct
     - Ingoing inspection must be future-dated and confirmed so it syncs correctly
 
 ## Close-out

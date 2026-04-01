@@ -1,6 +1,6 @@
 # Landlord & Property Setup
 
-**Version:** V2.5  
+**Version:** V2.6  
 **Last updated:** 2026-04-01
 
 ---
@@ -57,9 +57,14 @@ Complete:
 - fees and statement/disbursement settings
 - establish the Property Tree property file structure (docs folders)
 - verify owner bank details against the bank statement before any owner payment can be made
+- set the normal owner statement preference:
+  - email delivery
+  - basic statement
+  - contact type `Owner`
 - use the management agreement commencement date for `Authority Start Date`
 - use the management agreement spend threshold for `Expenditure Limit`
 - do not assume the default management fee is correct; check the agreement and include GST correctly in the effective rate
+- if address lookup fails for a new build or unit address, correct it manually before saving
 
 ---
 

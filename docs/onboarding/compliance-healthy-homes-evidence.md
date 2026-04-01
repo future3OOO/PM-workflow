@@ -1,6 +1,6 @@
 # Healthy Homes Evidence (TPS)
 
-**Version:** V2.5  
+**Version:** V2.6  
 **Last updated:** 2026-04-01
 
 ---
@@ -36,6 +36,9 @@ Use Property Tree invoices and other stored evidence to support TPS compliance u
 - extractor fan installation dates
 - draught stopping work
 - other Healthy Homes remediation items that were completed but not reflected in TPS yet
+- component-specific Healthy Homes dates where later remedial invoices provide a more accurate completion date than the original report alone
+
+Do not force every Healthy Homes field to use one blanket assessment date if the evidence shows different completion dates for different components.
 
 ## Quality checks
 

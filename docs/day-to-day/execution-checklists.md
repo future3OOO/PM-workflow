@@ -1,6 +1,6 @@
 # Execution Checklists
 
-**Version:** V2.8  
+**Version:** V2.9  
 **Last updated:** 2026-04-01
 
 ---
@@ -46,6 +46,11 @@
 - [ ] Agreement stored in Property Tree docs
 - [ ] Welcome pack sent
 - [ ] Ingoing inspection scheduled
+- [ ] Ingoing inspection completed as early as practical and well before move-in
+- [ ] Ingoing report / 360 report and key sheet sent to tenant on move-in morning
+- [ ] Tenant given 14 days to submit amendments
+- [ ] Finalised ingoing copy confirmed back in Property Tree
+- [ ] Finalised ingoing copy available to landlord through the portal
 
 ---
 

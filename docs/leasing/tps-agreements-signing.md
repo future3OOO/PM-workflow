@@ -1,6 +1,6 @@
 # Agreements & Signing (TPS)
 
-**Version:** V2.5  
+**Version:** V2.7  
 **Last updated:** 2026-04-01
 
 ---
@@ -12,11 +12,18 @@ Part of: [Leasing Lifecycle](leasing-lifecycle.md) → Stage 6
 
 Navigate to: **TPS → approved applicant / draft agreement → Edit**
 
+Typical path shown in the UI: **TPS left nav → Applications and Agreements → Agreements → property row → Edit**
+
+Page title shown in the UI: **Agreements**
+
 ### Agreement review sequence
 
 1. Generate or reopen the draft agreement in TPS
 2. Review the agreement field by field before emailing it to the tenant
-3. Cross-check TPS data against Property Tree, compliance evidence, and owner emails where needed
+3. Cross-check TPS data against:
+   - **Property Tree → Property Profile / Tenancy Profile**
+   - **Property Tree → Documents tab** for invoices and stored evidence
+   - owner email / policy email where needed
 4. Email the agreement to the tenant for electronic signing
 5. Export the final signed PDF
 6. Upload the signed agreement to Property Tree docs
@@ -29,6 +36,11 @@ Navigate to: **TPS → approved applicant / draft agreement → Edit**
 - For a 12-month fixed term, the end date is the **day before the anniversary**
 - Check the first rent payment amount and bond totals carefully
 - If a pet is approved, make sure the pet bond is included where applicable
+
+### Utilities
+
+- Utilities often flow through from the approved application already
+- Do not change the utilities position unless the imported TPS data is wrong or the agreed arrangement has changed
 
 ### Next rent payment date
 <span class="pp-verified-label">Verified from video analysis</span>
@@ -66,6 +78,7 @@ Navigate to: **TPS → approved applicant / draft agreement → Edit**
 - Leave the smoke alarm assessment date alone unless there is evidence it should change
 - All new tenancies must be compliant from tenancy start
 - If TPS shows a non-compliant Healthy Homes item but the work appears to have been completed, confirm against Property Tree invoices or other evidence before changing the field
+- Do not assume every Healthy Homes field should use one blanket report date; some component dates may need to come from later remediation invoices or other completion evidence for that specific item
 
 ### Insurance and clauses
 

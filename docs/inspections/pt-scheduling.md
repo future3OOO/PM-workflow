@@ -1,6 +1,6 @@
 # Scheduling & Confirmation (Property Tree)
 
-**Version:** V2.4  
+**Version:** V2.5  
 **Last updated:** 2026-04-01
 
 ---
@@ -48,20 +48,21 @@ Property Tree uses a 5-stage status pipeline for inspections:
 ## Scheduling a Routine Inspection
 <span class="pp-verified-label">Verified from video analysis</span>
 
-1. Navigate to **Inspections** tab on the Tenancy Profile (or use the Inspections Summary page)
-2. Check whether a **Routine** inspection already exists:
+1. Navigate to **Property Tree → Tenancy Profile → Inspections tab** (or use the Inspections Summary page)
+2. Confirm you are on the **Tenancy Profile** screen and looking at the inspection list for that tenancy
+3. Check whether a **Routine** inspection already exists:
    - for the **first** routine inspection in a tenancy, Property Tree usually auto-creates it 3 months from the tenancy start date
    - if that auto-created routine already exists, **open and edit it** instead of creating a duplicate
-3. Only click the **(+)** button to add a new inspection if no suitable routine inspection already exists
-4. Set **Inspection Type**: Routine
-5. Set **Assign To**: McKenzie Lawrence
-6. Set the **Inspection Date** and **time window** (agreed with tenant via email/text)
-7. Set **Status**: leave as **Proposed** initially (triggers proposal notification to tenant)
-8. Click **Save**
-9. Property Tree **automatically** sends the **~10-day** scheduling email and **~9-day** SMS (Automated Communications) — **do not** treat these as manual PM sends; confirm they appear in the **Communications Log**
-10. Follow up **non-responders** manually if needed (email/SMS) until the tenant confirms
-11. Once the tenant confirms, update status to **Confirmed** (manual). **Until Confirmed:** the tenant **does not** receive the **automatic day-before confirmation email**, the inspection **does not** sync to Inspection Express, and **do not attend** the property for the inspection
-12. After **Confirmed**, the tenant receives the **automatic** day-before confirmation email
+4. Only click the **(+)** button to add a new inspection if no suitable routine inspection already exists
+5. Set **Inspection Type**: Routine
+6. Set **Assign To**: McKenzie Lawrence
+7. Set the **Inspection Date** and **time window** (agreed with tenant via email/text)
+8. Set **Status**: leave as **Proposed** initially (triggers proposal notification to tenant)
+9. Click **Save**
+10. Property Tree **automatically** sends the **~10-day** scheduling email and **~9-day** SMS (Automated Communications) — **do not** treat these as manual PM sends; confirm they appear in the **Communications Log**
+11. Follow up **non-responders** manually if needed (email/SMS) until the tenant confirms
+12. Once the tenant confirms, update status to **Confirmed** (manual). **Until Confirmed:** the tenant **does not** receive the **automatic day-before confirmation email**, the inspection **does not** sync to Inspection Express, and **do not attend** the property for the inspection
+13. After **Confirmed**, the tenant receives the **automatic** day-before confirmation email
 
 ### Inspections Summary Page
 
@@ -107,13 +108,14 @@ The Edit Inspection dialog also shows an **"Inspections on [date]"** section lis
 Ingoing inspections are conducted before a new tenant moves in, while the property is vacant.
 
 1. Navigate to **Tenancy Profile → Inspections** tab
-2. Click the **(+)** button
-3. Set **Inspection Type**: Ingoing
-4. Set **Assign To**: McKenzie Lawrence
-5. Set **Inspection Date**: today or near future (a few hours ahead of current time)
-6. Set **Between**: a narrow time window (e.g., 12:00 PM – 1:00 PM)
-7. Set **Status**: **Confirmed** (select from the status dropdown before saving)
-8. Click **Save**
+2. Confirm you are on the correct **Tenancy Profile** for the new tenancy
+3. Click the **(+)** button
+4. Set **Inspection Type**: Ingoing
+5. Set **Assign To**: McKenzie Lawrence
+6. Set **Inspection Date**: today or near future (a few hours ahead of current time)
+7. Set **Between**: a narrow time window (e.g., 12:00 PM – 1:00 PM)
+8. Set **Status**: **Confirmed** (select from the status dropdown before saving)
+9. Click **Save**
 
 !!! tip "No tenant coordination needed"
     Ingoing inspections don't require any correspondence with the incoming tenant — the property is vacant and hasn't been moved into yet. The only scheduling constraint is the PM's calendar availability. Set the status to Confirmed immediately so it syncs to Inspection Express.

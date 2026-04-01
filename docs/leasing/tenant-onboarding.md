@@ -1,6 +1,6 @@
 # Tenant Onboarding
 
-**Version:** V2.5  
+**Version:** V2.7  
 **Last updated:** 2026-04-01
 
 ---
@@ -13,7 +13,7 @@ Agreement signed; start date set.
 
 ## Outputs (definition of done)
 - Welcome pack sent pre-start
-- Ingoing inspection completed, published, and stored in Property Tree
+- Ingoing inspection completed early, sent to the tenant with the key sheet on move-in morning, and finalised back into Property Tree after the tenant review window
 - Tenant understands maintenance pathway (website form → Tapi) and urgent escalation
 - Key handover recorded
 
@@ -41,7 +41,11 @@ Template: [Notice & Email Templates](../day-to-day/notice-email-templates.md)
 - schedule the ingoing inspection in Property Tree with a **future** time and **Confirmed** status
 - confirm sync in Inspection Express
 - complete inspection thoroughly with photos
-- publish report; send to tenant and owner; store in Property Tree docs
+- complete the ingoing inspection as soon as possible and well before the new tenant moves in, rather than leaving it to the last minute
+- on the morning of move-in, send the ingoing report or 360 report to the tenant together with the key sheet
+- tenant then has **14 days** to review the report and submit any amendments
+- if no amendments are received within that window, treat the report as finalised
+- once finalised, the final copy should be stored back into Property Tree automatically and should be available to the landlord through the portal
 
 SOP: [Inspection Express](../inspections/inspection-express.md)
 
@@ -55,7 +59,7 @@ SOP: [Inspection Express](../inspections/inspection-express.md)
 
 ## Recordkeeping
 - welcome pack copy (email PDF if needed) filed to Property Tree
-- ingoing report filed to Property Tree
+- final ingoing report filed to Property Tree
 
 !!! info "What's Next"
     - [Property Tree — Create Tenancy & Dates](pt-create-tenancy.md) — ensure the PT record is complete
