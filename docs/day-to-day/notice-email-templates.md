@@ -1,6 +1,6 @@
 # Notice & Email Templates
 
-**Version:** V2.7  
+**Version:** V2.8  
 **Last updated:** 2026-04-02
 
 ---
@@ -301,7 +301,7 @@ Thanks,
 ## 8a) Routine inspections — Property Tree automation (reference)
 <span class="pp-verified-label">Verified from video analysis</span>
 
-For **routine** inspections, Property Tree **Automated Communications** sends the **8-day email**, **7-day SMS**, and (if still unconfirmed) the **3-day reminder email**. Once status is **Confirmed**, Property Tree sends the **day-before confirmation email**. The PM does **not** manually send those as the primary path — use the inspection **Communications Log** to verify delivery. Sections **9–12** below are **reference wording** only (e.g. manual follow-up to a non-responder, manual reply confirming the narrowed time range, or explaining what tenants receive).
+For **routine** inspections, Property Tree **Automated Communications** sends the **8-day email**, **7-day SMS**, and (if still unconfirmed) the **3-day reminder email**. Once status is **Confirmed**, Property Tree sends the **day-before confirmation email**. The PM does **not** manually send those as the primary path — use the inspection **Communications Log** to verify delivery. Sections **9–13** below are **reference wording** only (e.g. manual follow-up to a non-responder, manual reply confirming the narrowed time range, or explaining what tenants receive).
 
 ---
 
@@ -441,7 +441,7 @@ Thanks,
 
 ---
 
-## 16) End of tenancy — vacate pack email
+## 18) End of tenancy — vacate pack email
 **Subject:** Moving out — [Property Address] — next steps
 
 Hi [Tenant Name],
@@ -461,7 +461,7 @@ Regards,
 
 ---
 
-## 17) Lease break — acknowledgement (email)
+## 19) Lease break — acknowledgement (email)
 **Subject:** Lease break request — [Property Address]
 
 Hi [Tenant Name],

@@ -27,6 +27,29 @@ VIDEOS = [
     ("video30", "Inspection confirmations.mp4"),
 ]
 
+BATCH_VIDEO_IDS = {
+    "2026-04-01": [
+        "video15",
+        "video16",
+        "video17",
+        "video18",
+        "video19",
+        "video20",
+        "video21",
+        "video22",
+        "video23",
+        "video24",
+        "video25",
+        "video26",
+        "video27",
+        "video28",
+        "video29",
+    ],
+    "2026-04-02": [
+        "video30",
+    ],
+}
+
 
 def batch_date_aliases(batch_date: str) -> list[str]:
     """Return supported folder-name aliases for a batch date."""
@@ -70,9 +93,14 @@ def resolve_frames_dir(script_dir: Path, batch_date: str, override: str | None =
     return resolve_artefact_dir(script_dir, batch_date) / "frames"
 
 
-def select_videos(video_ids: Iterable[str] | None = None) -> list[tuple[str, str]]:
-    """Return the configured videos, optionally filtered by video_id."""
+def select_videos(
+    video_ids: Iterable[str] | None = None, batch_date: str | None = None
+) -> list[tuple[str, str]]:
+    """Return the configured videos, optionally filtered by video_id or scoped to a batch."""
     if not video_ids:
+        if batch_date and batch_date in BATCH_VIDEO_IDS:
+            requested = BATCH_VIDEO_IDS[batch_date]
+            return [item for item in VIDEOS if item[0] in requested]
         return list(VIDEOS)
 
     requested = list(video_ids)

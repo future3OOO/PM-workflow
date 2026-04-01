@@ -41,7 +41,7 @@ def main() -> int:
     """Return 0 when the batch has the required transcript, frame, and coverage artefacts."""
     args = parse_args()
     artefact_dir = resolve_artefact_dir(SCRIPT_DIR, args.batch_date, args.artefact_dir)
-    videos = select_videos(args.video_ids)
+    videos = select_videos(args.video_ids, args.batch_date)
     issues: list[str] = []
 
     print(f"Validating artefact directory: {artefact_dir}")

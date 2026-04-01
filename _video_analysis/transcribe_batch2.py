@@ -79,7 +79,7 @@ def transcribe_batch() -> None:
     video_dir = resolve_video_dir(SCRIPT_DIR, args.batch_date, args.video_dir)
     artefact_dir = resolve_artefact_dir(SCRIPT_DIR, args.batch_date, args.artefact_dir)
     audio_dir = artefact_dir / "audio"
-    videos = select_videos(args.video_ids)
+    videos = select_videos(args.video_ids, args.batch_date)
 
     print(f"Source video directory: {video_dir}")
     print(f"Artefact output directory: {artefact_dir}")

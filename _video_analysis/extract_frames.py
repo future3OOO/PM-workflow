@@ -123,7 +123,7 @@ def main() -> None:
     args = parse_args()
     video_dir = resolve_video_dir(SCRIPT_DIR, args.batch_date, args.video_dir)
     frames_dir = resolve_frames_dir(SCRIPT_DIR, args.batch_date, args.frames_dir)
-    videos = select_videos(args.video_ids)
+    videos = select_videos(args.video_ids, args.batch_date)
 
     print(f"Source video directory: {video_dir}")
     print(f"Frames output directory: {frames_dir}")
