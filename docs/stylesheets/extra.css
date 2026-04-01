@@ -424,7 +424,7 @@
 }
 
 /* Inline links in content must look like links */
-.md-content a:not(.md-content__button):not(.md-tag):not(.headerlink) {
+.md-content a:not(.md-content__button, .md-tag, .headerlink) {
   color: var(--pp-link);
   text-decoration: underline;
   text-decoration-color: color-mix(in srgb, var(--pp-link) 35%, transparent);
@@ -432,7 +432,7 @@
   text-decoration-thickness: 1px;
 }
 
-.md-content a:not(.md-content__button):not(.md-tag):not(.headerlink):hover {
+.md-content a:not(.md-content__button, .md-tag, .headerlink):hover {
   color: var(--pp-link-hover);
   text-decoration-color: var(--pp-link-hover);
   text-decoration-thickness: 2px;

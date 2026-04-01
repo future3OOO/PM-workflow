@@ -8,7 +8,7 @@
 
 ## Live Documentation
 
-- **Docs site:** https://future3ooo.github.io/PM-workflow/
+- **Docs site:** https://future3OOO.github.io/PM-workflow/
 - **Repository:** https://github.com/future3OOO/PM-workflow
 
 This repository contains Property Partner's internal workflow documentation for NZ residential property management. The published documentation site is the primary reading experience; this repository is the source that drives it.
@@ -84,3 +84,17 @@ When a process changes, update in this order:
 5. systems / standards pages if required
 
 Use **Tapi** spelling consistently. Do not use `Tarpy`, `Tappy`, or similar variants.
+
+<details>
+<summary>Version History</summary>
+
+| Version | Date | Summary |
+|---|---|---|
+| V2.0 | 2026-02-24 | Initial full documentation library |
+| V2.1 | 2026-03-07 | Integrated Tapi inspection follow-up training videos |
+| V2.2 | 2026-03-31 | Integrated Tapi video batch, runbook, and transcription tooling |
+| V2.3 | 2026-03-31 | Migrated to MkDocs Material with `docs/` navigation |
+| V2.4 | 2026-04-01 | Integrated April training videos and expanded workflow guidance |
+| V2.5 | 2026-04-01 | Refreshed README and site theming, branding, and contrast tokens |
+
+</details>
