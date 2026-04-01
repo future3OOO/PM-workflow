@@ -1,7 +1,7 @@
 # Weekly Operations Checklist
 
-**Version:** V2.3  
-**Last updated:** 2026-03-31
+**Version:** V2.4  
+**Last updated:** 2026-04-01
 
 ---
 
@@ -19,6 +19,9 @@ See: [Inspection Lifecycle](../inspections/inspection-lifecycle.md) | [Property 
 - [ ] Scheduled in Property Tree and synced
 - [ ] Confirmation status checked and chased
 - [ ] Overdue reports cleared
+- [ ] Ingoing reports due for move-in are queued to be sent on move-in morning with the key sheet
+- [ ] Open ingoing reports are tracked through the 14-day tenant amendment window
+- [ ] Finalised ingoing copies are confirmed back in Property Tree and visible to landlords through the portal
 
 ## 3) Maintenance hygiene
 

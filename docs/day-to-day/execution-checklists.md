@@ -1,6 +1,6 @@
 # Execution Checklists
 
-**Version:** V2.8  
+**Version:** V3.1  
 **Last updated:** 2026-04-01
 
 ---
@@ -10,12 +10,21 @@
 - [ ] Management authority saved to Property Tree docs (01 Management & Owner Docs)
 - [ ] Owner record created (bank details verified)
 - [ ] Property record created (address verified)
+- [ ] Owner statement preferences set correctly:
+  - delivery method = email
+  - statement type = basic statement
+  - contact type = Owner
+- [ ] If address lookup fails for a new build or unit, the address is corrected manually before saving
 - [ ] Fees/disbursement/statement settings applied
+- [ ] Authority Start Date matches the management agreement commencement date
+- [ ] Expenditure Limit matches the management agreement spend threshold
+- [ ] Management fee checked against the agreement and GST handled correctly
 - [ ] Property Tree docs folders created
 - [ ] Keys/access plan documented
 - [ ] TPS property setup completed (compliance fields entered)
 - [ ] Owner instructions recorded (approval style, quote-first, spend threshold)
 - [ ] Compliance evidence gathered OR gaps converted into Tapi action plan
+- [ ] Where later remediation evidence exists, Healthy Homes component dates are checked against the specific invoice / evidence source
 - [ ] Owner welcome email sent
 
 ---
@@ -35,6 +44,7 @@
 ---
 
 ## 3) Tenancy setup — TPS → bond → Property Tree
+<span class="pp-verified-label">Verified from video analysis</span>
 - [ ] Agreement fully signed and exported
 - [ ] Bond + initial rent collected to trust
 - [ ] Bond lodged via TPS
@@ -46,6 +56,12 @@
 - [ ] Agreement stored in Property Tree docs
 - [ ] Welcome pack sent
 - [ ] Ingoing inspection scheduled
+- [ ] Ingoing inspection completed as early as practical and well before move-in
+- [ ] Ingoing report / 360 report and key sheet sent to tenant on move-in morning
+- [ ] Tenant given 14 days to submit amendments
+- [ ] If amendments are received within 14 days, the ingoing report is updated and the finalised copy is confirmed back in Property Tree
+- [ ] If no amendments are received after 14 days, the ingoing report is treated as finalised and confirmed back in Property Tree
+- [ ] Finalised ingoing copy available to landlord through the portal
 
 ---
 

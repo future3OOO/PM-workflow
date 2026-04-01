@@ -1,6 +1,6 @@
 # Compliance & Healthy Homes
 
-**Version:** V2.5  
+**Version:** V2.6  
 **Last updated:** 2026-04-01
 
 ---
@@ -56,6 +56,7 @@ Populate TPS compliance fields so tenancy agreements and compliance statements c
 - Use SATS (`sats.co.nz`) or the last verified inspection date for smoke alarm last-check data
 - If TPS appears out of date, cross-check Property Tree invoices or other compliance evidence before changing the compliance answer
 - The evidence trail in Property Tree is the supporting proof for any compliance claim entered into TPS
+- Healthy Homes dates may need to be component-specific if later invoices or completion evidence show different valid dates for different remediation items
 
 SOP: [Healthy Homes Evidence (TPS)](compliance-healthy-homes-evidence.md)
 

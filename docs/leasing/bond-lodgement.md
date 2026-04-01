@@ -1,6 +1,6 @@
 # Bond Lodgement
 
-**Version:** V2.7  
+**Version:** V2.8  
 **Last updated:** 2026-04-01
 
 ---
@@ -17,14 +17,19 @@ Part of: [Leasing Lifecycle](leasing-lifecycle.md) → Stage 6 (bond)
 
 Navigate to:
 
-- **Property Tree → Accounting → Bond or Deposit Authority**, or
-- **Property Tree tenancy → Financials → Recent Transactions**
+- **Property Tree → Pay Bond & Deposit Authorities** screen, or
+- **Property Tree → Tenancy Profile → Financials → Recent Transactions**
 
 Check that the bond funds have actually been received before touching the TPS lodgement action.
 
 ### 2) Open the bond record in TPS
 
-Navigate to: **TPS → Bonds → open incomplete bond → Edit**
+Navigate to: **TPS left nav → Bonds**
+
+Page title shown in the UI: **Bonds**
+
+- Use the **Bonds** list as the work queue for incomplete bond items
+- Open the incomplete bond row you need to action
 
 - Review the bond lodgement details
 - If the tenant/property details are incomplete, fix them before lodging
@@ -44,7 +49,7 @@ Navigate to: **TPS → Bonds → open incomplete bond → Edit**
 
 ### 5) Lodge the bond in TPS
 
-Navigate to: **TPS → Bonds → three-dot menu → Lodge bond**
+Navigate to: **TPS → Bonds → row three-dot menu → Lodge bond**
 
 - Leave **Payment Method** as **Direct Credit**
 - Do not alter the generated references

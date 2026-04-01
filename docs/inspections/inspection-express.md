@@ -1,6 +1,6 @@
 # Reports & Actions (Inspection Express)
 
-**Version:** V2.4  
+**Version:** V2.6  
 **Last updated:** 2026-04-01
 
 ---
@@ -9,6 +9,8 @@
 <span class="pp-verified-label">Verified from video analysis</span>
 
 After each routine inspection is completed, the PM finalises the report in Inspection Express. The VA/PM Assistant then reviews it, ensures maintenance items have synced into Tapi, and initiates the landlord approval workflow. This SOP covers the full post-inspection handoff from Inspection Express through to Tapi action.
+
+For **ingoing inspections**, the timing is different: complete the inspection as early as possible before move-in, then send the ingoing report or 360 report to the tenant on move-in morning with the key sheet so the tenant can review it during the statutory amendment window.
 
 ---
 
@@ -161,6 +163,18 @@ When the owner has approved (either via Tapi approval button, Tapi message, or e
 1) Download the published PDF report from Inspection Express
 2) File to Property Tree docs under **04 Inspections** using naming convention:
    `YYYY-MM-DD Routine Inspection Report - [Address]`
+
+## Ingoing inspection distribution and finalisation
+<span class="pp-verified-label">Verified from video analysis</span>
+
+Use this flow for **ingoing** inspections rather than the routine-inspection owner-approval flow above:
+
+1) Complete the ingoing inspection as soon as possible and well before the tenant moves in
+2) On the morning of move-in, send the ingoing report or 360 report to the tenant together with the key sheet
+3) Advise the tenant they have **14 days** to review the report and submit any corrections or additions
+4) If amendments come back within the 14-day window, review and incorporate them according to the PM's decision
+5) If no amendments come back within 14 days, treat the ingoing report as finalised
+6) Once finalised, confirm the final copy has automatically synced back into Property Tree and is available to the landlord through the owner portal
 
 ---
 

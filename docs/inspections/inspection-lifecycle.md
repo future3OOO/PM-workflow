@@ -1,6 +1,6 @@
 # Inspection Lifecycle
 
-**Version:** V2.4  
+**Version:** V2.7  
 **Last updated:** 2026-04-01
 
 ---
@@ -15,7 +15,7 @@ Run inspections consistently, with tenant confirmations, strong reporting, corre
 
 ## Outputs (definition of done)
 - Inspection scheduled and tenant confirmed
-- Report published and sent to tenant and owner
+- Routine report published and sent to tenant and owner, or ingoing report completed early and sent to the tenant on move-in morning with the key sheet
 - VA/PM Assistant has reviewed all maintenance items in Tapi
 - Owner approval requested (or already received) for each maintenance item
 - Follow-up actions created (tenant tasks, Tapi jobs, escalation)
@@ -37,6 +37,7 @@ Run inspections consistently, with tenant confirmations, strong reporting, corre
 - Create via Tenancy Profile → Inspections → **(+)** button → set type to **Ingoing**
 - Assign to PM, set a near-future date/time, and set status to **Confirmed immediately**
 - No tenant correspondence needed — property is vacant pre-move-in
+- Complete the ingoing inspection as soon as possible and well before the new tenant moves in
 - Once Confirmed at a future time, it syncs to Inspection Express
 
 !!! warning "Rescheduling resets status"
@@ -57,10 +58,13 @@ SOP: [Reports & Actions (Inspection Express)](inspection-express.md)
 ---
 
 ## Stage 3 — Publish report and distribution
-- PM finalises and publishes report in Inspection Express
-- Report sent to tenant and owner via email (includes link + access code valid for 30 days)
-- Email includes: maintenance items noted (room, title, description, photos) and a request for the owner to respond regarding any maintenance
-- Tenant action list with deadlines where needed
+<span class="pp-verified-label">Verified from video analysis</span>
+- **Routine inspections:** PM finalises and publishes report in Inspection Express, then the report is sent to tenant and owner via email (includes link + access code valid for 30 days)
+- **Routine inspections:** email includes maintenance items noted (room, title, description, photos) and a request for the owner to respond regarding any maintenance
+- **Routine inspections:** tenant action list with deadlines where needed
+- **Ingoing inspections:** complete the report before move-in where possible, but send the ingoing report or 360 report to the tenant on the morning of move-in together with the key sheet
+- **Ingoing inspections:** the tenant has **14 days** to propose amendments; if no amendments are received, the report is treated as finalised
+- **Ingoing inspections:** finalised copies should automatically sync back into Property Tree; confirm they are there and available to the landlord through the portal
 
 SOP: [Reports & Actions (Inspection Express)](inspection-express.md)
 
