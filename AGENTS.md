@@ -23,7 +23,7 @@ property_management_docs_v2/
 ├── requirements.txt             # Python deps for MkDocs site builds
 ├── .gitignore                   # Excludes site/ and video-analysis artefacts
 ├── .github/workflows/docs.yml   # Auto-deploy to GitHub Pages on push to main
-├── docs/                        # All documentation (MkDocs source, 36 pages)
+├── docs/                        # All documentation (MkDocs source)
 │   ├── index.md                 # Homepage with workflow cards
 │   ├── stylesheets/extra.css    # Custom CSS
 │   ├── getting-started/         # Systems overview, standards & SLAs
@@ -32,7 +32,7 @@ property_management_docs_v2/
 │   ├── maintenance/             # Tapi lifecycle, intake, invoices
 │   ├── inspections/             # PT scheduling, Inspection Express
 │   ├── renewals-exits/          # Rent reviews, Valua, end of tenancy
-│   └── day-to-day/              # Email, notices, checklists, QA, templates
+│   └── day-to-day/              # Email, notices, checklists, QA, templates, glossary
 └── _video_analysis/             # Video integration tooling
     ├── RUNBOOK.md               # Transcript + frame-based video-to-docs process
     ├── batch_config.py          # Shared dated-batch video list + path helpers
@@ -75,6 +75,7 @@ Every batch also requires:
 
 - a **per-video analysis report** for each video ID
 - a **doc coverage matrix** that maps findings to reviewed docs and resulting actions
+- an update to the published **video analysis glossary** in `docs/day-to-day/video-analysis-glossary.md`
 - explicit **page / navigation mapping** for the screens involved in each analysed workflow
 - an explicit **dependency-cascade check** so templates, checklists, triage pages, and standards pages are not skipped when an SOP changes
 
@@ -178,6 +179,7 @@ Key points:
 - run `_video_analysis/validate_batch.py` before doc integration to confirm transcript + frame evidence exists, then rerun it with `--require-coverage-matrix` before batch sign-off
 - create a **per-video analysis report** for each video before relying on any grouped summary
 - maintain a **doc coverage matrix** for the batch showing findings, target docs reviewed, actions taken, and residual gaps
+- update the published **video analysis glossary** in `docs/day-to-day/video-analysis-glossary.md`
 - use the coverage matrix to record both:
   - **primary docs reviewed**: the main lifecycle / SOP targets
   - **dependent docs checked**: templates, checklists, triage pages, standards pages, systems-map pages, or other downstream docs that may inherit the change
@@ -192,11 +194,12 @@ Do **not** mark a video batch complete until:
 
 1. every video has its own analysis report
 2. the coverage matrix exists for the batch
-3. each material finding is explicitly classified as:
+3. the published video glossary has been updated for the batch
+4. each material finding is explicitly classified as:
    - documented via an update
    - already covered in the current docs
    - intentionally excluded from docs with a reason
-4. each material finding has a recorded dependency-cascade result for:
+5. each material finding has a recorded dependency-cascade result for:
    - templates
    - checklists / QA pages
    - triage / operations pages
@@ -208,6 +211,7 @@ When a video changes workflow understanding, the agent must not stop at the prim
 
 For each material finding, explicitly check whether it also affects:
 
+- the published glossary in `docs/day-to-day/video-analysis-glossary.md`
 - lifecycle pages
 - step-level SOPs
 - templates in `docs/day-to-day/notice-email-templates.md`
@@ -262,6 +266,7 @@ For video-driven doc updates, also verify:
 
 - every video in the batch has a per-video analysis report
 - the doc coverage matrix exists and reflects the changed files
+- the published video glossary includes the newly processed videos
 - no material finding was left without a disposition
 - no material finding was left without a dependency-cascade disposition
 - page / navigation mapping is captured for the relevant workflows
@@ -306,6 +311,7 @@ Tapi → approve → auto-close job + sync to Property Tree → rent holdback fr
 - Never update software workflow docs from transcript-only notes when frame evidence is available
 - Never treat a grouped batch summary as a substitute for per-video analysis
 - Never close a batch without a doc coverage matrix
+- Never close a batch without updating the published video glossary
 - Never use the coverage matrix as a primary-SOP-only checklist; it must cover downstream dependent docs too
 - Never omit page / navigation mapping when documenting a video-derived workflow
 - Never apply the verified label to sections that were not actually checked against proper video analysis

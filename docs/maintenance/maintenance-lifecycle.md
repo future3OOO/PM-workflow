@@ -1,6 +1,6 @@
 # Maintenance Lifecycle
 
-**Version:** V2.4  
+**Version:** V2.10  
 **Last updated:** 2026-04-01
 
 ---
@@ -206,10 +206,10 @@ This is a critical stage with its own detailed SOP. The summary:
 |---|---|
 | Invoice arrives | Contractor uploads via Tapi portal or emails `propertypartner@tapi.co.nz` |
 | Matching | Auto-match (Tapi reference number) or manual 3-step match (contractor → property → job) |
-| Coding | Charge-to: Property (~95%) / Owner (rare) / Tenancy (uncommon). Set work type. |
+| Coding | Charge-to: Property (~95%) / Owner (rare) / Tenancy (system option used when charging the tenant; uncommon except for excess water charges). Set work type. |
 | Notification | Always tick owner notification; add personalised message |
 | Approve | Triggers: invoice approved → job auto-closes → owner notified → **syncs to Property Tree** |
-| Holdback | Invoice amount deducted from owner's rent account in the Monday payment run |
+| Holdback | Standard case: invoice is deducted from the owner's rent account in the Monday payment run. Using the **Tenancy** option means the tenant is being charged. The more common case is an excess water charge; otherwise tenant charging is uncommon and only applies where tenant liability has been established, for example careless or intentional damage. If multiple properties share one ownership profile, available funds are pooled across that profile; separate ownership profiles do not share funds |
 
 ??? info "Forwarding invoices sent to the wrong address"
 

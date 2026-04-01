@@ -15,7 +15,7 @@ The current analysis method has two mandatory evidence streams:
 
 Do **not** rely on transcript-only analysis when the video is demonstrating a software workflow. The transcript tells you what was said; the frames tell you what was actually on screen.
 
-There are also two mandatory synthesis outputs for every batch:
+There are also three mandatory synthesis outputs for every batch:
 
 1. **Per-video analysis reports**
    - one analysis artefact per video, even if a later batch summary also exists
@@ -23,6 +23,9 @@ There are also two mandatory synthesis outputs for every batch:
 2. **Doc coverage matrix**
    - a batch-level table showing which docs were checked, what changed, what was intentionally left unchanged, and any residual gaps
    - the batch is **not complete** until this matrix exists
+3. **Published video glossary update**
+   - update `docs/day-to-day/video-analysis-glossary.md` with each processed video ID, its source label, and the published workflow docs created from or materially updated from that evidence
+   - the batch is **not complete** until the glossary reflects the newly processed videos
 
 The matrix must cover both:
 
@@ -111,6 +114,9 @@ py -3 -c "import whisper; print(whisper.__version__)"
           │
           ▼
  6b. Draft batch synthesis + doc coverage matrix
+         │
+         ▼
+ 6c. Update the published video glossary
           │
           ▼
  7. Read affected docs/ pages for baseline context
@@ -421,6 +427,7 @@ _video_analysis/artefacts/YYYY-MM-DD/analysis/doc_coverage_matrix.md
 | **Page / navigation mapping** | System, page name, visible URL if any, and navigation path |
 | **Primary docs reviewed** | Which main lifecycle / SOP pages were checked |
 | **Dependent docs checked** | Which templates, checklists, triage pages, standards pages, or related docs were checked because of the finding |
+| **Glossary entry** | Confirm the published glossary row added or updated for this video |
 | **Action taken** | Updated / already covered / intentionally not documented |
 | **Result** | File(s) changed or reason no change was needed |
 | **Residual risk / follow-up** | Anything still uncertain or deferred |
@@ -440,6 +447,34 @@ Do **not** close a batch, commit the batch as complete, or state that integratio
    - checklists / QA
    - triage / operations pages
    - standards / systems-map pages where relevant
+5. the published glossary has been updated for every newly processed video
+
+---
+
+## Step 7c — Update the Published Video Glossary
+
+Update:
+
+```text
+docs/day-to-day/video-analysis-glossary.md
+```
+
+This page is the published bridge between local video-analysis evidence and the workflow docs that now rely on it.
+
+### Minimum entry fields
+
+For every newly processed video, add or update:
+
+- **batch date**
+- **video ID**
+- **source video label / filename**
+- **published workflow docs created from or materially updated from that video**
+
+### Glossary rule
+
+Do not wait until a later cleanup pass. The glossary update is part of the same batch integration work as the SOP changes.
+
+If a video produced no published doc changes, still record it with the relevant disposition in the coverage matrix before deciding whether the glossary should note it as reviewed-only or omit it with a reason.
 
 ---
 
@@ -481,8 +516,9 @@ Update the relevant documentation pages using the analysis report as the synthes
 6. **Update all dependent docs** if a lifecycle, SOP, template, or checklist is affected.
 7. **Bump version and date** on every changed documentation file.
 8. **Update the coverage matrix** as you go so every material finding has a documented disposition.
-9. **Add navigation cues** so the user can find the screen, not just understand the rule.
-10. **Add a verified label** to sections materially updated from analysed video evidence.
+9. **Update the published glossary** so the processed videos and their downstream docs are visible in the live documentation.
+10. **Add navigation cues** so the user can find the screen, not just understand the rule.
+11. **Add a verified label** to sections materially updated from analysed video evidence.
 
 ### Dependency-cascade rule
 
@@ -490,6 +526,7 @@ Do not treat the main SOP update as the end of the change.
 
 For each material video finding, explicitly check whether it also changes:
 
+- **the published glossary** in `docs/day-to-day/video-analysis-glossary.md`
 - **templates** in `docs/day-to-day/notice-email-templates.md`
 - **daily / weekly operations pages** such as `daily-triage.md` and `weekly-operations.md`
 - **execution / QA checklists**
@@ -576,6 +613,7 @@ Before considering the batch done, confirm:
 
 - every analysed video has a per-video report
 - the batch coverage matrix exists
+- the published glossary includes the newly processed videos
 - each meaningful finding has a recorded disposition
 - no changed doc is missing from the matrix
 - each meaningful finding has a recorded dependency-cascade disposition
@@ -632,6 +670,7 @@ git push -u origin HEAD
 - Use **both** transcripts and frames for workflow analysis
 - Produce a **per-video analysis report** for every video in the batch
 - Produce a **doc coverage matrix** before closing the batch
+- Update the **published video glossary** before closing the batch
 - Use the matrix to track **dependent docs checked**, not just the primary SOP targets
 - Update `docs/`, not any legacy `workflow/` paths
 - Treat the analysis report as a synthesis artefact, not as the final published documentation
