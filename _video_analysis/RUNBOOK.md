@@ -31,8 +31,12 @@ There are also two mandatory synthesis outputs for every batch:
 ```text
 _video_analysis/
 ├── RUNBOOK.md
+├── batch_config.py
+├── requirements.txt
 ├── transcribe.py
 ├── transcribe_all_videos.py
+├── transcribe_batch2.py
+├── validate_batch.py
 ├── extract_frames.py
 ├── videos/                         # source videos + transcript outputs (gitignored)
 │   └── YYYY-MM-DD/                 # optional date-based source batch folders
@@ -47,9 +51,11 @@ _video_analysis/
 
 - The **documentation source** now lives in `docs/`, not the old `workflow/` folder.
 - Analysis outputs should be grouped by date under `_video_analysis/artefacts/YYYY-MM-DD/`.
-- The current scripts are still batch-oriented:
-  - `transcribe_all_videos.py` writes transcript outputs to `_video_analysis/videos/`
-  - `extract_frames.py` uses explicit `VIDEO_DIR`, `FRAMES_DIR`, and `VIDEOS` values that should be updated for the current batch before running
+- The dated batch scripts now use `_video_analysis/batch_config.py` for the shared `VIDEOS` list and default batch date.
+- `transcribe_batch2.py` and `extract_frames.py` resolve either:
+  - `videos/YYYY-MM-DD/`
+  - or the legacy folder name `videos/D-M-YYYY/`
+- Use CLI overrides only when the source or output folder intentionally differs from the default dated batch path.
 
 ---
 
@@ -61,7 +67,7 @@ _video_analysis/
 |---|---|---|
 | **Python 3.12+** | Runs transcription / extraction scripts | `winget install Python.Python.3.12` or [python.org](https://www.python.org/downloads/) |
 | **ffmpeg** | Audio extraction and frame capture | `choco install ffmpeg` or [ffmpeg.org](https://ffmpeg.org/download.html) |
-| **openai-whisper** | Speech-to-text transcription | `pip install openai-whisper` |
+| **openai-whisper** | Speech-to-text transcription | `py -3 -m pip install -r _video_analysis/requirements.txt` |
 
 ### Verify installation
 
@@ -79,7 +85,7 @@ py -3 -c "import whisper; print(whisper.__version__)"
  Place new videos in the current batch folder
           │
           ▼
- 1. Register video IDs and filenames in the scripts
+ 1. Register video IDs and filenames in `batch_config.py`
           │
           ▼
  2. Run transcription (audio extraction + Whisper)
@@ -88,13 +94,16 @@ py -3 -c "import whisper; print(whisper.__version__)"
  3. Run frame extraction (JPG screenshots every N seconds)
           │
           ▼
- 4. Review transcript + frames together
+ 4. Run local batch validation
           │
           ▼
- 5. Draft analysis report per video
+ 5. Review transcript + frames together
           │
           ▼
- 6. Draft batch synthesis + doc coverage matrix
+ 6. Draft analysis report per video
+          │
+          ▼
+ 6b. Draft batch synthesis + doc coverage matrix
           │
           ▼
  7. Read affected docs/ pages for baseline context
@@ -125,6 +134,7 @@ Typical examples:
 
 - `_video_analysis/videos/2026-04-01/1. TPS Book me - creating viewings.mp4`
 - `_video_analysis/videos/2026-04-01/2. TPS Book me - correction.mp4`
+- `_video_analysis/videos/1-4-2026/1. TPS Book me - creating viewings.mp4` (legacy folder naming still supported)
 
 The analysis outputs for that batch should go under:
 
@@ -134,11 +144,11 @@ _video_analysis/artefacts/2026-04-01/
 
 ---
 
-## Step 2 — Register Videos in the Scripts
+## Step 2 — Register Videos in the Batch Config
 
-### `transcribe_all_videos.py`
+Update `_video_analysis/batch_config.py`.
 
-Add each new video to the `VIDEOS` list:
+Add each new video to the shared `VIDEOS` list:
 
 ```python
 VIDEOS = [
@@ -149,20 +159,17 @@ VIDEOS = [
 
 Use sequential numbering from the latest existing video ID. The `video_id` determines the transcript and frame folder names.
 
-### `extract_frames.py`
-
-Before running the frame capture script, update:
-
-- `VIDEO_DIR` to the current source batch folder
-- `FRAMES_DIR` to the current dated artefacts folder
-- `VIDEOS` to match the current batch
-
-Example:
+Set `DEFAULT_BATCH_DATE` to the current batch date when you prepare a new dated batch:
 
 ```python
-VIDEO_DIR = os.path.join(SCRIPT_DIR, "videos", "2026-04-01")
-FRAMES_DIR = os.path.join(SCRIPT_DIR, "artefacts", "2026-04-01", "frames")
+DEFAULT_BATCH_DATE = "2026-04-01"
 ```
+
+The dated batch scripts will then resolve:
+
+- source videos from `_video_analysis/videos/YYYY-MM-DD/` when present
+- the matching artefacts folder under `_video_analysis/artefacts/YYYY-MM-DD/`
+- a legacy source folder like `_video_analysis/videos/1-4-2026/` if that is what exists locally
 
 ---
 
@@ -185,16 +192,24 @@ py -3 _video_analysis/transcribe.py video15 "_video_analysis/videos/2026-04-01/1
 ### Batch
 
 ```powershell
-py -3 _video_analysis/transcribe_all_videos.py
+py -3 _video_analysis/transcribe_batch2.py
+```
+
+Useful overrides:
+
+```powershell
+py -3 _video_analysis/transcribe_batch2.py --batch-date 2026-04-01
+py -3 _video_analysis/transcribe_batch2.py --video-id video15 --video-id video16
+py -3 _video_analysis/transcribe_batch2.py --video-dir "_video_analysis/videos/1-4-2026"
 ```
 
 ### Outputs
 
-Current outputs are written into `_video_analysis/videos/`:
+Outputs are written into the dated artefacts folder:
 
-- `{video_id}_audio.wav`
-- `{video_id}_transcript.json`
-- `{video_id}_transcript.txt`
+- `_video_analysis/artefacts/YYYY-MM-DD/audio/{video_id}_audio.wav`
+- `_video_analysis/artefacts/YYYY-MM-DD/{video_id}_transcript.json`
+- `_video_analysis/artefacts/YYYY-MM-DD/{video_id}_transcript.txt`
 
 The `.txt` transcript is the main review artefact for reading. The `.json` is useful when deeper timestamp inspection is needed.
 
@@ -218,6 +233,14 @@ Run:
 py -3 _video_analysis/extract_frames.py
 ```
 
+Useful overrides:
+
+```powershell
+py -3 _video_analysis/extract_frames.py --batch-date 2026-04-01
+py -3 _video_analysis/extract_frames.py --video-id video15 --video-id video16
+py -3 _video_analysis/extract_frames.py --video-dir "_video_analysis/videos/1-4-2026"
+```
+
 ### Output
 
 Frames are written to the dated artefacts folder:
@@ -239,7 +262,36 @@ Lower the interval if the workflow is moving quickly and you need denser UI evid
 
 ---
 
-## Step 5 — Review Transcript and Frames Together
+## Step 5 — Run Local Batch Validation
+
+Before drafting analysis or updating docs, validate that the batch has the minimum required evidence:
+
+```powershell
+py -3 _video_analysis/validate_batch.py --batch-date 2026-04-01
+```
+
+Optional targeted validation:
+
+```powershell
+py -3 _video_analysis/validate_batch.py --video-id video15 --video-id video16
+```
+
+The validator checks for:
+
+- transcript `.json` and `.txt` outputs for each configured video
+- at least one extracted `.jpg` frame for each configured video
+
+Do **not** proceed to doc integration while this validation fails.
+
+Before closing the batch, rerun the validator with the coverage matrix requirement enabled:
+
+```powershell
+py -3 _video_analysis/validate_batch.py --batch-date 2026-04-01 --require-coverage-matrix
+```
+
+---
+
+## Step 6 — Review Transcript and Frames Together
 
 This is the key analysis step.
 
@@ -270,7 +322,7 @@ When transcript and frame evidence appear to conflict:
 
 ---
 
-## Step 6 — Draft the Analysis Report
+## Step 7 — Draft the Analysis Report
 
 Create the report in the dated analysis folder:
 
@@ -342,7 +394,7 @@ The goal is that a user can identify both:
 
 ---
 
-## Step 6b — Create the Batch Coverage Matrix
+## Step 7b — Create the Batch Coverage Matrix
 
 Before editing is considered complete, create a batch-level **doc coverage matrix** in the dated analysis folder.
 
@@ -378,7 +430,7 @@ Do **not** close a batch, commit the batch as complete, or state that integratio
 
 ---
 
-## Step 7 — Read the Current Documentation Baseline
+## Step 8 — Read the Current Documentation Baseline
 
 Before editing anything, read the relevant pages in `docs/`.
 
@@ -402,7 +454,7 @@ Before editing anything, read the relevant pages in `docs/`.
 
 ---
 
-## Step 8 — Integrate Findings into `docs/`
+## Step 9 — Integrate Findings into `docs/`
 
 Update the relevant documentation pages using the analysis report as the synthesis source.
 
@@ -460,7 +512,7 @@ If a new video changes workflow understanding:
 
 ---
 
-## Step 9 — Verify Consistency
+## Step 10 — Verify Consistency
 
 After the docs are updated, run a consistency pass.
 
@@ -502,7 +554,7 @@ Before considering the batch done, confirm:
 
 ---
 
-## Step 10 — Commit the Right Files
+## Step 11 — Commit the Right Files
 
 Commit:
 
@@ -540,7 +592,7 @@ git push -u origin HEAD
 | `python` not found | Use `py -3` launcher |
 | Whisper memory pressure | Switch from `base` to `tiny` temporarily |
 | Transcript quality is weak | Re-check against the frames; NZ accents and product jargon often distort the transcript |
-| Frame coverage is too sparse | Lower `INTERVAL` in `extract_frames.py` |
+| Frame coverage is too sparse | Lower `INTERVAL` in `extract_frames.py` and rerun the affected `--video-id` batch |
 | Script skips a video | Delete the prior output for that `video_id` or change the ID if the batch is intentionally new |
 | Analysis report is missing key UI detail | Go back to the extracted frames before changing the docs |
 

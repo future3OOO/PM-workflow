@@ -46,16 +46,19 @@ Property Tree uses a 5-stage status pipeline for inspections:
 ## Scheduling a Routine Inspection
 
 1. Navigate to **Inspections** tab on the Tenancy Profile (or use the Inspections Summary page)
-2. Click the **(+)** button to add a new inspection
-3. Set **Inspection Type**: Routine
-4. Set **Assign To**: McKenzie Lawrence
-5. Set the **Inspection Date** and **time window** (agreed with tenant via email/text)
-6. Set **Status**: leave as **Proposed** initially (triggers proposal notification to tenant)
-7. Click **Save**
-8. Property Tree **automatically** sends the **~10-day** scheduling email and **~9-day** SMS (Automated Communications) — **do not** treat these as manual PM sends; confirm they appear in the **Communications Log**
-9. Follow up **non-responders** manually if needed (email/SMS) until the tenant confirms
-10. Once the tenant confirms, update status to **Confirmed** (manual). **Until Confirmed:** the tenant **does not** receive the **automatic day-before confirmation email**, the inspection **does not** sync to Inspection Express, and **do not attend** the property for the inspection
-11. After **Confirmed**, the tenant receives the **automatic** day-before confirmation email
+2. Check whether a **Routine** inspection already exists:
+   - for the **first** routine inspection in a tenancy, Property Tree usually auto-creates it 3 months from the tenancy start date
+   - if that auto-created routine already exists, **open and edit it** instead of creating a duplicate
+3. Only click the **(+)** button to add a new inspection if no suitable routine inspection already exists
+4. Set **Inspection Type**: Routine
+5. Set **Assign To**: McKenzie Lawrence
+6. Set the **Inspection Date** and **time window** (agreed with tenant via email/text)
+7. Set **Status**: leave as **Proposed** initially (triggers proposal notification to tenant)
+8. Click **Save**
+9. Property Tree **automatically** sends the **~10-day** scheduling email and **~9-day** SMS (Automated Communications) — **do not** treat these as manual PM sends; confirm they appear in the **Communications Log**
+10. Follow up **non-responders** manually if needed (email/SMS) until the tenant confirms
+11. Once the tenant confirms, update status to **Confirmed** (manual). **Until Confirmed:** the tenant **does not** receive the **automatic day-before confirmation email**, the inspection **does not** sync to Inspection Express, and **do not attend** the property for the inspection
+12. After **Confirmed**, the tenant receives the **automatic** day-before confirmation email
 
 ### Inspections Summary Page
 

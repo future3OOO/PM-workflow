@@ -20,7 +20,7 @@ property_management_docs_v2/
 ├── CLAUDE.md                    # This file — agent instructions
 ├── AGENTS.md                    # Mirror of CLAUDE.md for agent tooling
 ├── mkdocs.yml                   # MkDocs Material config + nav tree
-├── requirements.txt             # Python deps (mkdocs-material)
+├── requirements.txt             # Python deps for MkDocs site builds
 ├── .gitignore                   # Excludes site/ and video-analysis artefacts
 ├── .github/workflows/docs.yml   # Auto-deploy to GitHub Pages on push to main
 ├── docs/                        # All documentation (MkDocs source, 36 pages)
@@ -35,8 +35,12 @@ property_management_docs_v2/
 │   └── day-to-day/              # Email, notices, checklists, QA, templates
 └── _video_analysis/             # Video integration tooling
     ├── RUNBOOK.md               # Transcript + frame-based video-to-docs process
+    ├── batch_config.py          # Shared dated-batch video list + path helpers
+    ├── requirements.txt         # Video-analysis-only Python deps
     ├── transcribe.py            # Single-video CLI transcription
     ├── transcribe_all_videos.py # Batch transcription pipeline
+    ├── transcribe_batch2.py     # Dated-batch transcription pipeline
+    ├── validate_batch.py        # Local evidence validation for a dated batch
     ├── extract_frames.py        # Frame extraction for visual review
     ├── artefacts/               # Dated outputs (gitignored)
     │   └── YYYY-MM-DD/
@@ -169,6 +173,8 @@ Key points:
 
 - analyse software workflow videos using **both** transcript and extracted-frame evidence
 - store working outputs under `_video_analysis/artefacts/YYYY-MM-DD/`
+- keep MkDocs-only dependencies in root `requirements.txt`; keep Whisper/video-analysis dependencies in `_video_analysis/requirements.txt`
+- run `_video_analysis/validate_batch.py` before doc integration to confirm transcript + frame evidence exists, then rerun it with `--require-coverage-matrix` before batch sign-off
 - create a **per-video analysis report** for each video before relying on any grouped summary
 - maintain a **doc coverage matrix** for the batch showing findings, target docs reviewed, actions taken, and residual gaps
 - capture **where the action happens**: system, page/screen name, visible URL if any, and navigation path

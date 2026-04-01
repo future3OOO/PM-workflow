@@ -69,7 +69,10 @@ See `docs/day-to-day/contributing.md` for the full authoring guide.
 | [`transcribe.py`](_video_analysis/transcribe.py) | Single-video CLI transcription helper |
 | [`transcribe_all_videos.py`](_video_analysis/transcribe_all_videos.py) | Batch audio extraction and transcription pipeline |
 | [`transcribe_batch2.py`](_video_analysis/transcribe_batch2.py) | Batch audio extraction and transcription for the 2026-04-01 video batch |
+| [`validate_batch.py`](_video_analysis/validate_batch.py) | Local evidence check for transcripts and frames, with optional coverage-matrix enforcement for batch sign-off |
+| [`batch_config.py`](_video_analysis/batch_config.py) | Shared dated-batch video list and directory resolution helpers |
 | [`extract_frames.py`](_video_analysis/extract_frames.py) | Extract key frames from training videos for visual analysis |
+| [`requirements.txt`](_video_analysis/requirements.txt) | Video-analysis-only Python dependency list (`openai-whisper`) |
 
 ---
 

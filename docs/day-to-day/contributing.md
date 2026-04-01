@@ -2,6 +2,9 @@
 
 *How to add new documents, update existing ones, and keep the site consistent.*
 
+**Version:** V2.4  
+**Last updated:** 2026-04-01
+
 ---
 
 ## How the Site Works

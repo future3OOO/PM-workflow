@@ -1,5 +1,6 @@
-"""Extract audio and transcribe the 10 new training videos (2026-04-01 batch)."""
+"""Extract audio and transcribe the configured dated training-video batch."""
 
+import argparse
 import json
 import os
 import subprocess
@@ -8,26 +9,16 @@ import time
 from pathlib import Path
 
 import whisper
+from batch_config import (
+    DEFAULT_BATCH_DATE,
+    resolve_artefact_dir,
+    resolve_video_dir,
+    select_videos,
+)
 
 SCRIPT_DIR = Path(__file__).parent
-VIDEO_DIR = SCRIPT_DIR / "videos" / "1-4-2026"
-ARTEFACT_DIR = SCRIPT_DIR / "artefacts" / "2026-04-01"
-AUDIO_DIR = ARTEFACT_DIR / "audio"
 FFMPEG = os.environ.get("FFMPEG_PATH", "ffmpeg")
 FFMPEG_TIMEOUT = 900
-
-VIDEOS = [
-    ("video15", "1. TPS Book me - creating viewings.mp4"),
-    ("video16", "2. TPS Book me - correction.mp4"),
-    ("video17", "General example- liability nuance.mkv"),
-    ("video18", "Inspections- Changing an inspections time.mp4"),
-    ("video19", "Inspections- Entering an ingoing.mp4"),
-    ("video20", "Property tree- entering a rent increase.mp4"),
-    ("video21", "TPS Portal- entering a new property.mp4"),
-    ("video22", "TPS- Lease renewal and increase - 1.mp4"),
-    ("video23", "TPS- Lease renewal and increase - 2.mp4"),
-    ("video24", "TPS- Lease renewal and increase - 3.mp4"),
-]
 
 
 def remove_if_exists(path: Path) -> None:
@@ -57,19 +48,53 @@ def outputs_are_complete(json_path: Path, txt_path: Path) -> bool:
     return True
 
 
+def parse_args() -> argparse.Namespace:
+    """Parse CLI arguments for the transcription batch."""
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--batch-date",
+        default=DEFAULT_BATCH_DATE,
+        help="Batch date in YYYY-MM-DD format (default: %(default)s)",
+    )
+    parser.add_argument(
+        "--video-dir",
+        help="Optional override for the source video directory",
+    )
+    parser.add_argument(
+        "--artefact-dir",
+        help="Optional override for the dated artefact directory",
+    )
+    parser.add_argument(
+        "--video-id",
+        action="append",
+        dest="video_ids",
+        help="Optional video_id filter. Repeat to process multiple specific videos.",
+    )
+    return parser.parse_args()
+
+
 def transcribe_batch() -> None:
     """Transcribe the configured video batch into JSON and readable TXT files."""
-    AUDIO_DIR.mkdir(parents=True, exist_ok=True)
+    args = parse_args()
+    video_dir = resolve_video_dir(SCRIPT_DIR, args.batch_date, args.video_dir)
+    artefact_dir = resolve_artefact_dir(SCRIPT_DIR, args.batch_date, args.artefact_dir)
+    audio_dir = artefact_dir / "audio"
+    videos = select_videos(args.video_ids)
+
+    print(f"Source video directory: {video_dir}")
+    print(f"Artefact output directory: {artefact_dir}")
+
+    audio_dir.mkdir(parents=True, exist_ok=True)
 
     print("Loading Whisper model (base)...")
     model = whisper.load_model("base")
     print("Model loaded.\n")
 
-    for vid_id, filename in VIDEOS:
-        src = VIDEO_DIR / filename
-        wav_path = AUDIO_DIR / f"{vid_id}_audio.wav"
-        json_path = ARTEFACT_DIR / f"{vid_id}_transcript.json"
-        txt_path = ARTEFACT_DIR / f"{vid_id}_transcript.txt"
+    for vid_id, filename in videos:
+        src = video_dir / filename
+        wav_path = audio_dir / f"{vid_id}_audio.wav"
+        json_path = artefact_dir / f"{vid_id}_transcript.json"
+        txt_path = artefact_dir / f"{vid_id}_transcript.txt"
 
         if not src.exists():
             print(f"[SKIP] {filename} — file not found at {src}")
@@ -178,7 +203,7 @@ def transcribe_batch() -> None:
         sys.stdout.flush()
 
     print("\n\n" + "=" * 70)
-    print(f"ALL DONE — All transcripts saved to {ARTEFACT_DIR}")
+    print(f"ALL DONE — All transcripts saved to {artefact_dir}")
     print("=" * 70)
 
 
