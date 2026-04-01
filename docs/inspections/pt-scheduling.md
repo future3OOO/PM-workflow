@@ -14,6 +14,7 @@ Quarterly routine inspection due OR ingoing/outgoing inspection required.
 ---
 
 ## Auto-Scheduling Behaviour
+<span class="pp-verified-label">Verified from video analysis</span>
 
 When a new tenancy is created in Property Tree, the system **automatically creates a routine inspection 3 months from the tenancy start date**.
 

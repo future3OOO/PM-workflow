@@ -22,6 +22,7 @@ Part of: [Leasing Lifecycle](leasing-lifecycle.md) → Stage 6
 ---
 
 ## Renewals — Full TPS Wizard Walkthrough
+<span class="pp-verified-label">Verified from video analysis</span>
 
 ### Prerequisites
 

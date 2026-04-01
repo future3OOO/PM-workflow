@@ -13,6 +13,7 @@ Part of: [Leasing Lifecycle](leasing-lifecycle.md) → Stage 4
 ---
 
 ## Trade Me → TPS Integration
+<span class="pp-verified-label">Verified from video analysis</span>
 
 Before BookMe can receive enquiries, the Trade Me listing must be linked to TPS.
 

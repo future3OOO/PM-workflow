@@ -14,6 +14,7 @@ New property onboarded OR ready to lease.
 ---
 
 ## Step 1 — Create the Property in TPS
+<span class="pp-verified-label">Verified from video analysis</span>
 
 Navigate to **Properties → + New Property** and complete the setup fields.
 

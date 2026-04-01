@@ -56,6 +56,7 @@ See: [Notices & Communications](../day-to-day/notices-comms.md) for notice requi
 ---
 
 ## Stage 4 — Entering a Rent Increase in Property Tree
+<span class="pp-verified-label">Verified from video analysis</span>
 
 Once the owner has agreed to a rent increase amount, enter it into Property Tree **before** sending the formal notice to the tenant. This ensures the system entry isn't forgotten.
 
