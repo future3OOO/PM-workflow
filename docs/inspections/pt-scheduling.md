@@ -1,6 +1,6 @@
 # Scheduling & Confirmation (Property Tree)
 
-**Version:** V2.6  
+**Version:** V2.7  
 **Last updated:** 2026-04-02
 
 ---
@@ -160,7 +160,7 @@ Use this log to verify that the tenant has received the correct notifications:
 - **8 days before**: initial scheduling email
 - **7 days before**: SMS reminder
 - **3 days before**: extra reminder email if the inspection is still not confirmed
-- **1 day before confirmed**: final reminder email, sent only once the inspection is **Confirmed**
+- **1 day before the inspection (Confirmed only)**: final reminder email, sent only when status is **Confirmed**
 
 ---
 

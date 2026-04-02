@@ -1,6 +1,6 @@
 # Notice & Email Templates
 
-**Version:** V2.8  
+**Version:** V2.9  
 **Last updated:** 2026-04-02
 
 ---
@@ -326,6 +326,7 @@ Thanks,
 ---
 
 ## 11) Inspections — 3-day reminder (still unconfirmed)
+<span class="pp-verified-label">Verified from video analysis</span>
 **Subject:** Follow-up — please confirm your inspection time — [Property Address]
 
 Hi [Tenant Name],
@@ -340,6 +341,7 @@ Thanks,
 ---
 
 ## 12) Inspections — manual reply with narrowed confirmed time range
+<span class="pp-verified-label">Verified from video analysis</span>
 **Subject:** Confirmed inspection time — [Property Address]
 
 Hi [Tenant Name],
