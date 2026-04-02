@@ -57,9 +57,12 @@ def main() -> int:
     if args.video_ids:
         videos = select_videos(args.video_ids)
     else:
-        videos = discover_videos_in_artefact_dir(artefact_dir)
-        if not videos:
-            videos = discover_videos_in_dir(video_dir)
+        discovered: dict[str, tuple[str, str]] = {}
+        for video_id, filename in discover_videos_in_artefact_dir(artefact_dir):
+            discovered[video_id] = (video_id, filename)
+        for video_id, filename in discover_videos_in_dir(video_dir):
+            discovered[video_id] = (video_id, filename)
+        videos = list(discovered.values())
     issues: list[str] = []
 
     print(f"Validating artefact directory: {artefact_dir}")
