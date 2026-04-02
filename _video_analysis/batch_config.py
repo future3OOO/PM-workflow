@@ -74,10 +74,13 @@ def select_videos(
     video_ids: Iterable[str] | None = None,
 ) -> list[tuple[str, str]]:
     """Return configured videos, optionally filtered by explicit video_id."""
-    if not video_ids:
+    if video_ids is None:
         return list(VIDEOS)
 
     requested = list(video_ids)
+    if not requested:
+        return []
+
     selected = [item for item in VIDEOS if item[0] in requested]
     missing = [video_id for video_id in requested if video_id not in {item[0] for item in selected}]
     if missing:
