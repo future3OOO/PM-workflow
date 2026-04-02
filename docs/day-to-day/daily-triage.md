@@ -1,7 +1,7 @@
 # Daily Triage Checklist
 
-**Version:** V2.4  
-**Last updated:** 2026-04-01
+**Version:** V2.5  
+**Last updated:** 2026-04-02
 
 ---
 
@@ -40,8 +40,12 @@ See: [Leasing Lifecycle](../leasing/leasing-lifecycle.md)
 <span class="pp-verified-label">Verified from video analysis</span>
 
 See: [Property Tree Scheduling](../inspections/pt-scheduling.md)
-- [ ] Upcoming inspections: **Communications Log** checked (automated ~10-day / ~9-day messages from Property Tree)
-- [ ] Unconfirmed inspections chased (**Confirmed** required for day-before auto email and for attendance — no confirmation = no attendance)
+- [ ] Inspection reply inboxes monitored in both **`hello@propertypartner.co.nz`** and **`mckenzie@propertypartner.co.nz`**
+- [ ] Property-address search used where tenant-name search does not find the thread
+- [ ] Upcoming inspections: **Communications Log** checked (automated **8-day email / 7-day SMS / 3-day reminder** from Property Tree)
+- [ ] Unconfirmed inspections chased **3-4 days out**
+- [ ] Replied inspections updated to **Confirmed ASAP** (**Confirmed** required for day-before auto email and for attendance — no confirmation = no attendance)
+- [ ] Tenant sent the narrowed confirmed time range after status update
 - [ ] Newly auto-created first routine inspections checked to ensure the date did not land on a weekend
 
 ## 5) Inbox hygiene (VA)

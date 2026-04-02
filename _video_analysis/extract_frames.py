@@ -6,6 +6,7 @@ from pathlib import Path
 
 from batch_config import (
     DEFAULT_BATCH_DATE,
+    discover_videos_in_dir,
     resolve_frames_dir,
     resolve_video_dir,
     select_videos,
@@ -123,10 +124,17 @@ def main() -> None:
     args = parse_args()
     video_dir = resolve_video_dir(SCRIPT_DIR, args.batch_date, args.video_dir)
     frames_dir = resolve_frames_dir(SCRIPT_DIR, args.batch_date, args.frames_dir)
-    videos = select_videos(args.video_ids)
+    videos = select_videos(args.video_ids) if args.video_ids else discover_videos_in_dir(video_dir)
 
     print(f"Source video directory: {video_dir}")
     print(f"Frames output directory: {frames_dir}")
+
+    if not videos:
+        print(
+            "No configured videos were found in the selected source folder. "
+            "Register the new video in batch_config.py or pass --video-id explicitly."
+        )
+        return
 
     frames_dir.mkdir(parents=True, exist_ok=True)
     total = 0

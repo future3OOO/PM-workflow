@@ -1,7 +1,7 @@
 # Standards & SLAs
 
-**Version:** V2.4  
-**Last updated:** 2026-04-01
+**Version:** V2.5  
+**Last updated:** 2026-04-02
 
 ---
 
@@ -121,11 +121,12 @@ When an owner declines recommended maintenance:
 
 - Routine inspections are **quarterly** (every 3 months)
 - Cadence (Property Tree **Automated Communications** — **not** manual PM sends):
-    - ~10 days out: **automatic** email advising inspection is being scheduled (proposed window)
-    - ~9 days out: **automatic** SMS asking tenant to confirm proposed time
+    - 8 days out: **automatic** email advising inspection is being scheduled (proposed window)
+    - 7 days out: **automatic** SMS asking tenant to confirm proposed time
+    - 3 days out: **automatic** reminder email if the inspection is still unconfirmed
 - **Confirmed status is mandatory:** until the inspection is **Confirmed** in Property Tree, the tenant **does not** get the **automatic day-before confirmation email**, and **do not attend** — no routine inspection without confirmation
 - 24 hours before: **automatic** final reminder (**only** when status is **Confirmed**)
-- Property Tree: update inspection status to **Confirmed** once tenant confirms (manual)
+- Property Tree: update inspection status to **Confirmed** once tenant confirms (manual), then reply to the tenant with the narrowed final time range
 
 See: [Inspection Lifecycle](../inspections/inspection-lifecycle.md) · [PT Scheduling SOP](../inspections/pt-scheduling.md)
 

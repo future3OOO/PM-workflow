@@ -1,7 +1,7 @@
 # Notice & Email Templates
 
-**Version:** V2.6  
-**Last updated:** 2026-04-01
+**Version:** V2.9  
+**Last updated:** 2026-04-02
 
 ---
 
@@ -301,11 +301,11 @@ Thanks,
 ## 8a) Routine inspections — Property Tree automation (reference)
 <span class="pp-verified-label">Verified from video analysis</span>
 
-For **routine** inspections, Property Tree **Automated Communications** sends the **~10-day email**, **~9-day SMS**, and (once status is **Confirmed**) the **day-before confirmation email**. The PM does **not** manually send those as the primary path — use the inspection **Communications Log** to verify delivery. Sections **9–11** below are **reference wording** only (e.g. manual follow-up to a non-responder, or explaining what tenants receive).
+For **routine** inspections, Property Tree **Automated Communications** sends the **8-day email**, **7-day SMS**, and (if still unconfirmed) the **3-day reminder email**. Once status is **Confirmed**, Property Tree sends the **day-before confirmation email**. The PM does **not** manually send those as the primary path — use the inspection **Communications Log** to verify delivery. Sections **9–13** below are **reference wording** only (e.g. manual follow-up to a non-responder, manual reply confirming the narrowed time range, or explaining what tenants receive).
 
 ---
 
-## 9) Inspections — 10-day scheduling email
+## 9) Inspections — 8-day scheduling email
 **Subject:** Routine inspection scheduling — [Property Address]
 
 Hi [Tenant Name],
@@ -320,12 +320,42 @@ Thanks,
 
 ---
 
-## 10) Inspections — SMS confirmation (9 days out)
+## 10) Inspections — SMS confirmation (7 days out)
 **SMS:** Hi [Name], reminder to please confirm the proposed inspection time for [Address] on [Date]. Reply YES to confirm or suggest an alternative time window. Thanks — Property Partner.
 
 ---
 
-## 11) Inspections — 24-hour reminder
+## 11) Inspections — 3-day reminder (still unconfirmed)
+<span class="pp-verified-label">Verified from video analysis</span>
+**Subject:** Follow-up — please confirm your inspection time — [Property Address]
+
+Hi [Tenant Name],
+
+Just following up on your upcoming routine inspection for **[Property Address]** on **[date]**.
+
+Please reply confirming whether **[time range]** works for you, or let us know a better time window.
+
+Thanks,  
+[Name]
+
+---
+
+## 12) Inspections — manual reply with narrowed confirmed time range
+<span class="pp-verified-label">Verified from video analysis</span>
+**Subject:** Confirmed inspection time — [Property Address]
+
+Hi [Tenant Name],
+
+Thanks for confirming.
+
+I’ll attend sometime between **[confirmed time range]** on **[date]**.
+
+Kind regards,  
+[Name]
+
+---
+
+## 13) Inspections — 24-hour reminder
 **Subject:** Reminder — inspection tomorrow — [Property Address]
 
 Hi [Tenant Name],
@@ -337,7 +367,7 @@ Thanks,
 
 ---
 
-## 12) Tenant action required after inspection (minor)
+## 14) Tenant action required after inspection (minor)
 **Subject:** Action required — inspection follow‑up for [Property Address]
 
 Hi [Tenant Name],
@@ -353,7 +383,7 @@ Thanks,
 
 ---
 
-## 13) Owner email — grey-area damage / liability review
+## 15) Owner email — grey-area damage / liability review
 <span class="pp-verified-label">Verified from video analysis</span>
 **Subject:** Inspection follow-up — damage review at [Property Address]
 
@@ -375,7 +405,7 @@ Kind regards,
 
 ---
 
-## 14) Renewals — landlord email (~90 days)
+## 16) Renewals — landlord email (~90 days)
 <span class="pp-verified-label">Verified from video analysis</span>
 **Subject:** Renewal decision needed — [Property Address] — fixed term ending [End Date]
 
@@ -395,7 +425,7 @@ Thanks,
 
 ---
 
-## 15) Renewals — tenant offer (once owner direction confirmed)
+## 17) Renewals — tenant offer (once owner direction confirmed)
 <span class="pp-verified-label">Verified from video analysis</span>
 **Subject:** Tenancy renewal — [Property Address]
 
@@ -413,7 +443,7 @@ Thanks,
 
 ---
 
-## 16) End of tenancy — vacate pack email
+## 18) End of tenancy — vacate pack email
 **Subject:** Moving out — [Property Address] — next steps
 
 Hi [Tenant Name],
@@ -433,7 +463,7 @@ Regards,
 
 ---
 
-## 17) Lease break — acknowledgement (email)
+## 19) Lease break — acknowledgement (email)
 **Subject:** Lease break request — [Property Address]
 
 Hi [Tenant Name],

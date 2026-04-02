@@ -74,11 +74,12 @@ _video_analysis/
 
 - The **documentation source** now lives in `docs/`, not the old `workflow/` folder.
 - Analysis outputs should be grouped by date under `_video_analysis/artefacts/YYYY-MM-DD/`.
-- The dated batch scripts now use `_video_analysis/batch_config.py` for the shared `VIDEOS` list and default batch date.
+- The dated batch scripts now use `_video_analysis/batch_config.py` for the shared `VIDEOS` registry and current default batch date.
 - `transcribe_batch2.py` and `extract_frames.py` resolve either:
   - `videos/YYYY-MM-DD/`
   - or the legacy folder name `videos/D-M-YYYY/`
-- Use CLI overrides only when the source or output folder intentionally differs from the default dated batch path.
+- Batch membership is **not** hard-coded by date. The scripts scope themselves to the actual source folder or artefact folder for the run.
+- Use CLI overrides when the user provides a specific video location or when the source/output folder intentionally differs from the default dated batch path.
 
 ---
 
@@ -111,7 +112,7 @@ py -3 -c "import whisper; print(whisper.__version__)"
  1. Register video IDs and filenames in `batch_config.py`
           │
           ▼
- 2. Run transcription (audio extraction + Whisper)
+2. Run transcription (audio extraction + Whisper) against the actual provided source folder or explicit video selection
           │
           ▼
  3. Run base frame extraction (JPG screenshots every N seconds)
@@ -188,7 +189,7 @@ VIDEOS = [
 
 Use sequential numbering from the latest existing video ID. The `video_id` determines the transcript and frame folder names.
 
-Set `DEFAULT_BATCH_DATE` to the current batch date when you prepare a new dated batch:
+Set `DEFAULT_BATCH_DATE` to the current working batch date when you prepare a new dated batch:
 
 ```python
 DEFAULT_BATCH_DATE = "2026-04-01"
@@ -199,6 +200,13 @@ The dated batch scripts will then resolve:
 - source videos from `_video_analysis/videos/YYYY-MM-DD/` when present
 - the matching artefacts folder under `_video_analysis/artefacts/YYYY-MM-DD/`
 - a legacy source folder like `_video_analysis/videos/1-4-2026/` if that is what exists locally
+
+Important:
+
+- the scripts **do not** use a hard-coded date-to-video map
+- when `--video-id` is omitted, they scope to the configured video files actually present in the selected source folder
+- validation falls back to the artefact folder when transcripts/frames already exist
+- if the user provides a specific video folder, prefer passing `--video-dir` so the run is explicitly tied to that batch location
 
 ---
 

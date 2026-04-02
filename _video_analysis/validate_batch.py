@@ -6,7 +6,14 @@ import argparse
 import sys
 from pathlib import Path
 
-from batch_config import DEFAULT_BATCH_DATE, resolve_artefact_dir, select_videos
+from batch_config import (
+    DEFAULT_BATCH_DATE,
+    discover_videos_in_artefact_dir,
+    discover_videos_in_dir,
+    resolve_artefact_dir,
+    resolve_video_dir,
+    select_videos,
+)
 
 SCRIPT_DIR = Path(__file__).parent
 
@@ -22,6 +29,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--artefact-dir",
         help="Optional override for the dated artefact directory",
+    )
+    parser.add_argument(
+        "--video-dir",
+        help="Optional override for the source video directory",
     )
     parser.add_argument(
         "--video-id",
@@ -41,13 +52,30 @@ def main() -> int:
     """Return 0 when the batch has the required transcript, frame, and coverage artefacts."""
     args = parse_args()
     artefact_dir = resolve_artefact_dir(SCRIPT_DIR, args.batch_date, args.artefact_dir)
-    videos = select_videos(args.video_ids)
+    video_dir = resolve_video_dir(SCRIPT_DIR, args.batch_date, args.video_dir)
+
+    if args.video_ids:
+        videos = select_videos(args.video_ids)
+    else:
+        discovered: dict[str, tuple[str, str]] = {}
+        for video_id, filename in discover_videos_in_artefact_dir(artefact_dir):
+            discovered[video_id] = (video_id, filename)
+        for video_id, filename in discover_videos_in_dir(video_dir):
+            discovered[video_id] = (video_id, filename)
+        videos = list(discovered.values())
     issues: list[str] = []
 
     print(f"Validating artefact directory: {artefact_dir}")
 
     if not artefact_dir.exists():
         print("ERROR: artefact directory does not exist")
+        return 1
+
+    if not videos:
+        print(
+            "ERROR: no configured videos were discovered for this batch. "
+            "Pass --video-id, or point --video-dir / --artefact-dir at the correct batch location."
+        )
         return 1
 
     coverage_matrix = artefact_dir / "analysis" / "doc_coverage_matrix.md"
