@@ -1,7 +1,7 @@
 # Maintenance Lifecycle
 
-**Version:** V2.10  
-**Last updated:** 2026-04-01
+**Version:** V2.11  
+**Last updated:** 2026-04-06
 
 ---
 
@@ -122,7 +122,7 @@ Every job in Tapi presents five action buttons. Selecting the right one is the c
 2. In **Open jobs**, use the **Created** sort/filter to surface the newest **Choose action** jobs waiting for triage
 3. Send Tapi approval request with a structured message (issue, risk, recommendation, cost estimate)
 4. Dictation / voice-to-text is acceptable for speed, but clean any stray words before sending
-5. Owner responds via Approve button (auto-updates) or message thread (VA manually approves via ⋮ menu)
+5. Owner responds via Approve button (auto-updates) or by email / message; if Tapi does not auto-update, use the manual Tapi action for the current state, e.g. owner-thread approval via ⋮ or quote-card **Accept quote**
 6. Follow-up: Day 0 → Day 3 (business days) → Day 7 escalate to PM
 
 ??? info "Approval message template"
@@ -151,14 +151,14 @@ Every job in Tapi presents five action buttons. Selecting the right one is the c
     |---|---|
     | Select supplier | Choose based on trade category and preferred contractor list |
     | Compliance documents | Require for electrical / plumbing / gas; skip for handyman |
-    | Cost limit (inc. GST) | Set per owner approval or PM guidance |
+    | Cost limit (inc. GST) | Set per owner approval or PM guidance; leave blank when the accepted quote is only an estimate and the contractor will advise if cost rises materially |
     | Require contractor to contact tenants | Almost always **yes** |
     | Message to supplier | Brief, clear instruction of what is needed |
     | Send reminder after | Default 3 days |
     | Copy to owner | Default yes |
     | Message to owner | Brief context |
     | Copy to tenant | Tick |
-    | Message to tenant | Include specifics — tenants only see the job title, not the full description |
+    | Message to tenant | Include specifics — tenants only see the job title, not the full description. If the accepted-quote flow does not expose the tenant message box, rename the title clearly and send a separate Tapi message to the head tenant |
     | Health & safety hazards | Trip · Slip · Electrical · **Dogs (#1 hazard)** · Steep access · Asbestos · Working at height |
 
 ### "Call contractor first" for urgent jobs
@@ -171,6 +171,14 @@ When same-day attendance is needed:
 
 ### Multi-trade job coordination
 Some jobs need sequential trades (e.g. plumber → electrician). Create a **separate Tapi job** for each trade's scope.
+
+### Accepted quote conversion
+
+When a quote has already been returned and the owner approves it outside the Tapi approve button flow, reopen the quote inside **Review quotes** and use the quote card three-dot menu (⋮) → **Accept quote**. Review the resulting work-order panel before sending, especially:
+
+1. whether the **Title** is clear enough for the tenant-facing notification
+2. whether **Cost limit** should remain blank because the quote is only approximate
+3. whether a separate **Send message via Tapi** follow-up is needed for the head tenant because the quote-conversion panel does not expose the normal tenant-message box
 
 ### Contractor acceptance
 - Usually within 1–2 days. If not, send a follow-up.

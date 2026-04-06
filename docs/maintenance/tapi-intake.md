@@ -1,7 +1,7 @@
 # Intake, Triage & Work Orders
 
-**Version:** V2.4  
-**Last updated:** 2026-04-01
+**Version:** V2.5  
+**Last updated:** 2026-04-06
 
 ---
 
@@ -207,6 +207,18 @@ Before sending an owner approval request in Tapi:
 | **Plan for later** | PM has flagged as non-urgent / future consideration |
 | **Call contractor first** | Urgent/emergency — same-day attendance needed (see section below) |
 
+### Accepted quote after owner approval outside the Tapi approve button
+
+When a contractor quote is already sitting in **Review quotes** and the owner approves by direct email or another message path, do not wait for the Tapi approval button flow to update the job automatically.
+
+1. Open the job in Tapi
+2. Go to the quote card under **Review quotes**
+3. Open the quote card three-dot menu (⋮)
+4. Click **Accept quote**
+5. Review the resulting **Send work order** panel before sending
+
+Use this path when the operational approval is already clear but the status still needs the manual Tapi action to convert the accepted quote into a live work order.
+
 ---
 
 ## "Call Contractor First" Workflow (urgent/emergency)
@@ -233,6 +245,8 @@ For urgent jobs requiring same-day attendance:
 3. **Require contractor to contact tenants:** tick in almost all cases
    - Exception: exterior-only work or vacant property
 4. **Cost limit:** dollar amount with **"Incl. GST"** toggle
+   - Use this when the owner has given a real spend cap
+   - Leave it blank when the accepted quote is only an estimate and the contractor will advise if the final cost is materially higher
 5. **Message to supplier:** brief, clear instruction — e.g., "Please replace 1x oyster light in the living room"
 6. **Send reminder after:** default 3 days (Tapi auto-sends reminders at 12h–24h intervals until the contractor accepts)
 7. **Send copy to owner:** ticked by default — owner is notified contractor is engaged
@@ -246,6 +260,13 @@ For urgent jobs requiring same-day attendance:
 13. Job moves to **Scheduling** status in Tapi
 
 > **Tenant notification detail:** The tenant receives an email notification with the **job title only** (e.g., "Lounge room light flickering"). They do NOT see the full description or supplier messages. Always add a message to the tenant if the title alone does not provide enough context about what will happen.
+
+> **Accepted-quote branch detail:** When the work order is created from **Review quotes → Accept quote**, Tapi may not expose the usual personal message box for the owner or tenant. In that case:
+> 1. update the **Title** to a plain-language issue summary the tenant can understand
+> 2. send the work order
+> 3. then use **Send message via Tapi** on the tenant record to send the extra explanation separately
+>
+> Where there are multiple tenants on the lease, default to messaging the **head tenant** unless the situation specifically requires all tenants.
 
 ### Work order best practices
 - Scope should be clear to the contractor without needing extra context
@@ -270,6 +291,7 @@ For urgent jobs requiring same-day attendance:
 - PM may give a verbal price range first — owner may still want a formal quote before proceeding
 - Attach photos including satellite imagery (Property Guru / Google Maps) so the contractor can assess remotely where possible
 - When the quote comes back, forward to owner for approval via the standard approval flow
+- If the owner then approves outside the Tapi approve button flow, return to **Review quotes** and use the quote card three-dot menu (⋮) → **Accept quote**
 
 ---
 

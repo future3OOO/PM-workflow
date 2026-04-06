@@ -38,7 +38,8 @@ property_management_docs_v2/
     ├── RUNBOOK_PERFORMANCE.md   # Default transcript + frame-based video-to-docs process
     ├── batch_config.py          # Shared dated-batch video list + path helpers
     ├── requirements.txt         # Video-analysis-only Python deps
-    ├── transcribe.py            # Single-video CLI transcription
+    ├── normalize_legacy_artefacts.py # Optional one-off cleanup for pre-standard tracked artefacts
+    ├── transcribe.py            # Single-video wrapper over the canonical dated-batch transcription flow
     ├── transcribe_all_videos.py # Batch transcription pipeline
     ├── transcribe_batch2.py     # Dated-batch transcription pipeline
     ├── validate_batch.py        # Local evidence validation for a dated batch
@@ -179,7 +180,7 @@ Key points:
 - analyse software workflow videos using **both** transcript and extracted-frame evidence
 - store working outputs under `_video_analysis/artefacts/YYYY-MM-DD/`
 - keep MkDocs-only dependencies in root `requirements.txt`; keep Whisper/video-analysis dependencies in `_video_analysis/requirements.txt`
-- run `_video_analysis/validate_batch.py` before doc integration to confirm transcript + frame evidence exists, then rerun it with `--require-coverage-matrix` before batch sign-off
+- run `_video_analysis/validate_batch.py` before doc integration to confirm transcript + frame evidence exists, then rerun it with `--require-batch-closeout` before batch sign-off
 - create a **per-video analysis report** for each video before relying on any grouped summary
 - maintain a **doc coverage matrix** for the batch showing findings, target docs reviewed, actions taken, and residual gaps
 - update the published **video analysis glossary** in `docs/day-to-day/video-analysis-glossary.md`

@@ -22,7 +22,7 @@ This repository contains Property Partner's internal workflow documentation for 
 - `mkdocs.yml`
   Site configuration and navigation
 - `_video_analysis/`
-  Video-analysis tooling, runbook, and local evidence workflow used to convert training videos into documentation updates
+  Video-analysis tooling, runbook, local evidence workflow, and legacy-normalisation helper used to convert training videos into documentation updates
 - `CLAUDE.md` and `AGENTS.md`
   Repository-specific agent guidance and dependency rules
 

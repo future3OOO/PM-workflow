@@ -56,7 +56,8 @@ _video_analysis/
 ├── RUNBOOK_PERFORMANCE.md        # default runbook
 ├── batch_config.py
 ├── requirements.txt
-├── transcribe.py
+├── normalize_legacy_artefacts.py # optional cleanup helper for tracked pre-standard artefacts
+├── transcribe.py                 # single-video wrapper over the canonical dated-batch transcription flow
 ├── transcribe_all_videos.py
 ├── transcribe_batch2.py
 ├── validate_batch.py
@@ -66,6 +67,7 @@ _video_analysis/
 └── artefacts/                      # generated review outputs (gitignored)
     └── YYYY-MM-DD/
         ├── analysis/               # per-video analysis reports
+        ├── frames_dense/           # optional dense reruns for high-speed UI steps
         └── frames/
             └── videoXX/            # extracted JPG frames per video
 ```
@@ -75,11 +77,13 @@ _video_analysis/
 - The **documentation source** now lives in `docs/`, not the old `workflow/` folder.
 - Analysis outputs should be grouped by date under `_video_analysis/artefacts/YYYY-MM-DD/`.
 - The dated batch scripts now use `_video_analysis/batch_config.py` for the shared `VIDEOS` registry and current default batch date.
+- `transcribe.py`, `transcribe_batch2.py`, and `extract_frames.py` all write to the same dated artefact structure.
 - `transcribe_batch2.py` and `extract_frames.py` resolve either:
   - `videos/YYYY-MM-DD/`
   - or the legacy folder name `videos/D-M-YYYY/`
 - Batch membership is **not** hard-coded by date. The scripts scope themselves to the actual source folder or artefact folder for the run.
 - Use CLI overrides when the user provides a specific video location or when the source/output folder intentionally differs from the default dated batch path.
+- If you are tidying tracked historical artefacts from before this standard, use `normalize_legacy_artefacts.py` rather than ad hoc manual renames.
 
 ---
 
@@ -222,6 +226,9 @@ Transcription is the spoken-evidence layer. It captures:
 
 ### Single video
 
+The single-video wrapper is only a convenience entry point. It still uses the **same**
+dated artefact layout and configured `video_id` registry as the batch workflow.
+
 ```powershell
 py -3 _video_analysis/transcribe.py video15 "_video_analysis/videos/2026-04-01/1. TPS Book me - creating viewings.mp4"
 ```
@@ -276,6 +283,8 @@ Useful overrides:
 py -3 _video_analysis/extract_frames.py --batch-date 2026-04-01
 py -3 _video_analysis/extract_frames.py --video-id video15 --video-id video16
 py -3 _video_analysis/extract_frames.py --video-dir "_video_analysis/videos/1-4-2026"
+py -3 _video_analysis/extract_frames.py --video-id video15 --profile dense
+py -3 _video_analysis/extract_frames.py --video-id video15 --interval 2
 ```
 
 ### Output
@@ -287,15 +296,20 @@ _video_analysis/artefacts/YYYY-MM-DD/frames/video15/video15_frame_0001.jpg
 _video_analysis/artefacts/YYYY-MM-DD/frames/video16/video16_frame_0001.jpg
 ```
 
-### Default cadence
+Dense reruns are written to:
 
-The current script captures one frame every `INTERVAL` seconds. At present that value is:
-
-```python
-INTERVAL = 10
+```text
+_video_analysis/artefacts/YYYY-MM-DD/frames_dense/video15/video15_frame_0001.jpg
 ```
 
-Lower the interval if the workflow is moving quickly and you need denser UI evidence.
+### Extraction profiles
+
+The script now supports two standard profiles:
+
+- `standard` → `frames/` at 10-second intervals
+- `dense` → `frames_dense/` at 3-second intervals
+
+Use `--interval` when you need an explicit override for a specific rerun.
 
 ### Default frame density rule
 
@@ -352,11 +366,18 @@ The validator checks for:
 
 Do **not** proceed to doc integration while this validation fails.
 
-Before closing the batch, rerun the validator with the coverage matrix requirement enabled:
+Before closing the batch, rerun the validator with the full closeout requirement enabled:
 
 ```powershell
-py -3 _video_analysis/validate_batch.py --batch-date 2026-04-01 --require-coverage-matrix
+py -3 _video_analysis/validate_batch.py --batch-date 2026-04-01 --require-batch-closeout
 ```
+
+`--require-batch-closeout` checks the full batch-closeout artefacts:
+
+- transcript + frame evidence for each selected video
+- `analysis/doc_coverage_matrix.md`
+- one per-video analysis report per selected `video_id`
+- glossary coverage in `docs/day-to-day/video-analysis-glossary.md`
 
 ---
 

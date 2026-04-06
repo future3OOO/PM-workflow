@@ -1,7 +1,7 @@
 # Video Analysis Glossary
 
-**Version:** V3.1  
-**Last updated:** 2026-04-02
+**Version:** V3.2  
+**Last updated:** 2026-04-06
 
 ---
 
@@ -81,6 +81,15 @@ The underlying transcripts, frames, and analysis artefacts live under `_video_an
 | Video | Video label | Published workflow docs created from / materially updated from this video |
 |---|---|---|
 | `video30` | `Inspection confirmations.mp4` | [Scheduling & Confirmation (Property Tree)](../inspections/pt-scheduling.md), [Inspection Lifecycle](../inspections/inspection-lifecycle.md), [Daily Triage](daily-triage.md), [Execution Checklists](execution-checklists.md), [Notice & Email Templates](notice-email-templates.md), [Standards & SLAs](../getting-started/standards-slas.md) |
+
+---
+
+## Batch: 2026-04-06
+
+| Video | Video label | Published workflow docs created from / materially updated from this video |
+|---|---|---|
+| `video31` | `2026-04-06 09-50-33.mp4` | [Tapi Intake](../maintenance/tapi-intake.md), [Maintenance Lifecycle](../maintenance/maintenance-lifecycle.md), [Notice & Email Templates](notice-email-templates.md), [Execution Checklists](execution-checklists.md) |
+| `video32` | `2026-04-06 09-52-52.mp4` | [Tapi Intake](../maintenance/tapi-intake.md), [Maintenance Lifecycle](../maintenance/maintenance-lifecycle.md), [Notice & Email Templates](notice-email-templates.md), [Execution Checklists](execution-checklists.md) |
 
 ---
 
