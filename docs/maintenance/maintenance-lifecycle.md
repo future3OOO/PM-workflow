@@ -1,6 +1,6 @@
 # Maintenance Lifecycle
 
-**Version:** V2.11  
+**Version:** V2.12  
 **Last updated:** 2026-04-06
 
 ---
@@ -151,7 +151,7 @@ Every job in Tapi presents five action buttons. Selecting the right one is the c
     |---|---|
     | Select supplier | Choose based on trade category and preferred contractor list |
     | Compliance documents | Require for electrical / plumbing / gas; skip for handyman |
-    | Cost limit (inc. GST) | Set per owner approval or PM guidance; leave blank when the accepted quote is only an estimate and the contractor will advise if cost rises materially |
+    | Cost limit (inc. GST) | Set per owner approval or PM guidance; leave blank when the accepted quote is only an estimate and not a fixed cap, but use the contractor message to require notice before the cost rises materially so the owner can be updated before invoice |
     | Require contractor to contact tenants | Almost always **yes** |
     | Message to supplier | Brief, clear instruction of what is needed |
     | Send reminder after | Default 3 days |
@@ -177,8 +177,9 @@ Some jobs need sequential trades (e.g. plumber → electrician). Create a **sepa
 When a quote has already been returned and the owner approves it outside the Tapi approve button flow, reopen the quote inside **Review quotes** and use the quote card three-dot menu (⋮) → **Accept quote**. Review the resulting work-order panel before sending, especially:
 
 1. whether the **Title** is clear enough for the tenant-facing notification
-2. whether **Cost limit** should remain blank because the quote is only approximate
-3. whether a separate **Send message via Tapi** follow-up is needed for the head tenant because the quote-conversion panel does not expose the normal tenant-message box
+2. whether **Cost limit** should remain blank because the amount is only approximate rather than a true capped figure
+3. whether the contractor message explicitly says to report back if the actual cost will be materially higher, so the owner can be updated before invoice
+4. whether a separate **Send message via Tapi** follow-up is needed for the head tenant because the quote-conversion panel does not expose the normal tenant-message box
 
 ### Contractor acceptance
 - Usually within 1–2 days. If not, send a follow-up.

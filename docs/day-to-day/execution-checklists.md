@@ -1,6 +1,6 @@
 # Execution Checklists
 
-**Version:** V3.3  
+**Version:** V3.4  
 **Last updated:** 2026-04-06
 
 ---
@@ -121,7 +121,7 @@
 - [ ] Work order/quote request issued with scope/access/WO#
 - [ ] If owner approved a returned quote outside the Tapi approve button flow, the quote was manually accepted in **Review quotes** before the work order was sent
 - [ ] Contractor selected based on trade and preference (Contractor Key)
-- [ ] Message to supplier includes clear instruction
+- [ ] Message to supplier includes clear instruction and, where no cost limit is being set because the amount is only an estimate, says to report back before the cost rises materially so the owner can be updated
 - [ ] Copy sent to owner (default)
 - [ ] Copy sent to tenant with context message, or separate **Send message via Tapi** sent to the head tenant if the accepted-quote panel did not expose the tenant message box
 - [ ] "Require contractor to contact tenants" ticked for access

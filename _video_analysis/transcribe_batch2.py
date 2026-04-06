@@ -23,6 +23,7 @@ from batch_config import (
 SCRIPT_DIR = Path(__file__).parent
 FFMPEG = os.environ.get("FFMPEG_PATH", "ffmpeg")
 FFMPEG_TIMEOUT = 900
+DEFAULT_WHISPER_MODEL = "medium"
 
 
 def remove_if_exists(path: Path) -> None:
@@ -73,6 +74,19 @@ def parse_args() -> argparse.Namespace:
         action="append",
         dest="video_ids",
         help="Optional video_id filter. Repeat to process multiple specific videos.",
+    )
+    parser.add_argument(
+        "--model",
+        default=DEFAULT_WHISPER_MODEL,
+        help=(
+            "Whisper model to use for transcription "
+            f"(default: {DEFAULT_WHISPER_MODEL})"
+        ),
+    )
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Regenerate transcripts even if existing outputs look complete.",
     )
     return parser.parse_args()
 
@@ -139,11 +153,15 @@ def extract_audio(src: Path, wav_path: Path) -> bool:
 def save_transcript_outputs(
     video_id: str,
     filename: str,
+    model_name: str,
     transcript: dict,
     json_path: Path,
     txt_path: Path,
 ) -> None:
     """Persist the machine-readable and review-friendly transcript artefacts."""
+    transcript["_analysis_metadata"] = {
+        "whisper_model": model_name,
+    }
     with json_path.open("w", encoding="utf-8") as handle:
         json.dump(transcript, handle, indent=2, ensure_ascii=False)
     print(f"  JSON saved: {json_path}")
@@ -151,6 +169,7 @@ def save_transcript_outputs(
     with txt_path.open("w", encoding="utf-8") as handle:
         handle.write(f"# Transcript — {video_id}\n")
         handle.write(f"# Source: {filename}\n\n")
+        handle.write(f"# Whisper model: {model_name}\n\n")
         for seg in transcript["segments"]:
             start_m = int(seg["start"] // 60)
             start_s = int(seg["start"] % 60)
@@ -167,13 +186,15 @@ def transcribe_videos(
     videos: list[tuple[str, str]],
     video_dir: Path,
     artefact_dir: Path,
+    model_name: str,
+    force: bool = False,
 ) -> None:
     """Transcribe the selected videos into the canonical dated artefact layout."""
     audio_dir = artefact_dir / "audio"
     audio_dir.mkdir(parents=True, exist_ok=True)
 
-    print("Loading Whisper model (base)...")
-    model = whisper.load_model("base")
+    print(f"Loading Whisper model ({model_name})...")
+    model = whisper.load_model(model_name)
     print("Model loaded.\n")
 
     for video_id, filename in videos:
@@ -186,9 +207,12 @@ def transcribe_videos(
             print(f"[SKIP] {filename} — file not found at {src}")
             continue
 
-        if outputs_are_complete(json_path, txt_path):
+        if not force and outputs_are_complete(json_path, txt_path):
             print(f"[SKIP] {video_id} ({filename}) — transcript already exists")
             continue
+        if force:
+            remove_if_exists(json_path)
+            remove_if_exists(txt_path)
 
         print(f"\n{'=' * 70}")
         print(f"Processing {video_id}: {filename}")
@@ -215,7 +239,14 @@ def transcribe_videos(
         elapsed = time.time() - t0
         print(f"  Transcription done in {elapsed:.1f}s")
 
-        save_transcript_outputs(video_id, filename, transcript, json_path, txt_path)
+        save_transcript_outputs(
+            video_id,
+            filename,
+            model_name,
+            transcript,
+            json_path,
+            txt_path,
+        )
 
         seg_count = len(transcript["segments"])
         if seg_count == 0:
@@ -239,6 +270,8 @@ def transcribe_batch(
     video_dir_override: str | None = None,
     artefact_dir_override: str | None = None,
     video_ids: Iterable[str] | None = None,
+    model_name: str = DEFAULT_WHISPER_MODEL,
+    force: bool = False,
 ) -> int:
     """Transcribe the requested batch selection into dated artefact folders."""
     video_dir, artefact_dir, videos = resolve_inputs(
@@ -258,7 +291,13 @@ def transcribe_batch(
         )
         return 1
 
-    transcribe_videos(videos, video_dir, artefact_dir)
+    transcribe_videos(
+        videos=videos,
+        video_dir=video_dir,
+        artefact_dir=artefact_dir,
+        model_name=model_name,
+        force=force,
+    )
 
     print("\n\n" + "=" * 70)
     print(f"ALL DONE — All transcripts saved to {artefact_dir}")
@@ -275,6 +314,8 @@ def main() -> None:
             video_dir_override=args.video_dir,
             artefact_dir_override=args.artefact_dir,
             video_ids=args.video_ids,
+            model_name=args.model,
+            force=args.force,
         )
     )
 

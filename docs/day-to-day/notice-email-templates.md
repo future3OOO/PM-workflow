@@ -1,6 +1,6 @@
 # Notice & Email Templates
 
-**Version:** V3.0  
+**Version:** V3.1  
 **Last updated:** 2026-04-06
 
 ---
@@ -172,6 +172,10 @@ Thanks,
 > - "Please attend to the heat pump — not heating"
 
 **Keep it brief.** The contractor can click through to see full job details, photos, and property info in Tapi.
+
+**Accepted-estimate variant:** If the job is being converted from **Review quotes → Accept quote** but the amount is still only an estimate, use wording like:
+
+> Please proceed as per estimate. If it's going to cost much more than this, please let me know so we can update the owner before invoice.
 
 ---
 

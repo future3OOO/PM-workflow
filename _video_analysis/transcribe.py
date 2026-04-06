@@ -39,6 +39,16 @@ def parse_args() -> argparse.Namespace:
         help="Optional dated artefact directory override",
     )
     parser.add_argument(
+        "--model",
+        default="medium",
+        help="Whisper model to use for transcription (default: %(default)s)",
+    )
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Regenerate transcripts even if existing outputs look complete.",
+    )
+    parser.add_argument(
         "--allow-filename-mismatch",
         action="store_true",
         help=(
@@ -92,6 +102,8 @@ def main() -> None:
             video_dir_override=str(video_path.parent),
             artefact_dir_override=args.artefact_dir,
             video_ids=[args.video_id],
+            model_name=args.model,
+            force=args.force,
         )
     )
 

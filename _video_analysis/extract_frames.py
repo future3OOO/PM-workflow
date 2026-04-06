@@ -1,4 +1,4 @@
-"""Extract key frames from training videos for visual analysis."""
+"""Extract dense key frames from training videos for visual analysis."""
 
 from __future__ import annotations
 
@@ -21,15 +21,30 @@ SCRIPT_DIR = Path(__file__).parent
 FFMPEG = os.environ.get("FFMPEG_PATH", "ffmpeg")
 FFMPEG_TIMEOUT = 300
 COMPLETE_MARKER = "EXTRACTION_COMPLETE"
-FRAME_PROFILES = {
-    "standard": {"interval": 10, "subdir": "frames"},
-    "dense": {"interval": 3, "subdir": "frames_dense"},
-}
+DEFAULT_FRAME_INTERVAL = 3
 
 
 def count_extracted_frames(out_dir: Path) -> int:
     """Return the number of extracted JPG frames in an output directory."""
     return len(list(out_dir.glob("*.jpg")))
+
+
+def marker_interval(marker_path: Path) -> int | None:
+    """Return the interval stored in the completion marker when present."""
+    if not marker_path.is_file():
+        return None
+
+    content = marker_path.read_text(encoding="utf-8").strip()
+    if not content:
+        return None
+
+    for line in content.splitlines():
+        line = line.strip()
+        if line.startswith("interval="):
+            raw_value = line.partition("=")[2].strip()
+            if raw_value.isdigit():
+                return int(raw_value)
+    return None
 
 
 def extract_frames_for_video(
@@ -51,10 +66,23 @@ def extract_frames_for_video(
     marker_path = out_dir / COMPLETE_MARKER
     if marker_path.exists():
         existing_count = count_extracted_frames(out_dir)
-        if existing_count > 0:
+        recorded_interval = marker_interval(marker_path)
+        if existing_count > 0 and recorded_interval == interval:
             print(f"  Already extracted {existing_count} frames — skipping")
             return existing_count
-        print("  Marker exists but no frames found — re-extracting")
+        if existing_count > 0:
+            if recorded_interval is None:
+                print(
+                    "  Legacy or interval-unknown marker found — re-extracting "
+                    f"at {interval}s"
+                )
+            else:
+                print(
+                    "  Existing frames were extracted at "
+                    f"{recorded_interval}s — re-extracting at {interval}s"
+                )
+        else:
+            print("  Marker exists but no frames found — re-extracting")
         marker_path.unlink()
 
     existing_frames = list(out_dir.glob("*.jpg"))
@@ -103,7 +131,7 @@ def extract_frames_for_video(
     if extracted_count == 0:
         print("  ERROR: ffmpeg completed but produced no frames")
         return 0
-    marker_path.write_text("ok\n", encoding="utf-8")
+    marker_path.write_text(f"interval={interval}\n", encoding="utf-8")
     return extracted_count
 
 
@@ -134,15 +162,12 @@ def parse_args() -> argparse.Namespace:
         help="Optional video_id filter. Repeat to process multiple specific videos.",
     )
     parser.add_argument(
-        "--profile",
-        choices=sorted(FRAME_PROFILES),
-        default="standard",
-        help="Extraction profile. 'dense' writes to frames_dense with a tighter interval.",
-    )
-    parser.add_argument(
         "--interval",
         type=int,
-        help="Optional explicit seconds-between-frames override",
+        help=(
+            "Optional explicit seconds-between-frames override. "
+            f"Default is {DEFAULT_FRAME_INTERVAL}s."
+        ),
     )
     return parser.parse_args()
 
@@ -153,7 +178,6 @@ def resolve_inputs(
     artefact_dir_override: str | None = None,
     frames_dir_override: str | None = None,
     video_ids: Iterable[str] | None = None,
-    profile: str = "standard",
     interval_override: int | None = None,
 ) -> tuple[Path, Path, list[tuple[str, str]], int]:
     """Resolve source videos, output folder, selection, and capture interval."""
@@ -162,13 +186,13 @@ def resolve_inputs(
     if frames_dir_override:
         frames_dir = Path(frames_dir_override)
     else:
-        frames_dir = artefact_dir / FRAME_PROFILES[profile]["subdir"]
+        frames_dir = artefact_dir / "frames"
 
     videos = select_videos(video_ids) if video_ids else discover_videos_in_dir(video_dir)
     interval = (
         interval_override
         if interval_override is not None
-        else int(FRAME_PROFILES[profile]["interval"])
+        else DEFAULT_FRAME_INTERVAL
     )
     if interval <= 0:
         raise ValueError("--interval must be a positive integer")
@@ -181,7 +205,6 @@ def extract_batch(
     artefact_dir_override: str | None = None,
     frames_dir_override: str | None = None,
     video_ids: Iterable[str] | None = None,
-    profile: str = "standard",
     interval_override: int | None = None,
 ) -> int:
     """Extract frames for the selected videos into the canonical artefact structure."""
@@ -191,7 +214,6 @@ def extract_batch(
         artefact_dir_override=artefact_dir_override,
         frames_dir_override=frames_dir_override,
         video_ids=video_ids,
-        profile=profile,
         interval_override=interval_override,
     )
 
@@ -239,7 +261,6 @@ def main() -> None:
             artefact_dir_override=args.artefact_dir,
             frames_dir_override=args.frames_dir,
             video_ids=args.video_ids,
-            profile=args.profile,
             interval_override=args.interval,
         )
     )

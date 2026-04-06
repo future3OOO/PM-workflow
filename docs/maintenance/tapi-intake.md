@@ -1,6 +1,6 @@
 # Intake, Triage & Work Orders
 
-**Version:** V2.5  
+**Version:** V2.6  
 **Last updated:** 2026-04-06
 
 ---
@@ -246,8 +246,9 @@ For urgent jobs requiring same-day attendance:
    - Exception: exterior-only work or vacant property
 4. **Cost limit:** dollar amount with **"Incl. GST"** toggle
    - Use this when the owner has given a real spend cap
-   - Leave it blank when the accepted quote is only an estimate and the contractor will advise if the final cost is materially higher
+   - Leave it blank when the accepted quote is only an estimate and not a fixed capped amount
 5. **Message to supplier:** brief, clear instruction — e.g., "Please replace 1x oyster light in the living room"
+   - If no cost limit is being set because the amount is only an estimate, tell the contractor to let you know if the actual cost will be materially higher so the owner can be updated **before** the invoice arrives
 6. **Send reminder after:** default 3 days (Tapi auto-sends reminders at 12h–24h intervals until the contractor accepts)
 7. **Send copy to owner:** ticked by default — owner is notified contractor is engaged
 8. **Message to owner:** usually blank if already in correspondence
@@ -263,8 +264,9 @@ For urgent jobs requiring same-day attendance:
 
 > **Accepted-quote branch detail:** When the work order is created from **Review quotes → Accept quote**, Tapi may not expose the usual personal message box for the owner or tenant. In that case:
 > 1. update the **Title** to a plain-language issue summary the tenant can understand
-> 2. send the work order
-> 3. then use **Send message via Tapi** on the tenant record to send the extra explanation separately
+> 2. use the contractor message to state that they must tell you if the final cost will be materially higher than the estimate, so the owners can be updated before invoice
+> 3. send the work order
+> 4. then use **Send message via Tapi** on the tenant record to send the extra explanation separately
 >
 > Where there are multiple tenants on the lease, default to messaging the **head tenant** unless the situation specifically requires all tenants.
 
