@@ -1,7 +1,7 @@
 # Notice & Email Templates
 
-**Version:** V2.9  
-**Last updated:** 2026-04-02
+**Version:** V3.1  
+**Last updated:** 2026-04-06
 
 ---
 
@@ -173,14 +173,22 @@ Thanks,
 
 **Keep it brief.** The contractor can click through to see full job details, photos, and property info in Tapi.
 
+**Accepted-estimate variant:** If the job is being converted from **Review quotes → Accept quote** but the amount is still only an estimate, use wording like:
+
+> Please proceed as per estimate. If it's going to cost much more than this, please let me know so we can update the owner before invoice.
+
 ---
 
 ## 7d) Maintenance — work order message to tenant (Tapi)
-**Used in:** Tapi → Send work order → Add personal message to tenants
+**Used in:** Tapi → Send work order → Add personal message to tenants, or Tapi job → tenant card → **Send message via Tapi** when the work order was created from **Review quotes → Accept quote**
 
 > Hi [Tenant name], a contractor will be in contact with you to [brief description of work].
 
 **Why this matters:** The tenant only sees the job title in their email notification from Tapi (e.g., "Lounge room light flickering") — they don't see the full description. Add a message to provide context about what will happen.
+
+**Accepted-quote variant:** If the contractor still has to order a part or the panel did not let you add the normal tenant message, send a separate Tapi message to the **head tenant**, for example:
+
+> Just letting you know that a new oven fan is going to be installed, but the contractor has to order the fan in, so there might be some delay until it arrives.
 
 ---
 

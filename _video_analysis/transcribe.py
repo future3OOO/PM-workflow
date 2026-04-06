@@ -1,93 +1,112 @@
-"""Transcribe a single video file using OpenAI Whisper.
+"""Transcribe one configured video using the canonical dated-batch workflow.
 
 Usage:
     py -3 _video_analysis/transcribe.py <video_id> <path_to_video>
 
 Example:
-    py -3 _video_analysis/transcribe.py video15 "videos/New Training Video.mp4"
+    py -3 _video_analysis/transcribe.py video15 "_video_analysis/videos/2026-04-01/1. TPS Book me - creating viewings.mp4"
 
-Output is written to _video_analysis/videos/{video_id}_transcript.{json,txt}
-Audio is extracted to _video_analysis/videos/{video_id}_audio.wav
+This wrapper enforces the same output layout and processing path as `transcribe_batch2.py`.
 """
-import whisper
-import json
-import os
-import subprocess
+
+from __future__ import annotations
+
+import argparse
 import sys
-import time
+from pathlib import Path
 
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-OUTPUT_DIR = os.path.join(SCRIPT_DIR, "videos")
-FFMPEG = os.environ.get("FFMPEG_PATH", "ffmpeg")
-FFMPEG_TIMEOUT = 900  # 15 min safety bound per file
+from batch_config import (
+    configured_filename_for,
+    infer_batch_date_from_path,
+)
+from transcribe_batch2 import transcribe_batch
 
 
-def transcribe_video(vid_id: str, src_path: str) -> None:
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
+def parse_args() -> argparse.Namespace:
+    """Parse CLI arguments for canonical single-video transcription."""
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("video_id", help="Configured video ID from batch_config.py")
+    parser.add_argument("video_path", help="Path to the source video file")
+    parser.add_argument(
+        "--batch-date",
+        help=(
+            "Optional batch date override in YYYY-MM-DD format. "
+            "When omitted, the wrapper infers the date from the video path."
+        ),
+    )
+    parser.add_argument(
+        "--artefact-dir",
+        help="Optional dated artefact directory override",
+    )
+    parser.add_argument(
+        "--model",
+        default="medium",
+        help="Whisper model to use for transcription (default: %(default)s)",
+    )
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Regenerate transcripts even if existing outputs look complete.",
+    )
+    parser.add_argument(
+        "--allow-filename-mismatch",
+        action="store_true",
+        help=(
+            "Skip the safety check that the provided filename matches the configured "
+            "filename for this video_id."
+        ),
+    )
+    return parser.parse_args()
 
-    wav_path = os.path.join(OUTPUT_DIR, f"{vid_id}_audio.wav")
-    json_path = os.path.join(OUTPUT_DIR, f"{vid_id}_transcript.json")
-    txt_path = os.path.join(OUTPUT_DIR, f"{vid_id}_transcript.txt")
 
-    if not os.path.exists(src_path):
-        print(f"[ERROR] Video file not found: {src_path}")
+def main() -> None:
+    """Run the canonical single-video transcription workflow."""
+    args = parse_args()
+    video_path = Path(args.video_path).expanduser().resolve()
+
+    if not video_path.is_file():
+        print(f"[ERROR] Video file not found: {video_path}")
         sys.exit(1)
 
-    if os.path.exists(txt_path):
-        print(f"[SKIP] {vid_id} — transcript already exists at {txt_path}")
-        print("       Delete it to force re-processing.")
-        return
+    try:
+        configured_filename = configured_filename_for(args.video_id)
+    except ValueError as exc:
+        print(f"[ERROR] {exc}")
+        sys.exit(1)
+    if (
+        not args.allow_filename_mismatch
+        and video_path.name != configured_filename
+    ):
+        print(
+            "[ERROR] Provided filename does not match batch_config.py for this video_id.\n"
+            f"        video_id: {args.video_id}\n"
+            f"        configured: {configured_filename}\n"
+            f"        provided:   {video_path.name}\n"
+            "        Rename the source file or use the configured filename so the "
+            "single-video and batch workflows remain identical."
+        )
+        sys.exit(1)
 
-    if not os.path.exists(wav_path):
-        print(f"Extracting audio from {src_path}...")
-        t0 = time.time()
-        cmd = [FFMPEG, "-y", "-i", src_path, "-vn", "-acodec", "pcm_s16le",
-               "-ar", "16000", "-ac", "1", wav_path]
-        try:
-            subprocess.run(
-                cmd, capture_output=True, text=True,
-                check=True, timeout=FFMPEG_TIMEOUT,
-            )
-        except subprocess.TimeoutExpired:
-            print(f"[ERROR] ffmpeg timed out after {FFMPEG_TIMEOUT}s")
-            if os.path.exists(wav_path):
-                os.remove(wav_path)
-            sys.exit(1)
-        except subprocess.CalledProcessError as e:
-            print(f"[ERROR] ffmpeg failed: {e.stderr[:500] if e.stderr else 'no stderr'}")
-            if os.path.exists(wav_path):
-                os.remove(wav_path)
-            sys.exit(1)
-        print(f"Audio extracted in {time.time() - t0:.1f}s")
+    batch_date = args.batch_date or infer_batch_date_from_path(video_path)
+    if not batch_date:
+        print(
+            "[ERROR] Could not infer a batch date from the video path. "
+            "Pass --batch-date explicitly so outputs still land in the canonical "
+            "dated artefact folder."
+        )
+        sys.exit(1)
 
-    print("Loading Whisper model (base)...")
-    model = whisper.load_model("base")
-
-    print("Transcribing...")
-    t0 = time.time()
-    transcript = model.transcribe(wav_path, language="en", verbose=False, word_timestamps=True)
-    print(f"Transcription done in {time.time() - t0:.1f}s")
-
-    with open(json_path, "w", encoding="utf-8") as f:
-        json.dump(transcript, f, indent=2, ensure_ascii=False)
-
-    with open(txt_path, "w", encoding="utf-8") as f:
-        f.write(f"# Transcript — {vid_id}\n")
-        f.write(f"# Source: {os.path.basename(src_path)}\n\n")
-        for seg in transcript["segments"]:
-            start_m, start_s = int(seg["start"] // 60), int(seg["start"] % 60)
-            end_m, end_s = int(seg["end"] // 60), int(seg["end"] % 60)
-            f.write(f"[{start_m:02d}:{start_s:02d} - {end_m:02d}:{end_s:02d}] {seg['text'].strip()}\n")
-
-    seg_count = len(transcript["segments"])
-    char_count = len(transcript["text"])
-    print(f"Done — {seg_count} segments, {char_count} chars")
-    print(f"  JSON: {json_path}")
-    print(f"  TXT:  {txt_path}")
+    sys.exit(
+        transcribe_batch(
+            batch_date=batch_date,
+            video_dir_override=str(video_path.parent),
+            artefact_dir_override=args.artefact_dir,
+            video_ids=[args.video_id],
+            model_name=args.model,
+            force=args.force,
+        )
+    )
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print(__doc__)
-        sys.exit(1)
-    transcribe_video(sys.argv[1], sys.argv[2])
+    main()

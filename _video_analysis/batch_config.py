@@ -4,9 +4,10 @@ from __future__ import annotations
 
 from datetime import datetime
 from pathlib import Path
+import re
 from typing import Iterable
 
-DEFAULT_BATCH_DATE = "2026-04-02"
+DEFAULT_BATCH_DATE = "2026-04-06"
 
 VIDEOS = [
     ("video15", "1. TPS Book me - creating viewings.mp4"),
@@ -25,7 +26,14 @@ VIDEOS = [
     ("video28", "TPS- application approved- Create Tenancy agreement (B).mp4"),
     ("video29", "TPS- Bond lodgement.mp4"),
     ("video30", "Inspection confirmations.mp4"),
+    ("video31", "2026-04-06 09-50-33.mp4"),
+    ("video32", "2026-04-06 09-52-52.mp4"),
 ]
+
+ISO_BATCH_DATE_PATTERN = re.compile(r"(?P<year>\d{4})-(?P<month>\d{2})-(?P<day>\d{2})")
+LEGACY_BATCH_DATE_PATTERN = re.compile(
+    r"(?P<day>\d{1,2})-(?P<month>\d{1,2})-(?P<year>\d{4})"
+)
 
 
 def batch_date_aliases(batch_date: str) -> list[str]:
@@ -40,6 +48,52 @@ def batch_date_aliases(batch_date: str) -> list[str]:
     if legacy not in aliases:
         aliases.append(legacy)
     return aliases
+
+
+def normalise_batch_date_token(token: str) -> str | None:
+    """Return a canonical YYYY-MM-DD batch date when the token contains one."""
+    match = ISO_BATCH_DATE_PATTERN.search(token)
+    if match:
+        try:
+            parsed = datetime(
+                int(match.group("year")),
+                int(match.group("month")),
+                int(match.group("day")),
+            )
+        except ValueError:
+            return None
+        return parsed.strftime("%Y-%m-%d")
+
+    match = LEGACY_BATCH_DATE_PATTERN.search(token)
+    if not match:
+        return None
+
+    try:
+        parsed = datetime(
+            int(match.group("year")),
+            int(match.group("month")),
+            int(match.group("day")),
+        )
+    except ValueError:
+        return None
+    return parsed.strftime("%Y-%m-%d")
+
+
+def infer_batch_date_from_path(path: Path) -> str | None:
+    """Infer the canonical batch date from any part of a source path."""
+    for part in reversed(path.parts):
+        batch_date = normalise_batch_date_token(part)
+        if batch_date:
+            return batch_date
+    return None
+
+
+def configured_filename_for(video_id: str) -> str:
+    """Return the configured filename for a video_id or raise if unknown."""
+    for configured_video_id, filename in VIDEOS:
+        if configured_video_id == video_id:
+            return filename
+    raise ValueError(f"Unknown video_id: {video_id}")
 
 
 def resolve_video_dir(script_dir: Path, batch_date: str, override: str | None = None) -> Path:

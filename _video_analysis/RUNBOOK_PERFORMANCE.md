@@ -22,7 +22,7 @@ This is now the **default** video-analysis workflow for the repository.
 In this runbook:
 
 - analysis depth is prioritised over speed
-- dense evidence capture is preferred over minimal sufficiency
+- dense evidence capture is the default, not an optional second pass
 - per-video reports must preserve enough detail that another operator could update the docs without reopening the video
 - concise summaries do **not** replace detailed evidence logs
 - first-pass UI mapping must be complete enough that a second UI-only re-review is normally unnecessary
@@ -56,7 +56,8 @@ _video_analysis/
 ├── RUNBOOK_PERFORMANCE.md        # default runbook
 ├── batch_config.py
 ├── requirements.txt
-├── transcribe.py
+├── normalize_legacy_artefacts.py # optional cleanup helper for tracked pre-standard artefacts
+├── transcribe.py                 # single-video wrapper over the canonical dated-batch transcription flow
 ├── transcribe_all_videos.py
 ├── transcribe_batch2.py
 ├── validate_batch.py
@@ -75,11 +76,13 @@ _video_analysis/
 - The **documentation source** now lives in `docs/`, not the old `workflow/` folder.
 - Analysis outputs should be grouped by date under `_video_analysis/artefacts/YYYY-MM-DD/`.
 - The dated batch scripts now use `_video_analysis/batch_config.py` for the shared `VIDEOS` registry and current default batch date.
+- `transcribe.py`, `transcribe_batch2.py`, and `extract_frames.py` all write to the same dated artefact structure.
 - `transcribe_batch2.py` and `extract_frames.py` resolve either:
   - `videos/YYYY-MM-DD/`
   - or the legacy folder name `videos/D-M-YYYY/`
 - Batch membership is **not** hard-coded by date. The scripts scope themselves to the actual source folder or artefact folder for the run.
 - Use CLI overrides when the user provides a specific video location or when the source/output folder intentionally differs from the default dated batch path.
+- If you are tidying tracked historical artefacts from before this standard, use `normalize_legacy_artefacts.py` rather than ad hoc manual renames.
 
 ---
 
@@ -115,10 +118,7 @@ py -3 -c "import whisper; print(whisper.__version__)"
 2. Run transcription (audio extraction + Whisper) against the actual provided source folder or explicit video selection
           │
           ▼
- 3. Run base frame extraction (JPG screenshots every N seconds)
-          │
-          ▼
- 3b. Run targeted dense frame reruns for fast or form-heavy screens
+ 3. Run dense frame extraction into the canonical frame folder
           │
           ▼
  4. Run local batch validation
@@ -222,6 +222,9 @@ Transcription is the spoken-evidence layer. It captures:
 
 ### Single video
 
+The single-video wrapper is only a convenience entry point. It still uses the **same**
+dated artefact layout and configured `video_id` registry as the batch workflow.
+
 ```powershell
 py -3 _video_analysis/transcribe.py video15 "_video_analysis/videos/2026-04-01/1. TPS Book me - creating viewings.mp4"
 ```
@@ -238,7 +241,18 @@ Useful overrides:
 py -3 _video_analysis/transcribe_batch2.py --batch-date 2026-04-01
 py -3 _video_analysis/transcribe_batch2.py --video-id video15 --video-id video16
 py -3 _video_analysis/transcribe_batch2.py --video-dir "_video_analysis/videos/1-4-2026"
+py -3 _video_analysis/transcribe_batch2.py --video-id video15 --force
+py -3 _video_analysis/transcribe_batch2.py --video-id video15 --model base
 ```
+
+### Transcription quality rule
+
+The performance workflow now defaults to the **Whisper `medium` model** for better transcript accuracy.
+
+Use:
+
+- `--force` when an existing transcript needs to be regenerated
+- `--model base` only when hardware limits force a lighter run
 
 ### Outputs
 
@@ -276,6 +290,7 @@ Useful overrides:
 py -3 _video_analysis/extract_frames.py --batch-date 2026-04-01
 py -3 _video_analysis/extract_frames.py --video-id video15 --video-id video16
 py -3 _video_analysis/extract_frames.py --video-dir "_video_analysis/videos/1-4-2026"
+py -3 _video_analysis/extract_frames.py --video-id video15 --interval 2
 ```
 
 ### Output
@@ -287,21 +302,13 @@ _video_analysis/artefacts/YYYY-MM-DD/frames/video15/video15_frame_0001.jpg
 _video_analysis/artefacts/YYYY-MM-DD/frames/video16/video16_frame_0001.jpg
 ```
 
-### Default cadence
+### Canonical density rule
 
-The current script captures one frame every `INTERVAL` seconds. At present that value is:
+The canonical frame set always lives in `frames/` and is extracted at **3-second intervals by default**.
 
-```python
-INTERVAL = 10
-```
+Use `--interval` only when you need an even tighter rerun for a specific video. A rerun replaces the prior canonical frames for that `video_id`; it should not create a second competing frame tree.
 
-Lower the interval if the workflow is moving quickly and you need denser UI evidence.
-
-### Default frame density rule
-
-For this runbook, the default extraction is only the starting point.
-
-Use targeted reruns when:
+Use a tighter rerun when:
 
 - the operator moves rapidly between screens
 - a form is filled in across several short interactions
@@ -309,10 +316,10 @@ Use targeted reruns when:
 - menu paths or dropdown options are only visible for a moment
 - a before/after state change matters
 
-Typical dense rerun pattern:
+Typical rerun pattern:
 
-- first pass at the default interval
-- second pass at a tighter interval for the relevant `--video-id`
+- canonical pass at the default 3-second interval
+- tighter rerun at `--interval 1` or `--interval 2` for the relevant `--video-id`
 - manual frame review focused on the transition points
 
 The goal is to preserve enough visual evidence to reconstruct the UI sequence precisely, not just approximately.
@@ -352,11 +359,18 @@ The validator checks for:
 
 Do **not** proceed to doc integration while this validation fails.
 
-Before closing the batch, rerun the validator with the coverage matrix requirement enabled:
+Before closing the batch, rerun the validator with the full closeout requirement enabled:
 
 ```powershell
-py -3 _video_analysis/validate_batch.py --batch-date 2026-04-01 --require-coverage-matrix
+py -3 _video_analysis/validate_batch.py --batch-date 2026-04-01 --require-batch-closeout
 ```
+
+`--require-batch-closeout` checks the full batch-closeout artefacts:
+
+- transcript + frame evidence for each selected video
+- `analysis/doc_coverage_matrix.md`
+- one per-video analysis report per selected `video_id`
+- glossary coverage in `docs/day-to-day/video-analysis-glossary.md`
 
 ---
 
@@ -872,11 +886,11 @@ git push -u origin HEAD
 |---|---|
 | `ffmpeg` not found | Use `FFMPEG_PATH` env var or install ffmpeg into PATH |
 | `python` not found | Use `py -3` launcher |
-| Whisper memory pressure | Switch from `base` to `tiny` temporarily |
+| Whisper memory pressure | Rerun with `--model base` or `--model tiny` temporarily |
 | Transcript quality is weak | Re-check against the frames; NZ accents and product jargon often distort the transcript |
-| Frame coverage is too sparse | Lower `INTERVAL` in `extract_frames.py` and rerun the affected `--video-id` batch |
+| Frame coverage is too sparse | Rerun `extract_frames.py` with a tighter `--interval` for the affected `--video-id` |
 | The report still feels too summary-like | Go back and add the action ledger, field inventory, and timestamped evidence notes |
-| The workflow is clear but the exact screen still isn't | Go back to dense frames and capture the page title, entry path, local tab, and row action before closing the report |
+| The workflow is clear but the exact screen still isn't | Rerun frames at a tighter interval and capture the page title, entry path, local tab, and row action before closing the report |
 | Script skips a video | Delete the prior output for that `video_id` or change the ID if the batch is intentionally new |
 | Analysis report is missing key UI detail | Go back to the extracted frames before changing the docs |
 
